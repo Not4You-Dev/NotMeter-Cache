@@ -1386,6 +1386,7 @@
 
   const elements = {};
   let downloadModalReturnFocus = null;
+  let advertisementHistoryActive = false;
 
   document.addEventListener("DOMContentLoaded", () => {
     bindElements();
@@ -1401,6 +1402,7 @@
       }
     });
     const pageView = initialPageView();
+    advertisementHistoryActive = window.location.hash === "#google_vignette";
     if (pageView !== "character") {
       void loadIconAtlases();
       void loadCache();
@@ -1779,41 +1781,7 @@
       leaveClassView();
       render();
     });
-    window.addEventListener("popstate", event => {
-      if (event.state?.notMeterStatsView === "class-performance") {
-        openClassPerformanceView(false);
-        return;
-      }
-      if (event.state?.notMeterStatsView === "class-top10") {
-        openClassTop10View(false);
-        return;
-      }
-      if (event.state?.notMeterStatsView === "contribution") {
-        openContributionView();
-        return;
-      }
-      if (event.state?.notMeterStatsView === "boss-resistance") {
-        openBossResistanceView();
-        return;
-      }
-      closeFieldBossView();
-      closeArtifactView();
-      closeClassTop10View();
-      closeClassPerformanceView();
-      closeContributionView();
-      closeBossResistanceView();
-      closeStatEfficiencyView();
-      closeOptimizationView();
-      const job = event.state?.notMeterStatsJob;
-      if (event.state?.notMeterStatsView === "class" && job) {
-        state.selectedJob = job;
-        state.mode = "class";
-        blockRankingNavigation();
-      } else {
-        leaveClassView();
-      }
-      render();
-    });
+    window.addEventListener("popstate", handlePageHistory);
     window.addEventListener("message", handleOptimizationFrameMessage);
     elements["detail-close"].addEventListener("click", closeCombatDetail);
     elements["detail-settings-toggle"].addEventListener("click", () => {
@@ -1844,6 +1812,53 @@
         closeCombatDetail();
       }
     });
+  }
+
+  function handlePageHistory(event) {
+      const isAdvertisement = window.location.hash === "#google_vignette";
+      if (isAdvertisement || advertisementHistoryActive) {
+        advertisementHistoryActive = isAdvertisement;
+        return;
+      }
+      const view = event.state?.notMeterStatsView || initialPageView();
+      if (view === "class-performance") {
+        openClassPerformanceView(false);
+        return;
+      }
+      if (view === "class-top10") {
+        openClassTop10View(false);
+        return;
+      }
+      if (view === "contribution" || view === "setup-guide") {
+        openContributionView();
+        return;
+      }
+      if (view === "boss-resistance") {
+        openBossResistanceView();
+        return;
+      }
+      if (view === "field-boss") return openFieldBossView();
+      if (view === "artifact") return openArtifactView();
+      if (view === "optimization") return openOptimizationView();
+      if (view === "stat-efficiency") return openStatEfficiencyView();
+      if (view === "character") return openCharacterView();
+      closeFieldBossView();
+      closeArtifactView();
+      closeClassTop10View();
+      closeClassPerformanceView();
+      closeContributionView();
+      closeBossResistanceView();
+      closeStatEfficiencyView();
+      closeOptimizationView();
+      const job = event.state?.notMeterStatsJob;
+      if (view === "class" && job) {
+        state.selectedJob = job;
+        state.mode = "class";
+        blockRankingNavigation();
+      } else {
+        leaveClassView();
+      }
+      render();
   }
 
   function openDownloadModal() {
