@@ -6,9 +6,9 @@
   const ALGORITHM = "RSA-SHA256-PKCS1-v1";
   const KEY_ID = "notmeter-ranking-2026-07";
   const PUBLIC_KEY_BASE64 = "MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEArn8f2jGTdnIRUHtso8FmmUcmN7rgOzJ7lQRcy9e3Lekt8S2Tg8L1++9/8AKAhnY/hpJbdHkgdTvvv3oyGZVMU/owyv7u9CcmiKQm1dIx7JkoHz0fnBbpytyVRH9Y21HF/PyLX6GcHmkYsfA5keNq3BjK/C+3MTuC8h9EFGPlWBlDwTuLOq4ky4McZMBV5wAu15xLvcyPHeaUhGMuc2XufGyyLLXV2hHXpUsIKZineKWEyN3UoaCXnWzAw5VqSd6cfhB5jY3CFFnthMbQk62ddJUT2B6GWZHjz39rg0u6qSTuGWW1M3BfUR+F6GUllxgDumWmxPHfNcs5MI4rNGsKyuLRrk6z85EYIyL4eduEM8NaQQ5gY03BsgT81jTFfbG+PVgqgkz9t322JycjgCUKLlva0FlZzGXmE57d7N5KcxMlnfdpPq5dcmyvLN2J8vAK4Sct9bKjUEZWeA4npCIHpBPXob9WlTkuLPasWrkuHiUPPPx5xfZzmnRKmCswr0fdAgMBAAE=";
-  const RAW_URL = "https://raw.githubusercontent.com/Not4You-Dev/NotMeter-Web/main/control/notmeter-control-endpoint.json";
+  const RAW_URL = "https://raw.githubusercontent.com/Not4You-Dev/NotMeter-Cache/main/control/notmeter-control-endpoint.json";
   const SITE_URL = "https://notmeter.com/control/notmeter-control-endpoint.json";
-  const API_URL = "https://api.github.com/repos/Not4You-Dev/NotMeter-Web/contents/control/notmeter-control-endpoint.json?ref=main";
+  const API_URL = "https://api.github.com/repos/Not4You-Dev/NotMeter-Cache/contents/control/notmeter-control-endpoint.json?ref=main";
   const STORAGE_KEY = "notmeter-control-endpoint-v1";
   const REFRESH_MS = 5 * 60 * 1000;
   const MAX_LIFETIME_SECONDS = 14 * 24 * 60 * 60;
