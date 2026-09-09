@@ -1,3 +1,8 @@
+/* Keep sticky controls on the document scrollport, not an overflow body. */
+body.character-view {
+  overflow-x: clip;
+}
+
 .global-character-search {
   position: relative;
   z-index: 80;

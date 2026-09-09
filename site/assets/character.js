@@ -45,7 +45,7 @@
   ]);
   const ACCESSORY_SLOT_TYPES = new Set([
     "Pendant", "Necklace", "Earring1", "Earring2", "Ring1", "Ring2", "Bracelet1",
-    "Bracelet2", "Belt", "Brooch1", "Brooch2", "Amulet", "Rune1", "Rune2",
+    "Bracelet2", "Belt", "Brooch1", "Brooch2", "Amulet", "Rune1", "Rune2", "Seal1", "Seal2",
   ]);
   const ITEM_GRADE_PRIORITY = Object.freeze({ Mythic: 6, Epic: 5, Unique: 4, Legend: 3, Rare: 2, Common: 1 });
   const COPY = {
@@ -1540,7 +1540,7 @@
         Pendant: "펜던트", Necklace: "목걸이", Earring1: "귀걸이 1", Earring2: "귀걸이 2",
         Ring1: "반지 1", Ring2: "반지 2", Bracelet1: "팔찌 1", Bracelet2: "팔찌 2",
         Belt: "허리띠", Waist: "허리띠", Shoes: "장화", Brooch1: "브로치 1", Brooch2: "브로치 2", Amulet: "아뮬렛",
-        Rune1: "룬 1", Rune2: "룬 2",
+        Rune1: "룬 1", Rune2: "룬 2", Seal1: "인장 1", Seal2: "인장 2",
       },
       en: {
         MainHand: "Main hand", SubHand: "Off hand", Helmet: "Helmet", Shoulder: "Shoulders",
@@ -1548,7 +1548,7 @@
         Pendant: "Pendant", Necklace: "Necklace", Earring1: "Earring 1", Earring2: "Earring 2",
         Ring1: "Ring 1", Ring2: "Ring 2", Bracelet1: "Bracelet 1", Bracelet2: "Bracelet 2",
         Belt: "Belt", Brooch1: "Brooch 1", Brooch2: "Brooch 2", Amulet: "Amulet",
-        Rune1: "Rune 1", Rune2: "Rune 2",
+        Rune1: "Rune 1", Rune2: "Rune 2", Seal1: "Seal 1", Seal2: "Seal 2",
       },
       "zh-TW": {
         MainHand: "主手武器", SubHand: "副手武器", Helmet: "頭盔", Shoulder: "護肩",
@@ -1556,7 +1556,7 @@
         Pendant: "墜飾", Necklace: "項鍊", Earring1: "耳環 1", Earring2: "耳環 2",
         Ring1: "戒指 1", Ring2: "戒指 2", Bracelet1: "手鐲 1", Bracelet2: "手鐲 2",
         Belt: "腰帶", Brooch1: "胸針 1", Brooch2: "胸針 2", Amulet: "護符",
-        Rune1: "符文 1", Rune2: "符文 2",
+        Rune1: "符文 1", Rune2: "符文 2", Seal1: "印章 1", Seal2: "印章 2",
       },
     };
     return labels[state.locale]?.[slot] || labels.ko[slot] ||
