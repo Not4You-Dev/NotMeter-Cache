@@ -5,7 +5,7 @@
     "https://raw.githubusercontent.com/Not4You-Dev/NotMeter-Cache";
   const SAME_ORIGIN_RANKING_CACHE_ROOT = "./data";
   const GITHUB_RANKING_MANIFEST_URLS = [
-    "https://not4you-dev.github.io/NotMeter-Cache/data/client/notmeter-ranking-latest.json",
+    "https://notmeter.com/data/client/notmeter-ranking-latest.json",
     `${GITHUB_RANKING_REPOSITORY_ROOT}/main/data/client/notmeter-ranking-latest.json`,
     `${SAME_ORIGIN_RANKING_CACHE_ROOT}/client/notmeter-ranking-latest.json`,
   ];
@@ -2208,7 +2208,8 @@
           `https://notmeter.com/g/${generation}`].includes(manifest.pagesRoot)) {
       throw new Error("invalid cache Pages destination");
     }
-    return manifest.pagesRoot;
+    // The github.io redirect does not carry CORS headers after a custom-domain move.
+    return `https://notmeter.com/g/${generation}`;
   }
 
   async function loadCache(force = false, preserveView = false) {
