@@ -37,8 +37,10 @@
   ];
   const FIELD_BOSS_CACHE_URLS = [
     "https://raw.githubusercontent.com/Not4You-Dev/NotMeter-Cache/main/presence/notmeter-field-boss-public.json",
-    "https://notmeter.com/presence/notmeter-field-boss-public.json",
   ];
+  const FIELD_BOSS_CACHE_REF_URL = "https://api.github.com/repos/Not4You-Dev/NotMeter-Cache/commits?path=presence/notmeter-field-boss-public.json&per_page=1";
+  let fieldBossRefCheckedAt = 0;
+  let fieldBossFixedCacheUrl = "";
   const EXPECTED_SCHEMA = "notmeter-web-ranking-v1";
   const EXPECTED_CLASS_RANKING_SCHEMA = "notmeter-web-class-ranking-v1";
   const EXPECTED_VIEW_RANKING_SCHEMA = "notmeter-web-view-ranking-v1";
@@ -73,8 +75,8 @@
   let vpsFallbackQueue = Promise.resolve();
   let vpsFallbackSpreadPromise = null;
   const CACHE_SYNC_THROTTLE_MS = 60 * 1000;
-  const FIELD_BOSS_CACHE_SYNC_INTERVAL_MS = 10 * 60 * 1000;
-  const FIELD_BOSS_CACHE_RESUME_THROTTLE_MS = 10 * 60 * 1000;
+  const FIELD_BOSS_CACHE_SYNC_INTERVAL_MS = 2 * 60 * 1000;
+  const FIELD_BOSS_CACHE_RESUME_THROTTLE_MS = 2 * 60 * 1000;
   const FIELD_BOSS_TARGET_HOLD_THRESHOLD_MS = 10 * 60 * 1000;
   const DAILY_USER_KEY = "__notmeter_daily_active_users__";
   const STANDARD_CP_TIER_LIMIT = 100;
@@ -2871,7 +2873,10 @@
 
   async function fetchFieldBossCache(force) {
     const errors = [];
-    for (const baseUrl of FIELD_BOSS_CACHE_URLS) {
+    let latest = null;
+    const urls = [...FIELD_BOSS_CACHE_URLS];
+    for (let index = 0; index < urls.length; index += 1) {
+      const baseUrl = urls[index];
       try {
         const separator = baseUrl.includes("?") ? "&" : "?";
         const cache = normalizeFieldBossCache(await fetchFieldBossCacheJson(
@@ -2881,13 +2886,33 @@
         if (!Array.isArray(cache.servers) || cache.servers.length === 0) {
           throw new Error("empty cache");
         }
-        const source = baseUrl.includes("raw.githubusercontent.com") ? "github" : "pages";
-        return { cache, revision: `${source}:${Number(cache.generatedAt) || 0}` };
+        if (!latest || Number(cache.generatedAt) > Number(latest.cache.generatedAt)) {
+          latest = { cache, revision: `github:${Number(cache.generatedAt) || 0}` };
+        }
+        if (index > 0 || (!force && Date.now() - Number(cache.generatedAt) * 1000 < 12 * 60_000)) {
+          return latest;
+        }
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
         errors.push(`${baseUrl}: ${message}`);
       }
+      if (index === 0) {
+        try {
+          // Resolve a fixed commit only when the shared raw URL is stale or unavailable.
+          if (Date.now() - fieldBossRefCheckedAt >= 10 * 60_000) {
+            fieldBossRefCheckedAt = Date.now();
+            const commits = await fetchFieldBossCacheJson(FIELD_BOSS_CACHE_REF_URL, "no-cache");
+            const revision = String(commits?.[0]?.sha || "");
+            if (!/^[0-9a-f]{40}$/i.test(revision)) throw new Error("invalid field-boss revision");
+            fieldBossFixedCacheUrl = FIELD_BOSS_CACHE_URLS[0].replace("/main/", `/${revision}/`);
+          }
+          if (fieldBossFixedCacheUrl) urls.push(fieldBossFixedCacheUrl);
+        } catch (error) {
+          errors.push(String(error));
+        }
+      }
     }
+    if (latest) return latest;
     throw new Error(`${t("cacheUnavailable")} (${errors.join(" / ")})`);
   }
 
@@ -3684,6 +3709,11 @@
       normalizedExpected);
   }
 
+  async function fetchSetupGuideCache(force = false) {
+    await refreshGitHubRankingRevision(force);
+    return fetchCompressedJson(CONTRIBUTION_CACHE_URLS, force);
+  }
+
   async function loadContributionCache(force = false) {
     if (state.contributionLoad) {
       return state.contributionLoad;
@@ -3691,11 +3721,15 @@
     showContributionState("loading");
     state.contributionLoad = (async () => {
       try {
-        const cache = await fetchCompressedJson(CONTRIBUTION_CACHE_URLS, force);
+        const cache = await fetchSetupGuideCache(force);
         if (cache?.schema !== EXPECTED_CONTRIBUTION_SCHEMA ||
             ![1, 2].includes(Number(cache.version)) ||
             !Array.isArray(cache.jobs)) {
           throw new Error("invalid setup guide cache schema");
+        }
+        if (state.contributionData && Date.parse(cache.generatedAt) < Date.parse(state.contributionData.generatedAt)) {
+          renderContributionStats();
+          return state.contributionData;
         }
         state.contributionData = cache;
         const currentKey = state.contributionDungeonKey;
