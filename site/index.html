@@ -1,0 +1,1586 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111a">
+  <meta name="description" content="NotMeter 던전 통계와 직업별 DPS 랭킹을 웹에서 확인하세요.">
+  <meta name="google-adsense-account" content="ca-pub-7318383767094918">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NotMeter 던전 통계">
+  <meta property="og:description" content="직업별 상위 25% DPS와 TOP 20 랭킹을 동일한 통계 캐시로 확인하세요.">
+  <meta property="og:url" content="https://notmeter.com/">
+  <meta property="og:image" content="https://notmeter.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NotMeter 던전 통계">
+  <meta name="twitter:description" content="직업별 상위 25% DPS와 TOP 20 랭킹">
+  <meta name="twitter:image" content="https://notmeter.com/assets/og.png">
+  <title>NotMeter 던전 통계</title>
+  <link rel="canonical" href="https://notmeter.com/">
+  <link rel="icon" type="image/png" href="./assets/notmeter-icon.png">
+  <link rel="stylesheet" href="./assets/app.css?v=20260909-5">
+  <link rel="stylesheet" href="./assets/character.css?v=20260901-2">
+  <link rel="stylesheet" href="./assets/stat-efficiency.css?v=20260826-2">
+  <link rel="stylesheet" href="./assets/theme-current-polish.css?v=20260901-1">
+  <link rel="stylesheet" href="./assets/theme-purchased.css?v=20260907-15">
+  <link rel="stylesheet" href="./assets/setup-guide-readability.css?v=20260908-1">
+  <link rel="stylesheet" href="./assets/combat-detail.css?v=20260909-1">
+  <script>
+    (() => {
+      const rawView = new URLSearchParams(window.location.search).get("view") || "ranking";
+      const requestedView = rawView === "contribution" ? "setup-guide" : rawView;
+      const pageView = ["ranking", "class-top10", "class-performance", "setup-guide", "contribution", "boss-resistance", "stat-efficiency", "field-boss", "artifact", "optimization", "character"]
+        .includes(requestedView) ? requestedView : "ranking";
+      let savedLocale = "";
+      try {
+        savedLocale = localStorage.getItem("notmeter-stats-locale") || "";
+      } catch {
+        // Storage can be unavailable in privacy mode; browser language remains safe.
+      }
+      const browserLocales = [
+        ...(Array.isArray(navigator.languages) ? navigator.languages : []),
+        navigator.language,
+      ].map(value => String(value || "").trim().toLowerCase()).filter(Boolean);
+      const detectedLocale = (() => {
+        for (const browserLocale of browserLocales) {
+          if (browserLocale.startsWith("zh-tw") || browserLocale.startsWith("zh-hant") ||
+              browserLocale.startsWith("zh-hk") || browserLocale.startsWith("zh-mo") || browserLocale === "zh") return "zh-TW";
+          if (browserLocale.startsWith("ko")) return "ko";
+          if (browserLocale.startsWith("en")) return "en";
+          if (browserLocale.startsWith("zh")) return "zh-TW";
+        }
+        return "en";
+      })();
+      const locale = ["ko", "en", "zh-TW"].includes(savedLocale)
+        ? savedLocale
+        : detectedLocale;
+      const routeMetadata = {
+        ko: {
+          ranking: {
+            title: "NotMeter 던전 통계",
+            description: "NotMeter 던전 통계와 직업별 DPS 랭킹을 웹에서 확인하세요."
+          },
+          "class-top10": {
+            title: "NotMeter 클래스 종합 TOP 10",
+            description: "여러 던전과 CP 구간의 성적을 합산한 클래스별 종합 TOP 10을 확인하세요."
+          },
+          "class-performance": {
+            title: "NotMeter CP 보정 직업 DPS 통계",
+            description: "이번 주 동일 조건 전투기록을 CP로 보정해 직업별 DPS 성능과 신뢰도를 비교합니다."
+          },
+          "setup-guide": {
+            title: "NotMeter 직업별 세팅 가이드",
+            description: "전체 기간 상위 랭커의 PVE 장비·마석·영혼 각인·아르카나·스킬 세팅 통계를 확인합니다."
+          },
+          "boss-resistance": {
+            title: "NotMeter 보스 저항 통계",
+            description: "전체 기간 누적 표본으로 보스별 강타·완벽 저항과 치명타·회피 판정을 분석합니다."
+          },
+          "stat-efficiency": {
+            title: "NotMeter 스탯 효율 계산기",
+            description: "딜미터기에서 복사한 내 스탯으로 직업과 스킬별 성장 효율을 간편하게 비교합니다."
+          },
+          "field-boss": {
+            title: "NotMeter 필드보스 현황",
+            description: "NotMeter가 수집한 서버별 필드보스 출현 시간과 남은 시간을 확인하세요."
+          },
+          "artifact": {
+            title: "NotMeter 아티팩트 현황",
+            description: "한국 서버별 아티팩트 점령 현황과 다음 점령전까지 남은 시간을 확인하세요."
+          },
+          "optimization": {
+            title: "NotMeter 아이온2 그래픽 최적화",
+            description: "PC 사양과 증상에 맞는 안전한 아이온2 Unreal Engine 5 설정을 생성합니다."
+          },
+          "character": {
+            title: "NotMeter 캐릭터 검색",
+            description: "아이온2 캐릭터의 장비, 영혼 각인, 마석, 스킬과 성장 정보를 한눈에 확인하세요."
+          }
+        },
+        en: {
+          ranking: {
+            title: "NotMeter Dungeon Statistics",
+            description: "Explore NotMeter dungeon statistics and DPS rankings by class."
+          },
+          "class-top10": {
+            title: "NotMeter Class Overall TOP 10",
+            description: "View the overall class TOP 10 aggregated across dungeons and CP brackets."
+          },
+          "class-performance": {
+            title: "NotMeter CP-adjusted Class DPS",
+            description: "Compare weekly class DPS and confidence using CP-adjusted encounters under matching conditions."
+          },
+          "setup-guide": {
+            title: "NotMeter Class Setup Guide",
+            description: "Explore PVE equipment, manastones, soul engravings, Arcana, and skill trends among all-time top rankers."
+          },
+          "boss-resistance": {
+            title: "NotMeter Boss Resistance Statistics",
+            description: "Estimate Evasion, Critical, Power-hit, and Perfect resistance for each boss from live stats and combat outcomes."
+          },
+          "stat-efficiency": {
+            title: "NotMeter Stat Efficiency Calculator",
+            description: "Paste stats copied from NotMeter to compare upgrades by class and skill."
+          },
+          "field-boss": {
+            title: "NotMeter Field Boss Status",
+            description: "Check field boss spawn times and remaining time collected by NotMeter for each server."
+          },
+          "artifact": {
+            title: "NotMeter Artifact Status",
+            description: "Check current artifact ownership and the next battle time for Korean servers."
+          },
+          "optimization": {
+            title: "NotMeter AION2 Graphics Optimizer",
+            description: "Generate safe AION2 Unreal Engine 5 settings for your PC and performance issues."
+          },
+          "character": {
+            title: "NotMeter Character Search",
+            description: "View AION2 equipment, soul engravings, manastones, skills, and progression in one place."
+          }
+        },
+        "zh-TW": {
+          ranking: {
+            title: "NotMeter 副本統計",
+            description: "查看 NotMeter 副本統計與各職業 DPS 排名。"
+          },
+          "class-top10": {
+            title: "NotMeter 職業綜合 TOP 10",
+            description: "查看彙整多個副本與 CP 區間成績的各職業綜合 TOP 10。"
+          },
+          "class-performance": {
+            title: "NotMeter CP 校正職業 DPS 統計",
+            description: "使用本週相同條件的戰鬥紀錄校正 CP，比較各職業 DPS 表現與可信度。"
+          },
+          "setup-guide": {
+            title: "NotMeter 職業配裝指南",
+            description: "查看歷代頂尖玩家的 PVE 裝備、魔石、靈魂刻印、阿爾卡納與技能配置趨勢。"
+          },
+          "boss-resistance": {
+            title: "NotMeter 首領抗性統計",
+            description: "結合角色屬性與戰鬥判定，查看各首領的迴避、暴擊抗性、強擊抗性與完美抗性推估值。"
+          },
+          "stat-efficiency": {
+            title: "NotMeter 屬性效率計算器",
+            description: "貼上從 NotMeter 複製的角色屬性，比較各職業與技能的成長效率。"
+          },
+          "field-boss": {
+            title: "NotMeter 世界首領現況",
+            description: "查看 NotMeter 收集的各伺服器世界首領出現時間與剩餘時間。"
+          },
+          "artifact": {
+            title: "NotMeter 神器佔領現況",
+            description: "查看韓國伺服器目前的神器佔領狀態與下次佔領戰時間。"
+          },
+          "optimization": {
+            title: "NotMeter AION2 圖形最佳化",
+            description: "依照電腦配備與問題，產生安全的 AION2 Unreal Engine 5 設定。"
+          },
+          "character": {
+            title: "NotMeter 角色搜尋",
+            description: "一次查看 AION2 角色的裝備、靈魂刻印、魔石、技能與成長資訊。"
+          }
+        }
+      };
+      const metadata = routeMetadata[locale][pageView] || routeMetadata[locale].ranking;
+
+      const canonicalUrl = new URL("https://notmeter.com/");
+      canonicalUrl.searchParams.set("view", pageView);
+      const canonical = canonicalUrl.toString();
+      const setMeta = (selector, content) => {
+        const element = document.querySelector(selector);
+        if (element) {
+          element.setAttribute("content", content);
+        }
+      };
+
+      document.documentElement.lang = locale;
+      document.title = metadata.title;
+      document.querySelector('link[rel="canonical"]')?.setAttribute(
+        "href",
+        pageView === "ranking" ? "https://notmeter.com/" : canonical);
+      setMeta('meta[name="description"]', metadata.description);
+      setMeta('meta[property="og:title"]', metadata.title);
+      setMeta('meta[property="og:description"]', metadata.description);
+      setMeta('meta[property="og:url"]', pageView === "ranking" ? "https://notmeter.com/" : canonical);
+      setMeta('meta[name="twitter:title"]', metadata.title);
+      setMeta('meta[name="twitter:description"]', metadata.description);
+    })();
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7318383767094918" crossorigin="anonymous"></script>
+  <script src="./assets/control-endpoint.js?v=20260909-2" defer></script>
+  <script src="./assets/field-boss-catalog.js?v=20260905-4" defer></script>
+  <script src="./assets/field-boss-kibelisk-catalog.js?v=20260819-2" defer></script>
+  <script src="./assets/combat-detail-buffs.js?v=20260909-5" defer></script>
+  <script src="./assets/stats-copy.zh-TW.js?v=20260909-1" defer></script>
+  <script src="./assets/character-snapshot.js?v=20260901-5" defer></script>
+  <script src="./assets/character.js?v=20260909-phase1-personal" defer></script>
+  <script src="./assets/artifact.js?v=20260909-1" defer></script>
+  <script src="./assets/stat-efficiency.js?v=20260909-2" defer></script>
+  <script src="./assets/app.js?v=20260909-phase1-personal" defer></script>
+  <script src="./assets/theme-purchased-icons.js?v=20260907-7" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand-icon" src="./assets/notmeter-icon.png" width="44" height="44" alt="">
+        <div>
+          <h1 id="page-title">NotMeter 던전 통계</h1>
+          <p id="page-subtitle">선택한 DPS / nDPS의 직업별 상위 25% 기준으로 정렬합니다</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <nav class="service-links" aria-label="NotMeter 바로가기" data-i18n-aria-label="serviceLinksAria">
+          <a class="service-link stat-efficiency-link" id="stat-efficiency-button" href="./?view=stat-efficiency" aria-current="false">
+            <span class="feature-new-badge" data-feature-new-until="2026-09-01T23:59:59+09:00" data-i18n-title="newFeature">NEW</span>
+            <span class="service-link-icon stat-efficiency-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <rect x="4" y="3" width="16" height="18" rx="3"></rect>
+                <path d="M8 7h8M8 12h2m4 0h2M8 16h2m4 0h2"></path>
+              </svg>
+            </span>
+            <span class="service-link-label" data-i18n="statEfficiencyCalculator">스탯 효율 계산기</span>
+          </a>
+          <a class="service-link class-performance-link" id="class-performance-button" href="./?view=class-performance" aria-current="false">
+            <span class="feature-new-badge" data-feature-new-until="2026-08-17T13:40:00+09:00" data-i18n-title="newFeature" hidden>NEW</span>
+            <span class="service-link-icon class-performance-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M5 18V11M10 18V7M15 18V4M20 18V9"></path>
+              </svg>
+            </span>
+            <span class="service-link-label" data-i18n="classPerformance">직업 성능</span>
+          </a>
+          <a class="service-link contribution-link" id="contribution-button" href="./?view=setup-guide" aria-current="false">
+            <span class="feature-new-badge" data-feature-new-until="2026-09-10T23:59:59+09:00" data-i18n-title="newFeature" hidden>NEW</span>
+            <span class="service-link-icon contribution-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4 5.5c2.7-1 5.3-.7 8 1.1v12c-2.7-1.8-5.3-2.1-8-1.1zM20 5.5c-2.7-1-5.3-.7-8 1.1v12c2.7-1.8 5.3-2.1 8-1.1z"></path>
+              </svg>
+            </span>
+            <span class="service-link-label" data-i18n="contributionStats">세팅 가이드</span>
+          </a>
+          <a class="service-link boss-resistance-link" id="boss-resistance-button" href="./?view=boss-resistance" aria-current="false">
+            <span class="feature-new-badge" data-feature-new-until="2026-08-22T23:59:59+09:00" data-i18n-title="newFeature" hidden>NEW</span>
+            <span class="service-link-icon boss-resistance-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 3 20 6v5c0 5-3.2 8.3-8 10-4.8-1.7-8-5-8-10V6l8-3Z"></path>
+                <path d="M12 7v9M8.5 11.5h7"></path>
+              </svg>
+            </span>
+            <span class="service-link-label" data-i18n="bossResistanceStats">보스 저항 통계</span>
+          </a>
+          <a class="service-link class-top10-link" id="class-top10-button" href="./?view=class-top10" aria-current="false">
+            <span class="service-link-icon class-top10-link-icon" aria-hidden="true">10</span>
+            <span class="service-link-label" data-i18n="classTop10">클래스 TOP 10</span>
+          </a>
+          <a class="service-link field-boss-link" id="field-boss-button" href="./?view=field-boss" aria-current="false">
+            <span class="service-link-icon field-boss-link-icon" aria-hidden="true">
+              <img src="./assets/boss-icon.png" alt="">
+            </span>
+            <span class="service-link-label" data-i18n="fieldBoss">필드보스</span>
+          </a>
+          <a class="service-link artifact-link" id="artifact-button" href="./?view=artifact" aria-current="false">
+            <span class="feature-new-badge" data-feature-new-until="2026-09-09T23:59:59+09:00" data-i18n-title="newFeature">NEW</span>
+            <span class="service-link-icon artifact-link-icon" aria-hidden="true">
+              <img src="./assets/artifact-neutral.png" alt="">
+            </span>
+            <span class="service-link-label">아티팩트 현황</span>
+          </a>
+          <a class="service-link optimization-link" id="optimization-button" href="./?view=optimization" aria-current="false">
+            <span class="service-link-icon optimization-link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4 7h9m4 0h3M4 17h3m4 0h9"></path>
+                <circle cx="15" cy="7" r="2"></circle>
+                <circle cx="9" cy="17" r="2"></circle>
+              </svg>
+            </span>
+            <span class="service-link-label" data-i18n="optimization">최적화</span>
+          </a>
+          <a class="service-link discord-link" href="https://discord.com/invite/DuAuuhdrwy" target="_blank" rel="noopener noreferrer">
+            <span class="service-link-icon discord-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M19.5 5.34A17.2 17.2 0 0 0 15.44 4l-.5 1.02a15.7 15.7 0 0 0-5.86 0L8.56 4A17.4 17.4 0 0 0 4.5 5.35C1.93 9.12 1.23 12.8 1.58 16.43a16.5 16.5 0 0 0 4.98 2.52l1.2-1.64a10.8 10.8 0 0 1-1.9-.92l.47-.36c3.67 1.7 7.65 1.7 11.27 0l.48.36c-.61.36-1.25.67-1.91.92l1.2 1.64a16.4 16.4 0 0 0 4.98-2.52c.42-4.2-.72-7.84-2.85-11.09ZM8.87 14.22c-1.1 0-2.01-1.01-2.01-2.25s.89-2.26 2.01-2.26c1.13 0 2.03 1.02 2.01 2.26 0 1.24-.89 2.25-2.01 2.25Zm6.26 0c-1.1 0-2.01-1.01-2.01-2.25s.89-2.26 2.01-2.26c1.13 0 2.03 1.02 2.01 2.26 0 1.24-.88 2.25-2.01 2.25Z"/>
+              </svg>
+            </span>
+            <span class="service-link-label" data-i18n="discord">디스코드</span>
+          </a>
+          <a class="service-link download-link" id="download-button"
+            href="https://github.com/Not4You-Dev/NotMeter-Releases/releases/latest/download/NotMeter.zip"
+            aria-haspopup="dialog" aria-controls="download-modal">
+            <span class="service-link-icon download-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14"/>
+              </svg>
+            </span>
+            <span class="service-link-label" data-i18n="download">다운로드</span>
+          </a>
+        </nav>
+        <div class="live-pill" title="최근 집계된 일일 사용자 수" data-i18n-title="dailyUsersTitle">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span data-i18n="dailyUsers">일일 활성 미터기</span>
+          <strong id="daily-user-count">—</strong>
+        </div>
+        <span class="language-select-wrap" data-language="ko">
+          <span class="language-flag-icon" aria-hidden="true"></span>
+          <select class="ghost-button language-select" id="language-button" aria-label="언어 선택" data-i18n-aria-label="languageSwitchAria">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+            <option value="zh-TW">繁體中文</option>
+          </select>
+        </span>
+      </div>
+    </header>
+
+    <section class="global-character-search" id="global-character-search" aria-label="캐릭터 검색">
+      <div class="character-search-intro">
+        <span class="character-search-intro-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M12 3.25 19.25 7.4v8.2L12 19.75 4.75 15.6V7.4L12 3.25Z"></path>
+            <circle cx="12" cy="10.25" r="2.65"></circle>
+            <path d="M7.9 16.15c.82-1.75 2.2-2.65 4.1-2.65s3.28.9 4.1 2.65"></path>
+          </svg>
+        </span>
+        <span class="character-search-intro-copy">
+          <span class="character-search-kicker" id="character-search-kicker">CHARACTER LOOKUP</span>
+          <strong id="character-search-title">캐릭터 검색</strong>
+          <span id="character-search-description">닉네임으로 장비·스킬·랭킹을 바로 확인하세요</span>
+        </span>
+      </div>
+      <form class="character-search-form" id="character-search-form" role="search" autocomplete="off">
+        <span class="character-search-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" focusable="false"
+            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path>
+          </svg>
+        </span>
+        <label class="sr-only" for="character-search-input">캐릭터 이름</label>
+        <input id="character-search-input" name="character" type="search" maxlength="20"
+          placeholder="캐릭터 이름을 입력하세요" aria-controls="character-search-popover"
+          aria-expanded="false" spellcheck="false">
+        <button id="character-search-submit" type="submit">검색</button>
+      </form>
+      <div class="character-search-popover" id="character-search-popover" hidden>
+        <div class="character-search-popover-head">
+          <div class="character-search-popover-heading">
+            <strong id="character-search-popover-title">최근 검색한 캐릭터</strong>
+            <div class="character-search-race-filters" id="character-search-race-filters" role="group"
+              aria-label="종족 필터" hidden>
+              <button type="button" data-search-race="all" aria-pressed="true">전체</button>
+              <button type="button" data-search-race="elyos" aria-pressed="false">천족</button>
+              <button type="button" data-search-race="asmodian" aria-pressed="false">마족</button>
+            </div>
+          </div>
+          <span id="character-search-status" aria-live="polite">최대 10개까지 저장됩니다</span>
+        </div>
+        <div class="character-search-results" id="character-search-results"></div>
+      </div>
+    </section>
+
+    <aside class="sponsor-mobile" aria-label="광고" data-i18n-aria-label="advertisementAria">
+      <a class="sponsor-mobile-link" href="https://buly.kr/8IySyKj" target="_blank"
+        rel="sponsored noopener noreferrer" aria-label="사종키나 광고 페이지 열기" data-i18n-aria-label="sponsorOpenAria">
+        <span class="sponsor-ad-badge" data-i18n="advertisement">광고</span>
+        <img src="./assets/sponsor-kinah-mobile.jpg" width="960" height="480"
+          decoding="async" alt="사종키나 키나 직접 최저가 판매 광고">
+      </a>
+    </aside>
+
+    <section class="optimization-surface" id="optimization-surface" hidden>
+      <div class="optimization-surface-heading">
+        <div>
+          <span class="optimization-surface-kicker">AION2 ENGINE.INI</span>
+          <h2 data-i18n="optimizationSurfaceTitle">그래픽 최적화 설정</h2>
+          <p data-i18n="optimizationSurfaceDescription">현재 페이지에서 설정을 생성하며 상단 메뉴와 광고는 그대로 유지됩니다.</p>
+        </div>
+        <a class="ranking-back-button" id="optimization-back-button" href="./">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span data-i18n="backToRanking">랭킹으로 돌아가기</span>
+        </a>
+      </div>
+      <div class="optimization-frame-shell">
+        <iframe id="optimization-frame"
+          title="아이온2 그래픽 최적화 설정 생성기"
+          data-i18n-title="optimizationFrameTitle"
+          data-src="./optimization.html?embed=1&amp;v=20260815-1"
+          allow="clipboard-write"
+          loading="eager"></iframe>
+      </div>
+    </section>
+
+    <section class="character-surface" id="character-surface" hidden>
+      <header class="character-page-heading">
+        <div>
+          <span class="character-page-kicker">AION2 CHARACTER · OFFICIAL DATA</span>
+          <h2 id="character-page-title">캐릭터 정보</h2>
+          <p id="character-page-description">장비 옵션과 영혼 각인, 마석을 한 화면에서 비교할 수 있습니다.</p>
+        </div>
+        <a class="ranking-back-button" id="character-back-button" href="./">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span>랭킹으로 돌아가기</span>
+        </a>
+      </header>
+      <div class="character-page-state" id="character-loading-state">
+        <div class="spinner" aria-hidden="true"></div>
+        <strong>공식 캐릭터 정보를 불러오는 중입니다</strong>
+        <span>장비별 영혼 각인과 마석을 함께 확인하고 있습니다.</span>
+      </div>
+      <div class="character-page-state character-page-error" id="character-error-state" hidden>
+        <div class="error-mark" aria-hidden="true">!</div>
+        <strong id="character-error-title">캐릭터 정보를 불러오지 못했습니다</strong>
+        <span id="character-error-message">잠시 후 다시 시도해 주세요.</span>
+        <button class="refresh-button compact" id="character-retry-button" type="button">다시 시도</button>
+      </div>
+      <div class="character-profile-content" id="character-profile-content" hidden></div>
+    </section>
+
+    <section class="contribution-surface setup-guide-surface" id="contribution-surface" hidden>
+      <div class="contribution-heading">
+        <div class="contribution-heading-copy">
+          <span class="contribution-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 5.5c2.7-1 5.3-.7 8 1.1v12c-2.7-1.8-5.3-2.1-8-1.1zM20 5.5c-2.7-1-5.3-.7-8 1.1v12c2.7-1.8 5.3-2.1 8-1.1z"></path></svg></span>
+          <div>
+            <span class="contribution-kicker">ALL-TIME TOP RANKERS · PVE LOADOUT</span>
+            <h2 data-i18n="contributionStatsTitle">직업별 세팅 가이드</h2>
+            <p data-i18n="contributionStatsDescription">상위 랭커의 마석·영석·영혼 각인·아르카나·스킬 선택을 한눈에 확인하세요.</p>
+          </div>
+        </div>
+        <a class="ranking-back-button" id="contribution-back-button" href="./"><span class="ranking-back-button-icon" aria-hidden="true">←</span><span data-i18n="backToRanking">랭킹으로 돌아가기</span></a>
+      </div>
+      <div class="contribution-summary" id="contribution-summary" hidden>
+        <div><span data-i18n="contributionPeriod">캐시 갱신</span><strong id="contribution-period">—</strong></div>
+        <div><span data-i18n="contributionRecords">확보 표본</span><strong id="contribution-records">—</strong></div>
+        <div><span data-i18n="contributionSamples">확인한 후보</span><strong id="contribution-samples">—</strong></div>
+        <div><span data-i18n="contributionLowSamples">표본 신뢰도</span><strong id="contribution-low-samples">—</strong></div>
+      </div>
+      <nav class="contribution-tabs" id="contribution-tabs" aria-label="세팅 가이드 직업 선택" data-i18n-aria-label="contributionDungeonAria"></nav>
+      <div class="contribution-state" id="contribution-loading-state"><div class="spinner" aria-hidden="true"></div><p data-i18n="contributionLoading">상위 랭커의 PVE 세팅을 불러오는 중입니다</p></div>
+      <div class="contribution-state contribution-error-state" id="contribution-error-state" hidden><div class="error-mark" aria-hidden="true">!</div><strong data-i18n="contributionLoadError">세팅 가이드 캐시를 불러오지 못했습니다</strong><p id="contribution-error-message"></p><button class="refresh-button compact" id="contribution-retry-button" type="button" data-i18n="retry">다시 시도</button></div>
+      <div class="contribution-state" id="contribution-empty-state" hidden><p data-i18n="contributionEmpty">아직 확인 가능한 PVE 세팅 표본이 없습니다.</p></div>
+      <div class="contribution-content" id="contribution-content" hidden>
+        <div class="contribution-content-heading"><div><strong id="contribution-dungeon-title">—</strong></div><span data-i18n="contributionSortGuide">사용률이 높은 순서로 표시</span></div>
+        <div class="contribution-rows" id="contribution-rows"></div>
+      </div>
+      <details class="contribution-method" open>
+        <summary data-i18n="contributionMethodTitle">세팅 가이드는 어떻게 만들었나요?</summary>
+        <div class="contribution-method-grid">
+          <article><b>01</b><strong data-i18n="contributionMethodScopeTitle">상위 랭커 기준</strong><p data-i18n="contributionMethodScopeText">직업별 전체 기간 랭킹을 1위부터 확인해 최신 PVE 세팅이 있는 캐릭터 20명을 채웁니다.</p></article>
+          <article><b>02</b><strong data-i18n="contributionMethodFormulaTitle">누락 자동 보충</strong><p data-i18n="contributionMethodFormulaText">캐릭터 정보나 PVE 스냅샷이 없으면 다음 순위로 내려가며 유효한 20명을 확보합니다.</p></article>
+          <article><b>03</b><strong data-i18n="contributionMethodSampleTitle">한 캐릭터 한 표</strong><p data-i18n="contributionMethodSampleText">같은 캐릭터는 한 번만 반영하여 검색 횟수나 기록 수가 많은 캐릭터가 통계를 독점하지 않습니다.</p></article>
+          <article><b>04</b><strong data-i18n="contributionMethodTrustTitle">6시간마다 갱신</strong><p data-i18n="contributionMethodTrustText">최근 30일 안에 확인된 PVE 장비만 사용하며, 표본 수와 사용률을 함께 보여줍니다.</p></article>
+        </div>
+        <p class="contribution-caution" data-i18n="contributionCaution">실전 상위 랭커의 선택을 정리한 참고 자료입니다. 패치·보유 장비·플레이 방식에 따라 정답은 달라질 수 있습니다.</p>
+      </details>
+    </section>
+
+    <section class="boss-resistance-surface" id="boss-resistance-surface" hidden>
+      <div class="boss-resistance-page-heading">
+        <div class="boss-resistance-page-heading-copy">
+          <span class="boss-resistance-page-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 3 20 6v5c0 5-3.2 8.3-8 10-4.8-1.7-8-5-8-10V6l8-3Z"></path>
+              <path d="M12 7v9M8.5 11.5h7"></path>
+            </svg>
+          </span>
+          <div>
+            <span class="boss-resistance-page-kicker">ALL TIME · ACCURACY · CRITICAL · HARD HIT · PERFECT</span>
+            <h2 data-i18n="bossResistanceStatsTitle">보스 저항 통계</h2>
+            <p data-i18n="bossResistanceStatsDescription">강타·완벽 저항은 추정값을 표시하고, 치명타·회피는 수치 구간별 판정 표본으로 환산식을 검증합니다.</p>
+          </div>
+        </div>
+        <a class="ranking-back-button" id="boss-resistance-back-button" href="./">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span data-i18n="backToRanking">랭킹으로 돌아가기</span>
+        </a>
+      </div>
+      <div class="boss-resistance-guide">
+        <span data-i18n="bossResistanceAllTime">전체 기간 누적</span>
+        <p data-i18n="bossResistanceSamplesGuide">치명타·회피는 유효 스탯 구간별 성공·실패를 분리해 수집하며, 검증된 환산식이 나오기 전에는 저항 수치를 표시하지 않습니다. 페리·막기는 회피와 별도 판정입니다.</p>
+      </div>
+      <nav class="boss-resistance-tabs" id="boss-resistance-tabs" aria-label="보스 저항 통계 던전 선택" data-i18n-aria-label="bossResistanceDungeonAria"></nav>
+      <div class="boss-resistance-content" id="boss-resistance-content" hidden>
+        <div class="boss-resistance-content-heading">
+          <strong id="boss-resistance-dungeon-title">—</strong>
+          <span data-i18n="bossResistanceAllTime">전체 기간 누적</span>
+        </div>
+        <div class="boss-resistance-rows" id="boss-resistance-rows"></div>
+      </div>
+      <div class="boss-resistance-empty" id="boss-resistance-empty" hidden data-i18n="bossResistanceNoData">표시할 보스 정보가 없습니다.</div>
+    </section>
+
+    <section class="stat-efficiency-surface" id="stat-efficiency-surface" hidden>
+      <div class="stat-efficiency-heading">
+        <div class="stat-efficiency-heading-copy">
+          <span class="stat-efficiency-heading-icon" aria-hidden="true">↗</span>
+          <div>
+            <span class="stat-efficiency-kicker" data-stat-i18n="pageKicker">실시간 스탯 비교</span>
+            <h2 data-stat-i18n="title">스탯 효율 계산기</h2>
+            <p data-stat-i18n="subtitle">현재 캐릭터에서 실제 피해 기대값을 높이는 스탯만 비교합니다.</p>
+          </div>
+        </div>
+        <a class="ranking-back-button" id="stat-efficiency-back-button" href="./">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span data-i18n="backToRanking">랭킹으로 돌아가기</span>
+        </a>
+      </div>
+
+      <section class="stat-import-card" aria-labelledby="stat-import-title">
+        <div class="stat-import-copy">
+          <span class="stat-import-step">1</span>
+          <div>
+            <strong id="stat-import-title" data-stat-i18n="importTitle">딜미터기에서 복사한 내 스탯 붙여넣기</strong>
+            <p data-stat-i18n="importDescription">처치 기록 상단의 ‘내 스탯 복사’를 누른 뒤 붙여넣으면 필요한 피해 스탯만 자동 입력됩니다.</p>
+          </div>
+        </div>
+        <div class="stat-import-control">
+          <textarea id="stat-import" rows="1" autocomplete="off" autocapitalize="off" spellcheck="false"
+            data-stat-i18n-placeholder="importPlaceholder" placeholder="여기를 누르고 Ctrl+V로 붙여넣기"></textarea>
+          <span class="stat-import-status" id="stat-import-status" aria-live="polite" data-stat-i18n="importWaiting">복사한 값을 기다리고 있습니다</span>
+        </div>
+      </section>
+
+      <section class="test-notice" role="note">
+        <span aria-hidden="true">!</span>
+        <div>
+          <strong data-stat-i18n="noticeTitle">표시 기준</strong>
+          <p data-stat-i18n="notice">현재 고정 계산식에서 피해 기대값을 직접 바꾸는 스탯만 표시합니다. 명중·방어·재시전 시간·전투 속도·속성 증폭·봉혼석·관통 등 미검증 항목은 계산 UI와 순위에서 제외됩니다.</p>
+        </div>
+      </section>
+
+      <section class="quality-card calculator-steps" aria-labelledby="calculator-steps-title">
+        <h3 id="calculator-steps-title" data-stat-i18n="easyTitle">사용 방법</h3>
+        <ol>
+          <li data-stat-i18n="easyOne">딜미터기 처치 기록 상단에서 ‘내 스탯 복사’를 누릅니다.</li>
+          <li data-stat-i18n="easyTwo">이 페이지 상단 입력칸에 붙여넣습니다.</li>
+          <li data-stat-i18n="easyThree">비교할 옵션 수치를 바꾸면 결과가 같은 위치에서 즉시 갱신됩니다.</li>
+        </ol>
+      </section>
+
+      <div class="efficiency-layout">
+        <form class="efficiency-form" id="efficiency-form" novalidate>
+          <input id="stat-job" name="jobName" type="hidden" value="">
+          <section class="efficiency-card option-card">
+            <header><span>01</span><div><h3 data-stat-i18n="optionTitle">비교할 옵션 증가량</h3><p data-stat-i18n="optionHelp">장비를 바꿨을 때 늘어나는 값만 입력하세요. 음수도 입력할 수 있습니다.</p></div></header>
+            <label class="option-direction">
+              <span class="option-direction-copy"><b data-stat-i18n="attackType">공격 방향</b><small data-stat-i18n="directionHelp">전방·후방 피해 증폭을 비교할 방향을 선택하세요.</small></span>
+              <select name="attackType"><option value="none" data-stat-i18n="attackNone">방향 적용 안 함</option><option value="front" data-stat-i18n="attackFront">전방</option><option value="back" data-stat-i18n="attackBack">후방</option></select>
+            </label>
+            <section class="option-field-group" aria-labelledby="flat-option-group-title">
+              <h4 id="flat-option-group-title" data-stat-i18n="flatOptionGroup">공격 수치</h4>
+              <div class="field-grid option-grid option-flat-grid">
+                <label><span data-stat-i18n="deltaGearAttack">공격력</span><input name="deltaGearAttack" type="number" step="1" value="0"></label>
+                <label><span data-stat-i18n="deltaBaseAttack">추가 공격력</span><input name="deltaBaseAttack" type="number" step="1" value="0"></label>
+                <label><span data-stat-i18n="deltaMaxAttack">최대 공격력</span><input name="deltaMaxAttack" type="number" step="1" value="0"></label>
+                <label><span data-stat-i18n="deltaPveAttack">PVE 공격력</span><input name="deltaPveAttack" type="number" step="1" value="0"></label>
+                <label><span data-stat-i18n="deltaBossAttack">보스 공격력</span><input name="deltaBossAttack" type="number" step="1" value="0"></label>
+              </div>
+            </section>
+            <section class="option-field-group" aria-labelledby="percent-option-group-title">
+              <h4 id="percent-option-group-title" data-stat-i18n="percentOptionGroup">증폭·판정</h4>
+              <div class="field-grid option-grid option-percent-grid">
+                <label><span data-stat-i18n="deltaAttackIncrease">공격력 증가율</span><input name="deltaAttackIncreasePercent" type="number" step="0.01" value="0"></label>
+                <label><span data-stat-i18n="deltaDamageAmp">피해 증폭</span><input name="deltaDamageBoostPercent" type="number" step="0.01" value="0"></label>
+                <label><span data-stat-i18n="deltaWeaponAmp">무기 피해 증폭</span><input name="deltaWeaponDamageBoostPercent" type="number" step="0.01" value="0"></label>
+                <label><span data-stat-i18n="deltaCriticalAmp">치명타 피해 증폭</span><input name="deltaCriticalDamageBoostPercent" type="number" step="0.01" value="0"></label>
+                <label><span data-stat-i18n="deltaPerfect">완벽</span><input name="deltaPerfectPercent" type="number" step="0.01" value="0"></label>
+                <label><span data-stat-i18n="deltaHardHit">강타</span><input name="deltaSmitePercent" type="number" step="0.01" value="0"></label>
+                <label><span data-stat-i18n="deltaFrontAmp">전방 피해 증폭</span><input name="deltaFrontDamageBoostPercent" type="number" step="0.01" value="0"></label>
+                <label><span data-stat-i18n="deltaBackAmp">후방 피해 증폭</span><input name="deltaBackDamageBoostPercent" type="number" step="0.01" value="0"></label>
+              </div>
+            </section>
+            <div class="live-calculation-note"><span aria-hidden="true">●</span><strong data-stat-i18n="calculating">자동 계산 중</strong><small data-stat-i18n="notice">계산 버튼 없이 모든 입력을 즉시 반영합니다. 입력 도중에는 이전 요청을 취소하고 마지막 값만 표시합니다.</small></div>
+          </section>
+
+          <details class="current-stats-details">
+            <summary data-stat-i18n="currentDetails">현재 스탯 상세 보기 · 필요할 때만 펼치세요</summary>
+            <div class="current-stats-body">
+          <section class="efficiency-card divine-card">
+            <header><span>02</span><div><h3 data-stat-i18n="divineStats">피해 연동 주신 스탯</h3><p data-stat-i18n="divineStatsHelp">복사한 값에서 올리면 증가분이 자동으로 옵션 비교에 합산됩니다.</p></div></header>
+            <div class="field-grid divine-grid">
+              <label><span data-stat-i18n="power">위력</span><small data-stat-i18n="powerGrowth">1당 공격력 증가 +0.1%p</small><input name="power" type="number" min="0" max="10000" value="0"></label>
+              <label><span data-stat-i18n="destruction">파괴</span><small data-stat-i18n="destructionGrowth">1당 공격력 증가 +0.2%p</small><input name="destruction" type="number" min="0" max="10000" value="0"></label>
+              <label><span data-stat-i18n="justice">정의</span><small data-stat-i18n="justiceGrowth">1당 완벽 +0.2%p</small><input name="justice" type="number" min="0" max="10000" value="0"></label>
+              <label><span data-stat-i18n="wisdom">지혜</span><small data-stat-i18n="wisdomGrowth">1당 강타 +0.2%p</small><input name="wisdom" type="number" min="0" max="10000" value="0"></label>
+            </div>
+          </section>
+
+          <section class="efficiency-card">
+            <header><span>03</span><div><h3 data-stat-i18n="attackStats">현재 공격 수치</h3><p data-stat-i18n="attackStatsHelp">복사 기능을 사용하면 자동 입력됩니다.</p></div></header>
+            <div class="field-grid stat-grid">
+              <label><span data-stat-i18n="attack">공격력</span><input name="attack" type="number" min="1" max="100000000" required></label>
+              <label><span data-stat-i18n="additionalAttack">추가 공격력</span><input name="additionalAttack" type="number" min="0" max="100000000" required></label>
+              <label><span data-stat-i18n="minimumAttack">최소 공격력</span><input name="minimumAttack" type="number" min="0" max="100000000" required></label>
+              <label><span data-stat-i18n="maximumAttack">최대 공격력</span><input name="maximumAttack" type="number" min="0" max="100000000" required></label>
+              <label><span data-stat-i18n="pveAttack">PVE 공격력</span><input name="pveAttack" type="number" min="0" max="100000000" value="0"></label>
+              <label><span data-stat-i18n="bossAttack">보스 공격력</span><input name="bossAttack" type="number" min="0" max="100000000" value="0"></label>
+            </div>
+          </section>
+
+          <section class="efficiency-card">
+            <header><span>04</span><div><h3 data-stat-i18n="percentStats">현재 피해 증폭·판정</h3><p data-stat-i18n="percentStatsHelp">현재 캐릭터 창에 표시된 값을 입력합니다.</p></div></header>
+            <div class="field-grid stat-grid percent-grid">
+              <label><span data-stat-i18n="attackIncrease">공격력 증가율</span><input name="attackIncreasePercent" type="number" min="0" max="1000" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="damageAmp">피해 증폭</span><input name="damageAmplificationPercent" type="number" min="0" max="1000" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="weaponDamageAmp">무기 피해 증폭</span><input name="weaponDamageAmplificationPercent" type="number" min="0" max="1000" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="pveAmp">PVE 피해 증폭</span><input name="pveDamageAmplificationPercent" type="number" min="0" max="1000" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="bossAmp">보스 피해 증폭</span><input name="bossDamageAmplificationPercent" type="number" min="0" max="1000" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="criticalDamageAmp">치명타 피해 증폭</span><input name="criticalDamageAmplificationPercent" type="number" min="0" max="1000" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="perfect">완벽</span><input name="perfectPercent" type="number" min="0" max="100" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="hardHit">강타</span><input name="hardHitPercent" type="number" min="0" max="100" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="frontAmp">전방 피해 증폭</span><input name="frontDamageAmplificationPercent" type="number" min="0" max="1000" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="backAmp">후방 피해 증폭</span><input name="backDamageAmplificationPercent" type="number" min="0" max="1000" step="0.01" value="0"></label>
+            </div>
+          </section>
+
+          <section class="efficiency-card assumptions-card">
+            <header><span>05</span><div><h3 data-stat-i18n="combatAssumptions">세부 판정 조건</h3><p data-stat-i18n="combatAssumptionsHelp">치명타와 강타 기대값을 세부 조정할 때 사용합니다.</p></div></header>
+            <div class="field-grid stat-grid assumption-grid">
+              <label><span data-stat-i18n="criticalChance">치명타 발동률</span><input name="criticalChancePercent" type="number" min="0" max="100" step="0.01" value="80"></label>
+              <label><span data-stat-i18n="partyHardHit">파티 강타 버프</span><input name="partyHardHitPercent" type="number" min="0" max="100" step="0.01" value="0"></label>
+              <label><span data-stat-i18n="bossHardHitResistance">보스 강타 저항</span><input name="bossHardHitResistancePercent" type="number" min="0" max="100" step="0.01" value="30"></label>
+              <label><span data-stat-i18n="frontRate">전방 공격 비율</span><input name="frontAttackRatePercent" type="number" min="0" max="100" step="0.01" value="100"></label>
+              <label><span data-stat-i18n="backRate">후방 공격 비율</span><input name="backAttackRatePercent" type="number" min="0" max="100" step="0.01" value="100"></label>
+            </div>
+          </section>
+            </div>
+          </details>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+        </form>
+
+        <aside class="result-column">
+          <section class="result-card" id="result-card">
+            <header><div><span class="result-kicker" data-stat-i18n="resultKicker">내 캐릭터 기준</span><h3 data-stat-i18n="resultTitle">스탯 효율 순위</h3><small class="result-source" id="result-source">스탯을 붙여넣으면 계산됩니다.</small></div><span class="confidence pending" id="confidence">대기</span></header>
+            <div class="result-empty" id="result-empty"><span class="result-empty-mark" aria-hidden="true">∿</span><strong data-stat-i18n="waitingTitle">내 스탯을 붙여넣어 주세요</strong><p data-stat-i18n="waitingDescription">피해 증가에 직접 연결된 스탯만 서버에서 계산합니다.</p></div>
+            <div class="result-summary" id="result-summary" hidden></div>
+            <details class="result-quick-details"><summary data-stat-i18n="quickCompare">스탯별 기본 증가량 비교</summary><div class="result-list" id="result-list" hidden></div></details>
+            <footer><span data-stat-i18n="resultGuide">결과는 현재값 대비 선택한 옵션 증가량의 기대값입니다.</span></footer>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="field-boss-surface" id="field-boss-surface" hidden>
+      <div class="field-boss-heading">
+        <div class="field-boss-heading-copy">
+          <span class="field-boss-heading-icon" aria-hidden="true">
+            <img src="./assets/boss-icon.png" alt="">
+          </span>
+          <div>
+            <h2 data-i18n="fieldBossStatus">필드보스 현황</h2>
+          </div>
+        </div>
+        <a class="ranking-back-button field-boss-back-button" id="field-boss-back-button" href="./">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span data-i18n="backToRanking">랭킹으로 돌아가기</span>
+        </a>
+      </div>
+
+      <div class="field-boss-controls">
+        <div class="filter-field field-boss-server-field">
+          <label for="field-boss-server" data-i18n="server">서버</label>
+          <div class="field-boss-server-search">
+            <span class="field-boss-server-search-icon" aria-hidden="true"></span>
+            <input id="field-boss-server" type="text" role="combobox"
+              autocomplete="off" autocapitalize="off" spellcheck="false"
+              aria-autocomplete="list" aria-expanded="false"
+              aria-controls="field-boss-server-results"
+              data-i18n-placeholder="fieldBossServerSearchPlaceholder"
+              placeholder="서버명 또는 초성 검색">
+            <div class="field-boss-server-results" id="field-boss-server-results"
+              role="listbox" hidden></div>
+          </div>
+        </div>
+        <button class="refresh-button" id="field-boss-refresh-button" type="button">
+          <span class="refresh-glyph" aria-hidden="true">↻</span>
+          <span data-i18n="refresh">새로고침</span>
+        </button>
+      </div>
+
+      <div class="field-boss-snapshot" id="field-boss-snapshot" hidden>
+        <div>
+          <strong id="field-boss-snapshot-title">—</strong>
+          <span id="field-boss-snapshot-caption">—</span>
+        </div>
+        <div class="field-boss-snapshot-meta">
+          <strong id="field-boss-entry-count">—</strong>
+          <span id="field-boss-cache-age">—</span>
+        </div>
+      </div>
+
+      <div class="field-boss-state" id="field-boss-loading-state">
+        <div class="spinner" aria-hidden="true"></div>
+        <p data-i18n="fieldBossLoading">필드보스 공유 캐시를 불러오는 중입니다</p>
+      </div>
+      <div class="field-boss-state field-boss-error-state" id="field-boss-error-state" hidden>
+        <div class="error-mark" aria-hidden="true">!</div>
+        <strong data-i18n="fieldBossLoadError">필드보스 캐시를 불러오지 못했습니다</strong>
+        <p id="field-boss-error-message"></p>
+        <button class="refresh-button compact" id="field-boss-retry-button" type="button" data-i18n="retry">다시 시도</button>
+      </div>
+      <div class="field-boss-state" id="field-boss-empty-state" hidden>
+        <p data-i18n="fieldBossEmpty">선택한 서버에서 수집된 필드보스 시간이 아직 없습니다</p>
+      </div>
+
+      <div class="field-boss-content" id="field-boss-content" hidden>
+        <nav class="field-boss-tabs" id="field-boss-tabs" aria-label="필드보스 지역" data-i18n-aria-label="fieldBossRegionsAria"></nav>
+        <div class="field-boss-list" id="field-boss-list"></div>
+      </div>
+    </section>
+
+    <section class="artifact-surface" id="artifact-surface" hidden>
+      <div class="artifact-heading">
+        <div class="artifact-heading-copy">
+          <span class="artifact-heading-icon" aria-hidden="true">
+            <img src="./assets/artifact-neutral.png" alt="">
+          </span>
+          <div>
+            <span class="artifact-kicker" id="artifact-kicker">KOREA · SERVER MATCH</span>
+            <h2 id="artifact-title">아티팩트 현황</h2>
+            <p id="artifact-description">한국 서버 대진별 점령 현황을 한눈에 확인하세요.</p>
+          </div>
+        </div>
+        <a class="ranking-back-button artifact-back-button" id="artifact-back-button" href="./">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span data-i18n="backToRanking">랭킹으로 돌아가기</span>
+        </a>
+      </div>
+
+      <div class="artifact-controls artifact-overview-controls">
+        <div class="artifact-overview-summary">
+          <strong id="artifact-overview-title">전체 21개 서버 대진</strong>
+          <span id="artifact-overview-caption">별을 누른 서버는 항상 위에 표시됩니다.</span>
+        </div>
+        <label class="artifact-round-field" for="artifact-round-select">
+          <span id="artifact-round-label">점령전 회차</span>
+          <select id="artifact-round-select">
+            <option value="current">현재 현황</option>
+          </select>
+        </label>
+        <div class="artifact-actions">
+          <button class="ghost-button artifact-snapshot-button" id="artifact-snapshot-button" type="button">
+            <span aria-hidden="true" data-artifact-snapshot-icon>▣</span>
+            <span id="artifact-snapshot-label">이미지 복사</span>
+          </button>
+          <button class="refresh-button" id="artifact-refresh-button" type="button">
+            <span class="refresh-glyph" aria-hidden="true">↻</span>
+            <span data-i18n="refresh">새로고침</span>
+          </button>
+          <span class="artifact-copy-status" id="artifact-copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="artifact-state" id="artifact-loading-state">
+        <div class="spinner" aria-hidden="true"></div>
+        <p id="artifact-loading-text">아티팩트 현황을 불러오는 중입니다</p>
+      </div>
+      <div class="artifact-state artifact-error-state" id="artifact-error-state" hidden>
+        <div class="error-mark" aria-hidden="true">!</div>
+        <strong id="artifact-error-title">현황을 불러오지 못했습니다</strong>
+        <p id="artifact-error-message"></p>
+        <button class="refresh-button compact" id="artifact-retry-button" type="button" data-i18n="retry">다시 시도</button>
+      </div>
+
+      <div class="artifact-dashboard" id="artifact-dashboard" hidden>
+        <section class="artifact-cycle-panel" aria-label="현재 서버 매칭과 2주 누적 점수 안내">
+          <div class="artifact-cycle-summary">
+            <article>
+              <span id="artifact-cycle-label">현재 서버 매칭</span>
+              <strong id="artifact-cycle-week">2주 매칭 · 2주차</strong>
+              <small id="artifact-cycle-range">8월 26일 시작 · 9월 9일 교체 예정</small>
+            </article>
+            <article>
+              <span id="artifact-cycle-round-label">2주 점령전</span>
+              <strong id="artifact-cycle-rounds">점령전 총 4회</strong>
+              <small id="artifact-cycle-schedule">매주 수·토 22:00</small>
+            </article>
+            <article class="artifact-cycle-countdown-card">
+              <span id="artifact-cycle-remaining-label">매칭 교체까지</span>
+              <strong id="artifact-cycle-countdown">—</strong>
+              <small id="artifact-cycle-reset">새 매칭 시작 시 누적 점수가 초기화됩니다.</small>
+            </article>
+          </div>
+          <p class="artifact-score-guide" id="artifact-score-guide">아티팩트 1곳을 1점으로 계산하며, 하층·중층이 모두 확인된 회차만 2주 누적 점수에 반영합니다.</p>
+        </section>
+        <div class="artifact-overview-grid" id="artifact-overview-grid" aria-live="polite"></div>
+        <div class="artifact-footer-meta">
+          <span id="artifact-updated-at">—</span>
+          <span id="artifact-source-note">한국 서버에서 확인된 최신 현황만 반영됩니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="class-performance-surface" id="class-performance-surface" hidden>
+      <div class="class-performance-heading">
+        <div>
+          <span class="class-performance-kicker" id="class-performance-kicker">CP 800K+ · PARTY GAP ≤100K · SHARE &gt;10%</span>
+          <h2 data-i18n="classPerformanceTitle">CP 보정 직업 DPS 통계</h2>
+          <p id="class-performance-description" data-i18n="classPerformanceDescription">이번 주 검증 기록 중 CP 800K 이상·파티 CP 차이 100K 이하·기여도 10% 초과 표본을 같은 보스·10K CP 조건으로 맞춘 상대 지표입니다. 원시 DPS 순위가 아닙니다.</p>
+        </div>
+        <button class="ranking-back-button" id="class-performance-back-button" type="button">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span data-i18n="backToRanking">랭킹으로 돌아가기</span>
+        </button>
+      </div>
+
+      <div class="class-performance-scope-bar">
+        <strong data-i18n="classPerformanceScopeLabel">집계 CP 기준</strong>
+        <div class="class-performance-cp-scopes" role="group" aria-label="집계 CP 기준" data-i18n-aria-label="classPerformanceScopeAria">
+          <button type="button" data-performance-minimum-cp="800000" class="active" aria-pressed="true" data-i18n="classPerformanceScope800">800K+</button>
+          <button type="button" data-performance-minimum-cp="900000" aria-pressed="false">
+            <span data-i18n="classPerformanceScope900">900K+</span>
+            <span class="feature-new-badge" data-feature-new-until="2026-09-13T23:59:59+09:00" data-i18n-title="newFeature">NEW</span>
+          </button>
+        </div>
+        <span id="class-performance-scope-status" data-i18n="classPerformanceScopeStatus800">현재 CP 800K 이상 전체 표본</span>
+      </div>
+
+      <div class="class-performance-method">
+        <article>
+          <span class="class-performance-method-index">01</span>
+          <div>
+            <strong data-i18n="classPerformanceCpTitle">검증 기록만 수집</strong>
+            <p id="class-performance-cp-text" data-i18n="classPerformanceCpText">이번 주 통계 검증을 통과한 보스 처치 중 서버·캐릭터·직업이 확인되고 CP가 800K 이상인 기록만 사용합니다. 최대 CP 제한은 없습니다.</p>
+          </div>
+        </article>
+        <article>
+          <span class="class-performance-method-index">02</span>
+          <div>
+            <strong data-i18n="classPerformancePartyTitle">파티 표본 정제</strong>
+            <p data-i18n="classPerformancePartyText">파티원 정보가 모두 확인되고 CP 최고·최저 차이가 100K 이하인 전투만 사용하며, 파티 총 피해 기여도가 10%를 초과한 캐릭터만 표본에 포함합니다.</p>
+          </div>
+        </article>
+        <article>
+          <span class="class-performance-method-index">03</span>
+          <div>
+            <strong data-i18n="classPerformanceDedupeTitle">캐릭터별 대표 기록</strong>
+            <p data-i18n="classPerformanceDedupeText">같은 캐릭터·보스는 한 번만 반영합니다. 기록이 2회 이상이면 최대 상위 3회 중 두 번째 기록을 사용해 단발성 고점을 줄입니다.</p>
+          </div>
+        </article>
+        <article>
+          <span class="class-performance-method-index">04</span>
+          <div>
+            <strong data-i18n="classPerformanceTrustTitle">동일 조건끼리 비교</strong>
+            <p data-i18n="classPerformanceTrustText">같은 던전·보스·10K CP 안에서만 직업을 비교하고, 조건별 직업 중앙값을 100으로 환산합니다.</p>
+          </div>
+        </article>
+      </div>
+
+      <section class="class-performance-proof" aria-labelledby="class-performance-proof-title">
+        <article class="class-performance-proof-card calculation">
+          <div class="class-performance-proof-heading">
+            <div>
+              <span data-i18n="classPerformanceFormulaKicker">점수 산식</span>
+              <h3 id="class-performance-proof-title" data-i18n="classPerformanceFormulaTitle">100점은 어떻게 계산하나요?</h3>
+            </div>
+            <b data-i18n="classPerformanceVerifiedBadge">검증 통과 기록만</b>
+          </div>
+          <div class="class-performance-formula" data-i18n="classPerformanceFormulaExpression">직업 백분위 DPS ÷ 동일 조건 직업 중앙값 × 100</div>
+          <p data-i18n="classPerformanceFormulaText">점수 105는 같은 보스·같은 10K CP 조건의 직업 중앙값보다 관측 DPS가 약 5% 높다는 뜻입니다.</p>
+          <div class="class-performance-proof-rule">
+            <strong data-i18n="classPerformanceCellGateTitle">비교 셀 통과 조건</strong>
+            <span data-i18n="classPerformanceCellGateText">동일 보스·10K CP에 전체 대표 기록 30개 이상, 직업별 5개 이상, 비교 가능한 직업 4개 이상일 때만 계산합니다.</span>
+          </div>
+          <div class="class-performance-proof-rule">
+            <strong data-i18n="classPerformanceCombineTitle">콘텐츠 균등 합산</strong>
+            <span data-i18n="classPerformanceCombineText">CP 구간의 표본 수는 완만하게 반영하고, 최종 점수는 각 보스를 같은 비중의 기하평균으로 합쳐 인기 보스 쏠림을 줄입니다.</span>
+          </div>
+        </article>
+
+        <article class="class-performance-proof-card confidence">
+          <div class="class-performance-proof-heading">
+            <div>
+              <span data-i18n="classPerformanceConfidenceKicker">순위 공개 기준</span>
+              <h3 data-i18n="classPerformanceConfidenceTitle">신뢰도 A·B·C는 무엇인가요?</h3>
+            </div>
+            <b class="confidence-basis" data-i18n="classPerformanceConfidenceBasis">P75 기준</b>
+          </div>
+          <div class="class-performance-grade-list">
+            <div class="grade-a"><strong>A</strong><span data-i18n="classPerformanceGradeAText">고유 250명+ · 콘텐츠 75% 이상·최소 6개 · 추정 폭 ±4% 이하</span></div>
+            <div class="grade-b"><strong>B</strong><span data-i18n="classPerformanceGradeBText">고유 100명+ · 콘텐츠 50% 이상·최소 4개 · 추정 폭 ±7% 이하</span></div>
+            <div class="grade-c"><strong>C</strong><span data-i18n="classPerformanceGradeCText">고유 40명+ · 콘텐츠 최소 3개 · 추정 폭 ±12% 이하</span></div>
+            <div class="grade-off"><strong>—</strong><span data-i18n="classPerformanceGradeOffText">인원·콘텐츠·변동 폭 중 미달한 조건을 표시하고 순위에서 제외</span></div>
+          </div>
+          <p class="class-performance-confidence-note" data-i18n="classPerformanceConfidenceNote">A·B·C는 표본 안정성 기준이며 정확도나 승률이 아닙니다. 추정 변동 범위는 콘텐츠를 하나씩 제외한 점수 변화와 인원 수를 반영한 참고 범위이며, 통계적으로 검증된 95% 신뢰구간이 아닙니다. 콘텐츠가 기준 개수보다 적으면 집계 가능한 전체 콘텐츠 수로 판정합니다.</p>
+        </article>
+      </section>
+
+      <section class="class-performance-composition" aria-labelledby="class-performance-composition-title">
+        <div class="class-performance-composition-heading">
+          <div>
+            <span data-i18n="classPerformanceCompositionKicker">직업 제외 필터</span>
+            <h3 id="class-performance-composition-title" data-i18n="classPerformanceCompositionTitle">제외할 직업 선택</h3>
+            <p data-i18n="classPerformanceCompositionText">보고 싶지 않은 직업을 여러 개 선택하면 해당 직업이 한 명도 없는 파티 기록만 다시 집계합니다.</p>
+          </div>
+          <button class="class-performance-composition-reset" id="class-performance-composition-reset" type="button" data-i18n="classPerformanceCompositionReset">제외 초기화</button>
+        </div>
+        <div class="class-performance-composition-jobs" id="class-performance-composition-jobs" aria-label="제외할 파티 직업" data-i18n-aria-label="classPerformanceCompositionAria"></div>
+        <div class="class-performance-composition-status" id="class-performance-composition-status" aria-live="polite">제외 직업 없음 · 전체 파티 집계</div>
+      </section>
+
+      <div class="class-performance-toolbar">
+        <div class="class-performance-metric-selector">
+          <div class="class-performance-metrics" role="group" aria-label="성능 지표" data-i18n-aria-label="classPerformanceMetricsAria">
+            <button type="button" data-performance-metric="p50Score">P50</button>
+            <button type="button" data-performance-metric="p75Score" class="active">P75</button>
+            <button type="button" data-performance-metric="p90Score">P90</button>
+          </div>
+          <div class="class-performance-metric-guide" aria-live="polite">
+            <strong id="class-performance-metric-title" data-i18n="classPerformanceP75Title">P75 · 상위 25% 기준</strong>
+            <p id="class-performance-metric-description" data-i18n="classPerformanceP75Text">전체 기록의 75%가 이 값 이하인 지점으로, 숙련된 유저의 실전 성능을 비교합니다.</p>
+          </div>
+        </div>
+        <div class="class-performance-summary" id="class-performance-summary">—</div>
+      </div>
+
+      <div class="class-performance-state" id="class-performance-pending">
+        <div class="spinner" aria-hidden="true"></div>
+        <strong data-i18n="classPerformancePending">이번 주 신뢰도 통계 캐시 갱신을 기다리는 중입니다.</strong>
+      </div>
+      <div class="class-performance-state" id="class-performance-empty" hidden>
+        <strong data-i18n="classPerformanceEmpty">신뢰도 기준을 충족한 직업 표본이 아직 없습니다.</strong>
+      </div>
+      <div class="class-performance-chart" id="class-performance-chart" hidden></div>
+
+      <details class="class-performance-notice" open>
+        <summary data-i18n="classPerformanceNoticeTitle">이 통계를 어디까지 신뢰할 수 있나요?</summary>
+        <p id="class-performance-notice-text" data-i18n="classPerformanceNoticeText">CP 800K 이상·파티 CP 차이 100K 이하·기여도 10% 초과 조건과 보스·중복 캐릭터·표본 부족 보정을 적용한 이번 주 실전 비교 지표입니다. A가 가장 안정적이고 C는 참고 가능한 최소 기준입니다. 파티 버프·보스별 역할·숙련도 차이까지 완전히 제거할 수는 없으므로 밸런스의 절대 판정이나 이론상 최대 DPS가 아니라, 실제 수집 기록에서 반복 관측된 경향으로 해석해 주세요.</p>
+      </details>
+    </section>
+
+    <section class="class-top10-surface" id="class-top10-surface" hidden>
+      <div class="class-top10-heading">
+        <div>
+          <span class="class-top10-kicker">ALL CONTENT</span>
+          <h2 data-i18n="classTop10Title">클래스별 종합 TOP 10</h2>
+          <p data-i18n="classTop10Description">모든 CP의 던전·악몽·허수아비 TOP 20 성적을 합산한 클래스별 종합 랭킹입니다.</p>
+        </div>
+        <button class="ranking-back-button" id="class-top10-back-button" type="button">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span data-i18n="backToRanking">랭킹으로 돌아가기</span>
+        </button>
+      </div>
+
+      <div class="class-top10-guide">
+        <article>
+          <span class="class-top10-guide-index">01</span>
+          <div>
+            <strong data-i18n="classTop10ScoreTitle">점수 계산</strong>
+            <p data-i18n="classTop10ScoreText">1위 100점부터 20위 5점까지 5점 간격으로 환산합니다.</p>
+          </div>
+        </article>
+        <article>
+          <span class="class-top10-guide-index">02</span>
+          <div>
+            <strong data-i18n="classTop10EntryTitle">종합 랭킹 조건</strong>
+            <p data-i18n="classTop10EntryText">종합 점수, 총합 DPS, 1위 횟수, TOP 20 진입 콘텐츠 수 순으로 TOP 10을 선정합니다.</p>
+          </div>
+        </article>
+        <article>
+          <span class="class-top10-guide-index">03</span>
+          <div>
+            <strong data-i18n="classTop10DedupeTitle">중복 기록 처리</strong>
+            <p data-i18n="classTop10DedupeText">전체 CP·전체 기간 TOP 20의 실제 순위를 그대로 사용하며, 캐릭터별 최고 DPS와 갱신된 CP를 함께 반영합니다.</p>
+          </div>
+        </article>
+      </div>
+
+      <nav class="class-top10-tabs" id="class-top10-tabs" aria-label="클래스 선택" data-i18n-aria-label="classTabsAria"></nav>
+
+      <div class="class-top10-state" id="class-top10-pending" hidden>
+        <div class="spinner" aria-hidden="true"></div>
+        <strong data-i18n="classTop10Pending">종합 랭킹 캐시 갱신을 기다리는 중입니다.</strong>
+      </div>
+      <div class="class-top10-state" id="class-top10-empty" hidden>
+        <strong data-i18n="classTop10Empty">모든 콘텐츠 TOP 20 조건을 충족한 기록이 아직 없습니다.</strong>
+      </div>
+
+      <div class="table-scroll class-top10-table-scroll" id="class-top10-view" hidden>
+        <table class="ranking-table class-top10-table">
+          <thead>
+            <tr>
+              <th class="rank-column" data-i18n="rank">순위</th>
+              <th data-i18n="character">캐릭터</th>
+              <th class="number-column" data-i18n="combinedScore">종합 점수</th>
+              <th class="number-column" data-i18n="totalDps">총합 DPS</th>
+              <th class="number-column" data-i18n="firstPlaces">1위 횟수</th>
+              <th data-i18n="contentResults">콘텐츠 성적</th>
+            </tr>
+          </thead>
+          <tbody id="class-top10-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="filter-panel" aria-label="통계 필터" data-i18n-aria-label="statsFiltersAria">
+      <div class="ranking-metric-choice" id="ranking-metric-choice" data-ranking-metric-control>
+        <div class="ranking-metric-copy">
+          <span data-i18n="rankingMetric">DPS / nDPS 랭킹 기준</span>
+          <strong class="ranking-metric-description" id="ranking-metric-description" data-i18n="ndpsRankingDescription">파티 버프 기여도를 보정한 nDPS 순위입니다.</strong>
+        </div>
+        <div class="ranking-metric-buttons" role="radiogroup" aria-label="랭킹 기준 선택" data-i18n-aria-label="rankingMetricAria">
+          <button class="ranking-metric-button" id="ranking-metric-dps" type="button"
+            data-ranking-metric="dps" role="radio" aria-checked="false">DPS</button>
+          <button class="ranking-metric-button ranking-metric-ndps is-active" id="ranking-metric-ndps" type="button"
+            data-ranking-metric="ndps" role="radio" aria-checked="true">
+            <span>nDPS</span>
+          </button>
+        </div>
+      </div>
+      <div class="filter-choice filter-choice-dungeon">
+        <div class="filter-choice-heading">
+          <span data-i18n="dungeon">던전</span>
+          <button class="filter-expand-button" id="dungeon-filter-more" type="button" hidden></button>
+        </div>
+        <div class="filter-button-list dungeon-filter-buttons" id="dungeon-filter-buttons" role="radiogroup" aria-label="던전 선택" data-i18n-aria-label="dungeonSelectionAria"></div>
+        <select class="filter-native-select" id="dungeon-filter" tabindex="-1" aria-hidden="true"></select>
+        <div class="dungeon-difficulty" id="dungeon-difficulty" hidden>
+          <span data-i18n="dungeonDifficulty">난이도</span>
+          <div class="filter-button-list" id="dungeon-difficulty-buttons" role="radiogroup"
+            aria-label="비탄의 설원 난이도 선택" data-i18n-aria-label="dungeonDifficultyAria"></div>
+        </div>
+      </div>
+      <div class="filter-choice filter-choice-boss">
+        <div class="filter-choice-heading">
+          <span data-i18n="boss">보스</span>
+        </div>
+        <div class="filter-button-list boss-filter-buttons" id="boss-filter-buttons" role="radiogroup" aria-label="보스 선택" data-i18n-aria-label="bossSelectionAria"></div>
+        <select class="filter-native-select" id="boss-filter" tabindex="-1" aria-hidden="true"></select>
+      </div>
+      <div class="filter-field filter-cp-field">
+        <span>CP</span>
+        <button class="cp-filter-toggle" id="cp-filter-toggle" type="button"
+          aria-haspopup="dialog" aria-expanded="false" aria-controls="cp-filter-menu"
+          data-i18n-aria-label="cpSelectionAria">
+          <span id="cp-filter-current">전체 CP</span>
+          <span class="cp-filter-toggle-glyph" aria-hidden="true"></span>
+        </button>
+        <div class="cp-filter-menu" id="cp-filter-menu" role="dialog"
+          aria-modal="false" aria-labelledby="cp-filter-menu-title" hidden>
+          <div class="cp-filter-menu-heading">
+            <div>
+              <strong id="cp-filter-menu-title" data-i18n="cpSelectionTitle">CP 구간 선택</strong>
+              <span data-i18n="cpSelectionDescription">빠른 선택 또는 100K 묶음 안의 25K 구간을 선택하세요</span>
+            </div>
+            <button class="cp-filter-menu-close" id="cp-filter-menu-close" type="button"
+              aria-label="CP 구간 선택 닫기" data-i18n-aria-label="cpSelectionCloseAria">×</button>
+          </div>
+          <section class="cp-filter-menu-section">
+            <strong data-i18n="cpQuickTitle">빠른 선택</strong>
+            <div class="cp-filter-quick" id="cp-filter-quick"></div>
+          </section>
+          <section class="cp-filter-menu-section cp-filter-preset-section">
+            <strong data-i18n="cpPresetTitle">25K 구간</strong>
+            <div class="cp-filter-groups" id="cp-filter-groups"></div>
+          </section>
+        </div>
+        <select class="filter-native-select" id="cp-filter" tabindex="-1" aria-hidden="true"></select>
+      </div>
+      <label class="filter-field">
+        <span data-i18n="period">기간</span>
+        <select id="period-filter"></select>
+      </label>
+      <button class="refresh-button" id="refresh-button" type="button">
+        <span class="refresh-glyph" aria-hidden="true">↻</span>
+        <span data-i18n="refresh">새로고침</span>
+      </button>
+    </section>
+
+    <section class="custom-cp-panel" id="custom-cp-panel" hidden>
+      <div class="custom-cp-heading">
+        <strong data-i18n="customCpTitle">직접 CP 지정</strong>
+        <span data-i18n="customCpDescription">400은 40만 CP이며, 최소값과 최대값 사이 기록만 조회합니다</span>
+      </div>
+      <label class="custom-cp-input">
+        <span data-i18n="customCpMinimum">최소 CP</span>
+        <span class="custom-cp-control">
+          <input id="custom-cp-min" type="number" min="400" max="1998" step="1" inputmode="numeric" value="400">
+          <b>K</b>
+        </span>
+      </label>
+      <label class="custom-cp-input">
+        <span data-i18n="customCpMaximum">최대 CP</span>
+        <span class="custom-cp-control">
+          <input id="custom-cp-max" type="number" min="401" max="1999" step="1" inputmode="numeric" value="420">
+          <b>K</b>
+        </span>
+      </label>
+      <button class="custom-cp-apply" id="custom-cp-apply" type="button" data-i18n="customCpApply">적용</button>
+      <span class="custom-cp-result" id="custom-cp-result"></span>
+    </section>
+
+    <section class="snapshot-bar" aria-live="polite">
+      <div>
+        <strong id="snapshot-title" data-i18n="loading">통계를 불러오는 중입니다</strong>
+        <span id="snapshot-caption"></span>
+      </div>
+      <div class="snapshot-meta">
+        <span id="sample-meta">—</span>
+        <span class="meta-divider" aria-hidden="true"></span>
+        <div class="generated-status">
+          <span id="generated-meta">—</span>
+          <span id="cache-age"></span>
+          <details class="refresh-schedule">
+            <summary aria-label="통계 갱신 시간 안내" data-i18n-aria-label="refreshScheduleAria">
+              <span aria-hidden="true">!</span>
+            </summary>
+            <div class="refresh-schedule-card">
+              <b data-i18n="refreshScheduleTitle">통계 갱신 시간 안내</b>
+              <p data-i18n="refreshScheduleCadence">통계 집계는 매시 정각과 30분에 시작합니다.</p>
+              <p data-i18n="refreshScheduleDelay">표시된 시각은 통계 생성본의 기준 시각입니다. 기록량이 많으면 집계·압축·업로드 처리에 시간이 더 걸려 홈페이지 반영이 늦어질 수 있습니다.</p>
+              <p data-i18n="refreshSchedulePage">열어 둔 홈페이지는 약 5분마다 새 통계를 확인합니다. 바로 확인하려면 ‘새로고침’을 눌러주세요.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="sample-basis-notice weekly-guide" aria-labelledby="sample-basis-title"
+      data-feature-new-until="2026-09-07T15:00:00+09:00">
+      <span class="sample-basis-icon" aria-hidden="true">1</span>
+      <div class="sample-basis-copy">
+        <div class="sample-basis-title-line">
+          <strong id="sample-basis-title" data-i18n="sampleBasisTitle">표본 수가 줄어든 이유</strong>
+          <span class="sample-basis-new" data-i18n-title="newFeature" title="새로 추가된 기능">NEW</span>
+        </div>
+        <p data-i18n="sampleBasisDescription">같은 던전·보스·직업·25K CP 구간·기간에서 캐릭터별 시간순 최신 기록을 최대 40판까지 사용합니다. 10판 이상은 가장 높고 낮은 10%씩을 제외한 가운데 80% 평균, 10판 미만은 중앙값 1개를 표본으로 집계합니다. 전체 기간도 오래된 기록이 계속 누적되지 않으며, 한 캐릭터는 1명으로 표시됩니다. 30명 미만인 구간은 가까운 25K 구간 표본으로 보정합니다. 기록 삭제나 누락이 아닙니다.</p>
+      </div>
+      <div class="sample-basis-chips" aria-label="표본 집계 핵심" data-i18n-aria-label="sampleBasisChipsAria">
+        <span data-i18n="sampleBasisUniqueChip">표본 = 고유 캐릭터 수</span>
+        <span data-i18n="sampleBasisBestChip">DPS·nDPS별 최신 최대 40판 보정 평균</span>
+      </div>
+    </section>
+
+    <section class="weekly-guide ranking-entry-guide" id="ranking-entry-guide">
+      <details>
+        <summary>
+          <span class="weekly-guide-icon" aria-hidden="true">!</span>
+          <span class="weekly-guide-heading">
+            <strong data-i18n="rankingEntryGuideTitle">랭킹 등록 기준 안내</strong>
+            <span data-i18n="rankingEntryGuideSubtitle">기록이 보이지 않을 때 먼저 확인해 주세요</span>
+          </span>
+          <span class="weekly-guide-toggle" aria-hidden="true">⌄</span>
+        </summary>
+        <div class="weekly-guide-body">
+          <div class="weekly-guide-copy">
+            <div>
+              <strong data-i18n="rankingEntrySpreadTitle">파티 전투력 차이</strong>
+              <p data-i18n="rankingEntrySpread">전투 기록에서 CP가 확인된 파티원 중 최고 전투력과 최저 전투력의 차이가 200K(200,000) 이상이면 해당 전투 전체가 통계와 TOP 20 랭킹에서 제외됩니다.</p>
+            </div>
+            <div>
+              <strong data-i18n="rankingEntryCalculationTitle">계산 방법</strong>
+              <p data-i18n="rankingEntryCalculation">최고 CP − 최저 CP로 계산하며 정확히 200K인 경우도 제외됩니다. 예를 들어 900K와 700K가 함께 기록되면 차이가 200K이므로 등록되지 않습니다.</p>
+            </div>
+            <div>
+              <strong data-i18n="rankingEntryPurposeTitle">적용 목적</strong>
+              <p data-i18n="rankingEntryPurpose">버스 또는 전투력 격차가 큰 파티의 기록으로 인해 직업별 DPS 통계가 왜곡되는 것을 방지하기 위한 기준입니다.</p>
+            </div>
+            <div>
+              <strong data-i18n="rankingEntryRankerDisplayTitle">딜미터기 랭커 표시</strong>
+              <p data-i18n="rankingEntryRankerDisplay">상위 %는 nDPS 우선 설정에서 800K 미만은 전체 기간 nDPS, 800K 이상은 이번 주 nDPS를 우선 사용합니다. 랭커 표시와 랭커 권한 닉네임 효과는 800K 이상에서 전체 기간 DPS 또는 이번 주 nDPS 순위로 판정합니다.</p>
+            </div>
+          </div>
+          <p class="weekly-guide-note" data-i18n="rankingEntryNote">CP를 알 수 없는 파티원은 차이 계산에서 제외됩니다. 일반 던전 기록은 확정 처치와 파티원 5인 이상 조건을 충족해야 하며, 1인 콘텐츠인 악몽은 1인 이상 확정 처치부터 집계합니다. 훈련용 허수아비는 별도 기준을 사용합니다.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="weekly-guide ranker-dungeon-guide" id="ranker-dungeon-guide">
+      <details>
+        <summary>
+          <span class="weekly-guide-icon" aria-hidden="true">R</span>
+          <span class="weekly-guide-heading ranker-guide-heading">
+            <strong>
+              <span data-i18n="rankerDungeonGuideTitle">구간 랭킹·닉네임 효과 안내</span>
+              <span class="ranker-guide-required" data-i18n="rankerDungeonGuideRequired">문의 전 필독</span>
+            </strong>
+            <span data-i18n="rankerDungeonGuideSubtitle">랭커 마크 조건부터 닉네임 효과가 다른 사람에게 보이는 시점까지 확인하세요</span>
+            <span class="ranker-guide-summary-chips">
+              <span data-i18n="rankerDungeonGuideMarkerChip">랭커 마크 TOP 20</span>
+              <span data-i18n="rankerDungeonGuideEffectChip">닉네임 효과 TOP 3</span>
+              <span data-i18n="rankerDungeonGuideTimingChip">다른 사람 반영 5~10분</span>
+            </span>
+          </span>
+          <span class="weekly-guide-toggle" aria-hidden="true">⌄</span>
+        </summary>
+        <div class="weekly-guide-body ranker-dungeon-guide-body">
+          <div class="ranker-guide-answer-grid">
+            <article class="ranker-guide-answer-card ranker-guide-answer-marker">
+              <span data-i18n="rankerDungeonGuideMarkerLabel">랭커 마크</span>
+              <strong data-i18n="rankerDungeonGuideMarkerTitle">전체 기간 DPS 또는 이번 주 nDPS 구간 TOP 20</strong>
+              <p data-i18n="rankerDungeonGuideMarkerBody">전투력 800K 이상에서 두 기준 중 하나만 충족하면 표시됩니다. 같은 보스·직업·25K CP 구간의 개별 순위로 판정합니다.</p>
+            </article>
+            <article class="ranker-guide-answer-card ranker-guide-answer-effect">
+              <span data-i18n="rankerDungeonGuideEffectLabel">닉네임 효과</span>
+              <strong data-i18n="rankerDungeonGuideEffectTitle">전체 기간 DPS 또는 이번 주 nDPS 구간 TOP 3</strong>
+              <p data-i18n="rankerDungeonGuideEffectBody">전투력 800K 이상에서 전체 기간 DPS와 이번 주 nDPS 중 한 곳의 TOP 3를 달성하면 랭커 닉네임 효과를 사용할 수 있습니다.</p>
+            </article>
+          </div>
+
+          <div class="ranker-guide-flow" aria-label="닉네임 효과 반영 순서" data-i18n-aria-label="rankerDungeonGuideFlowAria">
+            <article>
+              <span class="ranker-guide-flow-number" aria-hidden="true">1</span>
+              <div>
+                <strong data-i18n="rankerDungeonGuideUseTitle">언제부터 사용할 수 있나요?</strong>
+                <p data-i18n="rankerDungeonGuideUseBody">TOP 3 달성 후 다음 랭킹 캐시가 게시되고 미터기가 자격을 확인하면 사용할 수 있습니다. 통계 집계는 매시 정각과 30분에 시작하며 처리 시간만큼 늦어질 수 있습니다.</p>
+              </div>
+            </article>
+            <article>
+              <span class="ranker-guide-flow-number" aria-hidden="true">2</span>
+              <div>
+                <strong data-i18n="rankerDungeonGuideSaveTitle">효과를 저장하면 언제 보이나요?</strong>
+                <p data-i18n="rankerDungeonGuideSaveBody">저장에 성공하면 본인 미터기에는 바로 표시됩니다. 공개 효과 캐시와 각 미터기의 확인 주기가 각각 5분이므로, 다른 사용자 화면에는 정상 배포 기준 보통 5~10분 안에 반영됩니다.</p>
+              </div>
+            </article>
+            <article>
+              <span class="ranker-guide-flow-number" aria-hidden="true">3</span>
+              <div>
+                <strong data-i18n="rankerDungeonGuideOthersTitle">다른 사람에게 안 보일 때</strong>
+                <p data-i18n="rankerDungeonGuideOthersBody">상대방도 딜미터기를 실행 중이어야 하며, 환경설정의 ‘다른 캐릭터 닉네임 효과 표시’가 켜져 있어야 합니다. 갱신 직후라면 최대 한 번의 추가 확인 주기를 기다려 주세요.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="ranker-guide-retention">
+            <strong data-i18n="rankerDungeonGuideRetentionTitle">랭커 구간을 벗어나면?</strong>
+            <p data-i18n="rankerDungeonGuideRetentionBody">현재 CP가 자격을 얻은 25K 구간을 벗어나거나 TOP 3 자격을 잃으면 랭커 권한 효과는 숨겨집니다. 선택한 효과는 지워지지 않으며, 같은 구간에서 자격이 다시 확인되면 자동 복원됩니다.</p>
+          </div>
+
+          <div class="ranker-dungeon-section-title">
+            <strong data-i18n="rankerDungeonGuideDungeonTitle">랭커 마크 대상 던전</strong>
+            <span data-i18n="rankerDungeonGuideIntro">아래 콘텐츠에서 각 난이도·보스·직업·CP 구간별로 판정합니다.</span>
+          </div>
+          <div class="ranker-dungeon-list">
+            <article class="ranker-dungeon-item" data-dungeon-keys="sorrow-snowfield-normal sorrow-snowfield-hard" data-ranking-basis="dps-alltime-ndps-weekly">
+              <span class="ranker-dungeon-number" aria-hidden="true">NEW</span>
+              <div>
+                <strong data-i18n="rankerDungeonSnowfieldTitle">비탄의 설원(보통·어려움)</strong>
+                <p data-i18n="rankerDungeonSnowfieldBosses">귀환자 트리톤 · 델트라스 (2페이즈)</p>
+                <p data-i18n="rankerDungeonSnowfieldScope">보통·어려움의 트리톤과 델트라스 2페이즈는 랭커 표시와 구간 TOP 3 닉네임 효과 대상입니다. 쉬움과 1페이즈는 제외됩니다.</p>
+              </div>
+            </article>
+            <article class="ranker-dungeon-item" data-dungeon-key="deus-research-hard" data-ranking-basis="dps-alltime-ndps-weekly">
+              <span class="ranker-dungeon-number" aria-hidden="true">01</span>
+              <div>
+                <strong data-i18n="rankerDungeonDeusTitle">잠식된 데우스 연구기지(어려움)</strong>
+                <p data-i18n="rankerDungeonDeusBosses">감독관 그롬카스 · 연구소장 자일러스 · 오만의 아티엘</p>
+              </div>
+            </article>
+            <article class="ranker-dungeon-item" data-dungeon-key="noiran-legacy-4" data-ranking-basis="dps-alltime-ndps-weekly">
+              <span class="ranker-dungeon-number" aria-hidden="true">02</span>
+              <div>
+                <strong data-i18n="rankerDungeonNoiranTitle">노이란의 숨겨진 유산(4단계)</strong>
+                <p data-i18n="rankerDungeonNoiranBosses">불완전한 브라운트 · 광기의 클로민스터 · 아스크란</p>
+              </div>
+            </article>
+            <article class="ranker-dungeon-item" data-dungeon-key="bakron-trial" data-ranking-basis="dps-alltime-ndps-weekly">
+              <span class="ranker-dungeon-number" aria-hidden="true">03</span>
+              <div>
+                <strong data-i18n="rankerDungeonBakronTitle">시련: 바크론의 공중섬</strong>
+                <p data-i18n="rankerDungeonBakronBosses">티에 · 타몬 · 바크론</p>
+              </div>
+            </article>
+            <article class="ranker-dungeon-item" data-dungeon-key="fallen-deva-hard" data-ranking-basis="dps-alltime-ndps-weekly">
+              <span class="ranker-dungeon-number" aria-hidden="true">04</span>
+              <div>
+                <strong data-i18n="rankerDungeonFallenDevaTitle">타락한 데바의 성(어려움)</strong>
+                <p data-i18n="rankerDungeonFallenDevaBosses">의지의 투르겐 · 금기의 마수 그리오사 · 위악의 바실루스</p>
+              </div>
+            </article>
+            <article class="ranker-dungeon-item" data-dungeon-key="abyss-horn-4" data-ranking-basis="dps-alltime-ndps-weekly">
+              <span class="ranker-dungeon-number" aria-hidden="true">05</span>
+              <div>
+                <strong data-i18n="rankerDungeonAbyssHornTitle">심연의 뿔 암굴(4단계)</strong>
+                <p data-i18n="rankerDungeonAbyssHornBosses">카푸 · 다칸 · 가르가움</p>
+              </div>
+            </article>
+            <article class="ranker-dungeon-item ranker-dungeon-item-special" data-dungeon-key="nightmare-atheron-10" data-ranking-basis="combat-time">
+              <span class="ranker-dungeon-number" aria-hidden="true">06</span>
+              <div>
+                <strong data-i18n="rankerDungeonNightmareTitle">악몽</strong>
+                <p data-i18n="rankerDungeonNightmareBosses">각성한 아테론 10단계 · DPS가 아닌 빠른 전투 시간 순</p>
+              </div>
+            </article>
+          </div>
+          <div class="ranker-dungeon-guide-notes">
+            <p data-i18n="rankerDungeonGuideScope">일반 던전은 전체 기간은 DPS, 이번 주는 nDPS 순으로 집계합니다. 악몽은 두 기간 모두 짧은 전투 시간 순입니다.</p>
+            <p data-i18n="rankerDungeonGuideBakronRewardExcluded">시련: 바크론의 공중섬은 랭커 마크에는 반영되지만, 랭커 권한 닉네임 효과 대상에서는 임시 제외됩니다.</p>
+            <p data-i18n="rankerDungeonGuideDummy">훈련용 허수아비(1분)는 홈페이지 랭킹만 제공하며, 딜미터기 전투 종료 구간 순위·상위% 배지와 실시간 랭커 마크 대상에서는 제외됩니다.</p>
+            <p data-i18n="rankerDungeonGuidePeriod">상위 %는 800K 미만에서 전체 기간, 800K 이상에서 이번 주를 사용하며 nDPS 우선 설정에서는 각 기간의 nDPS를 우선합니다.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="weekly-guide" id="weekly-guide" hidden>
+      <details>
+        <summary>
+          <span class="weekly-guide-icon" aria-hidden="true">i</span>
+          <span class="weekly-guide-heading">
+            <strong data-i18n="weeklyGuideTitle">▲▼ 이번 주 변화 표시 안내</strong>
+            <span data-i18n="weeklyGuideSubtitle">양쪽 주에 기록이 있는 동일 캐릭터끼리, 같은 시간만큼 비교합니다</span>
+          </span>
+          <span class="weekly-guide-toggle" aria-hidden="true">⌄</span>
+        </summary>
+        <div class="weekly-guide-body">
+          <div class="weekly-guide-legend" aria-label="주간 변화 기호" data-i18n-aria-label="weeklyLegendAria">
+            <span class="up"><b>▲</b><span data-i18n="weeklyUp">상승</span></span>
+            <span class="down"><b>▼</b><span data-i18n="weeklyDown">하락</span></span>
+            <span class="flat"><b>–</b><span data-i18n="weeklyFlat">변화 없음</span></span>
+          </div>
+          <div class="weekly-guide-copy">
+            <div>
+              <strong data-i18n="weeklyGuidePurposeTitle">표시 목적</strong>
+              <p data-i18n="weeklyGuidePurpose">참여자 구성이 바뀌어 생기는 착시를 줄인 관측 지표입니다. 장비·파티·숙련도 변화가 포함되므로 패치 효과 자체를 뜻하지는 않습니다.</p>
+            </div>
+            <div>
+              <strong data-i18n="weeklyGuideBasisTitle">비교 기준</strong>
+              <p data-i18n="weeklyGuideBasis">수요일 오전 5시(한국시간)를 기준으로 이번 주 집계 시점과 전주의 같은 경과 시간까지 비교합니다. 동일 캐릭터·직업·보스를 같은 10K CP 조건 안에서 비교하며, 선택한 25K 구간의 경계도 빠짐없이 포함합니다. nDPS는 양쪽의 계산 기준도 같아야 합니다.</p>
+            </div>
+            <div>
+              <strong data-i18n="weeklyGuideMeaningTitle">퍼센트 의미</strong>
+              <p data-i18n="weeklyGuideMeaning">조건별 최근 40회 이내 기록의 중앙값으로 캐릭터별 변화율을 구한 뒤, 각 캐릭터에 같은 비중을 주어 중앙값을 표시합니다. 비교 캐릭터 20명 미만은 표본 부족, 추정 범위가 0%를 포함하면 변화 불확실로 표시합니다. 범위는 파티 간 상관관계까지 보장하지 않습니다.</p>
+            </div>
+            <div>
+              <strong data-i18n="weeklyGuideRankingTitle">랭킹 반영 방식</strong>
+              <p data-i18n="weeklyGuideRanking">직업 순서는 기본적으로 이번 주 상위 25% nDPS로 정렬합니다. 구간 1~20위와 TOP 3 닉네임 효과 권한은 전투력 800K 이상에서 전체 기간 DPS 또는 이번 주 nDPS 중 하나만 충족해도 인정합니다. 보스 처치 후 상위 %는 nDPS 우선 설정에서 800K 미만은 전체 기간 nDPS, 800K 이상은 이번 주 nDPS를 사용하고 안전하게 계산할 수 없으면 DPS로 표시합니다.</p>
+            </div>
+          </div>
+          <p class="weekly-guide-note" data-i18n="weeklyGuideNote">행 아래 전주 수치는 전주 전체 기간의 참고용 분포입니다. 참여자와 기간이 달라 이 수치들끼리의 차이를 상승률로 표시하지 않습니다. 주간 변화의 비교 인원·기간·추정 범위는 변화 표시에서 확인할 수 있습니다.</p>
+        </div>
+      </details>
+      <div class="ranking-metric-choice weekly-ranking-metric-choice" data-ranking-metric-control>
+        <div class="ranking-metric-copy">
+          <span data-i18n="rankingMetric">DPS / nDPS 랭킹 기준</span>
+          <strong class="ranking-metric-description" data-i18n="ndpsRankingDescription">파티 버프 기여도를 보정한 nDPS 순위입니다.</strong>
+        </div>
+        <div class="ranking-metric-buttons" role="radiogroup" aria-label="랭킹 기준 선택" data-i18n-aria-label="rankingMetricAria">
+          <button class="ranking-metric-button" type="button"
+            data-ranking-metric="dps" role="radio" aria-checked="false">DPS</button>
+          <button class="ranking-metric-button ranking-metric-ndps is-active" type="button"
+            data-ranking-metric="ndps" role="radio" aria-checked="true">
+            <span>nDPS</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ranking-panel">
+      <details class="top100-panel" id="boss-combat-panel" hidden>
+        <summary class="top100-heading">
+          <span class="top100-heading-copy">
+            <span class="top100-title"><strong data-i18n="bossCombatTitle">네임드별 전투 지표</strong><span class="top100-new">NEW</span></span>
+            <span class="top100-subtitle" id="boss-combat-subtitle"></span>
+          </span>
+          <span class="top100-heading-right"><span class="top100-basis" data-i18n="bossCombatBasis">전체 기간 DPS TOP 100</span><span class="top100-chevron" aria-hidden="true">⌄</span></span>
+        </summary>
+        <div class="top100-content">
+          <p class="top100-meta" data-i18n="bossCombatFixed">직업별 상위 100명 · 전체 CP · DPS/nDPS·기간·CP 선택과 무관한 고정 집계</p>
+          <p class="top100-empty" id="boss-combat-empty" role="status"></p>
+          <div class="top100-table-scroll" id="boss-combat-table" tabindex="0" role="region" aria-label="네임드별 전투 지표" data-i18n-aria-label="bossCombatTitle" hidden>
+            <table class="top100-table">
+              <thead><tr><th scope="col" data-i18n="job">직업</th><th scope="col" data-i18n="doubleDamage">강타</th><th scope="col" data-i18n="perfect">완벽</th><th scope="col" data-i18n="bossCombatCritical">치명타</th><th scope="col" data-i18n="front">전방</th><th scope="col" data-i18n="back">후방</th></tr></thead>
+              <tbody id="boss-combat-rows"></tbody>
+            </table>
+          </div>
+          <div class="top100-footnote"><span data-i18n="bossCombatAverage">캐릭터당 최고 DPS 기록 1개 · 개인별 비율의 산술 평균</span><span data-i18n="bossCombatSamples">100명 미만이면 실제 인원 표시 · 비율 정보가 없는 기록은 평균에서 제외</span></div>
+        </div>
+      </details>
+      <div class="view-heading" id="class-heading" hidden>
+        <button class="ranking-back-button" id="back-button" type="button">
+          <span class="ranking-back-button-icon" aria-hidden="true">←</span>
+          <span data-i18n="backToJobs">직업 목록으로</span>
+        </button>
+        <div>
+          <div class="heading-line">
+            <h2 id="class-title"></h2>
+            <span class="top-badge" id="class-badge">TOP 20</span>
+          </div>
+          <p id="class-caption"></p>
+        </div>
+      </div>
+
+      <div class="loading-state" id="loading-state">
+        <div class="spinner" aria-hidden="true"></div>
+        <p data-i18n="loading">동일한 통계 캐시를 불러오는 중입니다</p>
+      </div>
+
+      <div class="error-state" id="error-state" hidden>
+        <div class="error-mark" aria-hidden="true">!</div>
+        <h2 data-i18n="loadError">통계 캐시를 불러오지 못했습니다</h2>
+        <p id="error-message"></p>
+        <button class="refresh-button compact" id="retry-button" type="button" data-i18n="retry">다시 시도</button>
+      </div>
+
+      <div class="empty-state" id="empty-state" hidden>
+        <p id="empty-message" data-i18n="empty">선택한 조건에 해당하는 통계가 아직 없습니다</p>
+      </div>
+
+      <div class="table-scroll" id="summary-view" hidden>
+        <table class="ranking-table summary-table">
+          <thead>
+            <tr>
+              <th class="rank-column" data-i18n="rank">순위</th>
+              <th data-i18n="job">직업</th>
+              <th class="number-column" id="sample-column-heading" data-i18n="sample" data-i18n-title="sampleBasisColumnTooltip">표본</th>
+              <th class="number-column" data-i18n="top10Threshold">상위 10%</th>
+              <th class="number-column" data-i18n="top25">상위 25%</th>
+              <th class="number-column" data-i18n="median">중앙값</th>
+              <th class="number-column" data-i18n="max">최고</th>
+              <th class="distribution-column" data-i18n="distribution">분포</th>
+              <th class="chevron-column"><span class="sr-only" data-i18n="details">상세</span></th>
+            </tr>
+          </thead>
+          <tbody id="summary-rows"></tbody>
+        </table>
+      </div>
+
+      <div class="table-scroll" id="class-view" hidden>
+        <table class="ranking-table class-table">
+          <thead>
+            <tr>
+              <th class="rank-column" data-i18n="rank">순위</th>
+              <th data-i18n="character">캐릭터</th>
+              <th data-i18n="boss">보스</th>
+              <th class="number-column" data-i18n="duration">전투 시간</th>
+              <th class="number-column" id="class-metric-heading">DPS</th>
+              <th class="detail-column" data-i18n="details">상세</th>
+            </tr>
+          </thead>
+          <tbody id="class-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span data-i18n="cacheNotice">클라이언트와 동일한 통계 생성본을 사용합니다.</span>
+      <nav class="footer-links" aria-label="서비스 안내" data-i18n-aria-label="footerLinksAria">
+        <a href="./privacy.html" data-i18n="privacyPolicy">개인정보처리방침</a>
+        <span data-i18n="advertisingNotice">Google AdSense 광고를 사용합니다.</span>
+      </nav>
+    </footer>
+  </main>
+
+  <aside class="sponsor-rail" aria-label="광고" data-i18n-aria-label="advertisementAria">
+    <a class="sponsor-ad-link" href="https://buly.kr/8IySyKj" target="_blank"
+      rel="sponsored noopener noreferrer" aria-label="사종키나 광고 페이지 열기" data-i18n-aria-label="sponsorOpenAria">
+      <span class="sponsor-ad-badge" data-i18n="advertisement">광고</span>
+      <img src="./assets/sponsor-kinah.jpg" width="300" height="600"
+        loading="lazy" decoding="async" alt="사종키나 키나 직접 최저가 판매 광고">
+    </a>
+  </aside>
+
+  <div class="download-modal" id="download-modal" hidden>
+    <section class="download-panel" role="dialog" aria-modal="true" aria-labelledby="download-modal-title"
+      aria-describedby="download-modal-description">
+      <header class="download-modal-header">
+        <div>
+          <span class="download-modal-kicker" data-i18n="downloadModalKicker">처음 설치 안내</span>
+          <h2 id="download-modal-title" data-i18n="downloadModalTitle">NotMeter 설치하기</h2>
+          <p id="download-modal-description" data-i18n="downloadModalDescription">아래 순서대로 설치하면 바로 사용할 수 있습니다.</p>
+        </div>
+        <button class="download-modal-close" id="download-modal-close" type="button"
+          aria-label="닫기" data-i18n-aria-label="closeAria">×</button>
+      </header>
+
+      <ol class="download-steps">
+        <li class="download-step">
+          <span class="download-step-number" aria-hidden="true">1</span>
+          <div class="download-step-content">
+            <h3 data-i18n="downloadStepNpcapTitle">Npcap 먼저 설치</h3>
+            <p data-i18n="downloadStepNpcapDescription">다운로드한 EXE를 실행하고 Windows 권한 요청에서 ‘예’를 누른 뒤, 기본 옵션 그대로 Install을 누르세요.</p>
+            <a class="download-action download-action-primary" id="npcap-download-link"
+              href="https://npcap.com/dist/npcap-1.88.exe" download="npcap-1.88.exe">
+              <span data-i18n="downloadNpcapButton">Npcap 설치 파일 다운로드</span>
+              <span class="download-file-type">.EXE</span>
+            </a>
+            <small data-i18n="downloadStepNpcapHint">Npcap이 이미 설치되어 있다면 이 단계는 건너뛰세요.</small>
+          </div>
+        </li>
+        <li class="download-step">
+          <span class="download-step-number" aria-hidden="true">2</span>
+          <div class="download-step-content">
+            <h3 data-i18n="downloadStepMeterTitle">딜미터기 다운로드</h3>
+            <p data-i18n="downloadStepMeterDescription">ZIP 파일의 압축을 푼 뒤 NotMeter.exe를 실행하세요.</p>
+            <a class="download-action download-action-secondary" id="meter-download-link"
+              href="https://github.com/Not4You-Dev/NotMeter-Releases/releases/latest/download/NotMeter.zip"
+              download="NotMeter.zip">
+              <span data-i18n="downloadMeterButton">NotMeter 다운로드</span>
+              <span class="download-file-type">.ZIP</span>
+            </a>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="detail-modal" id="combat-detail-modal" hidden>
+    <section class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <header class="detail-header">
+        <div class="detail-heading">
+          <h2 id="detail-title" data-i18n="combatDetails">전투 상세 정보</h2>
+          <div class="detail-identity">
+            <span id="detail-job-icon"></span>
+            <strong class="detail-character-line" id="detail-character"></strong>
+            <span class="detail-header-cp" id="detail-cp-row"><img src="./assets/combat-power.png" alt="CP"><strong id="detail-cp">—</strong></span>
+            <span class="detail-boss-separator" aria-hidden="true">/</span>
+            <span id="detail-boss-name"></span>
+          </div>
+        </div>
+        <div class="detail-header-actions">
+          <button id="detail-settings-toggle" type="button" aria-controls="detail-settings-options" aria-expanded="false">
+            <span data-i18n="visibleItems">표시 항목</span> <span id="detail-visible-count">15/15</span><span class="detail-settings-symbol" aria-hidden="true">+</span>
+          </button>
+          <button class="detail-close" id="detail-close" type="button" aria-label="닫기" data-i18n-aria-label="closeAria">×</button>
+        </div>
+      </header>
+      <nav class="detail-party-tabs" id="detail-party-tabs" aria-label="파티원" data-i18n-aria-label="partyTabsAria" hidden></nav>
+      <div class="detail-settings-options" id="detail-settings-options" hidden></div>
+
+      <section class="detail-summary">
+        <div class="detail-primary-metrics">
+          <div class="detail-summary-metric detail-damage-metric"><span data-i18n="totalDamage">총 데미지</span><strong id="detail-total-damage">—</strong></div>
+          <div class="detail-summary-metric detail-dps-metric"><span>DPS</span><strong id="detail-dps">—</strong></div>
+          <div class="detail-summary-metric detail-ndps-metric" id="detail-ndps-row"><span>nDPS</span><strong id="detail-ndps">—</strong></div>
+          <div class="detail-summary-metric detail-contribution-metric"><span data-i18n="detailContribution">파티 내 기여도</span><strong id="detail-share">—</strong></div>
+          <div class="detail-context-metrics">
+          <div class="detail-summary-metric"><span data-i18n="duration">전투 시간</span><strong id="detail-summary-duration">—</strong></div>
+          <div class="detail-summary-metric detail-death-metric"><span data-i18n="deathCount">사망 횟수</span><strong id="detail-death-count">—</strong></div>
+          </div>
+        </div>
+          <div class="detail-rate-grid">
+          <div class="detail-summary-metric" data-detail-metric="hits"><span data-i18n="hits">타수</span><strong id="detail-hits">—</strong></div>
+          <div class="detail-summary-metric" data-detail-metric="parry"><span data-i18n="parry">페리</span><strong id="detail-parry-rate">—</strong></div>
+            <div data-detail-metric="critical"><span data-i18n="critical">크리</span><strong id="detail-critical-rate">—</strong></div>
+            <div data-detail-metric="front"><span data-i18n="front">전방</span><strong id="detail-front-rate">—</strong></div>
+            <div data-detail-metric="back"><span data-i18n="back">후방</span><strong id="detail-back-rate">—</strong></div>
+            <div data-detail-metric="perfect"><span data-i18n="perfect">완벽</span><strong id="detail-perfect-rate">—</strong></div>
+            <div data-detail-metric="double"><span data-i18n="doubleDamage">강타</span><strong id="detail-double-rate">—</strong></div>
+            <div data-detail-metric="avoidance"><span data-i18n="avoidance">회피</span><strong id="detail-evade-rate">—</strong></div>
+            <div id="detail-block-row" data-detail-metric="avoidance" title="내 공격이 막힌 횟수가 아니라, 보스의 공격을 해당 캐릭터가 막아낸 횟수와 받은 직접 공격 대비 비율입니다"><span data-i18n="block">받은 공격 막기</span><strong id="detail-block-rate">—</strong></div>
+          </div>
+      </section>
+
+      <div class="detail-content">
+        <section class="detail-ledger">
+          <div class="detail-ledger-header">
+            <strong data-i18n="skill">스킬</strong>
+            <strong data-i18n="damageHealing">피해 / 치유</strong>
+            <strong data-i18n="detailSkillShare">딜지분</strong>
+          </div>
+          <div class="detail-skill-list" id="detail-skill-rows"></div>
+        </section>
+
+      <section class="detail-buff-strip" id="detail-buffs-section">
+        <h3>
+          <span data-i18n="buffUptime">버프 업타임</span>
+          <span id="detail-buff-count"></span>
+        </h3>
+        <div class="detail-buffs" id="detail-buffs"></div>
+      </section>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
