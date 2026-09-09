@@ -5293,13 +5293,7 @@
       identityCopy.className = "boss-resistance-boss-copy";
       const bossName = document.createElement("strong");
       bossName.textContent = boss.name;
-      const sample = document.createElement("small");
-      sample.className = "boss-resistance-sample";
-      const recordCount = Math.max(0, Math.trunc(Number(stats?.recordCount) || 0));
-      sample.textContent = recordCount > 0
-        ? t("bossResistanceSample", { records: formatInteger(recordCount) })
-        : t("bossResistancePending");
-      identityCopy.append(bossName, sample);
+      identityCopy.append(bossName);
       identity.append(order, identityCopy);
 
       row.append(
