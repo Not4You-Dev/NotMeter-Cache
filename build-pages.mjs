@@ -110,12 +110,14 @@ async function assemble(root, request) {
   if (main.schema !== 'notmeter-web-ranking-v1' || !Number.isFinite(Date.parse(main.generatedAt))) throw Error('Invalid web cache');
   for (const [dungeonKey, classRanking] of Object.entries(main.classRankings || {})) {
     if (!/^[a-z0-9_-]{1,64}$/.test(dungeonKey)) throw Error('Invalid dungeon key');
+    if (entries.some(entry => entry.path === `data/classes/${dungeonKey}.json.gz`)) continue;
     await write(destination, `data/classes/${dungeonKey}.json.gz`, gzipSync(JSON.stringify({
       schema: 'notmeter-web-class-ranking-v1', version: 1, generatedAt: main.generatedAt, dungeonKey, classRanking,
     })));
   }
   for (const dungeonKey of new Set((main.views || []).map(view => view.dungeonKey))) {
     if (!/^[a-z0-9_-]{1,64}$/.test(dungeonKey)) throw Error('Invalid view dungeon key');
+    if (entries.some(entry => entry.path === `data/views/${dungeonKey}.json.gz`)) continue;
     await write(destination, `data/views/${dungeonKey}.json.gz`, gzipSync(JSON.stringify({
       schema: 'notmeter-web-view-ranking-v1', version: 1, generatedAt: main.generatedAt, dungeonKey,
       views: main.views.filter(view => view.dungeonKey === dungeonKey),
