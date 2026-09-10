@@ -7760,7 +7760,7 @@
           H: item.player.H === true ? true : null,
           T: item.player.T || null,
         }));
-      return { jobName, players };
+      return { jobName, players, normalizedPlayers: usesNormalizedRanking() ? players : [] };
     }).filter(row => row.players.length > 0);
     return {
       bossIndex: state.bossIndex,
