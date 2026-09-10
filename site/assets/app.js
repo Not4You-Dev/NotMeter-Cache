@@ -80,8 +80,9 @@
   const FIELD_BOSS_TARGET_HOLD_THRESHOLD_MS = 10 * 60 * 1000;
   const DAILY_USER_KEY = "__notmeter_daily_active_users__";
   const STANDARD_CP_TIER_LIMIT = 100;
-  const PRESET_CP_TIER_MINIMUM = 400_000;
-  const PRESET_CP_TIER_LAST_START = 1_200_000;
+  const WEB_UNDER_800_CP_TIER = 99;
+  const PRESET_CP_TIER_MINIMUM = 800_000;
+  const PRESET_CP_TIER_LAST_START = 1_475_000;
   const PRESET_CP_TIER_SIZE = 25_000;
   const INTERNAL_REPLAY_PERIOD_LABEL = "__notmeter_replay_top20_v1__";
   const WEEKLY_LABEL_PREFIX = "weekly-wed05|";
@@ -517,7 +518,7 @@
       cpSelectionCloseAria: "CP 구간 선택 닫기",
       cpQuickTitle: "빠른 선택",
       cpPresetTitle: "25K 구간",
-      cpRangeGroup: "{minimum}K~{maximum}K",
+      cpRangeGroup: "{minimum}~{maximum}",
       customCpTitle: "직접 CP 지정",
       customCpDescription: "400~420은 40만 CP부터 42만 CP 구간까지 조회합니다",
       customCpMinimum: "최소 CP",
@@ -990,7 +991,7 @@
       cpSelectionCloseAria: "Close CP bracket selector",
       cpQuickTitle: "Quick selection",
       cpPresetTitle: "25K brackets",
-      cpRangeGroup: "{minimum}K–{maximum}K",
+      cpRangeGroup: "{minimum}–{maximum}",
       customCpTitle: "Custom CP",
       customCpDescription: "400–420 includes every CP bucket from 400K through 420K",
       customCpMinimum: "Minimum CP",
@@ -4511,6 +4512,16 @@
         normalizedExpected),
       normalizedExpected);
     validateCustomCpRankCache(cache, dungeonKey, normalizedBossIndex, normalizedExpected);
+    if (normalizedBossIndex === 0 && Array.isArray(cache.bossIndexes) && cache.bossIndexes.length) {
+      const bosses = [...new Set(cache.bossIndexes.map(Number).filter(index =>
+        Number.isInteger(index) && index > 0))];
+      const chunks = [];
+      for (const index of bosses) {
+        chunks.push(await fetchCustomCpRankCacheForGeneration(
+          dungeonKey, index, normalizedExpected, force));
+      }
+      return { ...cache, rankBuckets: chunks.flatMap(chunk => chunk.rankBuckets) };
+    }
     return cache;
   }
 
@@ -4849,11 +4860,12 @@
   function homepageCpTierOptions() {
     const options = (state.data?.cpTiers || [])
       .filter(item => Number(item.index) < STANDARD_CP_TIER_LIMIT)
-      .filter(item => Number(item.index) <= 1)
+      .filter(item => Number(item.index) === 0 || Number(item.index) === WEB_UNDER_800_CP_TIER)
       .sort((left, right) => Number(left.index) - Number(right.index))
       .map(item => ({
-        value: String(item.index),
+        value: Number(item.index) === WEB_UNDER_800_CP_TIER ? `preset:${item.index}` : String(item.index),
         label: Number(item.index) === 0 ? t("allCp") : item.label,
+        quick: true,
       }));
     const detailed = (state.data?.cpTiers || [])
       .filter(item => Number(item.index) >= STANDARD_CP_TIER_LIMIT)
@@ -4869,11 +4881,20 @@
       .sort((left, right) => Number(left.minCombatPower) - Number(right.minCombatPower))
       .map(item => ({
         value: `preset:${item.index}`,
-        label: item.label,
+        label: cpPresetRangeLabel(item),
         minCombatPower: Number(item.minCombatPower),
         maxCombatPowerExclusive: Number(item.maxCombatPowerExclusive),
       }));
     return options.concat(detailed);
+  }
+
+  function formatCpBoundary(value) {
+    return `${Math.trunc(Number(value) / 1000)}${Number(value) >= 1_000_000 ? "M" : "K"}`;
+  }
+
+  function cpPresetRangeLabel(tier) {
+    if (Number(tier.index) === WEB_UNDER_800_CP_TIER) return "~800K";
+    return `${formatCpBoundary(tier.minCombatPower)}~${formatCpBoundary(tier.maxCombatPowerExclusive)}`;
   }
 
   function currentCpSelectionValue() {
@@ -4896,14 +4917,14 @@
       : selectedOption?.label || t("allCp");
 
     const quickFragment = document.createDocumentFragment();
-    for (const option of cpTiers.filter(item => !item.value.startsWith("preset:"))) {
+    for (const option of cpTiers.filter(item => item.quick || !item.value.startsWith("preset:"))) {
       quickFragment.append(createCpFilterButton(option, selectedValue));
     }
     quickFragment.append(createCpFilterButton({ value: "custom", label: t("customCp") }, selectedValue));
     elements["cp-filter-quick"].replaceChildren(quickFragment);
 
     const grouped = new Map();
-    for (const option of cpTiers.filter(item => item.value.startsWith("preset:"))) {
+    for (const option of cpTiers.filter(item => !item.quick && item.value.startsWith("preset:"))) {
       const minimumK = Math.trunc(option.minCombatPower / 1000);
       const groupMinimumK = Math.floor(minimumK / 100) * 100;
       if (!grouped.has(groupMinimumK)) {
@@ -4918,8 +4939,8 @@
       group.className = "cp-filter-group";
       const title = document.createElement("strong");
       title.textContent = t("cpRangeGroup", {
-        minimum: formatInteger(minimumK),
-        maximum: formatInteger(minimumK + 99),
+        minimum: formatCpBoundary(minimumK * 1000),
+        maximum: formatCpBoundary((minimumK + 100) * 1000),
       });
       const buttons = document.createElement("div");
       buttons.className = "cp-filter-group-buttons";
@@ -4986,11 +5007,13 @@
     state.customCpEditorOpen = false;
     const tier = (state.data?.cpTiers || []).find(item =>
       Number(item.index) === tierIndex &&
-      Number(item.index) >= STANDARD_CP_TIER_LIMIT);
+      (Number(item.index) >= STANDARD_CP_TIER_LIMIT || Number(item.index) === WEB_UNDER_800_CP_TIER));
     const minimum = Number(tier?.minCombatPower);
     const maximumExclusive = Number(tier?.maxCombatPowerExclusive);
     if (!Number.isFinite(minimum) || !Number.isFinite(maximumExclusive) ||
-        maximumExclusive - minimum !== PRESET_CP_TIER_SIZE) {
+        (tierIndex === WEB_UNDER_800_CP_TIER
+          ? minimum !== 1 || maximumExclusive !== 800_000
+          : maximumExclusive - minimum !== PRESET_CP_TIER_SIZE)) {
       state.cpFilterMode = "standard";
       state.customCpPresetTierIndex = 0;
       state.cpTierIndex = 0;
@@ -8133,8 +8156,8 @@
     if (state.customCpPresetTierIndex > 0) {
       const tier = state.data?.cpTiers?.find(item =>
         Number(item.index) === state.customCpPresetTierIndex);
-      if (tier?.label) {
-        return tier.label;
+      if (tier) {
+        return cpPresetRangeLabel(tier);
       }
     }
     return `${formatInteger(state.customCpMinK)}K~${formatInteger(state.customCpMaxK)}K`;
