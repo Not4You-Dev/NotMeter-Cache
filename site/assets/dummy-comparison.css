@@ -1,0 +1,99 @@
+#combat-detail-modal #detail-compare-toggle { padding: 8px 12px; border: 1px solid #82ceb66b; border-radius: 5px; color: #b6e9d7; background: #243b32; white-space: nowrap; }
+#combat-detail-modal #detail-compare-toggle[aria-expanded="true"] { background: #33473e; }
+#combat-detail-modal .detail-panel.comparing { overflow: hidden; }
+#combat-detail-modal .detail-panel.comparing > :is(.detail-summary, .detail-content, .detail-party-tabs, .detail-settings-options) { display: none; }
+#combat-detail-modal .detail-panel.comparing #detail-settings-toggle { display: none; }
+#combat-detail-modal .detail-comparison { min-height: 0; padding: 18px 22px; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #555450 transparent; }
+#combat-detail-modal .comparing .detail-comparison { flex: 1; }
+#combat-detail-modal .comparison-import { max-width: 880px; margin: auto; }
+#combat-detail-modal .comparison-import p { margin: 7px 0 10px; color: var(--detail-muted); }
+#combat-detail-modal .comparison-import textarea { display: block; width: 100%; min-height: 64px; max-height: 130px; resize: vertical; padding: 10px; font: inherit; color: var(--detail-text); border: 1px solid #68796b; border-radius: 5px; background: #151b19; }
+#combat-detail-modal .comparison-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0; }
+#combat-detail-modal .detail-comparison button { padding: 7px 12px; color: var(--detail-text); background: #29302c; border: 1px solid #4b574f; border-radius: 5px; }
+#combat-detail-modal .detail-comparison button:hover { border-color: #8f9e91; }
+#combat-detail-modal .detail-comparison .comparison-primary { color: #15251e; background: #a5d5bd; border-color: #a5d5bd; font-weight: 700; }
+#combat-detail-modal .comparison-import small { color: var(--detail-muted); }
+#combat-detail-modal .comparison-import .comparison-error, #combat-detail-modal .comparison-error { color: #efb29b; }
+#combat-detail-modal .comparison-error:empty { display: none; }
+#combat-detail-modal .comparison-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+#combat-detail-modal .comparison-heading h3 { margin: 0; font-size: 17px; }
+#combat-detail-modal .comparison-heading h3:focus { outline: none; }
+#combat-detail-modal .comparison-heading-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+#combat-detail-modal .comparison-heading-actions button:first-child { color: #c7e2d1; background: #314238; border-color: #6c8873; }
+#combat-detail-modal .comparison-image-status { display: block; color: #b9d5c4; font-size: 12px; margin: 0 0 10px; }
+#combat-detail-modal .comparison-image-status:empty { display: none; }
+#combat-detail-modal .comparison-match { display: block; margin-top: 4px; color: var(--detail-muted); font-size: 11px; }
+#combat-detail-modal .comparison-summary { display: grid; grid-template-columns: 1fr 1fr minmax(145px, .55fr); border: 1px solid var(--detail-line); border-radius: 7px; overflow: hidden; }
+#combat-detail-modal .comparison-person { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 15px 18px; background: #242c28; min-width: 0; }
+#combat-detail-modal .comparison-person.ranker { background: #282a28; border-left: 1px solid var(--detail-line); }
+#combat-detail-modal .comparison-eyebrow { color: #9ce1cd; font-size: 12px; }
+#combat-detail-modal .ranker .comparison-eyebrow { color: var(--detail-share); }
+#combat-detail-modal .comparison-name { grid-column: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; }
+#combat-detail-modal .comparison-dps { grid-column: 2; grid-row: 1 / 3; align-self: center; font-size: clamp(18px, 2vw, 25px); white-space: nowrap; letter-spacing: -.025em; }
+#combat-detail-modal .comparison-context, #combat-detail-modal .comparison-person small { grid-column: 1 / -1; color: var(--detail-muted); font-size: 12px; }
+#combat-detail-modal .comparison-overall { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 12px; border-left: 1px solid var(--detail-line); }
+#combat-detail-modal .comparison-overall > span, #combat-detail-modal .comparison-overall small { color: var(--detail-muted); font-size: 12px; }
+#combat-detail-modal .comparison-overall strong { font-size: 28px; }
+#combat-detail-modal .comparison-negative { color: #e8b69d; }
+#combat-detail-modal .comparison-positive { color: #8edbc3; }
+#combat-detail-modal .comparison-neutral { color: #87968c; }
+#combat-detail-modal .comparison-warning { padding: 9px 12px; background: #473b242e; color: #e5c596; border-left: 2px solid #c7a764; }
+#combat-detail-modal .comparison-insights { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 13px 0; border-bottom: 1px solid var(--detail-line); font-size: 12px; }
+#combat-detail-modal .comparison-insights > span:first-child { color: var(--detail-muted); }
+#combat-detail-modal .comparison-gap { color: #d9c7ad; }
+#combat-detail-modal .comparison-toolbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 16px 0 8px; }
+#combat-detail-modal .comparison-toolbar button.active { color: #bfe4d0; background: #324139; border-color: #768e7b; }
+#combat-detail-modal .comparison-toolbar input, #combat-detail-modal .comparison-toolbar select { padding: 8px 10px; color: var(--detail-text); background: #191f1c; border: 1px solid #46534a; border-radius: 5px; font: inherit; }
+#combat-detail-modal .comparison-toolbar input { width: 200px; }
+#combat-detail-modal .comparison-toolbar select { margin-left: auto; width: 220px; flex: 0 0 220px; max-width: 100%; }
+#combat-detail-modal .comparison-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; color: var(--detail-muted); font-size: 11px; margin: 12px 0; }
+#combat-detail-modal .comparison-legend-mine, #combat-detail-modal .comparison-legend-ranked { display: inline-flex; align-items: center; gap: 6px; color: #cbd6ce; }
+#combat-detail-modal .comparison-legend-mine::before, #combat-detail-modal .comparison-legend-ranked::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #b5ecd9; }
+#combat-detail-modal .comparison-legend-ranked::before { background: #d9c5a5; }
+#combat-detail-modal .comparison-swipe { display: none; margin: 4px 0 10px; font-size: 11px; color: var(--detail-muted); }
+#combat-detail-modal .comparison-table-wrap { overflow-x: auto; scrollbar-width: thin; }
+#combat-detail-modal .comparison-table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 1060px; font-variant-numeric: tabular-nums; }
+#combat-detail-modal .comparison-table th, #combat-detail-modal .comparison-table td { padding: 10px 12px; border-bottom: 1px solid var(--detail-line); vertical-align: middle; text-align: right; }
+#combat-detail-modal .comparison-table th:first-child { width: 23%; text-align: left; }
+#combat-detail-modal .comparison-table th:first-child { position: sticky; left: 0; z-index: 1; background: var(--detail-bg); }
+#combat-detail-modal .comparison-table thead th { background: #282e29; color: #b8c4bc; font-size: 12px; font-weight: 500; white-space: nowrap; }
+#combat-detail-modal .comparison-table thead th:first-child { background: #282e29; }
+#combat-detail-modal .comparison-table tbody tr:hover { background: #ffffff03; }
+#combat-detail-modal .comparison-skill { display: flex; gap: 9px; align-items: center; min-width: 0; }
+#combat-detail-modal .comparison-skill .detail-skill-icon { width: 28px; height: 28px; flex-shrink: 0; }
+#combat-detail-modal .comparison-traits { display: grid; gap: 3px; margin-top: 6px; }
+#combat-detail-modal .comparison-traits .comparison-trait { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 158px; max-width: 100%; padding: 0; font-size: 11px; line-height: 16px; }
+#combat-detail-modal .comparison-trait.mine { color: #b5ecd9; }
+#combat-detail-modal .comparison-trait.ranker { color: #d9c5a5; }
+#combat-detail-modal .comparison-trait .detail-spec-dots { flex-shrink: 0; margin-left: 0; }
+#combat-detail-modal .comparison-traits-unknown { color: var(--detail-muted); font-weight: 400; }
+#combat-detail-modal .comparison-skill > div { min-width: 0; }
+#combat-detail-modal .comparison-skill strong { display: block; overflow-wrap: anywhere; font-weight: 600; font-size: 13px; }
+#combat-detail-modal .comparison-skill small { display: block; margin-top: 3px; font-size: 10px; font-weight: 400; color: #a1aea5; }
+#combat-detail-modal .comparison-condition { display: inline-block; font-size: 10px; color: #d9be95; font-weight: 400; }
+#combat-detail-modal .comparison-pair { display: flex; flex-direction: column; gap: 3px; }
+#combat-detail-modal .comparison-mine, #combat-detail-modal .comparison-ranker { display: flex; align-items: center; justify-content: space-between; gap: 8px; border-radius: 3px; padding: 3px 5px; font-size: 13px; }
+#combat-detail-modal .comparison-mine { color: #b5ecd9; background: #8edbc30b; }
+#combat-detail-modal .comparison-ranker { color: #d9c5a5; background: #d9c5a508; }
+#combat-detail-modal .comparison-value-label { flex-shrink: 0; font-size: 10px; font-weight: 500; }
+#combat-detail-modal .comparison-pair strong { font-weight: 600; white-space: nowrap; }
+#combat-detail-modal .comparison-table td > small { display: block; margin-top: 5px; font-size: 11px; }
+#combat-detail-modal .comparison-note { color: var(--detail-muted); font-size: 12px; margin: 13px 0 0; line-height: 1.6; }
+@media (max-width: 1050px) {
+  #combat-detail-modal .comparison-swipe { display: block; }
+  #combat-detail-modal .comparison-person { grid-template-columns: 1fr; }
+  #combat-detail-modal .comparison-dps { grid-column: 1; grid-row: auto; }
+}
+@media (max-width: 600px) {
+  #combat-detail-modal .comparison-heading { flex-wrap: wrap; }
+  #combat-detail-modal .detail-comparison { padding: 12px; }
+  #combat-detail-modal .comparison-summary { grid-template-columns: 1fr 1fr; }
+  #combat-detail-modal .comparison-person { padding: 10px; gap: 4px; }
+  #combat-detail-modal .comparison-overall { grid-column: 1 / -1; flex-direction: row; gap: 10px; border-left: 0; border-top: 1px solid var(--detail-line); }
+  #combat-detail-modal .comparison-overall strong { font-size: 21px; }
+  #combat-detail-modal .comparison-toolbar select { flex: 1 1 100%; order: 4; margin-left: 0; }
+  #combat-detail-modal .comparison-toolbar input { flex: 1; min-width: 100px; width: 100px; }
+  #combat-detail-modal .comparison-insights { gap: 7px 12px; }
+  #combat-detail-modal .comparison-heading h3 { font-size: 15px; }
+  #combat-detail-modal #detail-compare-toggle { padding: 6px 8px; font-size: 12px; }
+}

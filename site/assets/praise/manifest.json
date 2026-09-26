@@ -1,0 +1,73 @@
+{
+  "schema": "notmeter-praise-assets-v1",
+  "extractedAt": "2026-09-13",
+  "total": {
+    "file": "total.png",
+    "width": 32,
+    "height": 32,
+    "source": "AION2/Content/UI/Resource/Sprite/Common/UT_Common_Icon_RoleVote_Sprite.uasset",
+    "atlas": "AION2/Content/UI/Resource/Sprite/Common/Atlas_Common",
+    "texture": "Texture2D_0",
+    "uv": [
+      618,
+      438
+    ],
+    "size": [
+      32,
+      32
+    ],
+    "sha256": "6c54d7857cde0a5aac6683a49e7c7aacaf7e21ff6b9fbe6d461f359f5cff53db"
+  },
+  "kinds": [
+    {
+      "kind": 1,
+      "field": "skill",
+      "label": "뛰어난 실력",
+      "file": "reason-1.png",
+      "width": 128,
+      "height": 128,
+      "source": "AION2/Content/UI/Resource/Texture/Icon/UT_RoleVote_Reason01.uasset",
+      "sha256": "2fc948857670205fc3226f41282b0a29f892070c2dfb34eff3520b56c47ae020"
+    },
+    {
+      "kind": 2,
+      "field": "guardian",
+      "label": "든든한 수호자",
+      "file": "reason-2.png",
+      "width": 128,
+      "height": 128,
+      "source": "AION2/Content/UI/Resource/Texture/Icon/UT_RoleVote_Reason02.uasset",
+      "sha256": "1f790f140698cb132516eb8049d427fb68b63ec72b2d59fcc17152c3d3124bbb"
+    },
+    {
+      "kind": 3,
+      "field": "support",
+      "label": "헌신적인 지원",
+      "file": "reason-3.png",
+      "width": 128,
+      "height": 128,
+      "source": "AION2/Content/UI/Resource/Texture/Icon/UT_RoleVote_Reason03.uasset",
+      "sha256": "9cbc7c492be4d2337dfab3fa6829db09375b5ae423a3b4c3bce212b9d99cfb47"
+    },
+    {
+      "kind": 4,
+      "field": "leadership",
+      "label": "훌륭한 리더십",
+      "file": "reason-4.png",
+      "width": 128,
+      "height": 128,
+      "source": "AION2/Content/UI/Resource/Texture/Icon/UT_RoleVote_Reason04.uasset",
+      "sha256": "cfd6558c3ed2fea8fc6317f7e84b31952252c4adff7acad34e7da3ad8579dae0"
+    },
+    {
+      "kind": 5,
+      "field": "mentor",
+      "label": "친절한 멘토",
+      "file": "reason-5.png",
+      "width": 128,
+      "height": 128,
+      "source": "AION2/Content/UI/Resource/Texture/Icon/UT_RoleVote_Reason05.uasset",
+      "sha256": "19463b26c91bf77b861d4aea3f5ac7d4d6de5b1ad702d296433549b075c7e3c4"
+    }
+  ]
+}
