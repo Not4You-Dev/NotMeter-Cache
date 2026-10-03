@@ -1,0 +1,8 @@
+img.brand-icon[src*="notmeter-mark.svg"],
+.legal-header img[src*="notmeter-mark.svg"] {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+}

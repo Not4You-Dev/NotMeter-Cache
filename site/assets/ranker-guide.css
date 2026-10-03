@@ -1,0 +1,57 @@
+#ranker-dungeon-guide {
+  --guide-text: var(--text, #f3f8fb);
+  --guide-muted: var(--muted, #b7b4c3);
+  --guide-line: var(--line-soft, #29313b);
+  --guide-surface: var(--surface, #111827);
+}
+#ranker-dungeon-guide .ranker-dungeon-guide-body { gap: 24px; }
+#ranker-dungeon-guide [data-i18n="rankerDungeonGuideTitle"] { color: var(--guide-text); }
+#ranker-dungeon-guide [data-i18n="rankerDungeonGuideSubtitle"],
+#ranker-dungeon-guide .ranker-guide-summary-chips span { color: var(--guide-muted); }
+#ranker-dungeon-guide .ranker-guide-required,
+#ranker-dungeon-guide .weekly-guide-toggle { color: var(--guide-text); background: var(--guide-surface); }
+#ranker-dungeon-guide .weekly-guide-icon { color: var(--guide-muted); }
+#ranker-dungeon-guide .ranker-guide-answer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+#ranker-dungeon-guide .ranker-guide-answer-card { padding: 0 16px 0 0; border: 0; border-radius: 0; background: none; align-content: start; gap: 8px; }
+#ranker-dungeon-guide .ranker-guide-answer-card + article { border-left: 1px solid var(--guide-line); padding-left: 16px; }
+#ranker-dungeon-guide .ranker-guide-answer-card > span { color: var(--guide-muted); font-size: 12px; font-weight: 600; letter-spacing: 0; }
+#ranker-dungeon-guide h3, #ranker-dungeon-guide h4 { margin: 0; color: var(--guide-text); letter-spacing: -.015em; }
+#ranker-dungeon-guide h3 { font-size: 16px; font-weight: 700; line-height: 1.5; }
+#ranker-dungeon-guide h4, #ranker-dungeon-guide .ranker-guide-answer-card > strong { color: var(--guide-text); font-size: 14px; font-weight: 700; line-height: 1.5; }
+#ranker-dungeon-guide .ranker-guide-answer-card p,
+#ranker-dungeon-guide .ranker-preview-section p,
+#ranker-dungeon-guide .ranker-guide-other-access p { margin: 0; color: var(--guide-muted); font-size: 13px; font-weight: 500; line-height: 1.7; overflow-wrap: anywhere; }
+#ranker-dungeon-guide .ranker-preview-section { border-top: 1px solid var(--guide-line); padding-top: 20px; }
+#ranker-dungeon-guide .ranker-preview-section > p { margin-top: 6px; }
+#ranker-dungeon-guide .ranker-preview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; margin-top: 8px; }
+#ranker-dungeon-guide .ranker-preview { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 18px; margin: 0; padding-block: 18px; min-width: 0; border-bottom: 1px solid var(--guide-line); }
+#ranker-dungeon-guide .ranker-preview img { display: block; width: 96px; height: 96px; max-width: none; object-fit: contain; background: #171e24; border: 0; border-radius: 0; filter: none; box-shadow: none; }
+#ranker-dungeon-guide figcaption { min-width: 0; }
+#ranker-dungeon-guide figcaption p { margin-top: 5px; }
+#ranker-dungeon-guide .ranker-preview-combined { padding: 20px 0; }
+#ranker-dungeon-guide .ranker-motion-toggle { min-height: 44px; margin-top: 8px; padding: 5px 12px; border: 1px solid var(--guide-line); border-radius: 6px; background: var(--guide-surface); color: var(--guide-text); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; box-shadow: none; }
+#ranker-dungeon-guide .ranker-motion-toggle[hidden] { display: none; }
+#ranker-dungeon-guide .ranker-motion-toggle:hover { text-decoration: underline; }
+#ranker-dungeon-guide .ranker-motion-toggle:focus-visible { outline: 2px solid var(--guide-text); outline-offset: 3px; }
+#ranker-dungeon-guide .ranker-guide-other-access { padding: 16px 18px; border: 1px solid var(--guide-line); border-radius: 8px; background: var(--guide-surface); }
+#ranker-dungeon-guide .ranker-guide-other-access p { margin-top: 6px; }
+#ranker-dungeon-guide .ranker-guide-flow,
+#ranker-dungeon-guide .ranker-guide-retention { background: var(--guide-surface); border-color: var(--guide-line); }
+#ranker-dungeon-guide .ranker-guide-flow strong,
+#ranker-dungeon-guide .ranker-guide-retention strong { color: var(--guide-text); font-size: 13px; }
+#ranker-dungeon-guide .ranker-guide-flow p,
+#ranker-dungeon-guide .ranker-guide-retention p,
+#ranker-dungeon-guide .ranker-dungeon-guide-notes p { color: var(--guide-muted); font-size: 12px; line-height: 1.7; }
+#ranker-dungeon-guide .ranker-dungeon-item,
+#ranker-dungeon-guide .ranker-dungeon-guide-notes { background: var(--guide-surface); border-color: var(--guide-line); }
+#ranker-dungeon-guide .ranker-dungeon-item strong,
+#ranker-dungeon-guide .ranker-dungeon-section-title strong { color: var(--guide-text); font-size: 13px; }
+#ranker-dungeon-guide .ranker-dungeon-item p,
+#ranker-dungeon-guide .ranker-dungeon-section-title span { color: var(--guide-muted); font-size: 12px; line-height: 1.7; }
+@media (max-width: 700px) {
+  #ranker-dungeon-guide .ranker-guide-answer-grid, #ranker-dungeon-guide .ranker-preview-grid { grid-template-columns: minmax(0, 1fr); }
+  #ranker-dungeon-guide .ranker-guide-answer-card { padding: 0; }
+  #ranker-dungeon-guide .ranker-guide-answer-card + article { padding: 12px 0 0; border-left: 0; border-top: 1px solid var(--guide-line); }
+  #ranker-dungeon-guide .ranker-preview { gap: 12px; }
+  #ranker-dungeon-guide .ranker-guide-other-access { padding: 14px; }
+}

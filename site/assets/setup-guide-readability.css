@@ -1,0 +1,225 @@
+/* Guide-only layout; ranking pages keep their existing typography. */
+body.contribution-view .setup-guide-surface {
+  --guide-line: rgba(223, 218, 230, .13);
+  --guide-muted: #b3adbc;
+  font-size: .875rem;
+  line-height: 1.55;
+}
+body.contribution-view .setup-guide-surface [hidden] { display: none !important; }
+body.contribution-view .setup-guide-surface .contribution-heading { margin-bottom: 0 !important; padding: .75rem 0 1rem !important; }
+body.contribution-view .setup-guide-surface .contribution-kicker { display: none; }
+body.contribution-view .setup-guide-surface .contribution-heading h2 { font-size: 1.5rem !important; }
+body.contribution-view .setup-guide-surface .contribution-heading p {
+  margin-top: .375rem;
+  font-size: .875rem !important;
+  line-height: 1.6 !important;
+  color: var(--guide-muted) !important;
+}
+body.contribution-view .setup-guide-surface .contribution-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .625rem 1.75rem !important;
+  padding: .875rem 0;
+  margin-bottom: 1.25rem;
+  border: 0 !important;
+  border-bottom: 1px solid var(--guide-line) !important;
+  border-radius: 0 !important;
+}
+body.contribution-view .setup-guide-surface .contribution-summary > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .5rem;
+  min-width: 0;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+body.contribution-view .setup-guide-surface .contribution-summary span { font-size: .75rem; color: var(--guide-muted) !important; }
+body.contribution-view .setup-guide-surface .contribution-summary strong {
+  font-size: .8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #e4dfe8 !important;
+}
+body.contribution-view .setup-guide-surface .contribution-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem !important;
+  margin: 0 0 1.25rem;
+}
+body.contribution-view .setup-guide-surface .contribution-tab {
+  min-height: 2.75rem;
+  gap: .375rem;
+  padding: .5rem .75rem;
+  font-size: .875rem;
+  border: 1px solid transparent !important;
+  border-radius: .25rem !important;
+}
+body.contribution-view .setup-guide-surface .contribution-tab.active {
+  border-color: #756b83 !important;
+  background: #28232f !important;
+  color: #fff !important;
+}
+body.contribution-view .setup-guide-surface .contribution-tab small { display: none; }
+body.contribution-view .setup-guide-surface .contribution-tab .job-icon { width: 1.25rem; height: 1.25rem; }
+body.contribution-view .setup-guide-surface .setup-guide-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  border-bottom: 1px solid var(--guide-line);
+  margin-bottom: 1rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-categories button {
+  min-height: 2.75rem;
+  padding: .625rem 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--guide-muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+body.contribution-view .setup-guide-surface .setup-guide-categories button[aria-pressed="true"] {
+  color: #f1edf4;
+  border-bottom-color: #c2aecf;
+}
+body.contribution-view .setup-guide-surface .setup-guide-categories button:hover { color: #fff; }
+body.contribution-view .setup-guide-surface button:focus-visible { outline: 2px solid #c2aecf; outline-offset: 3px; }
+body.contribution-view .setup-guide-surface .contribution-content { padding: 0 !important; }
+body.contribution-view .setup-guide-surface .contribution-content-heading { display: none; }
+body.contribution-view .setup-guide-surface .contribution-content-heading strong { font-size: .875rem; }
+body.contribution-view .setup-guide-surface .contribution-content-heading > span { font-size: .75rem; color: var(--guide-muted); }
+body.contribution-view .setup-guide-surface .contribution-rows { gap: 1rem; }
+body.contribution-view .setup-guide-surface .setup-guide-stones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-section { min-width: 0; }
+body.contribution-view .setup-guide-surface .setup-guide-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .375rem 1rem;
+  padding: .625rem 0 .875rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-section-heading > h3 { font-size: 1rem; font-weight: 650; color: #eee8f2; }
+body.contribution-view .setup-guide-surface .setup-guide-section-note { font-size: .75rem; line-height: 1.6; text-align: left; color: var(--guide-muted) !important; }
+body.contribution-view .setup-guide-surface .setup-guide-section-body { padding: .875rem 0; }
+body.contribution-view .setup-guide-surface .setup-guide-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 0 1.5rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-stones .setup-guide-card-grid { grid-template-columns: minmax(0, 1fr); }
+body.contribution-view .setup-guide-surface .setup-guide-slot-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  align-items: start;
+  gap: 1.5rem 2rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-soul-columns {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: 1rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-slot-browser {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-slot-nav { border-right: 1px solid var(--guide-line); padding-right: 1.25rem; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-nav > h4 { margin: .625rem 0; color: var(--guide-muted); font-size: .75rem; font-weight: 500; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem; margin-bottom: 1rem; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-choices button {
+  min-height: 2.5rem;
+  padding: .5rem .625rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  background: transparent;
+  color: var(--guide-muted);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+body.contribution-view .setup-guide-surface .setup-guide-slot-choices button:hover { background: #211f2b; color: #f1edf4; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-choices button[aria-pressed="true"] { background: #28232f; border-color: #756b83; color: #fff; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-detail { min-width: 0; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-detail .setup-guide-arcana-slot { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 2rem; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-detail .setup-guide-arcana-slot > h4 { grid-column: 1 / -1; }
+body.contribution-view .setup-guide-surface .setup-guide-skill-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  align-items: start;
+  gap: .25rem 2rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-subgroup + .setup-guide-subgroup { margin-top: 1.75rem; }
+body.contribution-view .setup-guide-surface .setup-guide-subgroup > h4 { margin: 0 0 .875rem; font-size: .875rem; font-weight: 650; }
+body.contribution-view .setup-guide-surface .setup-guide-slot > h4 { margin: 0 0 .5rem; padding: .625rem 0; font-size: .875rem; font-weight: 650; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-category { min-width: 0; padding: 0 !important; border: 0 !important; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-category > h5 {
+  margin: 0 0 .25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--guide-muted);
+  font-size: .75rem;
+  font-weight: 500;
+}
+body.contribution-view .setup-guide-surface .setup-guide-card {
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: .625rem;
+  min-height: 3.5rem;
+  margin: 0;
+  padding: .625rem 0;
+  align-items: start;
+}
+body.contribution-view .setup-guide-surface .setup-guide-card-no-icon { grid-template-columns: minmax(0, 1fr); }
+body.contribution-view .setup-guide-surface .setup-guide-card-icon { width: 2rem; height: 2rem; margin-top: .25rem; }
+body.contribution-view .setup-guide-surface .setup-guide-card strong {
+  display: block;
+  font-size: .875rem;
+  font-weight: 550;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+body.contribution-view .setup-guide-surface .setup-guide-card-meta { display: flex; flex-wrap: wrap; gap: .125rem .625rem; margin-top: .125rem; }
+body.contribution-view .setup-guide-surface .setup-guide-card-meta span { font-size: .75rem; line-height: 1.5; font-weight: 400; color: var(--guide-muted) !important; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-detail .setup-guide-card { min-height: 2.875rem; align-items: center; }
+body.contribution-view .setup-guide-surface .setup-guide-slot-detail .setup-guide-card > div,
+body.contribution-view .setup-guide-surface .setup-guide-stones .setup-guide-card > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .125rem 1rem;
+}
+body.contribution-view .setup-guide-surface .setup-guide-slot-detail .setup-guide-card-meta { margin: 0; }
+body.contribution-view .setup-guide-surface .setup-guide-traits { margin-top: .5rem; padding: 0; }
+body.contribution-view .setup-guide-surface .setup-guide-traits-summary { font-size: .75rem; color: var(--guide-muted); }
+body.contribution-view .setup-guide-surface .setup-guide-trait-list { gap: .25rem; }
+body.contribution-view .setup-guide-surface .setup-guide-trait { padding: .375rem .125rem; }
+body.contribution-view .setup-guide-surface .setup-guide-trait.is-top { background: #282432; border-color: #75667f; color: #ece2f3; }
+body.contribution-view .setup-guide-surface .setup-guide-trait-index,
+body.contribution-view .setup-guide-surface .setup-guide-trait-rate { font-size: .75rem; }
+body.contribution-view .setup-guide-surface .contribution-method { margin-top: 1.5rem; padding-top: .875rem; border-top: 1px solid var(--guide-line); }
+body.contribution-view .setup-guide-surface .contribution-method > summary { font-size: .8125rem; }
+body.contribution-view .setup-guide-surface .contribution-method strong { font-size: .8125rem; }
+body.contribution-view .setup-guide-surface .contribution-method p,
+body.contribution-view .setup-guide-surface .setup-guide-inline-empty { font-size: .8125rem !important; line-height: 1.65 !important; color: var(--guide-muted) !important; }
+@media (max-width: 48rem) {
+  body.contribution-view .setup-guide-surface .contribution-summary { gap: .625rem 1rem !important; }
+  body.contribution-view .setup-guide-surface .contribution-summary > div:first-child { flex-basis: 100%; }
+  body.contribution-view .setup-guide-surface .contribution-tab { padding-inline: .5rem; }
+  body.contribution-view .setup-guide-surface .setup-guide-categories { gap: 0 1.125rem; }
+  body.contribution-view .setup-guide-surface .setup-guide-categories button { font-size: .8125rem; }
+  body.contribution-view .setup-guide-surface .setup-guide-stones { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  body.contribution-view .setup-guide-surface .contribution-method-grid { grid-template-columns: minmax(0, 1fr); }
+  body.contribution-view .setup-guide-surface .setup-guide-slot-browser { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  body.contribution-view .setup-guide-surface .setup-guide-slot-nav { border: 0; padding: 0; }
+  body.contribution-view .setup-guide-surface .setup-guide-slot-choices { display: flex; flex-wrap: wrap; gap: .25rem; margin-bottom: .5rem; }
+  body.contribution-view .setup-guide-surface .setup-guide-slot-choices button { min-height: 2.5rem; font-size: .8125rem; }
+  body.contribution-view .setup-guide-surface .setup-guide-slot-detail .setup-guide-arcana-slot { grid-template-columns: minmax(0, 1fr); }
+}
