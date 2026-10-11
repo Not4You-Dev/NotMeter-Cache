@@ -1,0 +1,24 @@
+{
+  "skills": [
+    {
+      "code": 18250000,
+      "name": "Hoheit des Sturmwinds"
+    },
+    {
+      "code": 17290000,
+      "name": "Absolution"
+    },
+    {
+      "code": 17390000,
+      "name": "Wiederbelebung durch Beschwörung"
+    },
+    {
+      "code": 17270000,
+      "name": "Erlösung"
+    },
+    {
+      "code": 17420000,
+      "name": "Yustiels Hoheit"
+    }
+  ]
+}

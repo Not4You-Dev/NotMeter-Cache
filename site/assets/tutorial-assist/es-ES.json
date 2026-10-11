@@ -1,0 +1,193 @@
+{
+  "title": "Asistencia de combate: desde tu primer icono",
+  "intro": "Una ventana independiente muestra cuánto duran los efectos, cuándo puedes volver a usar tus habilidades y las recargas de grupo compatibles. Empieza con una habilidad propia y añade lo que necesites.",
+  "toc": "Ir a un paso",
+  "supported": "Habilidades compatibles con recargas de grupo",
+  "check": "Compruébalo en el juego",
+  "example": "Ejemplos de la aplicación real. Los nombres, segundos y cargas explican los controles; no son datos de juego en directo.",
+  "chapters": [
+    [
+      "Activar y mostrar tu primera habilidad",
+      "Ajustes → Asistencia de combate → Inicio rápido",
+      [
+        "Pasa el cursor sobre el medidor, pulsa el icono de controles deslizantes y abre Asistencia de combate a la izquierda. Si está bloqueado, usa primero Alt-clic en el candado o abre Ajustes desde el icono del área de notificación de Windows.",
+        "Activa la asistencia arriba. En Inicio rápido elige tu clase y pulsa Añadir configuración seleccionada. Elegir la clase por sí solo no la aplica.",
+        "Puedes dejar las voces sin seleccionar al principio. Inicio rápido añade habilidades de clase y comunes a la selección existente; no activa automáticamente las recargas del grupo.",
+        "Pulsa Guardar abajo a la derecha, vuelve al juego y comprueba que se detecta tu personaje. Usa una habilidad seleccionada.",
+        "Un efecto aplicado muestra su duración restante; una habilidad usada muestra el tiempo hasta poder reutilizarla. La vista previa usa valores de ejemplo."
+      ],
+      [
+        "Cambiar la vista previa no sustituye a guardar los ajustes. No hace falta activar todas las opciones."
+      ],
+      [
+        "Añadir una configuración de clase en los ajustes reales",
+        "Efectos y recargas juntos"
+      ]
+    ],
+    [
+      "Entender efectos, recargas y cargas",
+      "Qué significa cada número",
+      [
+        "El temporizador de un efecto indica cuánto tiempo sigue activo. El de recarga indica cuándo puedes volver a usar la habilidad. Son tiempos distintos.",
+        "En el tema predeterminado, una habilidad puede aparecer en la fila de efectos y en la fila CD: por ejemplo, 12 segundos de efecto y 24 de recarga.",
+        "En habilidades con cargas, x0, x1 y x2 son los usos disponibles. x0 significa que no queda ninguna carga. El tiempo de recuperación se lee por separado.",
+        "El nombre sobre una recarga identifica a quien usó la habilidad. Iconos iguales pueden corresponder a ti y a otro jugador."
+      ],
+      [
+        "Un icono gris no implica un fallo de detección. El paso 5 explica los iconos fijados, inactivos y listos."
+      ],
+      [
+        "Duración de un efecto",
+        "Recarga de una habilidad",
+        "Ejemplos de x0, x1 y x2"
+      ]
+    ],
+    [
+      "Elegir habilidades individuales",
+      "Asistencia de combate → Habilidades",
+      [
+        "Elige una clase y busca la habilidad. Para las habilidades de grupo de otra clase, cambia al filtro de Cantor o Clérigo.",
+        "Activa por separado los efectos y las recargas de cada tarjeta. Las habilidades compartidas compatibles tienen interruptores de recarga propia y del grupo.",
+        "Pulsa Mostrar ajustes en la ficha de la habilidad para configurar iconos fijos, avisos y voz. Solo se abre esa ficha; usa Ocultar ajustes para cerrarla.",
+        "El filtro de habilidades seleccionadas oculta las demás. Revisa ese filtro y borra la búsqueda para añadir una habilidad.",
+        "Usa Vista previa en la tarjeta para comprobar el aspecto. Un interruptor gris deshabilitado significa que esa opción no está disponible."
+      ],
+      [],
+      [
+        "Opciones ampliadas de Poder de vendaval"
+      ]
+    ],
+    [
+      "Ver las recargas del grupo",
+      "Habilidades → Cantor / Clérigo → Recarga del grupo",
+      [
+        "Elige una habilidad de la lista de abajo. Solo se pueden seguir los tiempos de reutilización del grupo para las habilidades compatibles. También puedes seleccionar habilidades de otras clases.",
+        "Para ver solo al grupo, activa Recarga del grupo y desactiva Recarga propia. Activa ambas para ver las dos.",
+        "En Apariencia, elige Solo recargas o Efectos + recargas. Solo efectos también oculta las recargas del grupo.",
+        "En Apariencia → Posición y ventanas separadas, activa los nombres de los usuarios de habilidades. Desactivarlos oculta las etiquetas, no los temporizadores.",
+        "Guarda y espera un nuevo uso con tu personaje detectado. Para detectar Poder de vendaval, un miembro del grupo debe aplicárselo a tu personaje.",
+        "Las habilidades compatibles de Clérigo usan efectos observados o información y usos detectados de miembros del grupo. Los demás no necesitan instalar NotMeter ni introducir un código.",
+        "Un uso anterior al inicio del medidor o no detectado puede no tener temporizador. Que no haya icono no significa que la habilidad esté lista."
+      ],
+      [
+        "Los temporizadores muestran recargas del grupo detectadas y en curso. Fijar tu habilidad no crea iconos listos para todos los miembros. Las tarjetas reales muestran los nombres compatibles en KR, TW o Global."
+      ],
+      [
+        "Tarjetas reales de habilidades de grupo compatibles",
+        "Solo recarga propia",
+        "Solo recarga del grupo, con nombre",
+        "Recargas propias y del grupo juntas"
+      ]
+    ],
+    [
+      "Mantener y ordenar los iconos",
+      "Tarjeta → Alertas e iconos fijados / Apariencia",
+      [
+        "Activa Mostrar siempre efecto o Mostrar siempre recarga para reservar el espacio cuando estén inactivos. También se selecciona la visualización correspondiente.",
+        "Un icono de beneficio fijado en gris indica que el efecto está inactivo. Con los colores predeterminados, un icono de recarga fijado en gris indica que la habilidad está disponible; la opción de invertir los colores de recarga invierte ese significado. Comprueba también el tiempo restante y el número de cargas indicado con x.",
+        "Sin fijar, el icono puede desaparecer al terminar el efecto o la recarga. No es lo mismo que desactivar toda la asistencia.",
+        "En Apariencia → Orden de iconos fijados, coloca primero las habilidades importantes. Comprueba la ordenación y los iconos por fila en la vista previa."
+      ],
+      [
+        "Limitar efectos de grupo fijados por clase afecta a iconos de efectos inactivos. No sustituye los interruptores de recarga del grupo."
+      ],
+      [
+        "Icono de recarga fijado sin temporizador activo"
+      ]
+    ],
+    [
+      "Añadir habilidades comunes, pociones, pergaminos y perjuicios",
+      "Asistencia de combate → Habilidades",
+      [
+        "Usa las categorías Común, Poción, Pergamino y Perjuicio junto a las clases. Si falta un nombre, busca en su categoría.",
+        "Selecciona las recargas de tus tipos de poción. Para pergaminos, elige las opciones disponibles de duración y visualización. No todos los objetos admiten ambos temporizadores.",
+        "Los perjuicios del jefe muestran efectos sobre el objetivo. Son distintos de tus efectos y del tiempo para reutilizar tu habilidad.",
+        "Para mostrar efectos que otros te aplican, revisa Mostrar efectos de otros jugadores en Inicio rápido. Es independiente de Recarga del grupo.",
+        "Guarda, usa la poción o el pergamino seleccionado, o espera al perjuicio, y comprueba el resultado en el juego."
+      ],
+      [],
+      [
+        "Selección de pociones",
+        "Selección de pergaminos",
+        "Un efecto sobre el objetivo"
+      ]
+    ],
+    [
+      "Configurar avisos y voz",
+      "Tarjeta → Alertas e iconos fijados → Alertas y voz",
+      [
+        "Elige el evento de la habilidad: recarga para reutilización, inicio para un efecto nuevo o fin del efecto.",
+        "Los avisos y la voz son independientes; la voz funciona sin ventana. Revisa el interruptor global, la voz y el volumen en Alertas y voz, y prueba el sonido.",
+        "Configura el aviso anticipado general. Cada habilidad permite personalizar el nombre pronunciado y el momento. Un nombre vacío utiliza el nombre mostrado.",
+        "Configura el retraso tras la recarga entre 1 y 30 segundos para recibir el aviso ese número de segundos después de que termine. Este aviso sustituye al aviso anticipado. Deja el campo vacío o indica 0 para utilizar el aviso anticipado.",
+        "El inicio de efecto responde a una aplicación nueva, no a renovar su duración. El aviso de fin necesita una duración restante conocida.",
+        "Mueve la vista previa del aviso final en Apariencia y guarda. Los colores de números y anillos tienen umbrales distintos del tiempo de aviso.",
+        "En Ayuda de combate → Avisos y voz, activa y ajusta por separado los efectos de sonido y la voz. Prueba ambos antes de guardar.",
+        "Para oír mejor los avisos sin subir todo el volumen de los auriculares, aumenta la amplificación del 100 % al 300 % poco a poco. También afecta a otros avisos de NotMeter, pero no anula el silencio ni un volumen al 0 %."
+      ],
+      [
+        "Si no hay sonido, revisa voz de la habilidad, voz global, volumen y salida de audio del PC, en ese orden. El sonido de cambio de objetivo del jefe se configura aparte."
+      ],
+      [
+        "Habilidad lista",
+        "Inicio de un efecto",
+        "Aviso antes del fin de un efecto",
+        "En Ayuda de combate → Avisos y voz, activa y ajusta por separado los efectos de sonido y la voz. Prueba ambos antes de guardar."
+      ]
+    ],
+    [
+      "Colocar, redimensionar y separar las ventanas",
+      "Posición arriba → Apariencia",
+      [
+        "Pulsa Posición y después Mover en pantalla. Aparece una vista previa movible incluso fuera de combate y sin efectos activos.",
+        "Arrástrala a su lugar. Si quedó fuera de pantalla, usa Centrar en esta pantalla y ajusta X/Y o las flechas. Termina pulsando Guardar en Ajustes.",
+        "El tema predeterminado permite separar efectos y recargas. Selecciona cada ventana en la lista de posición y coloca ambas.",
+        "El tema A reúne ambos en un solo icono y no permite separar esas dos ventanas. Lee sus dos temporizadores por separado.",
+        "Configura tamaño, opacidad, orientación horizontal/vertical y expansión desde el centro. Separar avisos es una opción distinta de separar efectos y recargas.",
+        "Si los iconos son pequeños en 4K, aumenta su escala en Apariencia hasta el 400 %. El zoom de la vista previa solo modifica el editor. Guarda y comprueba el tamaño real en el juego."
+      ],
+      [
+        "Después de mover la vista previa, pulsa Guardar en los ajustes. Comprueba la posición en el juego y vuelve a abrir los ajustes para confirmar que se ha guardado."
+      ],
+      [
+        "Vista previa de posición movible",
+        "Controles de posición en Apariencia",
+        "Efecto y recarga en un solo icono"
+      ]
+    ],
+    [
+      "Controlar la visibilidad y las ayudas de jefe",
+      "Inicio rápido / Alertas y voz",
+      [
+        "Mostrar solo en combate se refiere al combate contra jefes. Si desaparece en una ciudad o al terminar, revisa esta condición.",
+        "Mostrar solo con efectos/recargas activos oculta el panel vacío. Para una primera prueba, revisa las condiciones y usa una habilidad seleccionada.",
+        "Mantener visible al ocultar el medidor conserva la asistencia al ocultar el medidor principal. No anula el interruptor que desactiva la asistencia.",
+        "Activa el objetivo actual del jefe. Para oír solo cuando te elija a ti, activa el sonido de cambio y la opción limitada a tu personaje.",
+        "En Alertas y voz, elige frente/espalda para la dirección de los golpes. Avisa de golpes directos en otra dirección; excluye invocaciones, ataques colocados y daño periódico."
+      ],
+      [],
+      [
+        "El jefe tiene a tu personaje como objetivo",
+        "Un golpe en otra dirección"
+      ]
+    ],
+    [
+      "Resolver problemas en este orden",
+      "Revisa una condición cada vez",
+      [
+        "No se ve nada: personaje detectado → asistencia activada → habilidad seleccionada → modo → Guardar → condiciones de combate/actividad. Usa Posición → Centrar para descartar una ventana fuera de pantalla.",
+        "Solo falta tu temporizador: activa Recarga propia. Activar solo la del grupo no muestra la tuya.",
+        "Solo faltan temporizadores del grupo: habilidad compatible, Recarga del grupo activada y modo distinto de Solo efectos; observa un uso nuevo. Poder de vendaval debe aplicarse a ti.",
+        "Iconos duplicados: comprueba las combinaciones propio + grupo y efecto + recarga. Activa los nombres para distinguirlos.",
+        "Siempre gris: revisa si está fijado y usa la habilidad. Comprueba x0 si tiene cargas. Los números de vista previa no verifican la detección.",
+        "Aviso sin voz: revisa voz individual, voz global y volumen; prueba el sonido. Para avisos tardíos, revisa el retraso de la habilidad.",
+        "Los ajustes cambiaron: comprueba que guardaste y que un cambio de personaje no activó otro perfil.",
+        "Si continúa, indica versión, servidor, habilidad, captura de su tarjeta y ajustes de visibilidad, además del resultado esperado y el observado."
+      ],
+      [
+        "Prueba por separado una habilidad propia, una del grupo compatible y una alerta. Abre de nuevo Ajustes para comprobar que se guardaron."
+      ],
+      []
+    ]
+  ]
+}

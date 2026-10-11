@@ -1,0 +1,193 @@
+{
+  "title": "Combat Assist, from your first icon onward",
+  "intro": "A separate overlay shows when buffs end, when you can use skills again and the remaining cooldowns of supported party skills. Start with one skill of your own, then add the features you need.",
+  "toc": "Jump to a step",
+  "supported": "Skills with party cooldown support",
+  "check": "Try it in game",
+  "example": "Examples rendered by the actual app. Names, seconds and charge counts illustrate the controls; these are not live game readings.",
+  "chapters": [
+    [
+      "Turn it on and display your first skill",
+      "Settings → Combat Assist UI → Quick start",
+      [
+        "Hover over the meter, click the sliders icon and choose Combat Assist UI on the left. If locked, Alt-click the padlock first or open Settings from the Windows notification-area icon.",
+        "Turn ON Show Combat Assist UI at the top. In Quick start, select your class and click Add selected setup. Selecting a class alone does not add it.",
+        "You can leave voice selections empty at first. Quick start adds your class and common skills to your existing selections; it does not automatically enable party cooldowns.",
+        "Click Save at the bottom right, return to the game and check that your character is detected. Use one of your selected skills.",
+        "An applied buff shows its remaining duration; a used skill shows time until reuse. The settings preview uses sample numbers."
+      ],
+      [
+        "Changing the preview is not the same as saving changes to the game overlay. You do not need every option enabled."
+      ],
+      [
+        "Adding a class setup in the actual settings window",
+        "Buffs and cooldowns shown together"
+      ]
+    ],
+    [
+      "Read buffs, cooldowns and charges",
+      "Identify what each number measures",
+      [
+        "A buff timer measures how long an effect lasts. A cooldown timer measures how long until you can use a skill again. They are separate timers.",
+        "In the default theme, one skill can appear on both the buff row and the CD row. A buff might have 12 seconds left while the skill still has a 24-second cooldown.",
+        "For charge skills, x0, x1 and x2 are remaining uses. x0 means no charge is currently available. Read the recharge timer separately from the charge count.",
+        "A name above a cooldown identifies its caster. Matching icons may belong to you and another player."
+      ],
+      [
+        "A gray icon is not automatically a detection error. Step 5 explains pinned inactive and ready icons."
+      ],
+      [
+        "Buff duration",
+        "Skill cooldown",
+        "Examples of x0, x1 and x2 charges"
+      ]
+    ],
+    [
+      "Choose individual skills",
+      "Combat Assist UI → Skills",
+      [
+        "Choose a class in the class tab and search for a skill. To find another class’s party skill, switch the filter to Chanter or Cleric instead of staying on your own class.",
+        "Select Show buffs and Show Cooldowns separately on a skill card. Supported shared skills have separate Own cooldown and Party cooldown switches.",
+        "Click Show settings on the skill card to configure pinned icons, alerts and voice. Only that card expands; click Hide settings to close it.",
+        "If the selected-skills-only filter is enabled, unselected skills are hidden. Check that filter and clear your search when adding a skill.",
+        "Use the card’s Preview to inspect the appearance. A disabled gray switch means that option is unavailable for that skill."
+      ],
+      [],
+      [
+        "Power of the Storm with its additional options expanded"
+      ]
+    ],
+    [
+      "Track party cooldowns",
+      "Skills → Chanter / Cleric → Party cooldown",
+      [
+        "Choose a skill from the supported list below. Party cooldown tracking covers only these skills. You can select supported skills from other classes as well as your own.",
+        "For party members only, turn Party cooldown ON and Own cooldown OFF on that card. Turn both ON to see both.",
+        "In Appearance, use Cooldowns only or Buffs + cooldowns. Buffs only also hides party cooldowns.",
+        "In Appearance → Position & separate windows, enable the caster-name option to identify whose timer you are viewing. Turning names OFF hides the labels, not the cooldowns.",
+        "Save and wait for a new supported skill use while your character is detected. Power of the Storm needs a party member’s cast applied to your character to be detected.",
+        "Supported Cleric skills use observed effects or detected party-member information and skill use. The other player does not need to install NotMeter or enter a sharing code.",
+        "A cast made before the meter started, or one it could not detect, may have no timer. An absent icon does not prove that the party member’s skill is ready."
+      ],
+      [
+        "Party timers show detected cooldowns currently in progress. Pinning your own skill does not create ready icons for every party member. Check the actual skill cards for the supported list in KR, TW or Global."
+      ],
+      [
+        "Actual cards for supported party skills",
+        "Own cooldown only",
+        "Party cooldown only, with caster label",
+        "Own and party cooldowns together"
+      ]
+    ],
+    [
+      "Keep icons visible and arrange them",
+      "Skill card → Show settings / Appearance",
+      [
+        "Enable Always show buff or Always show cooldown on the skill card to keep a slot while inactive. This also selects that skill’s buff or cooldown display.",
+        "A gray pinned buff icon means the effect is inactive. With the default colors, a gray pinned cooldown icon means the skill is ready; the cooldown color-inversion option reverses that color rule. Check the remaining time and, for charge skills, the x count as well.",
+        "Without pinning, an icon can disappear when its effect or cooldown ends. That is different from turning the entire Combat Assist UI OFF.",
+        "In Appearance → Pinned icon order, put important skills first. Check the sort mode and icons per row in the preview."
+      ],
+      [
+        "Restricting pinned party buffs by class applies to inactive buff icons. It does not replace the Party cooldown switches."
+      ],
+      [
+        "A pinned cooldown icon with no active timer"
+      ]
+    ],
+    [
+      "Add common skills, potions, scrolls and debuffs",
+      "Combat Assist UI → Skills",
+      [
+        "Use the Common, Potion, Scroll and Debuff categories beside class skills. If a name is missing from class results, check its category.",
+        "Select cooldowns for the potion types you use. For scrolls, choose the available duration/display options. Not every item supports both buff and cooldown tracking.",
+        "Boss debuffs show effects on the target. They are different from your own buffs and your skill’s reuse timer.",
+        "To display buffs another player applies to you, check Show buffs from other players in Quick start. This is separate from Party cooldown.",
+        "Save, then use the selected potion or scroll, or wait for the selected debuff to be applied, and check the live display."
+      ],
+      [],
+      [
+        "Potion selection",
+        "Scroll selection",
+        "An effect on the target"
+      ]
+    ],
+    [
+      "Set popup and voice alerts",
+      "Skill card → Show settings → Alerts & voice",
+      [
+        "Choose an event on the skill card: cooldown alerts for reuse, buff-start alerts for a newly applied effect, and buff-end alerts for its ending.",
+        "Select popups and voice independently; voice can work without a popup. In Alerts & voice, check the global voice toggle, voice and volume, then use the sound preview.",
+        "Set the general advance warning. To customize a skill, use its spoken name and timing fields. Leave the name blank to read the displayed skill name.",
+        "Set the cooldown completion delay to 1–30 seconds to receive the alert that many seconds after the cooldown ends. This replaces the advance alert. Leave it blank or set it to 0 to use the advance alert instead.",
+        "Buff-start alerts respond to a new application, not a simple duration refresh. Buff-end alerts require an effect with a known remaining duration.",
+        "Move the end-alert position preview in Appearance and Save. Number/ring warning colors use separate thresholds from the alert timing.",
+        "At the top of Combat Assist UI → Alerts & voice, enable and adjust Sound effects and Voice separately. Use their preview buttons before saving.",
+        "To raise notifications without raising your headset’s overall volume, adjust Alert sound boost from 100% to 300%. Start at 100% and increase gradually. The boost also applies to other NotMeter alerts; it does not override mute or a volume of 0%."
+      ],
+      [
+        "For missing sound, check per-skill voice, global voice, volume and the PC output device in that order. Boss-target change sounds are configured separately."
+      ],
+      [
+        "Skill-ready popup",
+        "Buff-start popup",
+        "Warning before a buff ends",
+        "At the top of Combat Assist UI → Alerts & voice, enable and adjust Sound effects and Voice separately. Use their preview buttons before saving."
+      ]
+    ],
+    [
+      "Place, resize and separate the panels",
+      "Position at the top → Appearance",
+      [
+        "Click Position at the top, then Move on screen. A movable preview appears even outside combat and without active buffs.",
+        "Drag it into place. If it is off screen, use Center on this screen, then adjust X/Y or the arrow buttons. Click Save in Settings when finished.",
+        "In the default theme, separate mode lets you move buffs and cooldowns independently. Select each panel in the position target list and place both.",
+        "Theme A’s single-icon layout combines buffs and cooldowns and does not support splitting those two panels. Read its two timers separately.",
+        "Set size, opacity, horizontal/vertical direction and center-based expansion. Separating alert popups is a different option from separating buff and cooldown panels.",
+        "For a 4K screen, increase the icon scale in Appearance up to 400%. The preview’s viewing zoom only changes the editor view. Save and check the actual overlay size in game."
+      ],
+      [
+        "After moving the preview, click Save in Settings. Check the placement in game, then reopen Settings to confirm the position was saved."
+      ],
+      [
+        "The draggable position preview",
+        "Position controls in Appearance",
+        "Buff and cooldown combined in one icon"
+      ]
+    ],
+    [
+      "Control visibility and boss helpers",
+      "Quick start / Alerts & voice",
+      [
+        "Show only during combat refers to boss combat. If the overlay disappears in town or after combat, check this condition.",
+        "Show only when buffs/cooldowns are active hides the idle panel when there is nothing to show. For a first test, check the conditions and use a selected skill.",
+        "Keep visible when the meter is hidden keeps Combat Assist when you hide the main damage meter. It is separate from switching Combat Assist itself OFF.",
+        "Enable the boss-target display to show who is targeted. For sound only when you become the target, enable both the target-change sound and the self-target-only option.",
+        "In Alerts & voice, choose front/back for hit-direction alerts. They flag your direct hits that differ from the chosen direction; summons, placed attacks and damage over time are excluded."
+      ],
+      [],
+      [
+        "The boss targets your character",
+        "A hit-direction mismatch"
+      ]
+    ],
+    [
+      "Troubleshoot in this order",
+      "Check one condition at a time",
+      [
+        "Nothing visible: check character detection → Combat Assist ON → skill selected → display mode → Save → boss-combat/active-only conditions. Use Position → Center on this screen to check for an off-screen panel.",
+        "Only your timer is missing: enable Own cooldown on that card. Party cooldown alone does not show your timer.",
+        "Only party timers are missing: confirm a supported skill, Party cooldown ON and a mode other than Buffs only, then observe a new cast. Check that Power of the Storm was applied to you.",
+        "Duplicate icons: check own + party and buff + cooldown combinations first. Enable caster names to tell party timers apart.",
+        "Always gray: check pinning and use the skill. For charge skills, look at x0 too. Preview numbers are samples, not detection results.",
+        "Popup but no voice: check per-skill voice, global voice and volume, then preview the sound. For late alerts, check that skill’s completion delay.",
+        "Settings changed back: check that you clicked Save, and whether changing characters activated a different character preset.",
+        "If it still differs, share your version, server, skill name, the skill card and visibility settings, plus what you expected and what happened."
+      ],
+      [
+        "Finally test one of your skills, one supported party skill and one alert separately. Reopen Settings to check the saved selections."
+      ],
+      []
+    ]
+  ]
+}

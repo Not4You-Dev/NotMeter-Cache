@@ -1,0 +1,176 @@
+/* Approved homepage scenery. Keep content geometry and modal stacking intact. */
+html[data-notmeter-background="1"] {
+  --scene-image: url("./backgrounds/tower.webp");
+  --scene-color: 138, 188, 226;
+  --scene-position: 59% 23%;
+  --scene-brightness: .91;
+  --scene-saturation: .6;
+}
+html[data-notmeter-background="2"] {
+  --scene-image: url("./backgrounds/sanctuary.webp");
+  --scene-color: 209, 196, 153;
+  --scene-position: 50% 23%;
+  --scene-brightness: 1.05;
+  --scene-saturation: .48;
+}
+html[data-notmeter-background="3"] {
+  --scene-image: url("./backgrounds/cavern.webp");
+  --scene-color: 155, 205, 222;
+  --scene-position: 50% 24%;
+  --scene-brightness: .92;
+  --scene-saturation: .38;
+}
+html[data-notmeter-background="4"] {
+  --scene-image: url("./backgrounds/ruins.webp");
+  --scene-color: 212, 184, 212;
+  --scene-position: 53% 25%;
+  --scene-brightness: .68;
+  --scene-saturation: .4;
+}
+html[data-notmeter-background="5"] {
+  --scene-image: url("./backgrounds/crystal.webp");
+  --scene-color: 187, 170, 218;
+  --scene-position: 54% 25%;
+  --scene-brightness: .6;
+  --scene-saturation: .42;
+}
+
+#notmeter-site { isolation: isolate; }
+#notmeter-site .topbar {
+  background: linear-gradient(90deg, rgba(14,18,23,.78), rgba(14,18,23,.10) 64%, rgba(14,18,23,.30)) !important;
+  box-shadow: 0 12px 34px #0002 !important;
+}
+#notmeter-site .topbar #notmeter-discord {
+  background: rgba(27,31,38,.87) !important;
+}
+#notmeter-site .topbar .first-guide {
+  background: rgba(27,31,38,.88) !important;
+}
+#notmeter-site #global-character-search {
+  background: rgba(27,31,38,.96) !important;
+}
+
+.nm-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #111419;
+  contain: strict;
+}
+.nm-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #111419;
+  opacity: var(--reading-shade, 0);
+}
+.nm-background-landscape {
+  position: absolute;
+  inset: -2%;
+  background-image: var(--scene-image);
+  background-size: cover;
+  background-position: var(--scene-position);
+  filter: saturate(var(--scene-saturation)) brightness(var(--scene-brightness));
+  transform: scale(1.005);
+}
+.nm-background-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17,20,25,.12), rgba(17,20,25,.17) 28%, rgba(17,20,25,.55) 70%, rgba(17,20,25,.82)),
+    linear-gradient(90deg, rgba(17,20,25,.32), rgba(17,20,25,.10) 25%, rgba(17,20,25,.10) 75%, rgba(17,20,25,.32));
+}
+.nm-background-mist {
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(ellipse at 70% 27%, rgba(var(--scene-color),.08), transparent 45%),
+    radial-gradient(ellipse at 18% 74%, rgba(var(--scene-color),.055), transparent 30%);
+  mix-blend-mode: screen;
+  animation: nm-background-mist 38s ease-in-out infinite alternate;
+  will-change: transform;
+  opacity: .72;
+}
+.nm-background-shaft {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  width: 42%;
+  height: 130%;
+  background: linear-gradient(105deg, transparent 24%, rgba(var(--scene-color),.05) 34%, transparent 43%, rgba(var(--scene-color),.08) 52%, transparent 65%);
+  transform: rotate(12deg);
+  transform-origin: top;
+  opacity: 0;
+}
+[data-notmeter-background="2"] .nm-background-shaft {
+  animation: nm-background-light 26s ease-in-out infinite alternate;
+}
+[data-notmeter-background="3"] .nm-background-mist {
+  background: radial-gradient(ellipse at 50% 23%, rgba(var(--scene-color),.15), transparent 43%),
+    radial-gradient(ellipse at 48% 88%, rgba(var(--scene-color),.08), transparent 45%);
+  animation-duration: 32s;
+}
+[data-notmeter-background="5"] .nm-background-mist {
+  background: radial-gradient(ellipse at 49% 27%, rgba(var(--scene-color),.15), transparent 38%);
+  animation: nm-background-aether 22s ease-in-out infinite alternate;
+}
+.nm-background-particles { position: absolute; inset: 0; overflow: hidden; }
+.nm-background-particle {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: rgba(var(--scene-color),.83);
+  box-shadow: 0 0 7px rgba(var(--scene-color),.32);
+  opacity: 0;
+  animation: nm-background-dust var(--duration) linear var(--delay) infinite;
+  will-change: transform, opacity;
+}
+[data-notmeter-background="3"] .nm-background-particle { animation-name: nm-background-frost; box-shadow: none; }
+[data-notmeter-background="4"] .nm-background-particle { animation-name: nm-background-snow; box-shadow: none; background: #d8c3ba; }
+[data-notmeter-background="5"] .nm-background-particle { animation-name: nm-background-aether-dust; }
+.nm-background[data-paused="true"] * { animation-play-state: paused !important; }
+
+@keyframes nm-background-mist {
+  from { transform: translate3d(-1.5%,-.7%,0) scale(1); }
+  to { transform: translate3d(1.5%,.7%,0) scale(1.03); }
+}
+@keyframes nm-background-light {
+  from { opacity: .2; transform: rotate(11deg); }
+  to { opacity: .75; transform: rotate(14deg); }
+}
+@keyframes nm-background-aether {
+  from { opacity: .3; transform: translate3d(-1%,1%,0); }
+  to { opacity: .75; transform: translate3d(1%,-1%,0); }
+}
+@keyframes nm-background-dust {
+  0% { opacity: 0; transform: translate3d(0,35px,0); }
+  20%, 80% { opacity: var(--alpha); }
+  100% { opacity: 0; transform: translate3d(var(--drift),-95px,0); }
+}
+@keyframes nm-background-frost {
+  0% { opacity: 0; transform: translate3d(-15px,-45px,0); }
+  20%, 75% { opacity: var(--alpha); }
+  100% { opacity: 0; transform: translate3d(30px,100px,0); }
+}
+@keyframes nm-background-snow {
+  0% { opacity: 0; transform: translate3d(-18px,-80px,0); }
+  20%, 75% { opacity: var(--alpha); }
+  100% { opacity: 0; transform: translate3d(38px,125px,0); }
+}
+@keyframes nm-background-aether-dust {
+  0% { opacity: 0; transform: translate3d(-10px,25px,0); }
+  25%, 65% { opacity: var(--alpha); }
+  100% { opacity: 0; transform: translate3d(15px,-45px,0); }
+}
+@media (max-width: 540px) {
+  .nm-background-landscape { background-position: center top; }
+  .nm-background-particle:nth-child(n+17) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nm-background * { animation: none !important; will-change: auto; }
+  .nm-background-particle { opacity: .2; transform: none; }
+}
+@media print { .nm-background { display: none !important; } }

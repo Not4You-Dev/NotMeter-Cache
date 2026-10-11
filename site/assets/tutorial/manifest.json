@@ -1,0 +1,51 @@
+{
+  "version": "1.0.261",
+  "capturedOn": "2026-10-08",
+  "locales": {
+    "ko": {
+      "categories": 20,
+      "options": 290,
+      "images": 153
+    },
+    "en": {
+      "categories": 20,
+      "options": 291,
+      "images": 153
+    },
+    "zh-TW": {
+      "categories": 20,
+      "options": 291,
+      "images": 153
+    },
+    "ja-JP": {
+      "categories": 20,
+      "options": 290,
+      "images": 152
+    },
+    "de-DE": {
+      "categories": 20,
+      "options": 290,
+      "images": 153
+    },
+    "fr-FR": {
+      "categories": 20,
+      "options": 290,
+      "images": 153
+    },
+    "es-ES": {
+      "categories": 20,
+      "options": 290,
+      "images": 153
+    },
+    "pt-BR": {
+      "categories": 20,
+      "options": 290,
+      "images": 153
+    },
+    "ru-RU": {
+      "categories": 20,
+      "options": 290,
+      "images": 153
+    }
+  }
+}

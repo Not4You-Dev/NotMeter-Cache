@@ -1,0 +1,817 @@
+{
+  "locale": "fr-FR",
+  "ui": {
+    "tutorial": "Guide d’utilisation",
+    "website": "Site web",
+    "home": "Accueil du guide",
+    "edition": "Mis à jour le 8 octobre 2026",
+    "search": "Rechercher une fonction ou un réglage",
+    "menu": "Sommaire",
+    "heading": "NotMeter\nGuide d’utilisation",
+    "intro": "De la première connexion à l’analyse d’un combat, découvrez chaque fonction avec les véritables écrans de l’application.",
+    "begin": "Bien démarrer",
+    "cover": "Aperçu réel avec un combat d’exemple",
+    "contents": "Parcourir les réglages",
+    "contentsHint": "Dans le même ordre que dans l’application.",
+    "groups": [
+      "Premiers pas",
+      "Réglages du compteur",
+      "Outils en jeu",
+      "Système et connexion"
+    ],
+    "paths": [
+      [
+        "Connecter son personnage",
+        "Installation, langue et connexion."
+      ],
+      [
+        "Adapter l’affichage",
+        "Taille, texte et informations utiles."
+      ],
+      [
+        "Suivre buffs et recharges",
+        "Compétences, alertes et disposition."
+      ],
+      [
+        "Résoudre un problème",
+        "Détection, clics et mises à jour."
+      ]
+    ],
+    "reference": "Référence des réglages",
+    "referenceHint": "Ouvrez une option pour lire sa description et la situer.",
+    "location": "Où le trouver",
+    "settings": "Paramètres",
+    "gallery": "Écran réel de l’application",
+    "example": "Les noms et valeurs sont des exemples. Les fonctions disponibles dépendent du serveur et du PC.",
+    "zoom": "Cliquez sur l’image pour l’agrandir.",
+    "previous": "Image précédente",
+    "next": "Image suivante",
+    "page": "Écran",
+    "showScreen": "Voir ce réglage sur la capture",
+    "default": "Valeur affichée",
+    "range": "Plage",
+    "choices": "Choix disponibles",
+    "more": "Guides associés",
+    "copyLink": "Copier le lien",
+    "copied": "Lien copié.",
+    "copyFailed": "Copiez l’adresse depuis le navigateur.",
+    "searchTitle": "Résultats de recherche",
+    "found": "résultats",
+    "empty": "Aucun résultat. Essayez un nom de fonction plus court.",
+    "error": "Impossible de charger le guide. Vérifiez la connexion puis réessayez.",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "screenshotLanguage": "Langue des images",
+    "guideLanguage": "Langue du guide",
+    "languageNote": "Les explications et les captures sont disponibles dans les neuf langues du site. La langue des captures peut être choisie séparément.",
+    "sourceNote": "Basé sur l’interface et le fonctionnement réels de NotMeter 1.0.261.",
+    "discord": "Obtenir de l’aide",
+    "feedback": "Si le problème persiste, indiquez votre version, serveur, symptômes et joignez une capture.",
+    "skip": "Aller au contenu",
+    "important": "À vérifier",
+    "allOptions": "Tout développer",
+    "collapseOptions": "Tout replier",
+    "screenshotDefault": "Les images expliquent les commandes ; les valeurs ne constituent pas une configuration recommandée.",
+    "noDetails": "Consultez les étapes et l’écran ci-dessus.",
+    "missing": "Page introuvable",
+    "support": "Dépannage",
+    "sample": "Exemple",
+    "privacy": "Confidentialité",
+    "fit": "Ajuster",
+    "iconTitle": "Emblèmes de classe et icône CP",
+    "cpTitle": "Puissance de combat (CP)",
+    "cpDetail": "Le nombre à côté du nom, distinct du DPS et de l’emblème de classe.",
+    "jobs": [
+      "Gladiateur",
+      "Templier",
+      "Rôdeur",
+      "Assassin",
+      "Sorcier",
+      "Clerc",
+      "Spiritualiste",
+      "Aède",
+      "Pugiliste"
+    ],
+    "findOption": "Saisissez ce nom dans la recherche des paramètres de l’application.",
+    "helper": "Assistant de capture Linux",
+    "launchMeter": "Lancer NotMeter",
+    "meterPath": "Compteur",
+    "results": "Ce que vous verrez",
+    "when": "Quand cela apparaît",
+    "read": "Comment lire l’écran",
+    "check": "Si l’affichage manque",
+    "setup": "Comment le configurer",
+    "confirmation": "Vérifier après l’enregistrement",
+    "stageNote": "Images fixes produites par les fonctions réelles de l’application avec des valeurs d’exemple, agrandies pour la lecture.",
+    "showing": "Commandes à repérer dans cette image"
+  },
+  "articles": {
+    "start": [
+      "Bien démarrer",
+      "Vérifiez la connexion avant d’activer les fonctions dont vous avez besoin.",
+      [
+        "Suivez les <a href=\"./?download=1\" data-download>instructions de téléchargement</a> pour Npcap et NotMeter. Inutile de réinstaller Npcap s’il est déjà présent.",
+        "Extrayez tout le ZIP dans un dossier, puis lancez <code>NotMeter.exe</code>. Ne le lancez pas dans l’archive.",
+        "Utilisez la carte <b>Language</b> en haut à gauche. English passe directement en anglais ; All languages ouvre la liste complète. Titres, descriptions et aperçus changent immédiatement, sans fermer les paramètres. Enregistrez pour conserver le choix.",
+        "Entrez dans le monde du jeu avec votre personnage, déplacez-vous ou attaquez, puis vérifiez que son nom apparaît sur le compteur au repos. Si le personnage n’est pas détecté, lancez la recherche d’adaptateur dans Paramètres → Réseau tout en bougeant ou attaquant. La mention verte d’utilisation confirme la connexion au jeu.",
+        "Survolez le compteur pour afficher son menu, puis cliquez sur l’<b>icône des curseurs</b> pour ouvrir les paramètres. Ajustez la taille et le texte, puis cliquez sur <b>Enregistrer</b>. Sous Windows, vous pouvez aussi faire un clic droit sur l’icône NotMeter dans la zone de notification et choisir les paramètres."
+      ],
+      [
+        "Les raccourcis sont désactivés par défaut. Configurez l’ouverture des paramètres et l’affichage du compteur pour les retrouver lorsqu’il est verrouillé."
+      ],
+      null
+    ],
+    "reading": [
+      "Lire le compteur",
+      "Repérez les informations du boss, les joueurs et le menu.",
+      [
+        "L’en-tête montre cible, PV et durée du combat. Nombre, pourcentage et barre de PV se règlent séparément.",
+        "Chaque ligne présente classe, nom, CP, DPS et contribution. Le DPS divise les dégâts enregistrés par la durée ; la contribution dépend de la base choisie.",
+        "Survoler donne un résumé ; cliquer ouvre les détails. Ces deux fonctions ont des réglages distincts.",
+        "Le menu permet capture, enregistrements, paramètres et fermeture. Placez et verrouillez le compteur ; autorisez au besoin certains clics dans Général."
+      ],
+      [
+        "Les contributions calculées sur les PV maximum du boss et sur les dégâts du groupe ne sont pas directement comparables. Afficher uniquement sa ligne ne supprime pas le suivi des autres joueurs."
+      ],
+      null
+    ],
+    "details": [
+      "Analyser les compétences",
+      "Comparez dégâts et types de coups, au-delà du total.",
+      [
+        "Activez les détails de combat dans Paramètres → Compteur → Éléments affichés, enregistrez, puis cliquez sur une ligne de joueur.",
+        "Changez de joueur avec les onglets du haut. Comparez les dégâts, le nombre d’utilisations et de coups, ainsi que les dégâts moyens et maximaux de chaque compétence. En haut à droite, choisissez les statistiques à afficher : CRIT, Coup puissant, Coup parfait, attaques de face ou de dos et Blocage avec arme.",
+        "La durée des buffs utilise les effets observés, sans reconstituer les données absentes. Activez la sauvegarde des combats pour rouvrir ces détails plus tard.",
+        "Dans Paramètres → Compteur → Éléments affichés, l’aperçu au survol d’un joueur peut être placé en mode <b>Auto / Gauche / Droite</b>. Auto utilise l’espace disponible. Un côté imposé reste dans les limites de l’écran."
+      ],
+      [
+        "Démarrer au milieu d’un combat ne récupère pas les coups précédents. Un tiret pour le nDPS ou le rang ne signifie pas zéro.",
+        "Termes du jeu: Coup puissant · Coup parfait · CRIT · Blocage avec arme."
+      ],
+      null
+    ],
+    "training": [
+      "Mannequin et classement d’une minute",
+      "Les entraînements locaux et les classements ont des conditions différentes.",
+      [
+        "Dans les enregistrements, activez les mannequins et choisissez la durée locale. Le classement reste fixé à une minute.",
+        "Sur Global, seuls les mannequins du <b>dirigeable de légion</b> sont acceptés. Ceux de mêlée et d’entraînement apparaissent dans le même onglet avec leur type.",
+        "Attendez la détection du personnage avant de commencer. Un buff de groupe ou un affaiblissement d’une autre classe détecté exclut le résultat.",
+        "Le résultat est pris à exactement une minute de combat. Continuer n’en fait pas un résultat plus long. Le site affiche les TOP 50 de chaque classe, sans limite de CP.",
+        "L’instantané à 60 secondes est enregistré automatiquement : nul besoin de s’arrêter à la seconde près. <b>Sauvegardé / En attente d’envoi / Inscrit</b> sont des états différents. Vérifiez le statut d’inscription du record ; une notification de sauvegarde ne confirme pas le classement."
+      ],
+      [
+        "Les mannequins ne donnent ni marque de classement ni effet de nom. Les récompenses hebdomadaires des donjons sont distinctes. Les tableaux utilisent les statistiques publiées, pas une mise à jour immédiate après chaque essai.",
+        "Noms dans le jeu: Épouvantail d'entraînement · Épouvantail d'entraînement au corps à corps · Aéronef de la Légion de Verteron · Aéronef de la Légion de Morheim."
+      ],
+      null
+    ],
+    "rankings": [
+      "Rangs et effets de nom",
+      "Distinguez comparaison après combat, classement publié et droit à un effet.",
+      [
+        "Réglez séparément les marques de classement, le rang après combat et le pourcentage indiquant votre position parmi les joueurs comparés. Choisissez DPS, nDPS ou les deux lorsque ces options sont proposées.",
+        "Ouvrez les statistiques depuis un combat enregistré et vérifiez région, période, boss, classe et CP. Global utilise les TOP 50 par boss et classe sans limite de CP ; KR/TW utilise aussi des tranches de CP.",
+        "Dans les effets de nom, vérifiez le personnage détecté et son droit actuel, choisissez puis enregistrez.",
+        "Sur Global, la récompense est réservée au <b>TOP 10 DPS de la semaine pour votre classe</b> dans les donjons pris en charge. Elle reste disponible tant que vous remplissez cette condition."
+      ],
+      [
+        "Les classements historiques et mannequins n’accordent pas cette récompense. Un rang atteint une fois ne suffit pas immédiatement : publication et droit actuel doivent être confirmés. KR/TW possède aussi des conditions de CP. Un tiret n’est pas un résultat à zéro."
+      ],
+      null
+    ],
+    "resources": [
+      "Énergie, tickets et points du jour",
+      "Choisissez les ressources et consultez les résumés par personnage.",
+      [
+        "Dans les éléments affichés, sélectionnez énergie, clés de Festival des Shugos et ressources au repos.",
+        "Ajoutez les tickets, clés dimensionnelles, points abyssaux et de classement du jour. Les quantités de base et bonus viennent des informations reçues du jeu.",
+        "Cliquez sur les points du jour pour ouvrir le résumé. Les fenêtres d’énergie, d’artefacts et de boss de terrain peuvent aussi recevoir des raccourcis. Le site propose les informations publiées."
+      ],
+      [
+        "Avec un tiret, vérifiez d’abord le personnage et le serveur. Une information absente n’est pas supposée nulle."
+      ],
+      null
+    ],
+    "obs": [
+      "Afficher le compteur dans OBS",
+      "Utilisez une source navigateur sur le même PC.",
+      [
+        "Activez la source navigateur OBS dans Général, enregistrez puis copiez l’URL.",
+        "Ajoutez une source Navigateur dans OBS et collez l’adresse. Commencez avec 1000 × 1000, puis placez-la dans la scène. Réglez le contenu et la taille dans NotMeter.",
+        "Si vous modifiez le port, enregistrez et mettez aussi à jour l’URL dans OBS."
+      ],
+      [
+        "Seul le compteur principal est inclus, pas les fenêtres d’assistance ou de détails. L’adresse n’est pas utilisable telle quelle sur un autre PC. Si la source est vide, vérifiez que NotMeter tourne et que sauvegarde, adresse et port correspondent."
+      ],
+      null
+    ],
+    "proton": [
+      "Connexion Linux / Proton",
+      "Un plugin Linux facultatif transmet le trafic à NotMeter exécuté sous Proton.",
+      [
+        "Vérifiez d’abord qu’AION 2 démarre dans votre environnement Proton actuel. Le nouveau lanceur peut être ouvert avant le jeu : il attend le démarrage effectif du jeu pour ouvrir NotMeter.",
+        "Téléchargez le <b>ZIP du plugin Proton</b> ci-dessus et extrayez-le dans le dossier de NotMeter.exe. Vérifiez que <code>Plugins/Proton/notmeter_start.py</code> est présent. Le fichier EXE seul ne suffit pas.",
+        "Préparez Python 3.9 ou une version ultérieure, dumpcap et une installation native de Protontricks sous Linux. Exécutez <code>dumpcap -D</code> avec votre compte habituel pour vérifier les droits de capture. Les configurations Flatpak nécessitent une validation distincte.",
+        "Exécutez uniquement la commande <b>notmeter_start.py</b> ci-dessous dans un terminal Linux. Si plusieurs interfaces réseau sont disponibles, choisissez celle utilisée par le jeu au premier lancement. Ce choix est mémorisé ; utilisez <code>--interface NAME</code> pour le modifier. Aucun lancement séparé de l’outil de capture n’est nécessaire.",
+        "Une fois le jeu lancé, le script démarre automatiquement la capture et NotMeter. Gardez le terminal ouvert pendant l’utilisation. L’ID Steam de la version globale est 3393110 par défaut. Utilisez <code>--appid NUMBER</code> pour une autre installation ou <code>--exe \"chemin/NotMeter.exe\"</code> pour un autre emplacement de NotMeter. Déplacez-vous ou attaquez dans le jeu, puis vérifiez que votre personnage et les dégâts sont affichés. Fermer NotMeter arrête aussi l’outil de capture lancé par ce script. Utilisez la même commande la prochaine fois."
+      ],
+      [
+        "Connexion et nombre de paquets ne prouvent pas à eux seuls la détection. FPS et rendu dépendent de l’environnement. Aucun fichier de diagnostic en usage normal ; NOTMETER_PROTON_DIAGNOSTICS=1 uniquement sur demande de dépannage, à retirer ensuite. Ne partagez pas connection.json.",
+        "Fermez normalement NotMeter et tout outil de capture démarré avec les anciennes commandes avant d’utiliser ce lanceur. Ctrl+C arrête son outil de capture ; fermez vous-même NotMeter normalement. Fermez également NotMeter avant de redémarrer le jeu."
+      ],
+      null
+    ],
+    "troubleshooting": [
+      "Dépannage",
+      "Commencez par le symptôme, sans tout réinitialiser ni réinstaller d’emblée.",
+      [],
+      [],
+      null
+    ],
+    "Language": [
+      "Langue",
+      "Le menu est toujours en haut de la barre latérale.",
+      [
+        "Utilisez la carte <b>Language</b> en haut à gauche. English passe directement en anglais ; All languages ouvre la liste complète.",
+        "Titres, descriptions et aperçus changent immédiatement, sans fermer les paramètres. Enregistrez pour conserver le choix.",
+        "La langue de l’interface et la région du jeu sont indépendantes. Passer en anglais ne transforme pas une connexion coréenne en connexion Global."
+      ],
+      [
+        "La langue de l’interface ne force pas la région du jeu, détectée à partir de la connexion."
+      ],
+      null
+    ],
+    "Meter": [
+      "Taille et disposition",
+      "Gardez les informations lisibles sans masquer le jeu.",
+      [
+        "Comparez les thèmes A et B dans l’aperçu de disposition. Ajustez largeur, hauteur des lignes et extension vers le haut. Les options grisées ne s’appliquent pas au thème choisi.",
+        "Le nombre fixe de joueurs et le défilement stabilisent la hauteur. Choisissez éventuellement votre ligne seule ou toutes les lignes après combat. Placez, enregistrez et verrouillez."
+      ],
+      [
+        "Vérifiez les aperçus Combat et Repos avec le zoom. Les textes et fonds se règlent dans Couleurs et polices."
+      ],
+      null
+    ],
+    "Display": [
+      "Choisir les informations affichées",
+      "Séparez boss, joueurs, ressources et performances.",
+      [
+        "Choisissez nom, PV, durée, DPS du groupe et dégâts cumulés. Les PV du boss peuvent avoir leur propre fenêtre.",
+        "Réglez CP, serveur, état en ligne et marque de rang. Désactiver le partage de votre état masque les points d’état pour vous et les autres.",
+        "Dans le thème A, choisissez séparément les statistiques après combat : ATQ frontale · ATQ dans le dos · Coup puissant · Coup parfait · CRIT · Blocage avec arme. Vous pouvez limiter cet affichage à votre personnage.",
+        "Choisissez détails et aperçu au survol, puis bases de contribution, de jauge et format des nombres. Vérifiez et enregistrez.",
+        "Dans Paramètres → Compteur → Éléments affichés, l’aperçu au survol d’un joueur peut être placé en mode <b>Auto / Gauche / Droite</b>. Auto utilise l’espace disponible. Un côté imposé reste dans les limites de l’écran."
+      ],
+      [
+        "Le thème B ne propose pas ces statistiques sous les lignes. Vos statistiques seules laissent les autres lignes de dégâts visibles. Ping, FPS et CPU/RAM sont distincts ; désactiver les FPS arrête leur mesure. Les valeurs indisponibles peuvent être des tirets.",
+        "Si les FPS affichent un tiret accompagné d’un avertissement d’autorisation, fermez NotMeter normalement puis relancez-le en tant qu’administrateur. Un tiret lorsque le processus du jeu ou la mesure est indisponible ne signifie pas 0 FPS."
+      ],
+      null
+    ],
+    "Design": [
+      "Couleurs, polices et opacité",
+      "Commencez par la lisibilité des textes.",
+      [
+        "Réglez police, graisse et tailles des noms, DPS et informations du boss. Entrez un code couleur ou utilisez le sélecteur.",
+        "Distinguez opacité de jauge, fond de ligne, fond général et fenêtre entière. Une jauge à 0 % masque uniquement la jauge.",
+        "Choisissez couleurs de classe et personnelle, vérifiez combat et repos, puis enregistrez."
+      ],
+      [
+        "Si des lettres manquent ou apparaissent sous forme de carrés, vérifiez la police de remplacement. Si le texte est flou, essayez le rendu net. Même avec l’opacité minimale de la fenêtre, le compteur reste légèrement visible pour pouvoir le retrouver."
+      ],
+      null
+    ],
+    "ColorFinder": [
+      "Sélecteur de couleurs",
+      "Appliquez une couleur sans retenir son code.",
+      [
+        "Choisissez la cible, puis une couleur dans la palette. L’aperçu change et le code est copié.",
+        "Vérifiez le contraste et enregistrez. Le code peut être réutilisé dans un autre champ."
+      ],
+      [],
+      null
+    ],
+    "Presets": [
+      "Profils de personnage",
+      "Enregistrez jusqu’à cinq configurations.",
+      [
+        "Après détection, choisissez un emplacement vide et créez un profil pour le personnage actuel. Le premier conserve les réglages existants.",
+        "Modifiez puis enregistrez : le profil lié s’appliquera à la prochaine détection. Pour un changement temporaire sans modifier le lien, utilisez Profil actuel."
+      ],
+      [
+        "Les réglages réseau sont exclus. Changer de personnage ne change ni capture ni connexion."
+      ],
+      null
+    ],
+    "NicknameEffects": [
+      "Effets de nom",
+      "Réglez séparément vos effets et ceux des autres.",
+      [
+        "Choisissez la visibilité, puis comparez motif, vitesse et luminosité dans l’aperçu des lignes.",
+        "Vérifiez personnage et droit actuel après détection. Avant un coupon, vérifiez le nom. Sélectionnez et enregistrez ; l’apparence par défaut retire l’effet."
+      ],
+      [
+        "La perte du rang masque l’effet mais conserve le choix. Les tranches KR/TW et récompenses hebdomadaires Global ont des règles distinctes."
+      ],
+      null
+    ],
+    "BuffUi": [
+      "Configurer l’assistance au combat",
+      "Affichez la durée des effets et l’attente avant réutilisation.",
+      [
+        "Dans Démarrage rapide, choisissez votre classe et appliquez le profil initial. Activez également l’affichage général en haut.",
+        "Dans Compétences, choisissez classe, effets communs, potions, parchemins ou affaiblissements. Buff et recharge se règlent séparément par compétence.",
+        "Développez ses alertes et icônes fixes. Choisissez affichage permanent, début, fin ou disponibilité. Les commandes grisées ne sont pas prises en charge.",
+        "Dans Alertes et voix, choisissez voix, volume et avance. Chaque carte permet aussi un nom prononcé et un délai propres.",
+        "Dans Apparence, réglez taille, direction, opacité et couleurs. Vous pouvez séparer buffs, recharges et messages. Placez-les avec les aperçus et enregistrez.",
+        "En haut de Aide au combat → Alertes et voix, activez et réglez séparément les effets sonores et la voix. Utilisez les boutons d’écoute avant d’enregistrer.",
+        "Pour augmenter les alertes sans augmenter tout le casque, réglez l’amplification de 100 % à 300 %, progressivement à partir de 100 %. Elle s’applique aussi aux autres alertes NotMeter, mais ne supprime ni la sourdine ni un volume à 0 %.",
+        "Sur écran 4K, augmentez la taille des icônes dans Apparence, jusqu’à 400 %. Le zoom de l’aperçu ne change que la vue d’édition. Enregistrez et vérifiez la taille réelle en jeu."
+      ],
+      [
+        "Une compétence active ne suffit pas si le réglage général est coupé. Vérifiez uniquement en combat, uniquement actif et conservation quand le compteur est masqué. Le son de cible du boss possède volume et répétition séparés et peut se limiter à vous. Les directions utilisent vos coups directs, pas invocations, effets posés ou dégâts périodiques."
+      ],
+      null
+    ],
+    "PartyLookup": [
+      "Consulter groupe et personnages",
+      "La recherche de groupe est masquée dans les paramètres lorsqu’un serveur Global est détecté. Elle est réservée à la Corée et à Taïwan, indépendamment des délais de récupération du groupe dans l’aide au combat.",
+      [
+        "Choisissez fenêtre séparée ou résultat dans le compteur, puis demandes de groupe, groupe actuel ou détails de personnage.",
+        "Réglez arrivée des candidats, son, texte et cartes. Ajoutez si besoin notes et alias, puis enregistrez."
+      ],
+      [
+        "La recherche de groupe est masquée dans les paramètres lorsqu’un serveur Global est détecté. Elle est réservée à la Corée et à Taïwan, indépendamment des délais de récupération du groupe dans l’aide au combat."
+      ],
+      null
+    ],
+    "CombatRecords": [
+      "Conserver victoires et tentatives",
+      "Rouvrez un combat et ses détails après la fin.",
+      [
+        "Activez la sauvegarde et sa limite. Les plus anciennes entrées sont supprimées au dépassement.",
+        "Ouvrez via le carnet ou un raccourci. Parcourez victoires, tentatives, mannequins et archives ; filtrez le boss puis choisissez un joueur.",
+        "Archivez ce que vous voulez garder. Une suppression est définitive. Utilisez capture, copie de vos statistiques et accès au classement de la bonne région.",
+        "Pour vider après combat, activez la remise à zéro et le délai. Cela ne remet pas à zéro un combat en cours ou nouvellement commencé."
+      ],
+      [
+        "Le délai commence après la fin ; ce n’est pas la règle d’inactivité qui détermine la fin. Le mannequin local accepte 5–120 secondes, le classement Global impose une minute."
+      ],
+      null
+    ],
+    "FieldBoss": [
+      "Horaires des boss de terrain",
+      "Recevez des rappels à partir des horaires transmis par le jeu.",
+      [
+        "Activez les rappels et plusieurs avances si nécessaire, par exemple 10 ou 5 minutes.",
+        "Choisissez KR/TW ou Global, la zone et les boss. Attribuez de zéro à cinq étoiles d’importance.",
+        "Ouvrez la carte du monde (M) de la zone pour détecter l’horaire. Consultez-la de nouveau si nécessaire.",
+        "Vérifiez position, durée et volume avec les aperçus puis enregistrez."
+      ],
+      [
+        "Choix des boss et importance sont séparés par service, sons et délais sont communs. Le suivi des dégâts est distinct : dix joueurs maximum et pas de prise en charge de l’Abyss."
+      ],
+      null
+    ],
+    "Alerts": [
+      "Événements et alarmes personnalisées",
+      "Choisissez les rappels utiles et leurs sons.",
+      [
+        "La base horaire des alertes, en haut de Paramètres → Notifications, détecte le serveur par défaut. Corée, Taïwan et Global Asie, Amérique du Nord Ouest, Amérique du Nord Est, Europe et Amérique du Sud ont leurs propres horaires.",
+        "Vérifiez région, heure du serveur et prochaine alerte dans votre heure locale. Les alertes de jeu programmées attendent la détection du serveur. Au besoin, choisissez manuellement votre région de jeu, puis enregistrez.",
+        "Les alertes de champ de bataille, de faille et de festival Shugo utilisent cette base serveur. Les alarmes personnelles conservent l’heure locale du PC. Ne changez pas le fuseau horaire du PC pour cela.",
+        "Activez uniquement les notifications souhaitées de champ de bataille, faille et Festival des Shugos. À volume nul, seul le message apparaît.",
+        "Gérez vos alarmes pour choisir jours, heure et avance. Pour dégager le jeu, utilisez le mode séparé et l’aperçu de position.",
+        "Le signalement de faible contribution exige un seuil de PV du boss et de contribution ; votre propre ligne est exclue. Enregistrez."
+      ],
+      [
+        "Les failles utilisent l’heure du serveur détecté, y compris sur Global. Les horaires fixes ne reflètent pas forcément les maintenances ou changements temporaires."
+      ],
+      null
+    ],
+    "Bus": [
+      "Compter les victoires",
+      "Comptez les boss choisis jusqu’à un objectif.",
+      [
+        "Activez le compteur, sélectionnez les boss et le nombre cible. Corrigez le nombre actuel si nécessaire.",
+        "Enregistrez et vérifiez après une victoire. L’objectif atteint, le compteur revient automatiquement à zéro."
+      ],
+      [],
+      null
+    ],
+    "General": [
+      "Démarrage, verrouillage et mises à jour",
+      "Fixez la position en gardant les commandes nécessaires.",
+      [
+        "Choisissez démarrage automatique, barre des tâches et affichage pendant l’utilisation d’une autre application.",
+        "Pour utiliser le menu lorsque le compteur est verrouillé, activez son affichage et autorisez les boutons souhaités. Pour ouvrir les détails en cliquant sur une ligne de joueur, activez à la fois l’accès aux détails pendant le verrouillage et les détails de combat dans les éléments affichés.",
+        "Pour interagir temporairement avec le compteur au survol, activez le déverrouillage automatique des clics et réglez le délai. Une fois ce délai écoulé, les clics sont reçus par le compteur au lieu de traverser vers le jeu. Choisissez aussi les vérifications et notifications de mise à jour pendant l’utilisation, puis enregistrez. La vérification au démarrage reste distincte.",
+        "La récupération de l’affichage plein écran, sous Paramètres → Général, est activée par défaut. Elle tente de replacer le compteur devant le jeu. Certains modes plein écran exclusifs empêchent toujours les overlays ; utilisez alors le mode fenêtré sans bordure.",
+        "Si la fenêtre est hors écran, faites un clic droit sur l’icône NotMeter de la zone de notification et réinitialisez la position du compteur. Il est inutile de réinitialiser tous les paramètres."
+      ],
+      [
+        "Par défaut les clics traversent vers le jeu. Faire glisser une zone autorisée ne déplace ni ne redimensionne le compteur. Avec des permissions de clic en verrouillage manuel, le déverrouillage au survol ne s’applique pas."
+      ],
+      null
+    ],
+    "Hotkeys": [
+      "Attribuer des raccourcis",
+      "Accédez aux fenêtres même avec le compteur verrouillé.",
+      [
+        "Activez une action, choisissez touche et modificateurs Ctrl, Alt, Maj ou Win.",
+        "Commencez par paramètres, visibilité et clics traversants ; ajoutez remise à zéro, assistance, combats et fenêtres de ressources.",
+        "Évitez les conflits avec le jeu, enregistrez et testez."
+      ],
+      [
+        "Tous sont désactivés par défaut. Les exemples ne sont pas des touches préattribuées. Choisissez une combinaison difficile à déclencher accidentellement pour Quitter et Redémarrer."
+      ],
+      null
+    ],
+    "Render": [
+      "Rendu GPU / CPU",
+      "À modifier en cas de défaut d’affichage ou de performances.",
+      [
+        "Gardez le mode actuel s’il fonctionne. Pour une fenêtre noire ou déformée, changez de mode, <b>enregistrez et redémarrez</b>.",
+        "Les modes de faible latence du compteur et des buffs sont expérimentaux. Testez un seul changement sur une même scène.",
+        "Si lignes ou nombres saccadent en mode GPU, passez en mode CPU, enregistrez et redémarrez, puis comparez la même scène. Les animations de rang et celles des nombres/barres se désactivent séparément. La compatibilité entre génération d’images et overlays n’est pas garantie sur tous les PC."
+      ],
+      [
+        "Tous les GPU et environnements Proton n’en profitent pas. En cas de problème, désactivez et redémarrez."
+      ],
+      null
+    ],
+    "Optimization": [
+      "Alléger l’affichage",
+      "Ajustez la présentation séparément des mesures de combat.",
+      [
+        "Essayez le mode PC modeste ; le désactiver restaure les anciens réglages d’affichage.",
+        "Augmentez l’intervalle de mise à jour des valeurs et de l’aide au combat pour rafraîchir l’affichage moins souvent et réduire la charge. Les changements apparaîtront alors moins vite. Vous pouvez aussi désactiver les animations des jauges, des nombres et des changements de classement.",
+        "Vous pouvez masquer le compteur pendant un boss : il revient après, tandis que les affichages auxiliaires et alertes restent utilisables."
+      ],
+      [
+        "Masquer la barre de performances arrête CPU/RAM. Les FPS ont un réglage distinct dans les éléments affichés."
+      ],
+      null
+    ],
+    "Network": [
+      "Connexion et capture",
+      "Essayez d’abord la détection automatique. Si votre personnage n’est pas détecté, vérifiez l’adaptateur réseau et ne changez de méthode de capture que si nécessaire.",
+      [
+        "Npcap est le mode Windows par défaut. Lancez la recherche en bougeant ou attaquant. Après modification du VPN ou accélérateur, actualisez et recherchez à nouveau.",
+        "Cherchez la connexion confirmée, pas l’adaptateur le plus chargé. Si nécessaire, téléchargez le plugin WinDivert officiel et extrayez directement dans le dossier ouvert par l’application, sans sous-dossier supplémentaire.",
+        "Vérifiez l’installation, choisissez WinDivert, enregistrez, quittez complètement et relancez comme administrateur.",
+        "Pour un second PC de jeu, configurez d’abord le miroir bidirectionnel sur votre matériel réseau. Choisissez l’adaptateur récepteur et l’IPv4 d’un seul PC, puis vérifiez le miroir."
+      ],
+      [
+        "WinDivert est inutile si Npcap fonctionne. Changer de mode ne résout pas forcément un VPN masquant le trafic original. Ne mettez en miroir ni tout le WAN ni plusieurs PC ; séparez de préférence adaptateurs internet et réception.",
+        "Une fois la connexion détectée automatiquement, inutile de rechercher l’adaptateur à chaque lancement. En cas de choix manuel, enregistrez-le et vérifiez-le après redémarrage. Les réglages réseau ne sont transférés ni par les codes de sauvegarde ni par les profils de personnage."
+      ],
+      null
+    ],
+    "Backup": [
+      "Sauvegarder et restaurer les réglages de votre choix",
+      "Sauvegardez les réglages de votre choix ou partagez une apparence depuis le même écran. Choisissez séparément les catégories à sauvegarder et à restaurer. Les réglages réseau et les images du fond au repos sont exclus.",
+      [
+        "Ouvrez Paramètres → Sauvegarde et restauration, puis <b>Sauvegarder</b>. Toutes les catégories sont cochées par défaut.",
+        "Gardez uniquement les catégories souhaitées. Pour partager seulement l’apparence, sélectionnez <b>conception</b>. Ajoutez <b>Aide au combat</b> pour inclure vos compétences et temps de recharge. La deuxième image montre ces deux catégories sélectionnées.",
+        "Choisissez <b>Créer le code de sauvegarde</b>, puis <b>Copier le code</b> ou <b>Enregistrer dans un fichier</b>. Les nouveaux codes sont compressés pour être plus courts. Si vous modifiez la sélection, générez un nouveau code.",
+        "Pour importer, choisissez <b>Restaurer</b> sur le même écran. Collez le code complet ou ouvrez son fichier texte avec <b>Importer un fichier</b>, puis cliquez sur <b>Vérifier les éléments à restaurer</b>.",
+        "Sélectionnez les catégories du code à restaurer. Un code contenant l’apparence et l’aide au combat permet aussi de restaurer uniquement l’aide au combat. Les réglages non sélectionnés restent inchangés.",
+        "Cliquez sur <b>Restaurer la sélection</b>. Les changements sont appliqués et la fenêtre se ferme, sans enregistrement supplémentaire. Rouvrez les paramètres pour vérifier le résultat."
+      ],
+      [
+        "Tous les réglages réseau, dont l’adaptateur, la méthode de capture et le VPN, sont exclus. Restaurer un ancien code préserve aussi la configuration réseau de ce PC.",
+        "La position des fenêtres et le verrouillage actuel sont conservés. Les fichiers de combats enregistrés ne sont pas inclus ; la catégorie des historiques ne contient que les réglages, comme l’enregistrement et la réinitialisation automatique.",
+        "Les nouveaux codes NM-SETTINGS-2, les anciennes sauvegardes complètes NM-SETTINGS-1 et les codes d’apparence NM-SKIN-1 utilisent le même écran de restauration. Si un nouveau code est illisible, mettez d’abord NotMeter à jour.",
+        "Les images de fond au repos et leurs réglages sont également exclus des codes de sauvegarde."
+      ],
+      null
+    ],
+    "IdlePhoto": [
+      "Personnaliser l’image de fond au repos",
+      "Choisissez une photo ou un modèle intégré, puis cadrez-le en gardant les informations du personnage lisibles.",
+      [
+        "Ouvrez Paramètres → Compteur → Image de fond. Choisissez un modèle dans la bibliothèque ou importez un fichier JPG, PNG ou BMP de 25 Mo maximum. Une image horizontale d’environ 2000 × 800 px est recommandée.",
+        "Activez l’image et choisissez <b>Fond complet / Image à gauche / Image à droite</b>. Remplir peut rogner les bords ; Ajuster conserve l’image entière.",
+        "Faites glisser l’image dans l’aperçu pour modifier sa position et son cadrage. La molette ou le curseur de zoom ajuste la taille. Le glisser-déposer ne fait pas pivoter l’image.",
+        "Réglez l’opacité, l’assombrissement, ainsi que la force et l’étendue de l’ombre derrière le texte. Vérifiez la lisibilité du nom, du serveur et des ressources.",
+        "Vérifiez les aperçus avant et après détection du personnage, puis enregistrez. La bibliothèque mémorise le dernier cadrage et les réglages de chaque image."
+      ],
+      [
+        "L’image apparaît uniquement au repos. Si le compteur est limité aux combats, l’écran de repos est lui aussi masqué.",
+        "Les images et leurs réglages sont exclus des codes de sauvegarde et d’apparence. Retirer une image agit sur la bibliothèque du profil actuel."
+      ],
+      "Après enregistrement, vérifiez le fond et le nom au repos. L’image doit disparaître au début du combat."
+    ],
+    "bossForecast": [
+      "Temps avant la victoire et Furieux (TTK)",
+      "Estimez le temps nécessaire pour vaincre le boss à partir de ses PV restants et des dégâts du groupe observés.",
+      [
+        "Dans Paramètres → Compteur → Éléments affichés, activez l’estimation du temps avant la victoire (TTK) et/ou de l’état Furieux, puis enregistrez. Activer les deux affiche aussi l’avance ou le dépassement prévu.",
+        "L’estimation apparaît sous les PV dès que les premiers dégâts et les PV restants sont connus. Il n’est pas nécessaire d’attendre 30 secondes : les premières valeurs sont signalées comme une estimation initiale.",
+        "Le TTK est le temps restant estimé à partir de maintenant. Il utilise jusqu’à 30 secondes de dégâts récents sur ce boss et le temps écoulé depuis le dernier coup. Une invulnérabilité ou une mécanique peut l’allonger.",
+        "Le déclenchement de l’état Furieux est estimé à partir des données confirmées du boss et de la première attaque. L’avance indique le temps prévu entre la victoire et l’état Furieux ; un dépassement signifie que la victoire serait trop tardive.",
+        "Si l’absence de minuteur de Furieux est confirmée, le minuteur et la marge affichent ∞. Des données inconnues ou un début de combat non confirmé sont indiqués comme indisponibles, pas comme infinis."
+      ],
+      [
+        "Disponible en Corée, à Taïwan et sur Global. La ligne disparaît après le combat et ne s’affiche pas pour les cibles d’entraînement.",
+        "Il s’agit d’une estimation, pas d’un temps de victoire garanti. Soins, variations de dégâts et arrivée en cours de combat peuvent la modifier."
+      ],
+      "Vérifiez que les valeurs évoluent pendant le combat et disparaissent ensuite. Aucune ligne ne doit apparaître sur une cible d’entraînement."
+    ],
+    "combatVisibility": [
+      "Afficher le compteur uniquement en combat",
+      "Masquez l’écran de repos et faites réapparaître le compteur au début du combat.",
+      [
+        "Dans Paramètres → Général, activez l’affichage uniquement en combat. Cette option est désactivée par défaut.",
+        "Choisissez un délai de masquage après combat entre 0 et 300 secondes. À 0, le masquage est immédiat ; quelques secondes permettent de lire le résultat.",
+        "Enregistrez. Le compteur principal se masque au repos, apparaît pendant le combat, puis se masque après le délai choisi. Un nouveau combat annule le masquage en attente.",
+        "Lorsqu’il est masqué, faites un clic droit sur l’icône NotMeter dans la zone de notification Windows pour ouvrir les paramètres ou les profils. <b>Afficher</b> le révèle jusqu’au prochain combat. Vous pouvez aussi attribuer un raccourci au préalable."
+      ],
+      [
+        "Un compteur masqué manuellement ne réapparaît pas automatiquement. L’aide au combat utilise ses propres options de visibilité.",
+        "Cette option ne peut pas être activée avec le masquage pendant les combats de boss dans Optimisation."
+      ],
+      "Vérifiez la séquence : masqué au repos, visible en combat, puis masqué après le délai."
+    ],
+    "character": [
+      "Profils et détails des combats classés",
+      "Consultez les combats des personnages classés et les spécialisations relevées dans leur dernier combat disponible au classement.",
+      [
+        "Dans la <b>recherche de personnage</b>, choisissez Corée, Taïwan ou Global. Pour Global, choisissez aussi la région du jeu. Recherchez le nom et ouvrez le personnage du bon serveur.",
+        "Consultez séparément <b>Cette semaine</b> et <b>Toutes les périodes</b>. L’absence de résultat cette semaine n’exclut pas un record plus ancien.",
+        "Le bouton <b>Détails du combat</b> d’un record ouvre les dégâts, compétences et buffs de ce combat précis. Un autre record ouvre un autre combat.",
+        "Les spécialisations affichées dans les compétences viennent du combat classé disponible le plus récent. Elles peuvent différer de la configuration actuelle en jeu ; vérifiez la date du record.",
+        "Ces marques ne s’appliquent pas aux compétences de Stigma. Les spécialisations manquantes ou les détails indisponibles ne sont pas remplacés par des suppositions."
+      ],
+      [
+        "Un record publié au classement est nécessaire. Un combat tout juste terminé peut ne pas apparaître immédiatement."
+      ],
+      "Vérifiez région, serveur et correspondance entre le record choisi et ses détails."
+    ]
+  },
+  "problems": [
+    [
+      "Détection du personnage bloquée",
+      "Entrez dans le monde, bougez ou attaquez puis actualisez et cherchez l’adaptateur. Avec un VPN, vérifiez la visibilité du trafic original ; sur Proton, la connexion du plugin et de Python."
+    ],
+    [
+      "Fenêtre invisible ou impossible à cliquer",
+      "Ouvrez les paramètres depuis la zone de notification Windows. Vérifiez visibilité, opacité globale, affichage seulement en jeu, verrouillage et clics traversants. Un raccourci déjà attribué peut aider."
+    ],
+    [
+      "Compétence activée, assistance absente",
+      "Vérifiez affichage général, compétence, uniquement en combat et uniquement actif. Utilisez l’aperçu de position. Les réglages grisés sont indisponibles."
+    ],
+    [
+      "Notification sans son",
+      "Contrôlez réglages de la compétence et de la voix générale, volume, et condition de cible personnelle du boss. Testez le son."
+    ],
+    [
+      "Mise à jour en boucle ou en échec",
+      "Copiez le rapport complet des diagnostics en haut des paramètres. Version actuelle et version d’un ancien échec peuvent différer. Incluez étape et code d’erreur."
+    ],
+    [
+      "Tiret pour FPS, points ou rang",
+      "Les FPS dépendent du processus et du PC, les points de la détection des ressources, les rangs de données publiées correspondantes. Un tiret n’est pas zéro et les causes peuvent différer."
+    ],
+    [
+      "Pas de remise à zéro immédiate",
+      "Vérifiez l’automatisme et le délai après combat. Reprise d’attaque ou nouveau boss changent les conditions. Si le temps s’arrête mais les dégâts augmentent, partagez version, boss, étapes et capture."
+    ],
+    [
+      "Code de sauvegarde refusé",
+      "Dans la dernière version de NotMeter, collez le code complet dans Sauvegarde et restauration → Restaurer. Les nouveaux codes, anciennes sauvegardes complètes et anciens codes d’apparence utilisent le même écran. Si la copie est incomplète, importez le fichier texte original et conservez-le."
+    ]
+  ],
+  "scenes": {
+    "assist": [
+      "Buffs et recharges",
+      "Lorsqu’un effet ou délai sélectionné est détecté.",
+      "En haut, 24 signifie 24 secondes d’effet ; en bas, 41 signifie 41 secondes avant réutilisation. 1:12 vaut une minute et douze secondes. Une même icône peut avoir deux temps distincts.",
+      "Vérifiez le réglage général et les interrupteurs individuels. Les couleurs sont personnalisables.",
+      [
+        "Durée des buffs en haut, recharge en bas"
+      ]
+    ],
+    "pinned": [
+      "Icônes fixes et disponibilité",
+      "L’affichage permanent conserve la place après la recharge.",
+      "À gauche il reste 24 secondes ; à droite l’icône reste sans minuterie. La permanence des buffs est une autre option.",
+      "Une icône fixe ne prouve pas qu’un buff est actif. L’inversion des couleurs peut inverser clair et sombre.",
+      [
+        "Recharge : 24 secondes",
+        "Icône fixe sans minuterie"
+      ]
+    ],
+    "combined": [
+      "Deux durées sur une icône",
+      "Thème combiné avec buff et recharge de la même compétence.",
+      "12 en bas à gauche est le buff ; 24 en haut à droite est la recharge.",
+      "Pour deux fenêtres séparées, choisissez le thème circulaire standard compatible.",
+      [
+        "Buff de 12 secondes / recharge de 24 secondes"
+      ]
+    ],
+    "debuff": [
+      "Marque d’affaiblissement",
+      "Quand un affaiblissement activé et pris en charge est détecté.",
+      "D indique un affaiblissement, 12 sa durée. Un nombre vert peut être un cumul, pas toujours des charges.",
+      "Les options incompatibles sont grisées. Les durées dépendent des effets observables.",
+      [
+        "Marque D et durée restante"
+      ]
+    ],
+    "alerts": [
+      "Messages en plus des icônes",
+      "Avec les alertes de début, fin ou disponibilité activées.",
+      "Application signifie début ; 3 secondes annonce la fin dans cet exemple ; prêt signifie réutilisable. Ce sont des messages temporaires.",
+      "Image et voix ont des commandes séparées. Vérifiez compétence, voix générale et volume.",
+      [
+        "Début du buff",
+        "Fin prochaine du buff",
+        "Compétence disponible"
+      ]
+    ],
+    "target": [
+      "Cible actuelle du boss",
+      "Lorsque l’affichage est actif et la cible connue.",
+      "Noel représente un allié, Aster vous représente. Votre couleur, les effets et le son sont réglables.",
+      "Limiter le son à votre personnage ne masque pas les autres cibles.",
+      [
+        "Un allié est ciblé",
+        "Vous êtes ciblé"
+      ]
+    ],
+    "direction": [
+      "Mauvaise direction du coup",
+      "Préférence arrière, mais coup direct confirmé ailleurs.",
+      "Le message décrit le coup, pas une direction à suivre ni le regard actuel du boss.",
+      "Vérifiez activation, direction et position. Invocations, effets posés et dégâts périodiques sont exclus de ce contrôle direct.",
+      [
+        "Avertissement avec préférence arrière"
+      ]
+    ],
+    "meter": [
+      "Vue de combat",
+      "Dès que des dégâts sur boss ou mannequin sont enregistrés.",
+      "En-tête : cible, durée, PV. À gauche : classe, nom, CP. À droite : DPS, contribution et rangs disponibles.",
+      "Thème et choix changent la disposition. Toutes les valeurs sont des exemples.",
+      [
+        "Combat rendu par le véritable compteur"
+      ]
+    ],
+    "detail": [
+      "Après un clic sur un joueur",
+      "Avec les détails de combat activés.",
+      "Changez de joueur en haut, comparez compétences et coups en bas. Les métriques choisies changent les colonnes.",
+      "Vérifiez les permissions de clic. Commencer au milieu du combat ne récupère pas les coups passés.",
+      [
+        "Dégâts et coups par compétence"
+      ]
+    ],
+    "records": [
+      "Revoir un combat",
+      "Après activation de la sauvegarde et création d’un enregistrement.",
+      "Utilisez les onglets et le filtre de boss, puis choisissez un joueur pour ses détails.",
+      "Vérifiez sauvegarde et moment d’enregistrement. Aucun ancien combat n’est créé rétroactivement.",
+      [
+        "Fenêtre avec un combat d’exemple"
+      ]
+    ],
+    "resources": [
+      "Ressources séparées",
+      "Quand l’affichage séparé est actif et les données détectées.",
+      "Les nombres correspondent à la clé ou à l’énergie ; les parenthèses sont les bonus. Boutons et icônes ouvrent les résumés.",
+      "Vérifiez interrupteurs et détection. Un tiret n’est pas zéro.",
+      [
+        "Clés et énergie"
+      ]
+    ],
+    "field": [
+      "Rappel de boss",
+      "Quand un boss choisi atteint le délai de rappel.",
+      "Lisez nom, compte à rebours et étoiles. Trois étoiles indiquent votre importance, pas la difficulté.",
+      "Vérifiez horaire reçu via la carte, région et boss activés.",
+      [
+        "Cinq minutes avant, importance trois"
+      ]
+    ],
+    "custom": [
+      "Alarme personnelle",
+      "Lorsque jour, heure et avance correspondent.",
+      "Titre, heure cible et délai sont affichés, avec la note en dessous si présente.",
+      "Vérifiez activation et jour. À volume nul, seule l’image apparaît.",
+      [
+        "Cinq minutes avant 21 h"
+      ]
+    ],
+    "bus": [
+      "Objectif atteint",
+      "Lorsque les victoires sur le boss choisi atteignent le nombre prévu.",
+      "Le message apparaît brièvement puis le compteur repart à zéro.",
+      "Vérifiez boss, objectif et compteur. Tous les monstres ne comptent pas.",
+      [
+        "Alerte d’objectif atteint"
+      ]
+    ],
+    "idle": [
+      "Vérifier son nom",
+      "Après détection du personnage dans le monde.",
+      "Nom et serveur confirment la détection ; les autres informations dépendent des réglages.",
+      "Si la recherche continue, vérifiez la connexion. Les ressources peuvent arriver après le nom.",
+      [
+        "Vue au repos après détection"
+      ]
+    ],
+    "hp": [
+      "PV du boss séparés",
+      "Lorsque le mode séparé est activé.",
+      "Placez nom, PV, pourcentage et barre là où ils sont faciles à regarder.",
+      "Vérifiez affichage, séparation et aperçu de position.",
+      [
+        "Fenêtre de PV du boss"
+      ]
+    ],
+    "hits": [
+      "Statistiques après combat",
+      "Sous les joueurs en thème A ; l’image est l’aperçu réel.",
+      "Avant, arrière, puissant, parfait, critique et parade sont indépendants. Les catégories se recoupent : leur somme n’est pas nécessairement 100 %.",
+      "Vous pouvez limiter à votre ligne. Le thème B ne propose pas cette extension.",
+      [
+        "Six métriques par joueur"
+      ]
+    ],
+    "energy": [
+      "Énergie et Kinah par personnage",
+      "Dans la liste des personnages détectés et enregistrés.",
+      "Séparez énergie de base, bonus et Kinah. Global montre les valeurs observées, différentes des estimations de récupération KR/TW. Pour les personnages Global, « Région - Nom du serveur » apparaît sous le nom. Cela distingue les serveurs homonymes d’Asie et d’Amérique du Nord Est, par exemple. Survolez un nom abrégé pour le lire en entier. L’affichage coréen et taïwanais reste inchangé.",
+      "Connectez un personnage absent et vérifiez sa détection. Les valeurs des autres ne sont pas forcément en direct.",
+      [
+        "Résumé d’énergie et de Kinah"
+      ]
+    ],
+    "points": [
+      "Points du jour",
+      "Après un clic sur les points quotidiens.",
+      "Comparez gains, pertes et totaux observés. Les changements du jour ne sont pas le solde total du jeu.",
+      "Un personnage reconnu ne garantit pas l’arrivée des points. Un tiret n’est pas zéro.",
+      [
+        "Changements observés aujourd’hui"
+      ]
+    ],
+    "timers": [
+      "Prochains boss de terrain",
+      "Par le bouton de boss ou un raccourci attribué.",
+      "Comparez horaires et comptes à rebours. Les étoiles sont personnelles. Vérifiez serveur et zone.",
+      "Ouvrez la carte correspondante avec M. Les horaires inconnus ne sont pas inventés.",
+      [
+        "Boss dont les horaires ont été détectés"
+      ]
+    ],
+    "party": [
+      "Compétences d’un candidat",
+      "Après une requête KR/TW activée et une réponse reçue.",
+      "Sous classe, nom, serveur et CP se trouvent les compétences sélectionnées et leurs niveaux.",
+      "Global n’est pas pris en charge. Si les compétences manquent, vérifiez sélection et récupération des données officielles.",
+      [
+        "Classe, CP et compétences d’un candidat"
+      ]
+    ],
+    "forecast": [
+      "Lire les estimations du boss",
+      "Visible quand les estimations sont activées pendant un combat de boss.",
+      "Le TTK indique le temps restant estimé. Le minuteur de Furieux et la marge permettent de comparer les échéances.",
+      "Le calcul continue sans nouveaux dégâts. ∞ désigne uniquement un boss dont l’absence de minuteur est confirmée.",
+      [
+        "Victoire prévue avant l’état Furieux",
+        "Interruption des dégâts : estimation plus longue",
+        "Absence de minuteur confirmée",
+        "Début de combat inconnu : minuteur en attente"
+      ]
+    ],
+    "photo": [
+      "Trois dispositions d’image",
+      "Aperçus réels après détection du personnage.",
+      "Le fond complet place le texte sur l’image. Les dispositions latérales séparent image et informations.",
+      "Après cadrage, vérifiez la lisibilité du nom, du serveur et des ressources.",
+      [
+        "Fond complet",
+        "Image à gauche",
+        "Image à droite"
+      ]
+    ],
+    "character": [
+      "Profils et détails des combats classés",
+      "Consultez les combats des personnages classés et les spécialisations relevées dans leur dernier combat disponible au classement.",
+      "Le bouton Détails du combat d’un record ouvre les dégâts, compétences et buffs de ce combat précis. Un autre record ouvre un autre combat.",
+      "Ces marques ne s’appliquent pas aux compétences de Stigma. Les spécialisations manquantes ou les détails indisponibles ne sont pas remplacés par des suppositions.",
+      [
+        "Consultez séparément Cette semaine et Toutes les périodes. L’absence de résultat cette semaine n’exclut pas un record plus ancien.",
+        "Les spécialisations affichées dans les compétences viennent du combat classé disponible le plus récent. Elles peuvent différer de la configuration actuelle en jeu ; vérifiez la date du record."
+      ]
+    ]
+  }
+}

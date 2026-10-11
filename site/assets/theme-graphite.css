@@ -1,0 +1,725 @@
+/* Approved Graphite palette. Presentation only: keep service layouts and game/status colors. */
+:root {
+  --gr-base: #111419;
+  --gr-panel: #1b1f26;
+  --gr-tile: #242a32;
+  --gr-line: #3a424e;
+  --gr-line-soft: #303741;
+  --gr-text: #edf0f4;
+  --gr-secondary: #c6ccd5;
+  --gr-muted: #a2aab7;
+  --gr-accent: #d9e1eb;
+  --gr-ink: #1b232d;
+  --gr-selected: #354150;
+  --gr-selected-line: #8999ac;
+  --bg: var(--gr-base);
+  --panel: var(--gr-panel);
+  --surface: var(--gr-panel);
+  --surface-2: var(--gr-tile);
+  --surface-3: var(--gr-line-soft);
+  --line: var(--gr-line);
+  --line-soft: var(--gr-line-soft);
+  --text: var(--gr-text);
+  --muted: var(--gr-muted);
+  --muted-2: var(--gr-muted);
+  --accent: var(--gr-accent);
+  --accent-strong: var(--gr-accent);
+  --cyan: var(--gr-accent);
+}
+html, body#notmeter-site { background: var(--gr-base) !important; color: var(--gr-text); }
+body#notmeter-site { font-weight: 500; }
+#notmeter-site .ambient { opacity: 0; }
+/* Short interaction feedback; content changes never wait for an animation. */
+#notmeter-site {
+  --gr-feedback-duration: 140ms;
+  --gr-press-duration: 80ms;
+  --gr-enter-duration: 180ms;
+  --gr-interaction-ease: cubic-bezier(.2, .8, .2, 1);
+}
+#notmeter-site :is(button, a[role="tab"], .service-link, .first-guide-primary, summary) {
+  transition: background-color var(--gr-feedback-duration) ease,
+    border-color var(--gr-feedback-duration) ease, color var(--gr-feedback-duration) ease,
+    transform var(--gr-feedback-duration) var(--gr-interaction-ease),
+    translate var(--gr-press-duration) var(--gr-interaction-ease);
+}
+/* Inverted navigation labels and fills switch together to preserve contrast. */
+#notmeter-site .service-link { transition-property: border-color, transform, translate; }
+#notmeter-site :is(button, a[role="tab"], .service-link, .first-guide-primary):not(:disabled):not([aria-disabled="true"]):active {
+  translate: 0 1px;
+}
+#notmeter-site .language-picker-caret {
+  transition: transform var(--gr-feedback-duration) var(--gr-interaction-ease), margin-top var(--gr-feedback-duration) ease;
+}
+#notmeter-site :is(.language-picker-panel, .cp-filter-menu):not([hidden]),
+#notmeter-site .refresh-schedule[open] .refresh-schedule-card {
+  animation: notmeter-menu-enter var(--gr-enter-duration) var(--gr-interaction-ease);
+}
+#notmeter-site :is(
+  #praise-ranking-surface, #character-surface, #optimization-surface,
+  #class-performance-surface, #class-top10-surface, #contribution-surface,
+  #boss-resistance-surface, #stat-efficiency-surface, #field-boss-surface, #artifact-surface,
+  #summary-view, #class-view, .character-tab-panel, .download-panel, .detail-panel
+) { animation: notmeter-surface-enter var(--gr-enter-duration) ease-out; }
+@keyframes notmeter-menu-enter {
+  from { transform: translateY(-4px); }
+  to { transform: none; }
+}
+@keyframes notmeter-surface-enter { from { opacity: .86; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce), (forced-colors: active), print {
+  #notmeter-site { --gr-feedback-duration: 0s; --gr-press-duration: 0s; --gr-enter-duration: 0s; }
+  #notmeter-site :is(button, a[role="tab"], .service-link, .first-guide-primary):not(:disabled):not([aria-disabled="true"]):active {
+    translate: none;
+  }
+}
+#notmeter-site :is(button, select, input, textarea, a):focus-visible {
+  outline-color: var(--gr-accent) !important;
+}
+
+/* Header navigation and language selection. */
+#notmeter-site .service-link {
+  color: var(--gr-secondary) !important;
+  background: transparent !important;
+  border-color: var(--gr-line) !important;
+  border-radius: 3px !important;
+  font-weight: 600;
+  box-shadow: none !important;
+}
+#notmeter-site .service-link :is(.service-link-icon, .download-icon) { color: inherit !important; }
+#notmeter-site .service-link::after { background: var(--gr-accent); }
+#notmeter-site .service-link:hover { background: var(--gr-tile) !important; color: var(--gr-text) !important; }
+#notmeter-site .service-link:is([aria-current="page"], [aria-current="true"], .download-link) {
+  background: var(--gr-accent) !important; color: var(--gr-ink) !important;
+}
+#notmeter-site :is(.language-select, .ghost-button, .live-pill) {
+  background-color: var(--gr-panel) !important;
+  color: var(--gr-text) !important;
+  border-color: var(--gr-line) !important;
+  border-radius: 3px !important;
+  box-shadow: none !important;
+}
+#notmeter-site .language-select option { background: var(--gr-panel); color: var(--gr-text); }
+#notmeter-site .live-pill { border-radius: 5px !important; backdrop-filter: none; }
+#notmeter-site .live-pill [data-i18n="dailyUsers"] { color: var(--gr-muted); font-weight: 500; }
+#notmeter-site .live-pill strong { color: var(--gr-text) !important; font-weight: 700; font-variant-numeric: tabular-nums; }
+#notmeter-site .live-dot { background: #65d6a2; box-shadow: none; }
+
+#notmeter-site .language-picker { position: relative; display: inline-flex; min-width: 0; }
+#notmeter-site .language-picker.is-enhanced > :is(select, .language-flag-icon) { display: none !important; }
+#notmeter-site .language-picker-trigger {
+  display: flex; align-items: center; gap: 10px; width: 100%; min-height: 40px; padding: 0 12px;
+  border: 1px solid var(--gr-line); border-radius: 5px; background: var(--gr-panel);
+  color: var(--gr-text); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+  text-align: left; white-space: nowrap; box-shadow: none;
+}
+#notmeter-site .language-picker-trigger:is(:hover, [aria-expanded="true"]) { background: var(--gr-tile); border-color: #768292; }
+#notmeter-site .language-picker-trigger:focus-visible { outline: 2px solid var(--gr-accent); outline-offset: 3px; }
+#notmeter-site .language-picker-flag { display: block; flex: 0 0 20px; width: 20px; height: 14px; object-fit: cover; border-radius: 2px; }
+#notmeter-site .language-picker-flag[hidden] { display: none; }
+#notmeter-site .language-picker-label { flex: 1; }
+#notmeter-site .language-picker-caret { width: 7px; height: 7px; margin: -4px 2px 0 5px; border: solid var(--gr-muted); border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+#notmeter-site .language-picker-trigger[aria-expanded="true"] .language-picker-caret { margin-top: 3px; transform: rotate(225deg); }
+#notmeter-site .language-picker-panel {
+  position: fixed; z-index: 11000; box-sizing: border-box; padding: 6px;
+  overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin;
+  border: 1px solid #596371; border-radius: 8px; background: var(--gr-panel);
+  color: var(--gr-text); box-shadow: 0 14px 40px #0008; text-align: left;
+}
+#notmeter-site .language-picker-panel[hidden] { display: none; }
+#notmeter-site .language-picker-heading { padding: 7px 10px 10px; color: var(--gr-muted); font-size: 11px; font-weight: 600; line-height: 1.4; }
+#notmeter-site .language-picker-option {
+  display: flex; align-items: center; gap: 12px; min-height: 40px; padding: 8px 10px; box-sizing: border-box;
+  color: var(--gr-secondary); border-radius: 4px; font-size: 13px; font-weight: 500; line-height: 1.4; cursor: pointer;
+}
+#notmeter-site .language-picker-option:is(:hover, .is-focused) { background: var(--gr-tile); color: var(--gr-text); }
+#notmeter-site .language-picker-option.is-focused { outline: 1px solid #768292; outline-offset: -1px; }
+#notmeter-site .language-picker-option[aria-selected="true"] { background: var(--gr-accent); color: var(--gr-ink); font-weight: 650; }
+#notmeter-site .language-picker-check { margin-left: auto; font-size: 15px; visibility: hidden; }
+#notmeter-site .language-picker-option[aria-selected="true"] .language-picker-check { visibility: visible; }
+@media (max-width: 480px) {
+  #notmeter-site :is(.topbar, .guide-header-actions) .language-picker-trigger { justify-content: center; gap: 6px; padding: 0 8px; }
+  #notmeter-site :is(.topbar, .guide-header-actions) .language-picker-label { display: none; }
+  #notmeter-site :is(.topbar, .guide-header-actions) .language-picker-caret { margin-left: 2px; }
+  #notmeter-site .guide-header-actions .language-picker { width: 58px; min-width: 58px; }
+}
+@media (forced-colors: active) {
+  #notmeter-site .language-picker-option[aria-selected="true"] { color: HighlightText; background: Highlight; forced-color-adjust: none; }
+}
+@media print { #notmeter-site .language-picker-panel { display: none; } }
+
+/* One flowing border language, with emphasis and color set by purpose. */
+#notmeter-site {
+  --gr-motion-cool: linear-gradient(115deg, #627589, #b4c8d8, #91cbd0, #d9e1eb, #627589);
+  --gr-motion-guide: linear-gradient(115deg, #80bdc9, #ae9dce, #cf9eb7, #d7bc8d, #80bdc9);
+  --gr-motion-warning: linear-gradient(115deg, #967543, #c9a76c, #f0d6a1, #c9a76c, #967543);
+  --gr-motion-neutral: linear-gradient(115deg, #465362, #8393a5, #bccbd8, #687a8d, #465362);
+}
+#notmeter-site :is(.first-guide, .meter-use-notice) {
+  position: relative; isolation: isolate; background: var(--gr-panel);
+  border-color: transparent; border-radius: 7px; color: var(--gr-text);
+}
+#notmeter-site #back-button { position: relative; isolation: isolate; border-color: transparent !important; }
+#notmeter-site #field-boss-service-tabs { position: relative; isolation: isolate; --gr-motion-gradient: var(--gr-motion-guide); --gr-motion-duration: 12s; --gr-motion-width: 2px; }
+#notmeter-site .first-guide { --gr-motion-gradient: var(--gr-motion-guide); --gr-motion-duration: 12s; }
+#notmeter-site .meter-use-notice { --gr-motion-gradient: var(--gr-motion-warning); --gr-motion-duration: 14s; }
+#notmeter-site .snapshot-meta {
+  --gr-motion-gradient: var(--gr-motion-neutral); --gr-motion-duration: 16s; --gr-motion-width: 1px;
+}
+#notmeter-site #back-button::before,
+#notmeter-site #field-boss-service-tabs::before,
+#notmeter-site :is(.first-guide, .meter-use-notice, .snapshot-meta, .ranking-metric-button, .ranking-service-button)::before {
+  content: ""; position: absolute; inset: 0; padding: var(--gr-motion-width, 1.5px); border-radius: inherit; pointer-events: none;
+  background: var(--gr-motion-gradient, var(--gr-motion-cool));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: notmeter-guide-border var(--gr-motion-duration, 10s) linear infinite alternate;
+}
+#notmeter-site :is(.ranking-metric-button, .ranking-service-button) { animation: none; }
+#notmeter-site :is(.ranking-metric-button, .ranking-service-button):not(.is-active)::before { content: none; }
+#notmeter-site .first-guide-mark { color: var(--gr-accent); }
+#notmeter-site .first-guide-copy h2 { font-weight: 700; }
+#notmeter-site .first-guide-copy p { color: var(--gr-muted); }
+#notmeter-site .first-guide-primary { background: var(--gr-accent); color: var(--gr-ink); border-color: var(--gr-accent); border-radius: 3px; }
+#notmeter-site .first-guide-primary:hover { background: var(--gr-text); }
+#notmeter-site .first-guide-secondary { color: var(--gr-secondary); }
+#notmeter-site .download-guide { background: var(--gr-tile); border-radius: 5px; }
+#notmeter-site .meter-use-notice {
+  grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center;
+  border-width: 1px; padding: 20px 24px;
+}
+#notmeter-site .meter-use-notice-icon { color: #e6c486; }
+#notmeter-site #meter-use-notice-title { color: var(--gr-text); font-size: 16px; font-weight: 700; }
+#notmeter-site #meter-use-notice-message { color: var(--gr-secondary); font-size: 14px; font-weight: 500; }
+#notmeter-site .site-notice-dismiss {
+  justify-self: end; align-self: center; min-height: 36px; max-width: 100%; padding: 7px 11px;
+  border: 1px solid var(--gr-line); border-radius: 4px; background: transparent;
+  color: var(--gr-muted); font: inherit; font-size: 12px; font-weight: 500; line-height: 1.5;
+  cursor: pointer; box-shadow: none; text-align: center;
+}
+#notmeter-site .site-notice-dismiss:hover { color: var(--gr-text); border-color: #768292; background: var(--gr-tile); }
+#notmeter-site .site-notice-dismiss:focus-visible { outline: 2px solid var(--gr-accent); outline-offset: 3px; }
+#notmeter-site .first-guide-actions .site-notice-dismiss { align-self: flex-end; }
+#notmeter-site .download-guide .site-notice-dismiss { display: block; margin: 12px 0 0 auto; }
+html[data-hide-first-guide] #notmeter-site [data-site-notice="first-guide"],
+html[data-hide-meter-use] #notmeter-site [data-site-notice="meter-use"],
+#notmeter-site [data-site-notice][hidden] { display: none !important; }
+@media (max-width: 800px) {
+  #notmeter-site .meter-use-notice { grid-template-columns: 26px minmax(0, 1fr); padding: 18px; gap: 12px; }
+  #notmeter-site .meter-use-notice-icon { width: 26px; height: 26px; align-self: start; }
+  #notmeter-site .meter-use-notice > .site-notice-dismiss { grid-column: 2; }
+}
+@keyframes notmeter-guide-border { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+@media (prefers-reduced-motion: reduce), print {
+  #notmeter-site #back-button::before,
+  #notmeter-site #field-boss-service-tabs::before,
+  #notmeter-site :is(.first-guide, .meter-use-notice, .snapshot-meta, .ranking-metric-button, .ranking-service-button)::before { animation: none; }
+}
+@media (forced-colors: active) {
+  #notmeter-site #back-button,
+  #notmeter-site #field-boss-service-tabs,
+  #notmeter-site .snapshot-meta { border-color: Highlight !important; }
+  #notmeter-site :is(.first-guide, .meter-use-notice) { border-color: Highlight; }
+  #notmeter-site #back-button::before,
+  #notmeter-site #field-boss-service-tabs::before,
+  #notmeter-site :is(.first-guide, .meter-use-notice, .snapshot-meta, .ranking-metric-button, .ranking-service-button)::before { display: none; }
+}
+
+/* Service panels and menus. Border widths, spacing, grids and ordering are untouched. */
+#notmeter-site :is(
+  #ranking-service-panel, #performance-service-panel, #top10-service-panel,
+  .praise-surface, .download-panel, .cp-filter-menu, .refresh-schedule-card,
+  .efficiency-card, .result-card, .quality-card, .stat-import-card,
+  .class-performance-proof-card, .class-performance-composition,
+  .class-top10-guide article, .class-top10-result, .setup-guide-section,
+  .contribution-method-grid, .boss-resistance-guide,
+  .artifact-overview-card:not(.is-favorite), .artifact-match-card, .artifact-layer-card,
+  .gfb-server-picker, .field-boss-server-results
+) {
+  background: var(--gr-panel) !important;
+  border-color: var(--gr-line) !important;
+  border-radius: 7px !important;
+  box-shadow: none !important;
+}
+#notmeter-site :is(#ranking-service-panel, #performance-service-panel, #top10-service-panel) {
+  border-left-color: var(--gr-accent) !important;
+}
+#notmeter-site :is(#ranking-service-switch, #performance-service-switch, #top10-service-switch,
+  .world-service-tabs, .ranking-period-buttons, .ranking-metric-buttons) {
+  gap: 8px; padding: 0; border: 0 !important; border-radius: 0 !important;
+  background: transparent !important; box-shadow: none !important;
+}
+#notmeter-site :is(
+  .filter-panel, .ranking-panel, .snapshot-bar, .ranking-period-toolbar,
+  .ranking-metric-choice, .contribution-surface, .boss-resistance-surface,
+  .stat-efficiency-surface, .class-performance-surface, .class-top10-surface,
+  .field-boss-surface, .artifact-surface, .optimization-surface,
+  .class-performance-scope-bar, .class-performance-toolbar, .class-performance-method,
+  .contribution-method, .field-boss-controls, .field-boss-content,
+  .artifact-controls, .artifact-cycle-panel, .artifact-state
+) { background: transparent !important; border-color: var(--gr-line-soft) !important; box-shadow: none !important; }
+#notmeter-site :is(.weekly-guide, .sample-basis-notice, .ranker-dungeon-guide, .custom-cp-panel) {
+  background: var(--gr-panel) !important; border-color: var(--gr-line) !important; border-radius: 7px !important;
+  color: var(--gr-secondary); box-shadow: none !important;
+}
+#notmeter-site :is(.ranking-metric-choice, .ranking-period-buttons)::before { background: var(--gr-line); }
+
+/* Neutral controls; use silver fill only for selections and primary actions. */
+#notmeter-site :is(
+  .ranking-service-button, .ranking-period-button, .ranking-metric-button,
+  .filter-option-button, .filter-button, .cp-filter-toggle, .cp-filter-option,
+  .ranking-back-button, .download-modal-close, .download-action-secondary,
+  .cp-filter-menu-close, .class-top10-tab, .class-performance-tab, .contribution-tab,
+  .boss-resistance-tab, .field-boss-tab, .class-performance-cp-scopes button,
+  .class-performance-metrics button, .class-performance-composition-reset,
+  .world-service-tabs button, .gfb-region-button, .gfb-server, .gfb-picker-filter,
+  .gfb-picker-option, .gfb-picker-close, .gfb-picker-clear, .gfb-map-tab,
+  .field-boss-server-option, .stat-step-button, .option-step-button, .percent-step-button,
+  .result-job-option, .displayed-stats-heading button, .setup-guide-slot-choice,
+  .artifact-snapshot-button:not(.is-copied, .is-downloaded, .is-failed), :where(#praise-refresh)
+) {
+  background: var(--gr-tile) !important; color: var(--gr-secondary) !important;
+  border-color: var(--gr-line) !important; border-radius: 6px !important;
+  box-shadow: none !important; font-weight: 600 !important;
+}
+#notmeter-site :is(
+  .ranking-service-button, .ranking-period-button, .ranking-metric-button,
+  .filter-option-button, .filter-button, .cp-filter-option, .class-top10-tab,
+  .class-performance-tab, .contribution-tab, .boss-resistance-tab, .field-boss-tab,
+  .class-performance-cp-scopes button, .class-performance-metrics button,
+  .world-service-tabs button, .gfb-region-button, .gfb-picker-filter, .gfb-picker-option,
+  .gfb-map-tab, .field-boss-server-option, .result-job-option, .setup-guide-slot-choice
+):is(.active, .is-active, .is-selected, [aria-checked="true"], [aria-pressed="true"], [aria-selected="true"]) {
+  background: var(--gr-selected) !important; color: var(--gr-text) !important; border-color: var(--gr-selected-line) !important;
+}
+#notmeter-site :is(.ranking-service-button, .ranking-period-button, .filter-option-button,
+  .cp-filter-option, .gfb-picker-option, .ranking-back-button, .field-boss-server-option):hover {
+  border-color: var(--gr-accent) !important;
+}
+#notmeter-site :is(.refresh-button, .custom-cp-apply, .download-action-primary, .gfb-refresh) {
+  background: var(--gr-accent) !important; color: var(--gr-ink) !important;
+  border-color: var(--gr-accent) !important; border-radius: 6px !important;
+  box-shadow: none !important; font-weight: 600;
+}
+#notmeter-site :is(.refresh-button, .custom-cp-apply, .download-action-primary, .gfb-refresh):hover { background: var(--gr-text) !important; }
+#notmeter-site :is(.filter-option-button, .ranking-service-button, .ranking-period-button) :is(span, .boss-filter-order) { color: inherit !important; }
+#notmeter-site :is(.ranking-metric-button.is-active, .ranking-metric-button[aria-checked="true"])::after { background: var(--gr-accent) !important; }
+#notmeter-site .ranking-service-button::after { border-color: currentColor; }
+#notmeter-site .ranking-service-icon { color: inherit !important; }
+#notmeter-site .ranking-service-button.is-active .ranking-service-icon img { box-shadow: 0 0 0 2px var(--gr-accent); }
+#notmeter-site .world-service-tabs { flex-wrap: wrap; }
+#notmeter-site .world-service-tabs button { min-height: 40px; padding: 8px 12px; font-size: 12px; }
+#notmeter-site .world-service-tabs > span { margin: 0; border-color: var(--gr-line); color: var(--gr-muted); }
+
+/* Filled controls need their own spacing; the legacy underline tabs use 1px padding. */
+#notmeter-site :is(.class-performance-tabs, .class-top10-tabs, .boss-resistance-tabs,
+  .contribution-tabs, .field-boss-tabs, .detail-party-tabs) {
+  gap: 8px !important; padding: 4px 0 12px !important; border-bottom: 0 !important;
+}
+#notmeter-site :is(.boss-resistance-tabs, .contribution-tabs) { flex-wrap: wrap; overflow: visible; }
+#notmeter-site .detail-party-tabs { padding: 8px 12px !important; }
+#notmeter-site :is(.class-performance-tab, .class-top10-tab, .boss-resistance-tab,
+  .contribution-tab, .field-boss-tab, .detail-party-tab, .class-performance-metric-button) {
+  box-sizing: border-box; min-height: 40px; padding: 9px 13px !important;
+  border: 1px solid var(--gr-line) !important; border-radius: 6px !important;
+  background: var(--gr-panel) !important; color: var(--gr-secondary) !important;
+  line-height: 1.4; font-size: 12px; font-weight: 600;
+}
+#notmeter-site .boss-resistance-tab { max-width: 100%; white-space: normal; text-align: center; }
+#notmeter-site .detail-party-tab small { color: var(--gr-muted); }
+#notmeter-site .detail-party-tab.active small { color: var(--gr-secondary); }
+#notmeter-site :is(.class-performance-tab, .class-top10-tab, .boss-resistance-tab,
+  .contribution-tab, .field-boss-tab, .detail-party-tab, .class-performance-metric-button
+):is(.active, [aria-selected="true"]) {
+  background: var(--gr-selected) !important; border-color: var(--gr-selected-line) !important; color: var(--gr-text) !important;
+}
+#notmeter-site :is(.class-performance-tab, .class-top10-tab, .boss-resistance-tab,
+  .contribution-tab, .field-boss-tab, .detail-party-tab, .class-performance-metric-button,
+  .class-performance-cp-scopes button, .class-performance-metrics button, .ranking-metric-button)::after { content: none !important; }
+#notmeter-site :is(.class-performance-cp-scopes, .class-performance-metrics) { gap: 6px !important; padding: 2px; }
+#notmeter-site :is(.class-performance-cp-scopes, .class-performance-metrics) button {
+  min-width: 58px; min-height: 36px; padding: 7px 12px !important; border: 1px solid var(--gr-line) !important;
+}
+#notmeter-site :is(.class-performance-cp-scopes, .class-performance-metrics) button.active { border-color: var(--gr-selected-line) !important; }
+#notmeter-site .ranking-metric-button { border: 1px solid var(--gr-line) !important; padding: 8px 16px !important; }
+#notmeter-site .ranking-metric-button.is-active { border-color: var(--gr-selected-line) !important; }
+#notmeter-site :is(.class-performance-tab, .class-top10-tab, .boss-resistance-tab,
+  .contribution-tab, .field-boss-tab, .detail-party-tab, .class-performance-cp-scopes button,
+  .class-performance-metrics button, .cp-filter-toggle, .filter-button, .result-job-option,
+  .world-service-tabs button, .gfb-region-button, .gfb-map-tab, .gfb-picker-filter,
+  .refresh-button, .ghost-button, .guide-disclosure-action):not(:disabled):hover {
+  border-color: var(--gr-selected-line) !important;
+}
+#notmeter-site :is(.class-performance-tab, .class-top10-tab, .boss-resistance-tab,
+  .contribution-tab, .field-boss-tab, .detail-party-tab):not(.active):hover {
+  background: var(--gr-tile) !important; color: var(--gr-text) !important;
+}
+#notmeter-site :is(.ranking-back-button, .ghost-button, .guide-disclosure-action,
+  .download-modal-close, .cp-filter-menu-close, .detail-close) { border-radius: 6px !important; }
+#notmeter-site :is(button, a[role="tab"]):focus-visible { outline: 2px solid var(--gr-accent); outline-offset: 3px; }
+#notmeter-site button:disabled { cursor: not-allowed; }
+#notmeter-site .class-performance-composition-exclude { min-height: 30px; padding: 4px 10px; font-size: 11px; border-radius: 5px; }
+@media (max-width: 600px) {
+  #notmeter-site :is(.boss-resistance-tabs, .class-top10-tabs, .field-boss-tabs) {
+    display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    overflow: visible !important;
+  }
+  #notmeter-site :is(.boss-resistance-tab, .class-top10-tab, .field-boss-tab) {
+    width: 100%; height: auto; min-height: 44px; padding: 9px 10px !important;
+  }
+  #notmeter-site .class-top10-tab > span:not(.job-icon-frame) { white-space: normal; overflow: visible; }
+  #notmeter-site .field-boss-tab { flex-wrap: wrap; }
+}
+@media (max-width: 420px) {
+  #notmeter-site .ranking-service-button { grid-template-columns: 28px auto; gap: 6px; font-size: 13px; }
+  #notmeter-site .ranking-service-icon { width: 28px; height: 24px; }
+  #notmeter-site .ranking-service-icon img { width: 20px; height: 14px; }
+  #notmeter-site .ranking-service-icon svg { width: 22px; height: 22px; }
+}
+#notmeter-site :is(.class-top10-tab, .class-performance-tab, .contribution-tab,
+  .boss-resistance-tab, .field-boss-tab, .gfb-region-button, .gfb-map-tab,
+  .gfb-picker-filter, .gfb-picker-option, .result-job-option
+):is(.active, .is-active, .is-selected, [aria-pressed="true"], [aria-selected="true"]) :is(span, strong, b, small) { color: inherit !important; }
+#notmeter-site :is(.filter-native-select,
+  .field-grid input, .field-grid select, .option-grid input, .option-direction select,
+  .custom-cp-panel input, .passive-option input[type="number"], .stat-import-control textarea,
+  .field-boss-server-search input, .gfb-picker-search, .gfb-picker-search input) {
+  background-color: var(--gr-base) !important; color: var(--gr-text) !important;
+  border-color: var(--gr-line) !important; border-radius: 3px !important; box-shadow: none !important;
+}
+#notmeter-site :is(.field-grid input, .option-grid input, .stat-import-control textarea):focus { border-color: var(--gr-accent) !important; }
+#notmeter-site :is(.field-grid input, .option-grid input, .stat-import-control textarea)[aria-invalid="true"] { border-color: var(--danger) !important; }
+#notmeter-site :is(.artifact-controls, .field-boss-controls) select {
+  min-height: 40px; padding: 10px 38px 10px 12px; appearance: none; color-scheme: dark;
+  border: 1px solid var(--gr-line) !important; border-radius: 6px !important;
+  background-color: var(--gr-tile) !important; color: var(--gr-text) !important; box-shadow: none !important;
+  background-image: linear-gradient(45deg, transparent 50%, var(--gr-secondary) 50%),
+    linear-gradient(135deg, var(--gr-secondary) 50%, transparent 50%) !important;
+  background-position: calc(100% - 18px) center, calc(100% - 13px) center !important;
+  background-size: 5px 5px !important; background-repeat: no-repeat !important;
+  font-size: 13px; font-weight: 600; line-height: 1.4; cursor: pointer;
+}
+#notmeter-site :is(.artifact-controls, .field-boss-controls) select:not(:disabled):hover { border-color: var(--gr-selected-line) !important; }
+#notmeter-site :is(.artifact-controls, .field-boss-controls) select:focus-visible {
+  outline: 2px solid var(--gr-accent); outline-offset: 3px;
+}
+#notmeter-site :is(.artifact-controls, .field-boss-controls) select:disabled { cursor: not-allowed; }
+#notmeter-site :is(.artifact-controls, .field-boss-controls) option {
+  background: var(--gr-panel); color: var(--gr-text); font: inherit;
+}
+#notmeter-site :is(.artifact-round-field, .artifact-pair-field) { gap: 6px; }
+#notmeter-site :is(.artifact-round-field, .artifact-pair-field) > span { color: var(--gr-muted); font-size: 12px; font-weight: 600; }
+
+/* Section hierarchy: neutral headings, readable supporting copy, no colored title bands. */
+#notmeter-site :is(
+  .class-top10-heading, .class-performance-heading, .boss-resistance-page-heading,
+  .contribution-heading, .field-boss-heading, .artifact-heading, .stat-efficiency-heading,
+  .optimization-surface-heading, .download-modal-header, .praise-list, .praise-row,
+  .setup-guide-section-heading, .contribution-content-heading, .class-top10-result-heading
+) { background: transparent !important; border-color: var(--gr-line-soft) !important; }
+#notmeter-site :is(
+  .class-top10-heading, .class-performance-heading, .boss-resistance-page-heading,
+  .contribution-heading, .field-boss-heading, .artifact-heading, .stat-efficiency-heading,
+  .optimization-surface-heading, .praise-heading
+) h2 { color: var(--gr-text) !important; font-weight: 700 !important; }
+#notmeter-site :is(
+  .class-top10-heading, .class-performance-heading, .boss-resistance-page-heading,
+  .contribution-heading, .field-boss-heading, .artifact-heading, .stat-efficiency-heading,
+  .optimization-surface-heading
+) p { color: var(--gr-muted) !important; font-weight: 500 !important; }
+#notmeter-site :is(
+  .class-top10-kicker, .class-performance-kicker, .field-boss-kicker, .artifact-kicker,
+  .boss-resistance-page-kicker, .contribution-kicker, .stat-efficiency-kicker,
+  .optimization-surface-kicker, .praise-eyebrow, .praise-benefit, .download-modal-kicker,
+  .ranking-service-copy span, .ranking-metric-copy > span, .ranking-metric-description,
+  .filter-label, .filter-group > span, .filter-choice-heading, .filter-field > span,
+  .field-boss-server-field > span, .artifact-controls label, .snapshot-meta,
+  .class-performance-scope-bar > span, .class-performance-score span,
+  .class-performance-evidence span, .option-direction-copy small,
+  .result-job-picker-heading span, .result-source
+) { color: var(--gr-muted) !important; font-weight: 500 !important; }
+#notmeter-site :is(
+  .ranking-service-copy strong, .snapshot-title, .ranking-heading h2, .heading-line h2,
+  .class-performance-proof-heading > b, .class-performance-formula,
+  .option-direction-copy b, .result-job-picker-heading strong, .result-kicker,
+  .setup-guide-section h3, .setup-guide-slot > h4, .setup-guide-slot-category > h5,
+  .contribution-content-heading h3, .boss-resistance-content-heading h3
+) { color: var(--gr-text) !important; font-weight: 600 !important; }
+#notmeter-site :is(
+  .weekly-guide-icon, .sample-basis-icon, .class-top10-guide-index,
+  .class-performance-method-index, .contribution-heading-icon, .boss-resistance-page-icon,
+  .stat-efficiency-heading-icon, .field-boss-heading-icon, .artifact-heading-icon,
+  .download-step-number, .top-badge, .ranker-guide-flow-number
+) { background: var(--gr-tile) !important; border-color: var(--gr-line) !important; color: var(--gr-accent) !important; box-shadow: none !important; }
+#notmeter-site :is(.weekly-guide, .ranker-dungeon-guide) summary::after { border-color: var(--gr-line) !important; background-color: var(--gr-tile) !important; color: var(--gr-text) !important; }
+#notmeter-site :is(.weekly-guide, .ranker-dungeon-guide) summary :is(strong, .guide-disclosure-toggle) { color: var(--gr-text) !important; }
+#notmeter-site .guide-disclosure-action { background: var(--gr-tile) !important; border-color: var(--gr-line) !important; color: var(--gr-text) !important; border-radius: 3px; }
+#notmeter-site .guide-disclosure summary:hover { background: var(--gr-tile) !important; }
+#notmeter-site .weekly-reset { background: var(--gr-panel); }
+#notmeter-site .refresh-schedule summary { background: var(--gr-panel); border-color: var(--gr-line); }
+#notmeter-site .snapshot-meta { background: var(--gr-panel); border-color: transparent; }
+
+#notmeter-site #class-ranking-hint {
+  width: fit-content; max-width: 100%; color: var(--gr-accent); font-weight: 700;
+}
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  #notmeter-site #class-ranking-hint {
+    background-image: linear-gradient(105deg, #c6ccd5 0%, #c6ccd5 32%, #a8dce1 43%, #edf4fa 50%, #b5d3e2 57%, #c6ccd5 68%, #c6ccd5 100%);
+    background-size: 250% 100%; background-position: 100% 50%;
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: notmeter-ranking-hint-shine 8s ease-in-out infinite;
+  }
+}
+@keyframes notmeter-ranking-hint-shine {
+  0%, 22% { background-position: 100% 50%; }
+  70%, 100% { background-position: 0% 50%; }
+}
+@media (prefers-reduced-motion: reduce), (forced-colors: active), print {
+  #notmeter-site #class-ranking-hint {
+    animation: none; background: none; -webkit-text-fill-color: currentColor;
+  }
+}
+@media (forced-colors: active), print {
+  #notmeter-site #class-ranking-hint { color: CanvasText; }
+}
+
+/* Ranking lists: retain podium and movement colors, remove decorative pink/cyan. */
+#notmeter-site .ranking-table th { color: var(--gr-muted) !important; border-color: var(--gr-line-soft) !important; font-weight: 500; }
+#notmeter-site .ranking-table td { background: var(--gr-panel) !important; border-color: var(--gr-line-soft) !important; }
+#notmeter-site .ranking-table tbody tr:hover td { background: var(--gr-tile) !important; }
+#notmeter-site .ranking-table tbody tr { border-radius: 7px !important; }
+#notmeter-site .ranking-table tbody td:first-child { border-top-left-radius: 7px !important; border-bottom-left-radius: 7px !important; }
+#notmeter-site .ranking-table tbody td:last-child { border-top-right-radius: 7px !important; border-bottom-right-radius: 7px !important; }
+#notmeter-site .ranking-table :is(.job-name, .character-name) { color: var(--gr-text); font-weight: 600; }
+#notmeter-site .ranking-table :is(.dps-cell, .dps-value, .weekly-current-value, .class-dps-value, .detail-link) { color: var(--gr-accent) !important; font-weight: 700; }
+#notmeter-site .class-dps-total:not(.normalized) { color: var(--gr-accent); }
+#notmeter-site .class-dps-adjusted { background: var(--gr-tile); }
+#notmeter-site .ranking-table :is(.weekly-previous-inline, .row-chevron, .character-server, .distribution-range) { color: var(--gr-muted) !important; }
+#notmeter-site .distribution-track { background: var(--gr-line-soft) !important; }
+#notmeter-site .distribution-fill { background: var(--gr-accent) !important; }
+#notmeter-site :is(.cp-badge, .party-icons, .party-count, .ranking-character-profile-link,
+  .sample-basis-chips span, .ranker-guide-summary-chips > span, .ranker-guide-required) {
+  background: var(--gr-tile) !important; border-color: var(--gr-line) !important; color: var(--gr-secondary) !important;
+}
+#notmeter-site .download-modal { background: rgb(10 12 15 / 88%) !important; }
+#notmeter-site .download-guide { border-color: var(--gr-line) !important; }
+#notmeter-site .download-guide :is(h3, a) { color: var(--gr-accent) !important; }
+
+/* Interior cards across the requested statistics and world services. */
+#notmeter-site :is(
+  .ranker-guide-answer-card, .ranker-guide-answer-effect, .ranker-guide-flow,
+  .ranker-guide-retention, .ranker-dungeon-item, .cp-filter-group,
+  .efficiency-hero, .calculation-guide, .calculation-guide-modes article,
+  .calculation-method-grid article, .job-profile-summary, .passive-panel,
+  .option-card, .option-direction, .current-stats-details, .result-quick-details,
+  .displayed-stats, .simulation-damage, .damage-gain-card, .live-compare-card,
+  .result-summary-card, .result-directional-card, .result-details, .result-summary > article,
+  .result-effect-grid article, .class-performance-method article,
+  .class-performance-composition-job, .class-performance-row,
+  .setup-guide-slot, .setup-guide-card, .setup-guide-arcana-slot, .setup-guide-trait-list,
+  .setup-guide-card-meta span, .contribution-summary > div, .contribution-row,
+  .contribution-method article, .boss-resistance-row, .boss-resistance-sample,
+  .field-boss-row, .gfb-row, .gfb-controls, .gfb-empty,
+  .artifact-overview-cumulative, .artifact-overview-layer, .artifact-overview-next,
+  .artifact-score-guide, .artifact-next-battle
+) { background: var(--gr-panel) !important; border-color: var(--gr-line-soft) !important; box-shadow: none !important; }
+#notmeter-site :is(.class-performance-track, .result-empty-mark, .specialization-options span,
+  .displayed-stats-grid > div, .divine-grid label, .field-boss-tab-count) {
+  background: var(--gr-tile) !important; border-color: var(--gr-line) !important;
+}
+#notmeter-site .class-performance-fill,
+#notmeter-site .quality-card li::before { background: var(--gr-accent) !important; }
+#notmeter-site .quality-card li::before { color: var(--gr-ink) !important; border-color: var(--gr-accent) !important; }
+#notmeter-site .class-performance-row :is(.class-performance-score strong, .class-performance-rank) { color: var(--gr-text) !important; }
+#notmeter-site :is(.setup-guide-trait.is-top, .result-row.is-top) { background: var(--gr-tile) !important; border-color: var(--gr-accent) !important; }
+#notmeter-site .specialization-options input:checked + span { background: var(--gr-accent) !important; color: var(--gr-ink) !important; border-color: var(--gr-accent) !important; }
+#notmeter-site .result-card > header { background: var(--gr-panel) !important; border-color: var(--gr-line-soft) !important; }
+#notmeter-site .praise-total { background: var(--gr-tile); }
+#notmeter-site :is(.class-top10-guide p, .class-top10-server, .class-top10-result,
+  .class-performance-method p, .class-performance-proof-card p, .class-performance-definition span,
+  .class-performance-grade-list span, .class-performance-summary, .class-performance-scale,
+  .class-performance-notice p, .class-performance-heading-copy > p,
+  .field-boss-server-field label, .field-boss-row-copy > span,
+  .artifact-overview-heading span, .artifact-round-field > span) { color: var(--gr-muted) !important; }
+#notmeter-site :is(.class-performance-proof-heading > span, .class-performance-composition-heading > div > span,
+  .boss-resistance-order, .field-boss-snapshot strong) { color: var(--gr-secondary) !important; }
+#notmeter-site .class-performance-formula { border-color: var(--gr-line) !important; }
+#notmeter-site .class-performance-composition-exclude { background: var(--gr-tile) !important; border-color: var(--gr-line) !important; color: var(--gr-secondary) !important; }
+#notmeter-site .class-performance-composition-exclude[aria-pressed="true"] { background: var(--gr-accent) !important; color: var(--gr-ink) !important; }
+#notmeter-site .boss-resistance-content { border-color: var(--gr-line) !important; }
+#notmeter-site .boss-resistance-content-heading > span { color: var(--gr-muted) !important; }
+#notmeter-site .setup-guide-surface { --guide-line: var(--gr-line-soft); --guide-muted: var(--gr-muted); }
+#notmeter-site .setup-guide-categories button { color: var(--gr-muted); }
+#notmeter-site .setup-guide-categories button[aria-pressed="true"] { color: var(--gr-text); border-bottom-color: var(--gr-accent); }
+#notmeter-site .setup-guide-slot-choices button { background: var(--gr-tile); color: var(--gr-secondary); border-color: var(--gr-line); }
+#notmeter-site .setup-guide-slot-choices button[aria-pressed="true"] { background: var(--gr-selected); color: var(--gr-text); border-color: var(--gr-selected-line); }
+#notmeter-site .contribution-tab.active { box-shadow: none !important; }
+#notmeter-site :is(.contribution-tab, .class-top10-tab, .class-performance-tab, .boss-resistance-tab, .field-boss-tab, .class-performance-metric-button)::after { background: var(--gr-accent) !important; }
+#notmeter-site .contribution-method article b { background: var(--gr-tile) !important; border-color: var(--gr-line) !important; color: var(--gr-secondary) !important; }
+#notmeter-site .contribution-summary > div { background: transparent !important; }
+#notmeter-site :is(.test-notice, .live-calculation-note, .option-field-group, .result-card > footer) { border-color: var(--gr-line-soft) !important; }
+#notmeter-site :is(.stat-import-step, .test-notice > span, .live-calculation-note > span,
+  .efficiency-card > header > span,
+  .result-empty-mark, .calculation-guide-heading > span, .calculation-guide-modes b) {
+  color: var(--gr-accent) !important; border-color: var(--gr-line) !important;
+}
+#notmeter-site :is(.stat-import-copy p, .test-notice p, .efficiency-hero p, .efficiency-card small,
+  .calculation-guide p, .calculation-guide-modes span, .calculation-method-grid span,
+  .live-calculation-note > small, .result-empty p, .result-card > footer,
+  .displayed-stats-heading span, .result-group-description) { color: var(--gr-muted) !important; }
+#notmeter-site :is(.efficiency-card h3, .result-card h3, .stat-import-copy strong,
+  .test-notice strong, .calculation-guide strong, .option-field-group h4,
+  .current-stats-details > summary, .result-quick-details > summary,
+  .field-grid label > span, .option-grid label > span, .percent-input-unit) { color: var(--gr-secondary) !important; }
+#notmeter-site :is(.result-job-picker, .source-scope) { background: var(--gr-panel) !important; border-color: var(--gr-line) !important; box-shadow: none !important; }
+#notmeter-site :is(.option-direction, .current-stats-details, .result-quick-details,
+  .live-compare-card, .damage-gain-card, .result-effect-grid article,
+  .artifact-overview-cumulative, .artifact-overview-layer, .artifact-overview-next,
+  .ranker-guide-answer-card, .ranker-guide-flow, .ranker-guide-retention) { border-radius: 5px !important; }
+#notmeter-site .artifact-cycle-summary article { background: var(--gr-panel) !important; border-color: var(--gr-line) !important; }
+#notmeter-site .artifact-cycle-summary article:first-child > strong { color: var(--gr-text); }
+#notmeter-site .artifact-overview-card.is-favorite { background: var(--gr-panel) !important; }
+#notmeter-site #field-boss-global {
+  --gfb-surface: var(--gr-panel); --gfb-line: var(--gr-line);
+  --gfb-muted: var(--gr-muted); --gfb-accent: var(--gr-accent); color: var(--gr-text);
+}
+#notmeter-site .gfb-server-arrow { border-color: var(--gr-muted); }
+#notmeter-site .gfb-picker-search:focus-within { border-color: var(--gr-accent) !important; }
+#notmeter-site .gfb-controls { border-radius: 7px 7px 0 0; }
+#notmeter-site .gfb-clocks { border-radius: 0 0 7px 7px; }
+#notmeter-site .result-effect-group h4 { background: var(--gr-base); border-color: var(--gr-line-soft); color: var(--gr-secondary); font-weight: 600; }
+#notmeter-site .result-effect-grid article > b { background: var(--gr-tile); color: var(--gr-secondary); border-radius: 3px; }
+#notmeter-site :is(.live-compare-card > span, .live-compare-card small, .live-compare-card i, .damage-gain-card > span) { color: var(--gr-muted); }
+#notmeter-site :is(.live-compare-card strong, .result-effect-grid article strong) { color: var(--gr-accent); }
+#notmeter-site .field-boss-tab.active .field-boss-tab-count { background: transparent !important; border-color: currentColor !important; }
+#notmeter-site :is(.class-top10-tab:not(.active) > b, .class-performance-grade-list .grade-off > strong,
+  .artifact-overview-score > i, .artifact-overview-cumulative > strong > i,
+  .sponsor-ad-badge) { color: var(--gr-muted) !important; }
+#notmeter-site .page-footer { color: var(--gr-muted); border-color: var(--gr-line-soft); }
+#notmeter-site .footer-links a { color: var(--gr-secondary); }
+
+/* Optimization is a separate document, both embedded and available as a standalone page. */
+html.optimization-embed, html.optimization-embed #notmeter-site { background: transparent; }
+#notmeter-site .optimizer-title { border-color: var(--gr-line-soft); }
+#notmeter-site .optimizer-title h1 { color: var(--gr-text) !important; }
+#notmeter-site .optimization-shell :is(
+  .quick-setup, .engine-location-card, .profile-panel, .builder-panel, .result-card,
+  .code-card, .advanced-settings, .problem-guide
+) { background: var(--gr-panel) !important; border-color: var(--gr-line) !important; border-radius: 7px !important; box-shadow: none !important; }
+#notmeter-site .optimization-shell :is(
+  .quick-setup-head, .quick-setup-footer, .panel-head, .section-title, .result-head, .code-head,
+  .quick-setup-step, .control-section, .engine-readonly-alert, .result-help, .legacy-box,
+  .rollback-box, .tuning-summary article, .problem-guide article, .policy-note
+) { background: transparent !important; border-color: var(--gr-line-soft) !important; }
+#notmeter-site .optimization-shell :is(
+  .panel-head span, .section-title span,
+  .result-head span, .code-head span, .engine-location-title > span, .quick-step-title > b,
+  .engine-location-steps b, .quick-steps b, .tuning-summary b, .problem-guide b,
+  .policy-note strong
+) { color: var(--gr-secondary) !important; border-color: var(--gr-line) !important; }
+#notmeter-site .optimization-shell :is(.lead, .quick-setup-badge) { color: var(--gr-muted) !important; }
+#notmeter-site .optimization-shell :is(.eyebrow, .quick-setup-head > div > span,
+  .quick-step-title > b, .engine-location-steps b, .quick-steps b,
+  .advanced-settings > summary, .result-help summary)::after {
+  color: var(--gr-muted) !important; border-color: var(--gr-line) !important;
+}
+#notmeter-site .optimization-shell :is(
+  .profile-button, .goal-button, .issue-button, .quick-advanced-button, .reset-button,
+  .engine-path-row button, .code-head button
+) { background: var(--gr-tile) !important; color: var(--gr-secondary) !important; border-radius: 6px !important; box-shadow: none !important; }
+#notmeter-site .optimization-shell :is(
+  .profile-button.is-active, .goal-button.is-active, .issue-button.is-active,
+  .quick-advanced-button[aria-expanded="true"]
+) { background: var(--gr-selected) !important; color: var(--gr-text) !important; border: 1px solid var(--gr-selected-line) !important; border-radius: 6px !important; }
+#notmeter-site .optimization-shell :is(.copy-primary, .quick-setup-footer button) { background: var(--gr-accent) !important; color: var(--gr-ink) !important; border-radius: 6px !important; }
+#notmeter-site .optimization-shell :is(.profile-button, .goal-button, .issue-button) :is(strong, span) { color: inherit !important; }
+#notmeter-site .optimization-shell .goal-button.is-active em { color: #e6c486; }
+#notmeter-site .optimization-shell :is(select, input[type="text"], input[type="number"], .code-card pre) {
+  background-color: var(--gr-base) !important; color: var(--gr-text) !important;
+  border-color: var(--gr-line) !important; border-radius: 3px !important; box-shadow: none !important;
+}
+#notmeter-site .optimization-shell select {
+  background-image: linear-gradient(45deg, transparent 50%, #a2aab7 50%), linear-gradient(135deg, #a2aab7 50%, transparent 50%) !important;
+}
+#notmeter-site .optimization-shell :is(select, input):focus { box-shadow: inset 0 -2px var(--gr-accent) !important; }
+#notmeter-site .optimization-shell input[type="range"] { accent-color: var(--gr-accent); }
+#notmeter-site .optimization-shell code { color: var(--gr-secondary); background: var(--gr-tile); }
+#notmeter-site .optimization-shell .tuning-summary article > span { color: var(--gr-muted); }
+
+/* Guide chrome shares the site palette; instructional images retain their colors. */
+#notmeter-site.notmeter-tutorial { --paper: var(--gr-base); --soft: var(--gr-tile); --gold: #e6c486; }
+#notmeter-site .guide-header { background: var(--gr-panel); }
+#notmeter-site .guide-sidebar { background: var(--gr-base); }
+#notmeter-site :is(.guide-nav-group h2, .guide-edition small, .guide-search kbd,
+  .guide-category-list span, .guide-result small, .guide-stage-note, .guide-footer) { color: var(--gr-muted); }
+#notmeter-site :is(.guide-nav-group a, .guide-article-prose p, .guide-article-prose ul,
+  .guide-option-body, .guide-location, .guide-scene-stage figcaption, .guide-assist-pictures figcaption,
+  .guide-image-key li, .guide-entry-instructions ol, .guide-assist-supported ul,
+  .guide-required > p, .guide-verification p, .guide-cover-media figcaption) { color: var(--gr-secondary); }
+#notmeter-site :is(.guide-crumb span:last-child, .guide-scene-title,
+  .guide-scene-explanation h3, .guide-verification h2, #guide-gallery-description strong) { color: var(--gr-text); }
+#notmeter-site :is(.guide-article-prose a, .guide-article-prose code, .guide-option .guide-show-screen,
+  .guide-entry-instructions a, .guide-required button, .guide-next-step strong,
+  .guide-open-links svg, .guide-assist-contents span, .guide-assist-chapter h2 > span) { color: var(--gr-accent); }
+#notmeter-site .guide-assist-path { color: var(--gr-secondary) !important; }
+#notmeter-site :is(.guide-category-list a, .guide-option .guide-show-screen) { border-color: var(--gr-line); }
+#notmeter-site :is(.guide-lightbox, .guide-lightbox header, .guide-cover-media,
+  .guide-cover-media .guide-hero-image, .guide-cover-media figcaption, .guide-screen,
+  .guide-scene-stage, .guide-entry-window, .guide-assist-pictures button) {
+  background: var(--gr-panel); border-color: var(--gr-line); border-radius: 7px;
+}
+#notmeter-site .guide-cover-media { box-shadow: none; }
+#notmeter-site :is(.guide-note, .guide-required) {
+  background: var(--gr-panel); color: var(--gr-secondary);
+  border: 1px solid var(--gr-line); border-left: 3px solid var(--gold); border-radius: 6px;
+}
+#notmeter-site .guide-note strong { color: var(--gold); }
+#notmeter-site .guide-primary {
+  background: var(--gr-accent); color: var(--gr-ink); border-color: var(--gr-accent); border-radius: 6px;
+}
+#notmeter-site .guide-primary:hover { background: var(--gr-text); }
+#notmeter-site :is(.guide-copy-link, .guide-mobile-menu, .guide-scene-tabs button,
+  .guide-gallery-controls button, .guide-article-index button, .guide-related a, #guide-image-scale) {
+  background: var(--gr-tile); color: var(--gr-secondary); border: 1px solid var(--gr-line); border-radius: 6px;
+}
+#notmeter-site :is(.guide-copy-link, .guide-mobile-menu, .guide-scene-tabs button,
+  .guide-gallery-controls button, .guide-article-index button, .guide-related a, #guide-image-scale):not(:disabled):hover {
+  color: var(--gr-text); border-color: var(--gr-selected-line);
+}
+#notmeter-site :is(.guide-scene-tabs button[aria-selected="true"],
+  .guide-mobile-menu[aria-expanded="true"], #guide-image-scale[aria-pressed="true"]) {
+  background: var(--gr-selected); color: var(--gr-text); border-color: var(--gr-selected-line);
+}
+#notmeter-site .guide-nav-group a[aria-current="page"] {
+  background: var(--gr-selected); color: var(--gr-text); border-left-color: var(--gr-accent);
+}
+#notmeter-site .guide-nav-group a:hover { background: var(--gr-tile); color: var(--gr-text); }
+#notmeter-site :is(.guide-open-links a, .guide-assist-contents a, .guide-article-prose a,
+  .guide-entry-instructions a):hover { color: var(--gr-text); text-decoration: underline; text-underline-offset: 3px; }
+#notmeter-site :is(.guide-search input, .guide-header-actions select, .guide-gallery-select, .guide-screen-language select) {
+  background: var(--gr-panel); color: var(--gr-text); border-color: var(--gr-line); border-radius: 5px;
+}
+#notmeter-site .guide-article-prose ol li::before {
+  background: var(--gr-panel); color: var(--gr-accent); border-color: var(--gr-selected-line);
+}
+#notmeter-site .guide-first-run a > span { color: var(--gr-accent); border-color: var(--gr-selected-line); }
+#notmeter-site .guide-entry-destination { color: var(--gr-accent); border-left-color: var(--gr-selected-line); }
+#notmeter-site .guide-value { background: var(--gr-tile); color: var(--gr-secondary); }
+#notmeter-site .guide-option:target { background: var(--gr-panel); box-shadow: -12px 0 var(--gr-panel), 12px 0 var(--gr-panel); }
+#notmeter-site .guide-option summary::after { color: var(--gr-muted); }
+#notmeter-site .guide-screen::after { background: var(--gr-panel); color: var(--gr-accent); border-color: var(--gr-selected-line); }
+#notmeter-site .guide-screen:hover::after { background: var(--gr-tile); }
+#notmeter-site #guide-toast { background: var(--gr-tile); color: var(--gr-text); border-color: var(--gr-selected-line); }
+#notmeter-site mark { background: var(--gr-tile); color: var(--gr-text); }
+#notmeter-site.notmeter-tutorial mark { background: var(--gr-accent); color: var(--gr-ink); }
+#notmeter-site .guide-nav-group a {
+  transition: background-color var(--gr-feedback-duration) ease, color var(--gr-feedback-duration) ease;
+}
+
+/* Mobile tables already become one card per row. Paint that card, not each grid cell. */
+@media (max-width: 600px) {
+  #notmeter-site .ranking-table tbody tr { background: var(--gr-panel) !important; }
+  #notmeter-site .ranking-table tbody tr:hover { background: var(--gr-tile) !important; }
+  #notmeter-site .ranking-table tbody :is(td, td:first-child, td:last-child),
+  #notmeter-site .ranking-table tbody tr:hover td { background: transparent !important; border-radius: 0 !important; }
+}

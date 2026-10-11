@@ -1,0 +1,193 @@
+{
+  "title": "L’aide au combat, de la première icône aux temps de recharge du groupe",
+  "intro": "Une fenêtre dédiée affiche la durée des effets, le temps avant de réutiliser une compétence et les temps de recharge de groupe pris en charge. Commencez par une seule compétence, puis ajoutez les fonctions utiles.",
+  "toc": "Accéder à une étape",
+  "supported": "Compétences de groupe prises en charge",
+  "check": "À vérifier en jeu",
+  "example": "Exemples issus de l’application réelle. Les noms, durées et charges illustrent les réglages ; ce ne sont pas des données de jeu en direct.",
+  "chapters": [
+    [
+      "Activer l’affichage de votre première compétence",
+      "Paramètres → Aide au combat → Démarrage rapide",
+      [
+        "Survolez le compteur, cliquez sur l’icône des curseurs et ouvrez l’aide au combat à gauche. S’il est verrouillé, faites d’abord Alt-clic sur le cadenas ou ouvrez les paramètres depuis l’icône de la zone de notification Windows.",
+        "Activez l’aide au combat en haut. Choisissez votre classe dans Démarrage rapide, puis cliquez sur Ajouter la configuration sélectionnée. Choisir une classe ne suffit pas.",
+        "Vous pouvez laisser les voix désactivées au début. Le démarrage rapide ajoute des compétences de classe et communes à votre sélection, sans activer automatiquement les temps de recharge du groupe.",
+        "Cliquez sur Enregistrer en bas à droite. Revenez en jeu, vérifiez que votre personnage est détecté et utilisez une compétence sélectionnée.",
+        "Un effet appliqué affiche sa durée restante ; une compétence utilisée affiche son délai de réutilisation. L’aperçu des paramètres emploie des valeurs d’exemple."
+      ],
+      [
+        "Modifier l’aperçu ne remplace pas l’enregistrement des réglages. Il n’est pas nécessaire de tout activer."
+      ],
+      [
+        "Ajouter une configuration de classe dans les paramètres réels",
+        "Effets et temps de recharge affichés ensemble"
+      ]
+    ],
+    [
+      "Lire les effets, les temps de recharge et les charges",
+      "Comprendre chaque nombre",
+      [
+        "Le minuteur d’un effet indique sa durée restante. Celui d’une compétence indique le temps avant sa prochaine utilisation. Ce sont deux mesures différentes.",
+        "Dans le thème par défaut, une compétence peut apparaître dans la ligne des effets et dans la ligne CD : par exemple, 12 secondes d’effet et 24 secondes de recharge.",
+        "Pour les compétences à charges, x0, x1 et x2 indiquent les utilisations encore disponibles. x0 signifie qu’il ne reste aucune charge. Le délai de récupération se lit séparément.",
+        "Le nom au-dessus d’un temps de recharge identifie l’utilisateur de la compétence. Des icônes identiques peuvent appartenir à vous et à un coéquipier."
+      ],
+      [
+        "Une icône grise n’indique pas forcément un problème. L’étape 5 explique les icônes épinglées inactives ou prêtes."
+      ],
+      [
+        "Durée d’un effet",
+        "Temps de recharge d’une compétence",
+        "Exemples de charges x0, x1 et x2"
+      ]
+    ],
+    [
+      "Choisir les compétences une par une",
+      "Aide au combat → Compétences",
+      [
+        "Choisissez une classe, puis recherchez la compétence. Pour une compétence de groupe d’une autre classe, passez au filtre Aède ou Clerc.",
+        "Sélectionnez séparément les effets et les temps de recharge sur chaque fiche. Les compétences compatibles ont deux interrupteurs distincts : votre recharge et celle du groupe.",
+        "Cliquez sur Afficher les réglages dans la fiche de compétence pour régler les icônes fixes, alertes et voix. Seule cette fiche s’ouvre. Masquer les réglages permet de la refermer.",
+        "Le filtre des compétences sélectionnées masque les autres. Vérifiez ce filtre et effacez la recherche pour ajouter une compétence.",
+        "Utilisez Aperçu sur la fiche pour voir le résultat. Un interrupteur grisé et désactivé indique une option indisponible pour cette compétence."
+      ],
+      [],
+      [
+        "Options supplémentaires de Pouvoir de la tempête"
+      ]
+    ],
+    [
+      "Suivre les temps de recharge du groupe",
+      "Compétences → Aède / Clerc → Recharge du groupe",
+      [
+        "Choisissez une compétence dans la liste ci-dessous. Le suivi des temps de recharge des membres du groupe se limite à ces compétences. Vous pouvez aussi sélectionner les compétences prises en charge d’autres classes.",
+        "Pour voir uniquement le groupe, activez sa recharge et désactivez votre recharge. Activez les deux pour afficher les deux.",
+        "Dans Apparence, choisissez Temps de recharge seuls ou Effets + temps de recharge. Effets seuls masque aussi les temps de recharge du groupe.",
+        "Dans Apparence → Position et fenêtres séparées, activez les noms des utilisateurs. Les désactiver retire les noms, pas les minuteurs.",
+        "Enregistrez et attendez une nouvelle utilisation avec votre personnage détecté. Pour détecter Pouvoir de la tempête, un membre du groupe doit l’appliquer à votre personnage.",
+        "Les compétences de Clerc compatibles utilisent les effets observés ou les informations de groupe et utilisations détectées. Les autres joueurs n’ont besoin ni de NotMeter ni d’un code de partage.",
+        "Une utilisation antérieure au lancement ou non détectée peut ne pas avoir de minuteur. L’absence d’icône ne prouve pas que la compétence du coéquipier est prête."
+      ],
+      [
+        "Les minuteurs du groupe correspondent aux recharges détectées en cours. Épingler votre compétence ne crée pas des icônes prêtes pour tout le groupe. Les fiches réelles ci-dessous donnent les noms pris en charge sur KR, TW ou Global."
+      ],
+      [
+        "Fiches réelles des compétences de groupe compatibles",
+        "Votre recharge uniquement",
+        "Recharge du groupe avec le nom de l’utilisateur",
+        "Votre recharge et celles du groupe"
+      ]
+    ],
+    [
+      "Garder les icônes visibles et les ordonner",
+      "Fiche → Alertes et icônes épinglées / Apparence",
+      [
+        "Activez Toujours afficher l’effet ou Toujours afficher la recharge pour conserver une place même sans activité. Cela sélectionne aussi l’affichage correspondant.",
+        "Une icône de buff épinglée et grise indique que l’effet est inactif. Avec les couleurs par défaut, une icône de recharge épinglée et grise indique que la compétence est disponible. L’option d’inversion des couleurs de recharge inverse cette convention. Vérifiez aussi le temps restant et le nombre de charges indiqué par x.",
+        "Sans épinglage, une icône peut disparaître à la fin de l’effet ou de la recharge. Cela ne signifie pas que toute l’aide au combat est désactivée.",
+        "Dans Apparence → Ordre des icônes épinglées, placez les compétences importantes en premier. Vérifiez le tri et les icônes par ligne dans l’aperçu."
+      ],
+      [
+        "Restreindre les effets de groupe épinglés selon la classe concerne les icônes d’effets inactifs. Cela ne remplace pas les interrupteurs de recharge du groupe."
+      ],
+      [
+        "Recharge épinglée sans minuteur actif"
+      ]
+    ],
+    [
+      "Ajouter compétences communes, potions, parchemins et affaiblissements",
+      "Aide au combat → Compétences",
+      [
+        "Les catégories Commun, Potion, Parchemin et Affaiblissement accompagnent les classes. Si un nom manque, cherchez dans sa catégorie.",
+        "Sélectionnez la recharge des types de potions utilisés. Pour les parchemins, choisissez les options de durée et d’affichage disponibles. Tous les objets ne proposent pas les deux types de suivi.",
+        "Les affaiblissements du boss sont des effets sur la cible. Ils se distinguent de vos effets et de vos délais de réutilisation.",
+        "Pour voir les effets appliqués sur vous par d’autres joueurs, vérifiez l’option correspondante dans Démarrage rapide. Elle est indépendante des recharges du groupe.",
+        "Enregistrez, utilisez la potion ou le parchemin, ou attendez l’application de l’affaiblissement choisi, puis vérifiez l’affichage en jeu."
+      ],
+      [],
+      [
+        "Sélection des potions",
+        "Sélection des parchemins",
+        "Un effet sur la cible"
+      ]
+    ],
+    [
+      "Configurer les alertes visuelles et vocales",
+      "Fiche → Alertes et icônes épinglées → Alertes et voix",
+      [
+        "Choisissez un événement sur la fiche : recharge terminée, début d’un nouvel effet ou fin d’un effet.",
+        "Les fenêtres et la voix sont indépendantes ; la voix peut fonctionner seule. Dans Alertes et voix, vérifiez l’activation globale, la voix et le volume, puis testez le son.",
+        "Réglez l’avertissement anticipé général. Chaque compétence peut avoir un nom prononcé et un délai personnalisés. Un nom vide utilise celui affiché.",
+        "Réglez le délai après recharge entre 1 et 30 secondes pour recevoir l’alerte ce nombre de secondes après la fin du temps de recharge. Cette alerte remplace l’avertissement anticipé. Laissez le champ vide ou indiquez 0 pour utiliser l’avertissement anticipé.",
+        "Le début d’effet signale une nouvelle application, pas un simple renouvellement. L’alerte de fin exige une durée restante connue.",
+        "Déplacez l’aperçu des alertes de fin dans Apparence et enregistrez. Les seuils de couleur des nombres et cercles sont distincts du moment de l’alerte.",
+        "En haut de Aide au combat → Alertes et voix, activez et réglez séparément les effets sonores et la voix. Utilisez les boutons d’écoute avant d’enregistrer.",
+        "Pour augmenter les alertes sans augmenter tout le casque, réglez l’amplification de 100 % à 300 %, progressivement à partir de 100 %. Elle s’applique aussi aux autres alertes NotMeter, mais ne supprime ni la sourdine ni un volume à 0 %."
+      ],
+      [
+        "Sans son, vérifiez dans l’ordre la voix de la compétence, la voix globale, le volume et la sortie audio du PC. Les sons de changement de cible du boss se règlent séparément."
+      ],
+      [
+        "Compétence prête",
+        "Début d’un effet",
+        "Avertissement avant la fin d’un effet",
+        "En haut de Aide au combat → Alertes et voix, activez et réglez séparément les effets sonores et la voix. Utilisez les boutons d’écoute avant d’enregistrer."
+      ]
+    ],
+    [
+      "Placer, redimensionner et séparer les fenêtres",
+      "Position en haut → Apparence",
+      [
+        "Cliquez sur Position, puis Déplacer à l’écran. Un aperçu déplaçable apparaît même hors combat et sans effet actif.",
+        "Faites-le glisser. S’il est hors écran, utilisez Centrer sur cet écran, puis les coordonnées X/Y ou les flèches. Terminez par Enregistrer dans les paramètres.",
+        "Dans le thème par défaut, le mode séparé permet de placer les effets et les recharges indépendamment. Sélectionnez chaque fenêtre dans la liste de positionnement.",
+        "Le thème A combine les deux dans une seule icône et ne permet pas de séparer ces fenêtres. Lisez ses deux minuteurs séparément.",
+        "Réglez la taille, l’opacité, l’orientation et l’expansion depuis le centre. Séparer les alertes est une option différente de la séparation effets/recharges.",
+        "Sur écran 4K, augmentez la taille des icônes dans Apparence, jusqu’à 400 %. Le zoom de l’aperçu ne change que la vue d’édition. Enregistrez et vérifiez la taille réelle en jeu."
+      ],
+      [
+        "Après avoir déplacé l’aperçu, cliquez sur Enregistrer dans les paramètres. Vérifiez la position en jeu, puis rouvrez les paramètres pour confirmer qu’elle a été conservée."
+      ],
+      [
+        "Aperçu de position déplaçable",
+        "Réglages de position dans Apparence",
+        "Effet et recharge réunis dans une icône"
+      ]
+    ],
+    [
+      "Régler la visibilité et les aides de boss",
+      "Démarrage rapide / Alertes et voix",
+      [
+        "L’affichage limité au combat concerne les combats de boss. Si la fenêtre disparaît en ville ou après le combat, vérifiez cette condition.",
+        "L’affichage limité aux effets/recharges actifs masque le panneau vide. Pour un premier essai, vérifiez les conditions et utilisez une compétence sélectionnée.",
+        "Garder visible quand le compteur est masqué conserve l’aide au combat quand vous masquez le compteur principal. Cela n’annule pas la désactivation de l’aide elle-même.",
+        "Activez la cible actuelle du boss. Pour un son seulement quand vous devenez sa cible, activez le son de changement et l’option limitée à votre personnage.",
+        "Dans Alertes et voix, choisissez avant/arrière pour les alertes de direction. Elles signalent vos coups directs dans une autre direction ; invocations, attaques placées et dégâts sur la durée sont exclus."
+      ],
+      [],
+      [
+        "Le boss cible votre personnage",
+        "Une direction de frappe différente"
+      ]
+    ],
+    [
+      "Résoudre un problème dans cet ordre",
+      "Vérifier une condition à la fois",
+      [
+        "Rien ne s’affiche : détection du personnage → aide activée → compétence sélectionnée → mode d’affichage → Enregistrer → conditions de combat/activité. Vérifiez aussi Position → Centrer sur cet écran.",
+        "Votre minuteur manque : activez votre recharge sur la fiche. La recharge du groupe seule ne l’affiche pas.",
+        "Seul le groupe manque : compétence compatible, recharge du groupe activée et mode autre qu’Effets seuls ; observez une nouvelle utilisation. Pouvoir de la tempête doit vous avoir été appliqué.",
+        "Icônes en double : vérifiez d’abord les combinaisons vous + groupe et effet + recharge. Activez les noms pour distinguer les coéquipiers.",
+        "Toujours gris : vérifiez l’épinglage et utilisez la compétence. Regardez aussi x0 pour les charges. Les valeurs d’aperçu ne confirment pas une détection.",
+        "Fenêtre sans voix : vérifiez voix de compétence, voix globale et volume, puis testez le son. Pour une alerte tardive, vérifiez son délai personnalisé.",
+        "Réglages revenus en arrière : avez-vous enregistré ? Un changement de personnage a-t-il activé un autre préréglage ?",
+        "Si le problème persiste, fournissez version, serveur, compétence, fiche de réglages, conditions de visibilité, résultat attendu et résultat observé."
+      ],
+      [
+        "Pour finir, testez séparément votre compétence, une compétence de groupe et une alerte. Rouvrez les paramètres pour vérifier les sélections enregistrées."
+      ],
+      []
+    ]
+  ]
+}

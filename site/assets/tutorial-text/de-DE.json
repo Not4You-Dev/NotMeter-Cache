@@ -1,0 +1,817 @@
+{
+  "locale": "de-DE",
+  "ui": {
+    "tutorial": "Anleitung",
+    "website": "Website",
+    "home": "Start der Anleitung",
+    "edition": "Stand: 8. Oktober 2026",
+    "search": "Funktionen und Einstellungen suchen",
+    "menu": "Inhalt",
+    "heading": "NotMeter\nAnleitung",
+    "intro": "Von der Verbindung bis zur Kampfauswertung: Lerne jede Funktion anhand echter App-Ansichten kennen.",
+    "begin": "Erste Schritte",
+    "cover": "Echte Meter-Vorschau mit Beispieldaten",
+    "contents": "Nach Einstellung suchen",
+    "contentsHint": "In derselben Reihenfolge wie in der App.",
+    "groups": [
+      "Einstieg",
+      "Meter-Einstellungen",
+      "Werkzeuge im Spiel",
+      "System und Verbindung"
+    ],
+    "paths": [
+      [
+        "Charakter verbinden",
+        "Installation, Sprache und Verbindung prüfen."
+      ],
+      [
+        "Anzeige anpassen",
+        "Größe, Schrift und Inhalte auswählen."
+      ],
+      [
+        "Buffs und Abklingzeiten",
+        "Fertigkeiten, Hinweise und Position festlegen."
+      ],
+      [
+        "Probleme lösen",
+        "Erkennung, Klickdurchleitung und Updates prüfen."
+      ]
+    ],
+    "reference": "Einstellungen im Detail",
+    "referenceHint": "Öffne einen Eintrag für Erklärung und Bildschirmposition.",
+    "location": "Hier findest du es",
+    "settings": "Einstellungen",
+    "gallery": "Echte App-Ansicht",
+    "example": "Namen und Werte sind Beispiele. Verfügbarkeit und Verbindung hängen von Server und PC ab.",
+    "zoom": "Zum Vergrößern auf das Bild klicken.",
+    "previous": "Vorheriges Bild",
+    "next": "Nächstes Bild",
+    "page": "Bild",
+    "showScreen": "Einstellung im Screenshot zeigen",
+    "default": "Gezeigter Wert",
+    "range": "Bereich",
+    "choices": "Auswahlmöglichkeiten",
+    "more": "Weitere Anleitungen",
+    "copyLink": "Seitenlink kopieren",
+    "copied": "Link kopiert.",
+    "copyFailed": "Bitte die Adresse im Browser kopieren.",
+    "searchTitle": "Suchergebnisse",
+    "found": "Ergebnisse",
+    "empty": "Keine Treffer. Versuche einen kürzeren Funktionsnamen.",
+    "error": "Die Anleitung konnte nicht geladen werden. Prüfe die Verbindung und versuche es erneut.",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "screenshotLanguage": "Sprache der App-Bilder",
+    "guideLanguage": "Sprache der Anleitung",
+    "languageNote": "Anleitung und App-Bilder sind in allen neun Website-Sprachen verfügbar. Die Sprache der Bilder lässt sich auch getrennt wählen.",
+    "sourceNote": "Basiert auf der tatsächlichen Oberfläche und Funktionsweise von NotMeter 1.0.261.",
+    "discord": "Hilfe erhalten",
+    "feedback": "Falls das Problem bleibt, teile Version, Server, Symptome und ein Bild mit.",
+    "skip": "Zum Inhalt",
+    "important": "Bitte beachten",
+    "allOptions": "Alle Einstellungen öffnen",
+    "collapseOptions": "Alle Einstellungen schließen",
+    "screenshotDefault": "Die Bilder erklären die Bedienung; die Werte sind keine empfohlene Voreinstellung.",
+    "noDetails": "Siehe die Schritte und die App-Ansicht oben.",
+    "missing": "Seite nicht gefunden",
+    "support": "Problemlösung",
+    "sample": "Beispiel",
+    "privacy": "Datenschutz",
+    "fit": "Einpassen",
+    "iconTitle": "Klassenzeichen und CP-Symbol",
+    "cpTitle": "Kampfkraft (CP)",
+    "cpDetail": "Die Zahl neben dem Namen. Sie ist weder DPS noch das Klassenzeichen.",
+    "jobs": [
+      "Gladiator",
+      "Templer",
+      "Waldläufer",
+      "Assassine",
+      "Magier",
+      "Kleriker",
+      "Beschwörer",
+      "Kantor",
+      "Faustkämpfer"
+    ],
+    "findOption": "Gib den Namen in die Einstellungssuche der App ein.",
+    "helper": "Linux-Capture-Helfer",
+    "launchMeter": "NotMeter starten",
+    "meterPath": "Meter",
+    "results": "So sieht es bei der Nutzung aus",
+    "when": "Wann erscheint das?",
+    "read": "So liest du die Anzeige",
+    "check": "Wenn etwas fehlt",
+    "setup": "So richtest du es ein",
+    "confirmation": "Nach dem Speichern prüfen",
+    "stageNote": "Standbilder aus der tatsächlichen App mit Beispieldaten, zur besseren Lesbarkeit vergrößert.",
+    "showing": "Diese Bedienelemente zeigt das Bild"
+  },
+  "articles": {
+    "start": [
+      "Erste Schritte",
+      "Prüfe zuerst die Verbindung. Weitere Funktionen kannst du später aktivieren.",
+      [
+        "Lade Npcap und NotMeter über die <a href=\"./?download=1\" data-download>Download-Anleitung</a> herunter. Bereits installiertes Npcap muss nicht neu installiert werden.",
+        "Entpacke das gesamte ZIP in einen Ordner und starte <code>NotMeter.exe</code>, nicht direkt aus dem ZIP.",
+        "Wähle die Sprache über die Karte <b>Language</b> oben links. English schaltet direkt auf Englisch um; All languages öffnet die gesamte Auswahl. Titel, Beschreibungen und Vorschau wechseln sofort. Du musst die Einstellungen nicht erneut öffnen. Speichere, um die Änderung zu behalten.",
+        "Betritt mit deinem Charakter die Spielwelt, bewege dich oder greife an und prüfe, ob dein Name auf dem Ruhebildschirm des Meters erscheint. Fehlt die Verbindung, starte unter Einstellungen → Netzwerk die Adaptersuche während einer Bewegung oder eines Angriffs. Grün markiertes „In Verwendung“ bestätigt die Spielverbindung.",
+        "Bewege den Mauszeiger über den Meter, damit das Menü erscheint. Klicke dann auf das <b>Regler-Symbol</b>, um die Einstellungen zu öffnen. Passe Größe und Schrift an und klicke auf <b>Speichern</b>. Unter Windows kannst du auch das NotMeter-Symbol im Infobereich rechts anklicken und die Einstellungen wählen."
+      ],
+      [
+        "Tastenkürzel sind zunächst deaktiviert. Weise Einstellungen öffnen und Meter ein-/ausblenden zu, damit du ihn auch gesperrt bedienen kannst."
+      ],
+      null
+    ],
+    "reading": [
+      "Den Meter lesen",
+      "Lerne Bossinformationen, Spielerzeilen und Menü kennen.",
+      [
+        "Oben stehen Ziel, HP und Kampfzeit. HP-Zahl, Prozentwert und Balken lassen sich einzeln schalten.",
+        "Zeilen zeigen Klasse, Name, CP, DPS und Beitrag. DPS ist erfasster Schaden geteilt durch Kampfdauer; der Beitrag verwendet die gewählte Berechnungsbasis.",
+        "Darüberfahren zeigt eine Kurzansicht, Anklicken öffnet Details. Beide Funktionen haben eigene Schalter.",
+        "Das Menü bietet Screenshot, Aufzeichnungen, Einstellungen und Beenden. Positioniere und sperre den Meter; unter Allgemein kannst du einzelne Klicks im gesperrten Zustand erlauben."
+      ],
+      [
+        "Boss-Maximal-HP und erfasster Gruppenschaden ergeben unterschiedliche Beitragswerte. Nur eigene Zeile anzeigen blendet andere aus, beendet aber ihre Erfassung nicht."
+      ],
+      null
+    ],
+    "details": [
+      "Fertigkeiten auswerten",
+      "Vergleiche Einzelschaden und Trefferarten.",
+      [
+        "Aktiviere Einstellungen → Meter → Angezeigte Werte → Kampfdetails, speichere und klicke eine Spielerzeile an.",
+        "Wechsle oben zwischen Spielern. Vergleiche Schaden, Einsätze, Treffer sowie Durchschnitts- und Höchstschaden pro Fertigkeit. Oben rechts wählst du etwa Kritischer Treffer, Wucht, Perfektion, Angriffe von vorne/hinten und Waffenblock.",
+        "Buff-Laufzeiten beruhen auf beobachteten Effekten; fehlende Beobachtungen werden nicht nachträglich erfunden. Aktiviere Kampfspeicherung, um Details später aus den Aufzeichnungen zu öffnen.",
+        "Unter Einstellungen → Meter → Angezeigte Werte kannst du für die Vorschau beim Überfahren einer Spielerzeile <b>Automatisch / Links / Rechts</b> wählen. Automatisch nutzt den freien Platz. Bei fester Seite bleibt die Vorschau innerhalb des Bildschirms."
+      ],
+      [
+        "Ein Start mitten im Kampf stellt frühere Treffer nicht wieder her. Ein Strich bei nDPS oder Rang bedeutet nicht null.",
+        "Bezeichnungen im Spiel: Wucht · Perfektion · Kritischer Treffer · Waffenblock."
+      ],
+      null
+    ],
+    "training": [
+      "Trainingspuppe und 1-Minuten-Rangliste",
+      "Lokale Übungsaufzeichnungen und Ranglisten haben unterschiedliche Bedingungen.",
+      [
+        "Aktiviere in Kampfverlauf die Puppenspeicherung und wähle eine Dauer. Das ändert die feste Ranglistendauer von einer Minute nicht.",
+        "Global akzeptiert nur Messungen im <b>Legionsluftschiff</b>. Nahkampf- und Trainingspuppen erscheinen gemeinsam im Trainingspuppen-Tab, jeweils mit ihrem Typ.",
+        "Beginne nach der Charaktererkennung. Erkannte Gruppenbuffs oder Debuffs einer anderen Klasse schließen den Versuch aus.",
+        "Der Ranglistenwert wird bei genau einer Minute Kampfzeit erfasst. Weiteres Angreifen ersetzt ihn nicht durch einen längeren Versuch. Auf der Website stehen pro Klasse die TOP 50 ohne CP-Grenze.",
+        "Der 60-Sekunden-Stand wird automatisch gespeichert; du musst nicht sekundengenau aufhören. <b>Gespeichert / Übertragung ausstehend / Registriert</b> sind verschiedene Zustände. Prüfe den Registrierungsstatus der Aufzeichnung statt nur die Speichermeldung."
+      ],
+      [
+        "Puppenränge vergeben weder Rangmarkierungen noch Namenseffekte. Wöchentliche Dungeon-TOP-10-Belohnungen sind separat. Die Anzeige benötigt veröffentlichte Statistikdaten.",
+        "Namen im Spiel: Trainingspuppe · Nahkampf-Trainingspuppe · Verteron-Legions-Luftschiff · Morheim-Legions-Luftschiff."
+      ],
+      null
+    ],
+    "rankings": [
+      "Ränge und Namenseffekte",
+      "Kampfvergleich, veröffentlichter Rang und Nutzungsrecht sind verschiedene Dinge.",
+      [
+        "Wähle Rangmarkierungen, Rang nach dem Kampf und Perzentile getrennt; soweit verfügbar DPS, nDPS oder beides.",
+        "Öffne Ranglistenstatistik aus Aufzeichnungen und prüfe Region, Zeitraum, Boss, Klasse und CP-Filter. Global verwendet Klassen-TOP-50 je unterstütztem Boss ohne CP-Grenze; KR/TW hat eigene CP-Bereiche.",
+        "Prüfe unter Namenseffekte den erkannten Charakter und seine aktuelle Berechtigung. Wähle einen Effekt und speichere.",
+        "Auf Global ist die Belohnung für die <b>DPS-TOP-10 deiner Klasse in dieser Woche</b> in unterstützten Dungeons verfügbar. Du kannst sie nutzen, solange du diese Voraussetzung erfüllst."
+      ],
+      [
+        "Gesamtzeit- und Puppenränge geben diese Belohnung nicht. Ein einmaliger Bereichsrang aktiviert nichts sofort: Veröffentlichung und aktuelle Berechtigung müssen vorliegen. KR/TW hat zusätzliche CP-Bedingungen. Ein Strich bedeutet keine Nullleistung."
+      ],
+      null
+    ],
+    "resources": [
+      "Energie, Tickets und Tagespunkte",
+      "Wähle Ressourcen und öffne Übersichten je Charakter.",
+      [
+        "Unter Angezeigte Werte aktivierst du Energie, Shugofesta-Schlüssel und Ressourcen im Ruhezustand.",
+        "Wähle Eintrittstickets, Dimensionsschlüssel sowie heutige Abyss- und Ranglistenpunkte. Grund- und Bonusmengen stammen aus empfangenen Spielinformationen.",
+        "Klicke die heutigen Punkte für eine Übersicht. Energie-, Artefakt- und Feldbossfenster lassen sich auch über zugewiesene Tasten öffnen. Veröffentlichte Informationen gibt es in den Website-Menüs."
+      ],
+      [
+        "Bei einem Strich zuerst Charakter- und Servererkennung prüfen. Fehlende Informationen werden nicht als null angenommen."
+      ],
+      null
+    ],
+    "obs": [
+      "Den Meter in OBS zeigen",
+      "Nutze eine Browserquelle auf demselben PC.",
+      [
+        "Aktiviere unter Allgemein die OBS-Browserquelle, speichere und kopiere die URL.",
+        "Füge in OBS eine Browserquelle hinzu und trage die URL ein. Beginne mit 1000 × 1000 und positioniere die Quelle. Inhalte und Metergröße stellst du in NotMeter ein.",
+        "Nach einer Portänderung erneut speichern und auch die OBS-Adresse ändern."
+      ],
+      [
+        "Nur der Hauptmeter wird übertragen, keine separaten Hilfs- oder Detailfenster. Die Adresse funktioniert nicht unverändert auf einem anderen PC. Bei leerer Quelle Laufzustand, Speicherung, URL und Port prüfen."
+      ],
+      null
+    ],
+    "proton": [
+      "Linux / Proton verbinden",
+      "Die Oberfläche läuft unter Proton, der optionale Linux-Helfer erfasst den Spielverkehr.",
+      [
+        "Prüfe zuerst, ob AION 2 in deiner vorhandenen Proton-Umgebung startet. Den neuen Launcher kannst du vor dem Spiel öffnen: Er wartet auf den tatsächlichen Spielprozess, bevor er NotMeter startet.",
+        "Lade die <b>Proton-Plugin-ZIP-Datei</b> oben herunter und entpacke sie im Ordner von NotMeter.exe. Die Datei <code>Plugins/Proton/notmeter_start.py</code> muss vorhanden sein. Die EXE allein reicht nicht aus.",
+        "Du benötigst Python 3.9 oder neuer, dumpcap und eine native Linux-Installation von Protontricks. Prüfe mit <code>dumpcap -D</code> als normaler Benutzer deine Mitschnittberechtigung. Flatpak-Umgebungen müssen gesondert geprüft werden.",
+        "Führe nur den unten stehenden Befehl für <b>notmeter_start.py</b> in einem Linux-Terminal aus. Bei mehreren Netzwerkschnittstellen wählst du beim ersten Start die Schnittstelle mit dem Spielverkehr aus. Die Auswahl wird gespeichert und lässt sich mit <code>--interface NAME</code> ändern. Der Mitschnitthelfer muss nicht separat gestartet werden.",
+        "Sobald das Spiel läuft, startet das Skript den Mitschnitthelfer und NotMeter automatisch. Lass das Terminal während der Nutzung geöffnet. Die Standard-App-ID der globalen Steam-Version ist 3393110. Für eine andere Installation verwende <code>--appid NUMBER</code>, für einen anderen NotMeter-Pfad <code>--exe \"Pfad/NotMeter.exe\"</code>. Bewege dich oder greife im Spiel an und prüfe, ob Charakter und Schaden angezeigt werden. Beim Schließen von NotMeter wird auch der vom Skript gestartete Mitschnitthelfer beendet. Verwende beim nächsten Mal denselben Befehl."
+      ],
+      [
+        "Verbindungsmeldung und Paketzähler bestätigen allein keine Charaktererkennung. FPS und Darstellung bleiben umgebungsabhängig. Normaler Betrieb schreibt keine Diagnosedateien. NOTMETER_PROTON_DIAGNOSTICS=1 nur auf Anfrage verwenden, danach entfernen. connection.json nicht teilen.",
+        "Beende NotMeter und den mit den alten Befehlen gestarteten Mitschnitthelfer regulär, bevor du diesen Starter verwendest. Strg+C stoppt dessen Mitschnitthelfer; schließe NotMeter selbst regulär. Beende NotMeter auch vor einem Neustart des Spiels."
+      ],
+      null
+    ],
+    "troubleshooting": [
+      "Problemlösung",
+      "Beginne beim Symptom, nicht mit einer kompletten Neuinstallation oder Rücksetzung.",
+      [],
+      [],
+      null
+    ],
+    "Language": [
+      "Sprache",
+      "Das Sprachmenü steht immer oben in der Seitenleiste.",
+      [
+        "Wähle die Sprache über die Karte <b>Language</b> oben links. English schaltet direkt auf Englisch um; All languages öffnet die gesamte Auswahl.",
+        "Titel, Beschreibungen und Vorschau wechseln sofort. Du musst die Einstellungen nicht erneut öffnen. Speichere, um die Änderung zu behalten.",
+        "Anzeigesprache und Spielregion sind unabhängig. Englisch macht aus einer koreanischen Verbindung keine Global-Verbindung."
+      ],
+      [
+        "Die Oberflächensprache erzwingt keine andere Spielregion. Diese wird aus der Verbindung erkannt."
+      ],
+      null
+    ],
+    "Meter": [
+      "Größe und Anordnung",
+      "Gut lesbar bleiben, ohne das Spiel zu verdecken.",
+      [
+        "Vergleiche Thema A und B in der Layout-Vorschau. Stelle Breite, Zeilenhöhe und Erweiterung nach oben ein; deaktivierte Optionen gelten für das gewählte Thema nicht.",
+        "Feste Spielerzahl und Scrollen halten die Höhe konstant. Wähle bei Bedarf nur deine Zeile oder alle Zeilen nach dem Kampf. Positioniere, speichere und sperre den Meter."
+      ],
+      [
+        "Prüfe Kampf- und Ruheansicht mit den Zoomtasten. Schrift und Hintergründe stehen unter Farben und Schriftarten."
+      ],
+      null
+    ],
+    "Display": [
+      "Angezeigte Werte",
+      "Boss, Spieler, Ressourcen und Leistungswerte getrennt auswählen.",
+      [
+        "Wähle Bossname, HP, Kampfzeit, Gruppen-DPS und Gesamtschaden. Boss-HP kann in einem separaten Fenster stehen.",
+        "Aktiviere CP, Server, Onlinepunkte und Rangmarkierungen nach Bedarf. Eigene Statusfreigabe auszuschalten blendet eigene und fremde Statuspunkte aus.",
+        "Wähle in Thema A die Statistiken nach dem Kampf einzeln: Angriffskraft (Frontal) · Angriffskraft (Rückseitig) · Wucht · Perfektion · Kritischer Treffer · Waffenblock. Du kannst sie auch nur für dich anzeigen.",
+        "Kampfdetails und Hover-Vorschau haben eigene Optionen. Prüfe Beitrags- und Balkenbasis sowie Zahlenformat und speichere.",
+        "Unter Einstellungen → Meter → Angezeigte Werte kannst du für die Vorschau beim Überfahren einer Spielerzeile <b>Automatisch / Links / Rechts</b> wählen. Automatisch nutzt den freien Platz. Bei fester Seite bleibt die Vorschau innerhalb des Bildschirms."
+      ],
+      [
+        "Thema B unterstützt diese aufgeklappten Trefferstatistiken nicht. Nur eigene Statistiken lässt fremde Schadenszeilen bestehen. Ping, FPS und CPU/RAM sind getrennt; FPS auszuschalten stoppt auch seine Messung. Fehlende Werte können als Strich erscheinen.",
+        "Zeigt FPS einen Strich und erscheint ein Berechtigungshinweis, beende NotMeter regulär und starte es als Administrator. Ein Strich bei fehlendem Spielprozess oder Messwert bedeutet nicht 0 FPS."
+      ],
+      null
+    ],
+    "Design": [
+      "Farben, Schrift und Deckkraft",
+      "Zuerst lesbare Schrift, dann Hintergründe und Balken.",
+      [
+        "Passe Schriftart, Stärke und Größen für Namen, DPS und Bossinfos getrennt an. Farben direkt eingeben oder im Farbwähler auswählen.",
+        "Unterscheide Balken, Zeilenhintergrund, Gesamthintergrund und ganze Fensterdeckkraft. Ein Balken bei 0 % verschwindet, nicht die ganze App.",
+        "Wähle Klassen- oder Eigenfarbe, prüfe beide Vorschauen und speichere."
+      ],
+      [
+        "Fehlen Buchstaben oder erscheinen stattdessen Kästchen, prüfe die Ersatzschrift. Bei unscharfem Text hilft möglicherweise die Option für scharfe Textdarstellung. Auch bei der niedrigsten Fensterdeckkraft bleibt der Meter schwach sichtbar, damit du ihn wiederfinden kannst."
+      ],
+      null
+    ],
+    "ColorFinder": [
+      "Farbauswahl",
+      "Farben ohne auswendig gelernte Codes einstellen.",
+      [
+        "Wähle das Ziel unter Anwenden auf und dann eine Farbe. Vorschau und kopierter Farbcode werden aktualisiert.",
+        "Prüfe den Kontrast und speichere. Den Code kannst du in anderen Farbfeldern wiederverwenden."
+      ],
+      [],
+      null
+    ],
+    "Presets": [
+      "Charakterprofile",
+      "Bis zu fünf Konfigurationen für unterschiedliche Charaktere.",
+      [
+        "Nach der Charaktererkennung einen freien Platz wählen und für den aktuellen Charakter anlegen. Profil 1 erhält die bisherigen Einstellungen.",
+        "Änderungen speichern; beim nächsten Erkennen wird das verknüpfte Profil automatisch angewendet. Für einen vorübergehenden Wechsel ohne neue Verknüpfung Aktuelles Profil verwenden."
+      ],
+      [
+        "Netzwerkeinstellungen sind ausgeschlossen. Ein Charakterwechsel verändert weder Erfassungsart noch Verbindungseinstellungen."
+      ],
+      null
+    ],
+    "NicknameEffects": [
+      "Namenseffekte",
+      "Eigene und fremde Effekte getrennt steuern.",
+      [
+        "Wähle die Sichtbarkeit beider Gruppen. Prüfe Design, Geschwindigkeit und Helligkeit in der Kampfzeile.",
+        "Nach der Erkennung die Berechtigung und vor einem Gutschein den Namen prüfen. Mit gültigem Recht auswählen und speichern; die Standarddarstellung beendet den Effekt."
+      ],
+      [
+        "Bei Verlust der Rangberechtigung wird der Effekt verborgen, die Auswahl bleibt. KR/TW-Bereichsregeln und Global-Wochenbelohnungen unterscheiden sich."
+      ],
+      null
+    ],
+    "BuffUi": [
+      "Kampfhilfe einrichten",
+      "Sieh Effektdauer und Wartezeit, ohne die Spielsymbole suchen zu müssen.",
+      [
+        "Wähle unter Schnellstart deine Klasse und das Startprofil. Aktiviere auch den Hauptschalter oben.",
+        "Unter Fertigkeiten zwischen Klasse, allgemeinen Effekten, Tränken, Schriftrollen und Debuffs wechseln. Buff und Abklingzeit je Fertigkeit getrennt aktivieren.",
+        "Öffne Hinweise und feste Symbole der gewünschten Fertigkeit. Wähle Daueranzeige und Start-, End- oder Bereitschaftshinweise. Graue Schalter sind nicht unterstützt.",
+        "Unter Hinweise und Sprache Stimme, Lautstärke und Vorlauf wählen. Karten erlauben eigene Namen und individuelle Zeitpunkte.",
+        "Unter Aussehen Größe, Richtung, Deckkraft und Farben ändern. Buffs, Abklingzeiten und Nachrichten können getrennt platziert werden. Mit Positions- und Hinweisschau prüfen, dann speichern.",
+        "Unter Kampfhilfe → Alarme & Stimme lassen sich Effekte und Sprachausgabe oben getrennt aktivieren und einstellen. Höre beide vor dem Speichern probeweise an.",
+        "Für lautere Meldungen ohne Änderung der gesamten Headset-Lautstärke kannst du die Alarmverstärkung von 100 % bis 300 % erhöhen. Beginne bei 100 %. Sie gilt auch für andere NotMeter-Alarme, hebt aber weder Stummschaltung noch 0 % Lautstärke auf.",
+        "Auf 4K-Bildschirmen kannst du die Symbolgröße unter Darstellung bis auf 400 % erhöhen. Der Vorschauzoom vergrößert nur die Editoransicht. Speichere und prüfe die tatsächliche Größe im Spiel."
+      ],
+      [
+        "Einzelne Fertigkeiten reichen bei ausgeschaltetem Hauptschalter nicht. Prüfe nur im Kampf, nur bei Aktivität und Sichtbarkeit bei verborgenem Meter. Bosszielton hat eigene Lautstärke und Wiederholung und kann auf dich beschränkt werden. Richtungsprüfung verwendet direkte Treffer, keine Beschwörungen, platzierten Effekte oder Schaden über Zeit."
+      ],
+      null
+    ],
+    "PartyLookup": [
+      "Gruppen- und Charaktersuche",
+      "Bei erkannter Global-Verbindung wird die Gruppenabfrage in den Einstellungen ausgeblendet. Sie ist für Korea/Taiwan vorgesehen und unabhängig von Gruppen-Abklingzeiten in der Kampfhilfe.",
+      [
+        "Wähle separates Fenster oder Ergebnisse im Meter und aktiviere Bewerber-, Gruppen- oder Detailabfragen.",
+        "Passe neue Einträge, Klang, Schrift und Fertigkeitskarten an. Optional Notizen und Fertigkeitsnamen vergeben, dann speichern."
+      ],
+      [
+        "Bei erkannter Global-Verbindung wird die Gruppenabfrage in den Einstellungen ausgeblendet. Sie ist für Korea/Taiwan vorgesehen und unabhängig von Gruppen-Abklingzeiten in der Kampfhilfe."
+      ],
+      null
+    ],
+    "CombatRecords": [
+      "Kämpfe speichern",
+      "Sieh dir abgeschlossene Bosskämpfe und gescheiterte Versuche später noch einmal an.",
+      [
+        "Speicherung aktivieren und Höchstzahl wählen. Bei Überschreitung werden ältere Einträge entfernt.",
+        "Aufzeichnungsbutton oder Tastenkürzel öffnen die Tabs für Siege, Versuche, Puppen und Archiv. Nach Boss filtern, Spieler für Details anklicken.",
+        "Wichtige Einträge archivieren. Löschen ist nicht rückgängig zu machen. Screenshots und eigene Statistik können geteilt werden; Ranglistenstatistik öffnet die passende Region auf der Website.",
+        "Für automatisches Leeren nach dem Kampf den Reset und die Verzögerung einschalten. Ein laufender oder neuer Kampf wird dadurch nicht zurückgesetzt."
+      ],
+      [
+        "Die Verzögerung beginnt nach Kampfende, nicht beim Erkennen von Inaktivität. Lokale Puppenaufzeichnungen erlauben 5–120 Sekunden; Global-Ränge verwenden fest eine Minute."
+      ],
+      null
+    ],
+    "FieldBoss": [
+      "Feldbosszeiten und Hinweise",
+      "Nutze aus dem Spiel empfangene Erscheinungszeiten.",
+      [
+        "Hinweise aktivieren und mehrere Vorlaufzeiten wählen, etwa 10 oder 5 Minuten.",
+        "KR/TW oder Global und Gebiet wählen. Gewünschte Bosse einschalten und Wichtigkeit von 0 bis 5 Sternen vergeben.",
+        "Öffne die passende Weltkarte (M), damit Zeiten erkannt werden. Bei Lücken die Region erneut ansehen.",
+        "Position, Dauer und Lautstärke mit Vorschauen prüfen und speichern."
+      ],
+      [
+        "Bossauswahl und Wichtigkeit sind je Dienst getrennt, Zeiten, Klänge und Lautstärke gemeinsam. Schadensmessung ist separat, zeigt bis zu zehn Spieler und unterstützt Abyss nicht."
+      ],
+      null
+    ],
+    "Alerts": [
+      "Ereignisse und eigene Alarme",
+      "Nur benötigte Hinweise zur passenden Zeit.",
+      [
+        "Die Zeitbasis oben unter Einstellungen → Benachrichtigungen erkennt standardmäßig den verbundenen Server. Korea, Taiwan sowie Global Asien, NA West, NA Ost, Europa und Südamerika werden getrennt behandelt.",
+        "Prüfe Region, Serverzeit und den nächsten Alarm in deiner Ortszeit. Bis zur Servererkennung bleiben zeitgebundene Spielmeldungen aus. Bei Bedarf kannst du deine Spielregion manuell wählen und speichern.",
+        "Schlachtfeld-, Riss- und Shugo-Festival-Meldungen verwenden diese Serverzeit. Persönliche Alarme nutzen weiterhin die lokale PC-Zeit. Ändere dafür nicht die PC-Zeitzone.",
+        "Wähle Schlachtfeld-, Riss- und Shugofesta-Hinweise und deren Zeitpunkte. Bei 0 % Lautstärke erscheint nur die Meldung.",
+        "Unter Eigene Alarme verwalten Wochentage, Uhrzeit und Vorlauf setzen. Bei störender Position den separaten Modus und die Positionsvorschau verwenden.",
+        "Geringer Beitrag benötigt Boss-HP- und Beitragsschwelle. Deine eigene Zeile ist ausgeschlossen. Speichern nicht vergessen."
+      ],
+      [
+        "Risszeiten richten sich nach dem erkannten Server; Global braucht ebenfalls Servererkennung. Wartungen oder geänderte Ereignisse können von festen Zeitplänen abweichen."
+      ],
+      null
+    ],
+    "Bus": [
+      "Bossbesiege zählen",
+      "Zähle ausgewählte Bosse bis zum Ziel und beginne neu.",
+      [
+        "Zählmodus aktivieren, Zielbosse und Zielzahl wählen. Bei Bedarf den aktuellen Stand korrigieren.",
+        "Speichern und nach einem passenden Boss prüfen. Am Ziel springt der Zähler automatisch auf null."
+      ],
+      [],
+      null
+    ],
+    "General": [
+      "Start, Sperre und Updates",
+      "Die Position festhalten, bestimmte Klicks aber zulassen.",
+      [
+        "Autostart, Taskleiste und Sichtbarkeit beim App-Wechsel auswählen.",
+        "Um Menüs bei gesperrtem Meter zu bedienen, aktiviere ihre Anzeige und erlaube die gewünschten Schaltflächen einzeln. Für einen Klick auf Spielerzeilen müssen sowohl Kampfdetails während der Sperre als auch Kampfdetails unter den angezeigten Werten aktiviert sein.",
+        "Um den Meter beim Darüberfahren vorübergehend zu bedienen, aktiviere das automatische Aufheben der Klickdurchleitung und stelle die Wartezeit ein. Danach nimmt der Meter Klicks entgegen. Wähle außerdem Updateprüfungen und Hinweise während der Nutzung und speichere. Die Prüfung beim Start wird separat durchgeführt.",
+        "Die Vollbild-Anzeigewiederherstellung unter Einstellungen → Allgemein ist standardmäßig AN. Sie versucht, den Hauptmeter wieder vor das Spiel zu bringen. Manche exklusiven Vollbildmodi verhindern weiterhin Overlays; nutze dann den randlosen Fenstermodus.",
+        "Liegt das Fenster außerhalb des Bildschirms, klicke mit rechts auf das NotMeter-Symbol im Infobereich und setze die Meter-Fensterposition zurück. Ein Zurücksetzen aller Einstellungen ist nicht nötig."
+      ],
+      [
+        "Standardmäßig gehen gesperrte Klicks ans Spiel. Ziehen an erlaubten Bereichen bewegt oder vergrößert den Meter nicht. Bei manueller Sperre mit Klickberechtigungen gilt Hover-Entsperren nicht."
+      ],
+      null
+    ],
+    "Hotkeys": [
+      "Tastenkürzel zuweisen",
+      "Einstellungen und Fenster auch während der Sperre erreichen.",
+      [
+        "Aktion aktivieren, Taste und Ctrl, Alt, Shift oder Win wählen.",
+        "Mit Einstellungen, Sichtbarkeit und Klickdurchleitung beginnen; Reset, Kampfhilfe, Aufzeichnungen und Statusfenster nach Bedarf ergänzen.",
+        "Konflikte mit Spieltasten prüfen, speichern und ausprobieren."
+      ],
+      [
+        "Anfangs ist kein Kürzel aktiv. Beispiele sind keine Vorbelegung. Für Beenden und Neustart schwer versehentlich auslösbare Kombinationen wählen."
+      ],
+      null
+    ],
+    "Render": [
+      "GPU-/CPU-Darstellung",
+      "Nur bei Anzeige- oder Leistungsproblemen anpassen.",
+      [
+        "Funktioniert der Modus gut, behalte ihn. Bei schwarzen oder fehlerhaften Fenstern Modus ändern, <b>speichern und neu starten</b>.",
+        "Niedrige Latenz für Meter und Buffs ist experimentell. Jeweils nur eine Option ändern und dieselbe Szene vergleichen.",
+        "Ruckeln Zeilen oder Zahlen im GPU-Modus, wechsle zum CPU-Modus, speichere und starte neu. Vergleiche dieselbe Szene. Rangwechsel- und Zahlen-/Balkenanimationen lassen sich getrennt abschalten. Die Verträglichkeit von Frame Generation und Overlays ist nicht auf jedem PC gewährleistet."
+      ],
+      [
+        "Nicht jede GPU oder Proton-Umgebung profitiert. Bei Problemen ausschalten und neu starten."
+      ],
+      null
+    ],
+    "Optimization": [
+      "Darstellungsaufwand senken",
+      "Anzeige anpassen, getrennt von der Kampfmessung.",
+      [
+        "Zuerst den Modus für schwächere PCs testen. Ausschalten stellt vorherige Anzeigeeinstellungen wieder her.",
+        "Vergrößere die Aktualisierungsintervalle für Zahlen und Kampfhilfe, damit die Anzeige seltener neu gezeichnet wird. Das senkt die Last, Änderungen erscheinen aber später. Animationen für Balken, Zahlen und Rangwechsel kannst du bei Bedarf ausschalten.",
+        "Optional den Hauptmeter im Bosskampf ausblenden und danach wieder zeigen. Zusatzanzeigen und Hinweise bleiben nutzbar."
+      ],
+      [
+        "Ohne Leistungsleiste endet die CPU/RAM-Messung. FPS hat einen eigenen Schalter unter Angezeigte Werte."
+      ],
+      null
+    ],
+    "Network": [
+      "Spielverbindung und Erfassung",
+      "Versuche zuerst die automatische Erkennung. Wird dein Charakter nicht erkannt, prüfe den Netzwerkadapter und ändere die Erfassungsmethode nur bei Bedarf.",
+      [
+        "Windows nutzt standardmäßig Npcap. Bewege dich oder greife an und starte die Adaptersuche. Nach VPN- oder Beschleunigerwechsel aktualisieren und erneut suchen.",
+        "Entscheidend ist bestätigtes In Verwendung, nicht die höchste Paketmenge. Falls nötig das offizielle WinDivert-Plugin direkt im geöffneten Plugin-Ordner entpacken, ohne zusätzlichen Unterordner.",
+        "Installation prüfen, WinDivert auswählen, speichern, vollständig schließen und als Administrator starten.",
+        "Für einen zweiten Spiel-PC vorher bidirektionale Portspiegelung einrichten. Empfangsadapter und IPv4 genau eines Spiel-PCs angeben und Spiegelung prüfen."
+      ],
+      [
+        "Bei funktionierendem Npcap kein Plugin nötig. Ein VPN kann den ursprünglichen Verkehr trotz Methodenwechsel verbergen. Nur einen PC spiegeln, kein ganzes WAN oder mehrere PCs. Getrennte Internet- und Empfangsadapter werden empfohlen.",
+        "Nach erfolgreicher automatischer Erkennung musst du den Adapter nicht bei jedem Start neu suchen. Speichere eine manuelle Auswahl und prüfe sie nach dem Neustart. Netzwerkeinstellungen werden weder durch Sicherungscodes noch durch Charakterprofile übertragen."
+      ],
+      null
+    ],
+    "Backup": [
+      "Ausgewählte Einstellungen sichern und wiederherstellen",
+      "Sichere ausgewählte Einstellungen oder teile dein Design über denselben Bildschirm. Wähle die Kategorien zum Sichern und Wiederherstellen jeweils selbst aus. Netzwerkeinstellungen und Bilder des Ruhebildschirms sind ausgeschlossen.",
+      [
+        "Öffne Einstellungen → Sicherung & Wiederherstellung und wähle <b>Sichern</b>. Standardmäßig sind alle Kategorien ausgewählt.",
+        "Lass nur die gewünschten Kategorien markiert. Für das Aussehen allein genügt <b>Design</b>. Wähle zusätzlich <b>Kampfhilfe</b>, um auch Fertigkeiten und Abklingzeiten zu teilen. Das zweite Bild zeigt diese beiden Kategorien.",
+        "Wähle <b>Sicherungscode erstellen</b> und anschließend <b>Code kopieren</b> oder <b>Als Datei speichern</b>. Neue Codes werden komprimiert und sind dadurch kürzer. Erstelle nach einer Änderung der Auswahl einen neuen Code.",
+        "Wähle zum Importieren auf demselben Bildschirm <b>Wiederherstellen</b>. Füge den vollständigen Code ein oder öffne die Textdatei mit <b>Aus Datei laden</b>. Wähle dann <b>Wiederherstellung prüfen</b>.",
+        "Markiere die enthaltenen Kategorien, die du wiederherstellen möchtest. Aus einem Code mit Design und Kampfunterstützung kannst du auch nur die Kampfunterstützung übernehmen. Nicht ausgewählte Einstellungen bleiben erhalten.",
+        "Wähle <b>Auswahl wiederherstellen</b>. Die Änderungen werden angewendet und das Einstellungsfenster schließt sich. Ein zusätzlicher Klick auf Speichern ist nicht nötig. Öffne die Einstellungen erneut und prüfe das Ergebnis."
+      ],
+      [
+        "Alle Netzwerkeinstellungen, einschließlich Adapter, Erfassungsmethode und VPN, sind ausgeschlossen. Auch ältere Codes überschreiben die Netzwerkeinstellungen dieses PCs nicht.",
+        "Fensterpositionen und der aktuelle Sperrstatus bleiben erhalten. Gespeicherte Kampfdateien sind nicht enthalten; die Kategorie für Kampfverlauf umfasst nur Einstellungen wie Speichern und automatisches Zurücksetzen.",
+        "Neue NM-SETTINGS-2-Codes, ältere vollständige NM-SETTINGS-1-Sicherungen und NM-SKIN-1-Designcodes werden alle im selben Wiederherstellungsbereich eingelesen. Aktualisiere NotMeter zuerst, falls ein neuer Code nicht erkannt wird.",
+        "Bilder und Einstellungen des Ruhehintergrunds sind ebenfalls von Sicherungscodes ausgeschlossen."
+      ],
+      null
+    ],
+    "IdlePhoto": [
+      "Hintergrundbild für die Ruheansicht",
+      "Wähle ein eigenes Bild oder eine Vorlage und richte es so aus, dass die Charakterdaten lesbar bleiben.",
+      [
+        "Öffne Einstellungen → Meter → Hintergrundbild. Wähle eine integrierte Vorlage oder eine JPG-, PNG- oder BMP-Datei. Erlaubt sind bis zu 25 MB pro Bild; empfohlen wird ein Querformat mit etwa 2000 × 800 Pixeln.",
+        "Aktiviere das Bild und wähle <b>Vollflächiger Hintergrund / Bild links / Bild rechts</b>. Ausfüllen kann das Bild beschneiden; Einpassen zeigt das ganze Bild.",
+        "Ziehe das Bild in der Vorschau, um Position und Ausschnitt zu ändern. Mit Mausrad oder Zoomregler passt du die Größe an. Das Bild wird dabei nicht gedreht.",
+        "Passe Deckkraft, Abdunklung sowie Stärke und Ausdehnung der Textschattierung an. Name, Server und Ressourcen müssen lesbar bleiben.",
+        "Prüfe die Vorschau vor und nach der Charaktererkennung und speichere. Die Bibliothek merkt sich Ausschnitt und Einstellungen für jedes Bild."
+      ],
+      [
+        "Das Bild erscheint nur in der Ruheansicht. Wird der Meter nur im Kampf angezeigt, bleibt auch dieses Bild verborgen.",
+        "Bilddateien und Bildeinstellungen sind nicht in Sicherungs- oder Designcodes enthalten. Entfernen betrifft die Bibliothek des aktuellen Profils."
+      ],
+      "Prüfe nach dem Speichern Bild und Charaktername in der Ruheansicht. Im Kampf muss das Bild verschwinden."
+    ],
+    "bossForecast": [
+      "Zeit bis zum Sieg und Raserei (TTK)",
+      "Schätze die verbleibende Kampfzeit anhand der Boss-HP und des erfassten Gruppenschadens.",
+      [
+        "Aktiviere unter Einstellungen → Meter → Angezeigte Werte die Schätzung der Zeit bis zum Sieg (TTK) und/oder bis zur Raserei und speichere. Sind beide aktiv, erscheint auch der zeitliche Vorsprung oder die Überschreitung.",
+        "Die Werte erscheinen unter den Boss-HP, sobald erster Schaden und verbleibende HP bekannt sind. Du musst nicht 30 Sekunden warten; anfangs ist der Wert als erste Schätzung gekennzeichnet.",
+        "Die TTK ist die geschätzte Restzeit ab jetzt. Sie berücksichtigt bis zu 30 Sekunden jüngsten Schaden an diesem Boss sowie die Zeit seit dem letzten Treffer. Unverwundbarkeit oder Mechaniken können die Schätzung erhöhen.",
+        "Die Raserei-Schätzung nutzt bestätigte Bossdaten und den Zeitpunkt des ersten Angriffs. Der Vorsprung zeigt, wie viel früher der Boss voraussichtlich fällt; eine Überschreitung bedeutet, dass es voraussichtlich zu spät wird.",
+        "Bei Bossen, die nachweislich keinen Raserei-Timer haben, zeigen Timer und Vorsprung ∞. Unbekannte Bossdaten oder ein nicht bestätigter Kampfbeginn werden dagegen als unbekannt angezeigt."
+      ],
+      [
+        "Für Korea, Taiwan und Global. Die Zeile verschwindet nach dem Kampf und wird bei Trainingszielen nicht angezeigt.",
+        "Die Schätzung ist keine garantierte Abschlusszeit. Heilung, schwankender Schaden und ein später Kampfeinstieg können sie verändern."
+      ],
+      "Prüfe, ob sich die Werte im Bosskampf aktualisieren und nach dessen Ende verschwinden. Bei Trainingszielen darf die Zeile nicht erscheinen."
+    ],
+    "combatVisibility": [
+      "Meter nur im Kampf anzeigen",
+      "Blende die Ruheansicht aus und lasse den Meter zum Kampfbeginn automatisch erscheinen.",
+      [
+        "Aktiviere unter Einstellungen → Allgemein die Option zum Anzeigen nur während des Kampfes. Standardmäßig ist sie AUS.",
+        "Stelle die Verzögerung nach Kampfende auf 0 bis 300 Sekunden. Bei 0 wird sofort ausgeblendet; mit einigen Sekunden bleibt Zeit zum Lesen.",
+        "Speichere. Der Meter ist im Ruhezustand verborgen, erscheint im Kampf und wird danach verzögert ausgeblendet. Ein neuer Kampf bricht einen ausstehenden Ausblendvorgang ab.",
+        "Über einen Rechtsklick auf das NotMeter-Symbol im Windows-Infobereich erreichst du weiterhin Einstellungen und Profile. <b>Anzeigen</b> blendet den Meter bis zum nächsten Kampf vorübergehend ein. Du kannst vorher auch einen Hotkey zuweisen."
+      ],
+      [
+        "Ein manuell ausgeblendeter Meter wird nicht automatisch eingeblendet. Die Kampfhilfe hat eigene Sichtbarkeitseinstellungen.",
+        "Nicht gleichzeitig mit der Optimierungsoption zum Ausblenden während Bosskämpfen verwendbar."
+      ],
+      "Prüfe: im Ruhezustand verborgen, im Kampf sichtbar und nach Ablauf der gewählten Verzögerung wieder verborgen."
+    ],
+    "character": [
+      "Charaktere und Ranglisten-Kampfdetails",
+      "Sieh dir Kämpfe gelisteter Charaktere und die im neuesten verfügbaren Ranglistenkampf erfassten Fertigkeitsmerkmale an.",
+      [
+        "Wähle in der <b>Charaktersuche</b> Korea, Taiwan oder Global. Bei Global wählst du zusätzlich die Spielregion. Suche nach dem Namen und öffne den Charakter auf dem richtigen Server.",
+        "Prüfe <b>Diese Woche</b> und <b>Gesamter Zeitraum</b> getrennt. Ohne aktuellen Wocheneintrag kann trotzdem ein älterer Rekord vorliegen.",
+        "Öffne die <b>Kampfdetails</b> eines Eintrags, um Schaden, Fertigkeiten und Buffs genau dieses Kampfes zu sehen. Ein anderer Eintrag zeigt einen anderen Kampf.",
+        "Die Merkmale im Fertigkeitsbereich stammen aus dem jüngsten verfügbaren Ranglistenkampf. Sie müssen nicht der aktuellen Ausrüstung entsprechen; beachte den Aufnahmezeitpunkt.",
+        "Stigma-Fertigkeiten erhalten diese Markierungen nicht. Fehlende Merkmale oder nicht ladbare Details werden nicht durch geschätzte Werte ersetzt."
+      ],
+      [
+        "Dafür ist ein veröffentlichter Ranglisteneintrag erforderlich. Ein gerade beendeter Kampf erscheint nicht zwingend sofort."
+      ],
+      "Prüfe Region und Server des Charakters sowie die Zuordnung der Details zum ausgewählten Kampf."
+    ]
+  },
+  "problems": [
+    [
+      "Charakter wird nicht erkannt",
+      "Die Welt betreten, bewegen oder angreifen, Adapterliste aktualisieren und suchen. Beim VPN muss der originale Spielverkehr sichtbar sein; bei Proton müssen Plugin und Python-Helfer verbunden sein."
+    ],
+    [
+      "Fenster unsichtbar oder nicht anklickbar",
+      "Einstellungen über den Windows-Infobereich öffnen. Sichtbarkeit, Fensterdeckkraft, Nur im Spiel, Sperre und Klickdurchleitung prüfen. Ein bereits zugewiesenes Tastenkürzel hilft ebenfalls."
+    ],
+    [
+      "Kampfhilfe fehlt trotz ausgewählter Fertigkeit",
+      "Hauptschalter, Fertigkeit, Nur im Kampf und Nur aktiv prüfen. Positionsvorschau zeigt, ob das Fenster außerhalb liegt. Deaktivierte Optionen sind nicht unterstützt."
+    ],
+    [
+      "Meldung ohne Ton",
+      "Fertigkeits- und Hauptsprachschalter, Lautstärke und die Bedingung Nur wenn ich Bossziel bin prüfen. Klangvorschau testen."
+    ],
+    [
+      "Update scheitert oder wiederholt sich",
+      "Oben in Einstellungen Updatediagnose öffnen und vollständig kopieren. Aktuelle Version und Version eines früheren Fehlers können abweichen. Fehlerstufe und Code mitgeben."
+    ],
+    [
+      "Strich bei FPS, Punkten oder Rang",
+      "FPS hängt von Spielprozess und PC ab, Punkte von Ressourcenerkennung, Ränge von veröffentlichten Vergleichsdaten. Ein Strich ist nicht null; die Ursachen müssen nicht gleich sein."
+    ],
+    [
+      "Kein sofortiger Reset nach Kampfende",
+      "Automatik und Verzögerung prüfen. Erneute Angriffe oder ein neuer Boss beeinflussen die Bedingungen. Bei stehendem Timer und steigendem Schaden Version, Boss, Schritte und Bild melden."
+    ],
+    [
+      "Sicherungscode abgelehnt",
+      "Füge den vollständigen Code in der aktuellen NotMeter-Version unter Sicherung & Wiederherstellung → Wiederherstellen ein. Neue Sicherungen, alte vollständige Sicherungen und alte Designcodes nutzen denselben Bereich. Importiere bei unvollständiger Kopie die ursprüngliche Textdatei und bewahre sie auf."
+    ]
+  ],
+  "scenes": {
+    "assist": [
+      "Buff oder Abklingzeit?",
+      "Sobald eine ausgewählte Fertigkeit erkannt wird.",
+      "Oben bedeutet 24 noch 24 Sekunden Wirkung, unten 41 noch 41 Sekunden bis zur Nutzung. 1:12 ist eine Minute und zwölf Sekunden. Dasselbe Symbol kann zwei verschiedene Zeiten zeigen.",
+      "Hauptanzeige und einzelne Buff-/Abklingzeitschalter prüfen. Farben sind einstellbar.",
+      [
+        "Oben Effektdauer, unten Abklingzeit"
+      ]
+    ],
+    "pinned": [
+      "Feste Symbole und Bereitschaft",
+      "Immer anzeigen lässt das Symbol nach Ablauf stehen.",
+      "Links sind 24 Sekunden übrig, rechts bleibt das Symbol ohne Timer. Dauerhafte Buff-Anzeige ist eine eigene Option.",
+      "Ein Symbol allein beweist keinen aktiven Buff. Farbumkehr kann hell und dunkel vertauschen.",
+      [
+        "24 Sekunden Abklingzeit",
+        "Festes Symbol ohne Timer"
+      ]
+    ],
+    "combined": [
+      "Zwei Zeiten, ein Symbol",
+      "Kombiniertes Thema mit Buff und Abklingzeit derselben Fertigkeit.",
+      "Unten links 12 ist die Buffdauer, oben rechts 24 die Abklingzeit.",
+      "Für getrennte Fenster das normale Ringthema mit Trennmodus verwenden.",
+      [
+        "12 Sekunden Buff / 24 Sekunden Abklingzeit"
+      ]
+    ],
+    "debuff": [
+      "Debuff-Kennzeichnung",
+      "Wenn ein unterstützter aktivierter Debuff erkannt wird.",
+      "D steht für Debuff, 12 für Restdauer. Grüne Zahlen können Stapel darstellen, nicht immer Ladungen.",
+      "Nicht unterstützte Schalter sind deaktiviert. Anzeigen hängen von beobachtbaren Effekten ab.",
+      [
+        "D-Markierung und Restdauer"
+      ]
+    ],
+    "alerts": [
+      "Zusätzliche Nachrichten",
+      "Bei aktiviertem Start-, End- oder Bereitschaftshinweis.",
+      "Anwenden zeigt den Buffstart, 3 Sekunden das bevorstehende Ende, Bereit die erneute Nutzung. Die Nachrichten bleiben nur kurz.",
+      "Bild und Sprache sind getrennt. Fertigkeitswahl, Hauptsprachschalter und Lautstärke prüfen.",
+      [
+        "Buff beginnt",
+        "Buff endet bald",
+        "Fertigkeit wieder bereit"
+      ]
+    ],
+    "target": [
+      "Aktuelles Bossziel",
+      "Wenn Zielanzeige aktiv und das Ziel im Kampf erkannt ist.",
+      "Noel ist ein Gruppenmitglied, Aster bist du im Beispiel. Eigene Zielfarbe, Effekte und Klang sind einstellbar.",
+      "Nur bei eigenem Ziel stummt andere Wechsel, verbirgt aber nicht den Namen des aktuellen Ziels.",
+      [
+        "Gruppenmitglied als Ziel",
+        "Du als Ziel"
+      ]
+    ],
+    "direction": [
+      "Falsche Trefferrichtung",
+      "Bevorzugt hinten, aber ein direkter Treffer kommt nicht von hinten.",
+      "Die Warnung beschreibt den Treffer, keine Bewegungsrichtung und nicht den Blick des Bosses.",
+      "Aktivierung, Richtung und Position prüfen. Beschwörungen, Platzierungen und zeitlicher Schaden zählen hier nicht als direkte Treffer.",
+      [
+        "Warnung bei bevorzugter Rückseite"
+      ]
+    ],
+    "meter": [
+      "Kampfansicht",
+      "Sobald Boss- oder Puppenschaden erfasst wird.",
+      "Kopf: Ziel, Zeit, HP. Links je Zeile: Klasse, Name, CP. Rechts: DPS, Beitrag und verfügbare Ränge.",
+      "Thema und Optionen verändern die Anordnung. Namen, Werte und Ränge sind Beispiele.",
+      [
+        "Kampfbeispiel aus dem echten Renderer"
+      ]
+    ],
+    "detail": [
+      "Spielerzeile anklicken",
+      "Bei aktivierten Kampfdetails.",
+      "Oben Spieler wechseln, unten Fertigkeitsschaden und Treffer vergleichen. Die Metrikauswahl verändert Spalten.",
+      "Sperrberechtigung prüfen. Frühere Treffer werden beim Start mitten im Kampf nicht ergänzt.",
+      [
+        "Schaden und Treffer je Fertigkeit"
+      ]
+    ],
+    "records": [
+      "Gespeicherten Kampf öffnen",
+      "Nach aktivierter Speicherung und einer Aufzeichnung.",
+      "Tabs und Bossfilter verwenden, dann einen Spieler für Details auswählen.",
+      "Speicherung und Auslösezeit prüfen. Vergangene Kämpfe entstehen nicht rückwirkend.",
+      [
+        "Aufzeichnungen mit Beispieldaten"
+      ]
+    ],
+    "resources": [
+      "Ressourcen separat anzeigen",
+      "Bei aktivierter getrennter Anzeige und erkannten Werten.",
+      "Zahlen gehören zum Schlüssel- oder Energiesymbol, Klammern zeigen Zusatzmengen. Symbole und Bossbutton öffnen Übersichten.",
+      "Einzelschalter und Erkennung prüfen. Ein Strich ist nicht null.",
+      [
+        "Schlüssel und Energie"
+      ]
+    ],
+    "field": [
+      "Spawn-Hinweis",
+      "Wenn ein ausgewählter Boss den Vorlauf erreicht.",
+      "Name, Countdown und Wichtigkeitssterne lesen. Drei Sterne sind deine Auswahl, nicht Schwierigkeit oder Rang.",
+      "Weltkartenzeit sowie Region und Bossaktivierung prüfen.",
+      [
+        "Fünf Minuten vorher, Wichtigkeit drei"
+      ]
+    ],
+    "custom": [
+      "Eigener Alarm",
+      "Wenn Wochentag, Zeit und Vorlauf passen.",
+      "Titel, Zielzeit und Hinweiszeitpunkt; eine Notiz erscheint darunter.",
+      "Aktivierung und Wochentag prüfen. Bei Lautstärke null erscheint nur die Nachricht.",
+      [
+        "Fünf Minuten vor 21:00 Uhr"
+      ]
+    ],
+    "bus": [
+      "Zielzahl erreicht",
+      "Wenn der ausgewählte Boss oft genug besiegt wurde.",
+      "Kurze Meldung, dann startet der Zähler bei null neu.",
+      "Boss, Ziel und aktuellen Stand prüfen. Nicht jeder Monsterkill zählt.",
+      [
+        "Meldung zum erreichten Ziel"
+      ]
+    ],
+    "idle": [
+      "Eigenen Namen finden",
+      "Nach der Charaktererkennung in der Welt.",
+      "Name und Server bestätigen die Erkennung. Weitere Ruheinformationen hängen von deinen Optionen ab.",
+      "Bei Erkennung läuft die Verbindung prüfen. Ressourcen können später eintreffen als der Name.",
+      [
+        "Ruheansicht eines erkannten Charakters"
+      ]
+    ],
+    "hp": [
+      "Boss-HP getrennt platzieren",
+      "Wenn separate HP-Anzeige eingeschaltet ist.",
+      "Name, HP-Zahl, Prozent und Balken an einem passenden Ort lesen.",
+      "HP-Schalter, Trennmodus und Position prüfen.",
+      [
+        "Separates Boss-HP-Fenster"
+      ]
+    ],
+    "hits": [
+      "Trefferstatistik nach dem Kampf",
+      "In Thema A unter den Spielerzeilen; hier als tatsächliche Vorschau.",
+      "Vorne, hinten, Wucht, perfekt, kritisch und Parieren einzeln wählen. Kategorien überlappen und ergeben zusammen nicht zwingend 100 %.",
+      "Nur eigene Statistik ist möglich. Thema B unterstützt diese aufgeklappten Werte nicht.",
+      [
+        "Sechs Trefferwerte pro Spieler"
+      ]
+    ],
+    "energy": [
+      "Energie und Kinah je Charakter",
+      "In der Übersicht erkannter, gespeicherter Charaktere.",
+      "Grund- und Zusatzenergie von Kinah unterscheiden. Global zeigt beobachtete Werte, nicht die KR/TW-Regenerationsprognose. Bei Global-Charakteren steht unter dem Namen „Region - Servername“. So lassen sich gleichnamige Server etwa in Asien und NA Ost unterscheiden. Fahre über eine gekürzte Anzeige, um den vollständigen Namen zu sehen. Die Anzeige für Korea und Taiwan bleibt unverändert.",
+      "Fehlenden Charakter anmelden und Erkennung prüfen. Andere Charakterwerte sind nicht unbedingt live.",
+      [
+        "Energie- und Kinahübersicht"
+      ]
+    ],
+    "points": [
+      "Heutige Punkte",
+      "Nach Anklicken der heutigen Punkte.",
+      "Beobachtete Gewinne, Verluste und Summen vergleichen. Tagesänderungen sind nicht der gesamte Kontostand im Spiel.",
+      "Erkannter Name garantiert noch keine Punktedaten. Ein Strich ist nicht null.",
+      [
+        "Heute beobachtete Änderungen"
+      ]
+    ],
+    "timers": [
+      "Anstehende Feldbosse",
+      "Über den Feldbossbutton oder ein zugewiesenes Kürzel.",
+      "Erscheinungszeit und Countdown vergleichen. Sterne sind persönliche Wichtigkeit. Server und Gebiet prüfen.",
+      "Passende Weltkarte mit M öffnen. Unbekannte Zeiten werden nicht geschätzt.",
+      [
+        "Bosse mit erkannten Spawnzeiten"
+      ]
+    ],
+    "party": [
+      "Bewerberfertigkeiten",
+      "Bei aktivierter KR/TW-Abfrage und empfangenen Informationen.",
+      "Unter Klasse, Name, Server und CP stehen ausgewählte Fertigkeiten und Level. Auswahl in den Einstellungen ändern.",
+      "Global wird nicht unterstützt. Bei leeren Karten Auswahl und offizielle Datenabfrage prüfen.",
+      [
+        "Klasse, CP und Fertigkeiten eines Bewerbers"
+      ]
+    ],
+    "forecast": [
+      "Die Bossprognose lesen",
+      "Erscheint bei aktivierten Schätzungen während eines Bosskampfs.",
+      "TTK zeigt die verbleibende Kampfzeit; der Raserei-Timer und die Zeitdifferenz helfen beim Vergleich.",
+      "Auch ohne neue Treffer wird weitergerechnet. ∞ steht ausschließlich für einen bestätigten Boss ohne Raserei-Timer.",
+      [
+        "Voraussichtlicher Sieg vor Raserei",
+        "Schadenspause: längere Restzeit",
+        "Boss ohne Raserei-Timer bestätigt",
+        "Kampfbeginn unbekannt: Timer wartet"
+      ]
+    ],
+    "photo": [
+      "Drei Bildanordnungen",
+      "Tatsächliche Vorschau nach der Charaktererkennung.",
+      "Vollflächig liegen Informationen auf dem Bild; links oder rechts stehen Bild und Informationen nebeneinander.",
+      "Prüfe nach dem Ausrichten die Lesbarkeit von Name, Server und Ressourcen.",
+      [
+        "Vollflächiger Hintergrund",
+        "Bild links",
+        "Bild rechts"
+      ]
+    ],
+    "character": [
+      "Charaktere und Ranglisten-Kampfdetails",
+      "Sieh dir Kämpfe gelisteter Charaktere und die im neuesten verfügbaren Ranglistenkampf erfassten Fertigkeitsmerkmale an.",
+      "Öffne die Kampfdetails eines Eintrags, um Schaden, Fertigkeiten und Buffs genau dieses Kampfes zu sehen. Ein anderer Eintrag zeigt einen anderen Kampf.",
+      "Stigma-Fertigkeiten erhalten diese Markierungen nicht. Fehlende Merkmale oder nicht ladbare Details werden nicht durch geschätzte Werte ersetzt.",
+      [
+        "Prüfe Diese Woche und Gesamter Zeitraum getrennt. Ohne aktuellen Wocheneintrag kann trotzdem ein älterer Rekord vorliegen.",
+        "Die Merkmale im Fertigkeitsbereich stammen aus dem jüngsten verfügbaren Ranglistenkampf. Sie müssen nicht der aktuellen Ausrüstung entsprechen; beachte den Aufnahmezeitpunkt."
+      ]
+    ]
+  }
+}

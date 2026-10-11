@@ -1,0 +1,193 @@
+{
+  "title": "Kampfhilfe: vom ersten Symbol bis zur Gruppenübersicht",
+  "intro": "Ein eigenes Overlay zeigt Buffdauer, verbleibende Abklingzeiten und unterstützte Gruppenfähigkeiten. Beginne mit einer eigenen Fähigkeit und ergänze danach die Funktionen, die du brauchst.",
+  "toc": "Direkt zum Thema",
+  "supported": "Unterstützte Gruppenfähigkeiten",
+  "check": "Im Spiel prüfen",
+  "example": "Beispiele aus der tatsächlichen App. Namen, Zeiten und Aufladungen erklären die Anzeige; sie sind keine Live-Spieldaten.",
+  "chapters": [
+    [
+      "Einschalten und die erste Fähigkeit anzeigen",
+      "Einstellungen → Kampfhilfe → Schnellstart",
+      [
+        "Bewege den Mauszeiger über das Meter, klicke auf das Schieberegler-Symbol und öffne die Kampfhilfe links. Bei gesperrtem Meter zuerst Alt-Klick auf das Schloss oder die Einstellungen über das Symbol im Windows-Infobereich öffnen.",
+        "Schalte die Kampfhilfe oben EIN. Wähle im Schnellstart deine Klasse und klicke auf „Ausgewählte Einstellungen hinzufügen“. Die Klassenauswahl allein übernimmt nichts.",
+        "Die Sprachauswahl kann zunächst leer bleiben. Der Schnellstart ergänzt Klassen- und allgemeine Fähigkeiten; Gruppen-Abklingzeiten werden nicht automatisch eingeschaltet.",
+        "Klicke unten rechts auf Speichern. Kehre ins Spiel zurück, prüfe die Charaktererkennung und verwende eine ausgewählte Fähigkeit.",
+        "Bei einem angewendeten Buff erscheint die Restdauer, bei einer verwendeten Fähigkeit die Zeit bis zur erneuten Nutzung. Die Vorschau in den Einstellungen zeigt Beispielwerte."
+      ],
+      [
+        "Eine geänderte Vorschau ersetzt das Speichern nicht. Du musst nicht alle Optionen aktivieren."
+      ],
+      [
+        "Klasseneinstellungen im tatsächlichen Einstellungsfenster hinzufügen",
+        "Buffs und Abklingzeiten gemeinsam"
+      ]
+    ],
+    [
+      "Buffs, Abklingzeiten und Aufladungen lesen",
+      "Was die Zahlen bedeuten",
+      [
+        "Der Buff-Timer zeigt, wie lange ein Effekt noch wirkt. Der Abklingzeit-Timer zeigt, wann die Fähigkeit wieder verwendbar ist. Es sind zwei verschiedene Zeiten.",
+        "Im Standarddesign kann dieselbe Fähigkeit in der Buff- und in der CD-Zeile erscheinen: etwa 12 Sekunden Buffdauer bei 24 Sekunden Abklingzeit.",
+        "Bei Fähigkeiten mit Aufladungen bedeuten x0, x1 und x2 die noch verfügbaren Nutzungen. x0 heißt: keine Aufladung verfügbar. Die Wiederaufladezeit wird separat angezeigt.",
+        "Ein Name über einer Abklingzeit bezeichnet den Anwender. Identische Symbole können dir und einem Gruppenmitglied gehören."
+      ],
+      [
+        "Ein graues Symbol ist nicht automatisch ein Erkennungsfehler. Abschnitt 5 erklärt angeheftete inaktive und bereite Symbole."
+      ],
+      [
+        "Buffdauer",
+        "Abklingzeit einer Fähigkeit",
+        "Beispiele für x0, x1 und x2"
+      ]
+    ],
+    [
+      "Einzelne Fähigkeiten auswählen",
+      "Kampfhilfe → Fähigkeiten",
+      [
+        "Wähle eine Klasse und suche die Fähigkeit. Für Gruppenfähigkeiten anderer Klassen zum Kantor- oder Kleriker-Filter wechseln.",
+        "Buff- und Abklingzeitanzeige pro Fähigkeit getrennt wählen. Unterstützte Gruppenfähigkeiten haben eigene Schalter für die eigene und die Gruppen-Abklingzeit.",
+        "Klicke auf der Fertigkeitskarte auf Einstellungen öffnen, um feste Symbole, Hinweise und Sprachausgabe einzustellen. Nur diese Karte wird geöffnet. Mit Einstellungen schließen schließt du sie.",
+        "Der Filter für ausgewählte Fähigkeiten blendet nicht ausgewählte Einträge aus. Beim Hinzufügen Filter und Suchtext prüfen.",
+        "Mit Vorschau auf der Karte kannst du das Aussehen prüfen. Ein deaktivierter grauer Schalter bedeutet, dass diese Funktion für die Fähigkeit nicht verfügbar ist."
+      ],
+      [],
+      [
+        "Erweiterte Optionen von Hoheit des Sturmwinds"
+      ]
+    ],
+    [
+      "Abklingzeiten der Gruppe verfolgen",
+      "Fähigkeiten → Kantor / Kleriker → Gruppen-Abklingzeit",
+      [
+        "Wähle eine Fertigkeit aus der unterstützten Liste unten. Nur für diese Fertigkeiten werden die Abklingzeiten der Gruppenmitglieder erfasst. Du kannst auch unterstützte Fertigkeiten anderer Klassen auswählen.",
+        "Nur Gruppenmitglieder: Gruppen-Abklingzeit EIN, eigene Abklingzeit AUS. Für beide Anzeigen beide Schalter einschalten.",
+        "Unter Darstellung „Nur Abklingzeiten“ oder „Buffs + Abklingzeiten“ wählen. „Nur Buffs“ blendet auch Gruppen-Abklingzeiten aus.",
+        "Unter Darstellung → Position & getrennte Fenster die Anwendernamen aktivieren. Ohne Namen bleiben die Timer sichtbar; nur die Beschriftungen verschwinden.",
+        "Speichere und beobachte eine neue Verwendung bei erkanntem Charakter. Hoheit des Sturmwinds muss von einem Gruppenmitglied auf deinen Charakter angewendet werden, damit es erkannt wird.",
+        "Die unterstützten Klerikerfähigkeiten werden anhand beobachteter Effekte oder erkannter Gruppenmitglieder und Fähigkeiten erfasst. Andere Spieler brauchen weder NotMeter noch einen Freigabecode.",
+        "Vor dem Start oder außerhalb der Erkennung verwendete Fähigkeiten haben eventuell keinen Timer. Ein fehlendes Symbol bedeutet nicht, dass die Fähigkeit bereit ist."
+      ],
+      [
+        "Gruppentimer zeigen erkannte, laufende Abklingzeiten. Das Anheften deiner Fähigkeit erzeugt keine Bereitschaftssymbole für alle Gruppenmitglieder. Die tatsächlichen Karten unten zeigen die unterstützten Namen für KR, TW oder Global."
+      ],
+      [
+        "Tatsächliche Karten der unterstützten Gruppenfähigkeiten",
+        "Nur eigene Abklingzeit",
+        "Nur Gruppen-Abklingzeit mit Anwendername",
+        "Eigene und Gruppen-Abklingzeiten gemeinsam"
+      ]
+    ],
+    [
+      "Symbole dauerhaft anzeigen und ordnen",
+      "Fähigkeitskarte → Alarme & angeheftete Symbole / Darstellung",
+      [
+        "„Buff immer anzeigen“ oder „Abklingzeit immer anzeigen“ hält einen Platz auch im inaktiven Zustand frei. Dabei wird die entsprechende Buff- oder Abklingzeitanzeige mit ausgewählt.",
+        "Ein graues, dauerhaft angezeigtes Buff-Symbol bedeutet, dass der Effekt inaktiv ist. Bei den Standardfarben zeigt ein graues Abklingzeitsymbol eine einsatzbereite Fertigkeit an. Die Option zur Farbumkehr kehrt diese Zuordnung um. Prüfe auch die Restzeit und bei Fertigkeiten mit Aufladungen die x-Anzeige.",
+        "Ohne Anheften kann ein Symbol nach Ablauf verschwinden. Das ist etwas anderes als die gesamte Kampfhilfe auszuschalten.",
+        "Unter Darstellung → Reihenfolge angehefteter Symbole wichtige Fähigkeiten nach vorn setzen. Sortierung und Symbole pro Zeile in der Vorschau prüfen."
+      ],
+      [
+        "Die Klassenbeschränkung angehefteter Gruppenbuffs betrifft inaktive Buffsymbole. Sie ersetzt nicht die Schalter für Gruppen-Abklingzeiten."
+      ],
+      [
+        "Angeheftetes Abklingzeitsymbol ohne laufenden Timer"
+      ]
+    ],
+    [
+      "Allgemeine Fähigkeiten, Tränke, Schriftrollen und Debuffs",
+      "Kampfhilfe → Fähigkeiten",
+      [
+        "Neben den Klassen gibt es Allgemein, Tränke, Schriftrollen und Debuffs. Fehlt ein Eintrag bei einer Klasse, prüfe seine Kategorie.",
+        "Wähle die Abklingzeiten deiner Trankarten. Für Schriftrollen die verfügbaren Dauer- und Anzeigeoptionen wählen. Nicht jeder Gegenstand unterstützt beide Timerarten.",
+        "Boss-Debuffs zeigen Effekte auf dem Ziel. Sie unterscheiden sich von deinen Buffs und der Wiederverwendungszeit deiner Fähigkeiten.",
+        "Für Buffs, die andere auf dich anwenden, im Schnellstart „Buffs anderer Spieler anzeigen“ prüfen. Das ist eine andere Funktion als Gruppen-Abklingzeiten.",
+        "Speichere und verwende den Trank oder die Schriftrolle beziehungsweise warte auf den ausgewählten Debuff. Prüfe anschließend die Anzeige im Spiel."
+      ],
+      [],
+      [
+        "Tränke auswählen",
+        "Schriftrollen auswählen",
+        "Ein Effekt auf dem Ziel"
+      ]
+    ],
+    [
+      "Popup- und Sprachalarme einrichten",
+      "Fähigkeitskarte → Alarme & angeheftete Symbole → Alarme & Sprache",
+      [
+        "Wähle das Ereignis pro Fähigkeit: Abklingzeit für erneute Nutzung, Buffbeginn für einen neuen Effekt oder Buffende.",
+        "Popups und Sprache sind unabhängig; Sprache funktioniert auch ohne Popup. Unter Alarme & Sprache den globalen Sprachschalter, Stimme und Lautstärke prüfen und die Tonvorschau nutzen.",
+        "Lege die allgemeine Vorwarnzeit fest. Individuell kannst du gesprochenen Namen und Zeitpunkt ändern. Ein leeres Namensfeld verwendet den angezeigten Fähigkeitsnamen.",
+        "Stelle die Verzögerung nach Ablauf der Abklingzeit auf 1–30 Sekunden, um erst nach dieser zusätzlichen Wartezeit benachrichtigt zu werden. Das ersetzt die Vorwarnung. Ein leeres Feld oder 0 verwendet stattdessen die Vorwarnung.",
+        "Buffbeginn reagiert auf eine neue Anwendung, nicht auf eine reine Verlängerung. Für Buffende muss die verbleibende Dauer bekannt sein.",
+        "Die Vorschau der Endmeldungen unter Darstellung verschieben und speichern. Warnfarben für Zahlen und Ringe haben andere Schwellen als die Alarmzeit.",
+        "Unter Kampfhilfe → Alarme & Stimme lassen sich Effekte und Sprachausgabe oben getrennt aktivieren und einstellen. Höre beide vor dem Speichern probeweise an.",
+        "Für lautere Meldungen ohne Änderung der gesamten Headset-Lautstärke kannst du die Alarmverstärkung von 100 % bis 300 % erhöhen. Beginne bei 100 %. Sie gilt auch für andere NotMeter-Alarme, hebt aber weder Stummschaltung noch 0 % Lautstärke auf."
+      ],
+      [
+        "Bei fehlendem Ton nacheinander Fähigkeitssprache, globale Sprache, Lautstärke und Ausgabegerät prüfen. Bossziel-Wechseltöne werden separat eingestellt."
+      ],
+      [
+        "Meldung: Fähigkeit bereit",
+        "Meldung: Buff beginnt",
+        "Warnung vor dem Buffende",
+        "Unter Kampfhilfe → Alarme & Stimme lassen sich Effekte und Sprachausgabe oben getrennt aktivieren und einstellen. Höre beide vor dem Speichern probeweise an."
+      ]
+    ],
+    [
+      "Position, Größe und getrennte Fenster",
+      "Position oben → Darstellung",
+      [
+        "Klicke oben auf Position, dann auf „Auf dem Bildschirm verschieben“. Die verschiebbare Vorschau erscheint auch außerhalb des Kampfes und ohne aktive Buffs.",
+        "Ziehe sie an die gewünschte Stelle. Falls sie außerhalb des Bildschirms liegt, zuerst auf diesem Bildschirm zentrieren, dann X/Y oder Pfeile verwenden. Abschließend in den Einstellungen speichern.",
+        "Im Standarddesign lassen sich Buffs und Abklingzeiten getrennt verschieben. Wähle jeweils das passende Fenster in der Positionsauswahl.",
+        "Design A kombiniert beide Timer in einem Symbol; Buff- und Abklingzeitfenster lassen sich dabei nicht trennen. Lies die beiden Zeiten getrennt.",
+        "Größe, Deckkraft, horizontale/vertikale Ausrichtung und zentriertes Erweitern einstellen. Getrennte Alarm-Popups sind eine eigene Option.",
+        "Auf 4K-Bildschirmen kannst du die Symbolgröße unter Darstellung bis auf 400 % erhöhen. Der Vorschauzoom vergrößert nur die Editoransicht. Speichere und prüfe die tatsächliche Größe im Spiel."
+      ],
+      [
+        "Klicke nach dem Verschieben der Vorschau in den Einstellungen auf Speichern. Prüfe die Platzierung im Spiel und öffne die Einstellungen erneut, um die gespeicherte Position zu kontrollieren."
+      ],
+      [
+        "Verschiebbare Positionsvorschau",
+        "Positionsregler unter Darstellung",
+        "Buff und Abklingzeit in einem Symbol"
+      ]
+    ],
+    [
+      "Sichtbarkeit und Bosshilfen",
+      "Schnellstart / Alarme & Sprache",
+      [
+        "„Nur im Kampf anzeigen“ bezieht sich auf Bosskämpfe. Verschwindet die Anzeige in der Stadt oder nach dem Kampf, prüfe diese Bedingung.",
+        "„Nur bei aktiven Buffs/Abklingzeiten“ blendet ein leeres Panel aus. Für den ersten Test Bedingungen prüfen und eine ausgewählte Fähigkeit verwenden.",
+        "„Bei verborgenem Meter sichtbar lassen“ erhält die Kampfhilfe beim Ausblenden des Hauptmeters. Es übergeht nicht den AUS-Schalter der Kampfhilfe.",
+        "Aktiviere das aktuelle Bossziel. Für einen Ton nur beim Wechsel auf dich sowohl Zielwechselton als auch die Beschränkung auf deinen Charakter einschalten.",
+        "Unter Alarme & Sprache vorne/hinten für Treffer-Richtungsalarme wählen. Gemeldet werden abweichende direkte Treffer; Beschwörungen, platzierte Angriffe und Schaden über Zeit sind ausgeschlossen."
+      ],
+      [],
+      [
+        "Der Boss nimmt deinen Charakter ins Ziel",
+        "Abweichende Trefferrichtung"
+      ]
+    ],
+    [
+      "Probleme Schritt für Schritt prüfen",
+      "Immer nur eine Bedingung ändern",
+      [
+        "Nichts sichtbar: Charaktererkennung → Kampfhilfe EIN → Fähigkeit ausgewählt → Anzeigemodus → Speichern → Kampf-/Aktivitätsbedingungen. Mit Position → Zentrieren ein verschobenes Fenster ausschließen.",
+        "Nur dein Timer fehlt: eigene Abklingzeit auf der Karte aktivieren. Die Gruppenoption zeigt deinen Timer nicht mit an.",
+        "Nur Gruppentimer fehlen: unterstützte Fähigkeit, Gruppen-Abklingzeit EIN und nicht „Nur Buffs“ prüfen; dann neue Nutzung beobachten. Hoheit des Sturmwinds muss dich erreicht haben.",
+        "Doppelte Symbole: eigene + Gruppen-Timer sowie Buff + Abklingzeit prüfen. Anwendernamen erleichtern die Zuordnung.",
+        "Immer grau: Anheften prüfen und Fähigkeit verwenden. Bei Aufladungen auch x0 beachten. Vorschauwerte bestätigen keine Erkennung.",
+        "Popup ohne Sprache: Fähigkeitssprache, globale Sprache und Lautstärke prüfen, dann Tonvorschau. Bei verspäteten Meldungen die individuelle Verzögerung prüfen.",
+        "Einstellungen zurückgesetzt: wurde gespeichert oder durch einen Charakterwechsel ein anderes Charakterprofil aktiviert?",
+        "Bleibt das Problem, Version, Server, Fähigkeitsname, Fähigkeitskarte, Sichtbarkeitseinstellungen sowie erwartetes und tatsächliches Verhalten angeben."
+      ],
+      [
+        "Zum Abschluss eine eigene Fähigkeit, eine unterstützte Gruppenfähigkeit und einen Alarm einzeln testen. Gespeicherte Auswahl erneut in den Einstellungen prüfen."
+      ],
+      []
+    ]
+  ]
+}

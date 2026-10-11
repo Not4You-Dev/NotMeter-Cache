@@ -1,0 +1,817 @@
+{
+  "locale": "es-ES",
+  "ui": {
+    "tutorial": "Guía de uso",
+    "website": "Web",
+    "home": "Inicio de la guía",
+    "edition": "Actualizado el 8 de octubre de 2026",
+    "search": "Buscar funciones y ajustes",
+    "menu": "Contenido",
+    "heading": "NotMeter\nGuía de uso",
+    "intro": "Desde la primera conexión hasta revisar un combate, aprende con las pantallas reales de la aplicación.",
+    "begin": "Primeros pasos",
+    "cover": "Vista real con datos de combate de ejemplo",
+    "contents": "Buscar por ajuste",
+    "contentsHint": "En el mismo orden que en la aplicación.",
+    "groups": [
+      "Primeros pasos",
+      "Ajustes del medidor",
+      "Herramientas del juego",
+      "Sistema y conexión"
+    ],
+    "paths": [
+      [
+        "Conectar tu personaje",
+        "Instalación, idioma y conexión."
+      ],
+      [
+        "Adaptar la pantalla",
+        "Tamaño, texto e información visible."
+      ],
+      [
+        "Ver efectos y reutilización",
+        "Habilidades, avisos y posición."
+      ],
+      [
+        "Resolver un problema",
+        "Detección, clics y actualizaciones."
+      ]
+    ],
+    "reference": "Referencia de ajustes",
+    "referenceHint": "Abre una opción para ver su explicación y ubicación.",
+    "location": "Dónde encontrarlo",
+    "settings": "Ajustes",
+    "gallery": "Pantalla real de la aplicación",
+    "example": "Nombres y cifras de ejemplo. La disponibilidad depende del servidor y del equipo.",
+    "zoom": "Pulsa la imagen para ampliarla.",
+    "previous": "Imagen anterior",
+    "next": "Imagen siguiente",
+    "page": "Pantalla",
+    "showScreen": "Ver este ajuste en la captura",
+    "default": "Valor mostrado",
+    "range": "Intervalo",
+    "choices": "Opciones disponibles",
+    "more": "Guías relacionadas",
+    "copyLink": "Copiar enlace",
+    "copied": "Enlace copiado.",
+    "copyFailed": "Copia la dirección del navegador.",
+    "searchTitle": "Resultados de búsqueda",
+    "found": "resultados",
+    "empty": "Sin coincidencias. Prueba un nombre de función más corto.",
+    "error": "No se pudo cargar la guía. Comprueba la conexión y vuelve a intentarlo.",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "screenshotLanguage": "Idioma de las imágenes",
+    "guideLanguage": "Idioma de la guía",
+    "languageNote": "Las instrucciones y capturas están disponibles en los nueve idiomas del sitio. Puedes elegir por separado el idioma de las capturas.",
+    "sourceNote": "Basado en la interfaz y el funcionamiento reales de NotMeter 1.0.261.",
+    "discord": "Obtener ayuda",
+    "feedback": "Si continúa el problema, comparte versión, servidor, síntomas y captura.",
+    "skip": "Ir al contenido",
+    "important": "Antes de continuar",
+    "allOptions": "Expandir todos los ajustes",
+    "collapseOptions": "Contraer todos los ajustes",
+    "screenshotDefault": "Las imágenes explican los controles; los valores no son una configuración recomendada.",
+    "noDetails": "Consulta los pasos y la pantalla anterior.",
+    "missing": "Página no encontrada",
+    "support": "Solución de problemas",
+    "sample": "Ejemplo",
+    "privacy": "Privacidad",
+    "fit": "Ajustar",
+    "iconTitle": "Marcas de clase e icono CP",
+    "cpTitle": "Poder de combate (CP)",
+    "cpDetail": "La cifra junto al nombre, distinta del DPS y de la marca de clase.",
+    "jobs": [
+      "Gladiador",
+      "Templario",
+      "Arquero",
+      "Asesino",
+      "Hechicero",
+      "Clérigo",
+      "Espiritualista",
+      "Cantor",
+      "Luchador"
+    ],
+    "findOption": "Escribe el nombre en la búsqueda de opciones de la aplicación.",
+    "helper": "Ayudante de captura para Linux",
+    "launchMeter": "Iniciar NotMeter",
+    "meterPath": "Medidor",
+    "results": "Así se ve al usarlo",
+    "when": "Cuándo aparece",
+    "read": "Cómo interpretarlo",
+    "check": "Si no aparece",
+    "setup": "Cómo configurarlo",
+    "confirmation": "Comprobar después de guardar",
+    "stageNote": "Imágenes fijas generadas por la aplicación real con valores de ejemplo, ampliadas para facilitar la lectura.",
+    "showing": "Controles que debes localizar"
+  },
+  "articles": {
+    "start": [
+      "Primeros pasos",
+      "Comprueba la conexión y activa después las funciones que necesites.",
+      [
+        "Sigue las <a href=\"./?download=1\" data-download>instrucciones de descarga</a> para obtener Npcap y NotMeter. Si Npcap ya está instalado, no hace falta reinstalarlo.",
+        "Extrae todo el ZIP a una carpeta y ejecuta <code>NotMeter.exe</code>, no desde dentro del archivo comprimido.",
+        "Utiliza la tarjeta <b>Language</b> arriba a la izquierda. English cambia directamente a inglés; All languages abre la selección completa. Los títulos, las explicaciones y la vista previa cambian al instante. No necesitas cerrar y abrir los ajustes. Guarda para mantener el cambio.",
+        "Entra en el mundo del juego con tu personaje, muévete o ataca y comprueba que tu nombre aparezca en el medidor en reposo. Si no conecta, busca el adaptador desde Ajustes → Red mientras te mueves o atacas. La marca verde de uso confirma la conexión con el juego.",
+        "Pasa el puntero por el medidor para mostrar el menú y haz clic en el <b>icono de controles deslizantes</b> para abrir los ajustes. Ajusta el tamaño y el texto y pulsa <b>Guardar</b>. En Windows también puedes hacer clic derecho en el icono de NotMeter del área de notificación y elegir los ajustes."
+      ],
+      [
+        "Los atajos están desactivados inicialmente. Configura Abrir ajustes y Mostrar/ocultar para acceder incluso con el medidor bloqueado."
+      ],
+      null
+    ],
+    "reading": [
+      "Interpretar el medidor",
+      "Identifica al jefe, las filas de jugadores y el menú.",
+      [
+        "La cabecera muestra objetivo, vida y duración. Número, porcentaje y barra de vida tienen controles separados.",
+        "Cada fila muestra clase, nombre, CP, DPS y contribución. El DPS divide el daño registrado entre el tiempo; la contribución depende de la base seleccionada.",
+        "Pasar el puntero muestra un resumen; pulsar la fila abre detalles. Son funciones independientes.",
+        "El menú permite capturar, abrir registros, ajustes y salir. Coloca y bloquea la ventana; en General puedes permitir ciertos clics mientras está bloqueada."
+      ],
+      [
+        "La contribución basada en vida máxima del jefe no equivale a la basada en daño del grupo. Mostrar solo tu fila no deja de registrar a los demás."
+      ],
+      null
+    ],
+    "details": [
+      "Analizar cada habilidad",
+      "Compara el daño y los resultados de los golpes.",
+      [
+        "Activa los detalles de combate en Ajustes → Medidor → Elementos mostrados, guarda y pulsa una fila de jugador.",
+        "Cambia de personaje con las pestañas superiores. Compara el daño, los usos, los impactos y el daño medio y máximo de cada habilidad. Arriba a la derecha puedes elegir estadísticas como Crítico, Golpe, Perforación, ataques frontales o traseros y Bloqueo con Arma.",
+        "La actividad de efectos se basa en lo observado; no se reconstruyen datos ausentes. Activa el guardado de combates para abrir los detalles más tarde.",
+        "En Ajustes → Medidor → Datos visibles, puedes elegir <b>Automático / Izquierda / Derecha</b> para la vista al pasar el ratón sobre una fila. Automático usa el espacio disponible. Si eliges un lado, la vista se mantiene dentro de la pantalla."
+      ],
+      [
+        "Empezar a medir a mitad de combate no recupera ataques anteriores. Un guion en nDPS o clasificación no significa cero.",
+        "Nombres en el juego: Golpe · Perforación · Crítico · Bloqueo con Arma."
+      ],
+      null
+    ],
+    "training": [
+      "Muñeco y clasificación de un minuto",
+      "Los registros locales y la clasificación tienen reglas distintas.",
+      [
+        "Activa el guardado de muñecos y elige duración local en los registros. Eso no cambia el minuto fijo de la clasificación.",
+        "Global solo acepta el <b>dirigible de la legión</b>. El muñeco de cuerpo a cuerpo y el de entrenamiento comparten pestaña, indicando el tipo utilizado.",
+        "Espera a que se detecte tu personaje. Si se detectan beneficios del grupo o perjuicios de otra clase, el registro se excluye.",
+        "Se toma el resultado exactamente al minuto de combate. Seguir atacando no lo sustituye por uno más largo. La web muestra TOP 50 por clase sin límite de CP.",
+        "La instantánea de 60 segundos se guarda automáticamente: no tienes que parar en el segundo exacto. <b>Guardado / Pendiente de envío / Registrado</b> son estados diferentes. Comprueba el estado de registro; un aviso de guardado no confirma la clasificación."
+      ],
+      [
+        "Los muñecos no conceden marcas de rango ni efectos de nombre. Las recompensas semanales de mazmorras son distintas. Los resultados usan estadísticas publicadas y no aparecen necesariamente al instante.",
+        "Nombres en el juego: Muñeco de entrenamiento · Muñeco de entrenamiento cuerpo a cuerpo · Dirigible de la Legión de Verteron · Dirigible de la Legión de Morheim."
+      ],
+      null
+    ],
+    "rankings": [
+      "Clasificación y efectos de nombre",
+      "Distingue comparación al terminar, puesto publicado y permiso del efecto.",
+      [
+        "Configura por separado marcas, puestos y percentiles al finalizar. Elige DPS, nDPS o ambos cuando estén disponibles.",
+        "Abre estadísticas desde un registro y revisa región, periodo, jefe, clase y CP. Global usa TOP 50 por jefe y clase sin límite de CP; KR/TW tiene tramos propios.",
+        "En efectos de nombre comprueba personaje y permiso actual; elige un diseño y guarda.",
+        "La recompensa Global requiere <b>TOP 10 semanal de DPS de tu clase</b> en mazmorras admitidas y dura mientras mantengas ese puesto."
+      ],
+      [
+        "La clasificación histórica y los muñecos no conceden esa recompensa. Alcanzar una vez un puesto de tramo no activa inmediatamente el efecto: deben publicarse los datos y confirmarse el permiso. KR/TW añade condiciones de CP. Un guion no es daño cero."
+      ],
+      null
+    ],
+    "resources": [
+      "Energía, entradas y puntos diarios",
+      "Selecciona recursos y consulta resúmenes por personaje.",
+      [
+        "En elementos mostrados elige energía, llaves de Festival de Shugo y recursos en reposo.",
+        "Activa entradas, llaves dimensionales y puntos de Abismo y clasificación del día. Cantidades base y adicionales proceden de los datos recibidos.",
+        "Pulsa los puntos de hoy para abrir el resumen. Las ventanas de energía, artefactos y jefes de campo también admiten atajos. La web ofrece información publicada."
+      ],
+      [
+        "Si ves un guion, comprueba detección de personaje y servidor. Un dato no recibido no se supone cero."
+      ],
+      null
+    ],
+    "obs": [
+      "Mostrar el medidor en OBS",
+      "Usa una fuente de navegador en el mismo PC.",
+      [
+        "Activa la fuente OBS en General, guarda y copia su URL.",
+        "Añade una fuente Navegador en OBS y pega la dirección. Empieza con 1000 × 1000 y ajusta la posición. El tamaño y contenido se cambian en NotMeter.",
+        "Si cambias el puerto, guarda y actualiza también la dirección de OBS."
+      ],
+      [
+        "Incluye solo el medidor principal, no ventanas separadas de asistencia o detalles. La URL no sirve directamente en otro PC. Si queda en blanco, revisa ejecución, guardado, URL y puerto."
+      ],
+      null
+    ],
+    "proton": [
+      "Conexión Linux / Proton",
+      "El complemento opcional de Linux envía el tráfico a NotMeter bajo Proton.",
+      [
+        "Comprueba primero que AION 2 se inicia con tu configuración actual de Proton. Puedes abrir el nuevo lanzador antes que el juego: esperará a que se inicie el proceso del juego para abrir NotMeter.",
+        "Descarga el <b>ZIP del plugin Proton</b> de arriba y extráelo en la carpeta de NotMeter.exe. Comprueba que exista <code>Plugins/Proton/notmeter_start.py</code>. El EXE por sí solo no es suficiente.",
+        "Prepara Python 3.9 o posterior, dumpcap y una instalación nativa de Protontricks en Linux. Ejecuta <code>dumpcap -D</code> con tu usuario habitual para comprobar los permisos de captura. Las instalaciones Flatpak requieren una validación aparte.",
+        "Ejecuta solo el comando <b>notmeter_start.py</b> de abajo en un terminal de Linux. Si hay varias interfaces de red, elige la que transporta el tráfico del juego en el primer inicio. La elección se guarda; usa <code>--interface NAME</code> para cambiarla. No tienes que iniciar la herramienta de captura por separado.",
+        "Cuando el juego esté en marcha, el script iniciará la captura y NotMeter automáticamente. Mantén el terminal abierto mientras lo uses. El ID predeterminado de la versión global de Steam es 3393110. Usa <code>--appid NUMBER</code> para otra instalación o <code>--exe \"ruta/NotMeter.exe\"</code> para otra ubicación de NotMeter. Muévete o ataca en el juego y comprueba que aparezcan tu personaje y el daño. Al cerrar NotMeter también se detiene la herramienta de captura iniciada por este script. La próxima vez, utiliza el mismo comando."
+      ],
+      [
+        "Una conexión y un contador de paquetes no garantizan detección de personaje. FPS y representación dependen del entorno. No se escriben diagnósticos en uso normal; usa NOTMETER_PROTON_DIAGNOSTICS=1 solo si se solicita y retíralo después. No compartas connection.json.",
+        "Cierra normalmente NotMeter y cualquier herramienta de captura iniciada con los comandos anteriores antes de usar este lanzador. Ctrl+C detiene su herramienta de captura; cierra NotMeter tú mismo de forma normal. Cierra también NotMeter antes de reiniciar el juego."
+      ],
+      null
+    ],
+    "troubleshooting": [
+      "Solución de problemas",
+      "Empieza por el síntoma, sin restablecer todo ni reinstalar de entrada.",
+      [],
+      [],
+      null
+    ],
+    "Language": [
+      "Idioma",
+      "El menú de idioma siempre está arriba en la barra lateral.",
+      [
+        "Utiliza la tarjeta <b>Language</b> arriba a la izquierda. English cambia directamente a inglés; All languages abre la selección completa.",
+        "Los títulos, las explicaciones y la vista previa cambian al instante. No necesitas cerrar y abrir los ajustes. Guarda para mantener el cambio.",
+        "El idioma y la región del juego son independientes. Elegir inglés no convierte una conexión coreana en Global."
+      ],
+      [
+        "El idioma de la interfaz no fuerza otra región de juego; esta se detecta por la conexión."
+      ],
+      null
+    ],
+    "Meter": [
+      "Tamaño y disposición",
+      "Mantén la información legible sin cubrir demasiado el juego.",
+      [
+        "Compara temas A y B en la vista previa. Ajusta ancho, altura de fila y expansión hacia arriba. Las opciones desactivadas no corresponden al tema.",
+        "Un número fijo de jugadores y desplazamiento estabilizan la altura. Puedes mostrar solo tu fila o expandirlas al acabar. Coloca, guarda y bloquea."
+      ],
+      [
+        "Revisa las vistas Combate y Reposo con zoom. Texto y fondos se ajustan en Colores y fuentes."
+      ],
+      null
+    ],
+    "Display": [
+      "Elegir información visible",
+      "Configura jefe, jugadores, recursos y rendimiento por separado.",
+      [
+        "Selecciona nombre, vida, tiempo, DPS del grupo y daño acumulado. Puedes separar la vida del jefe en otra ventana.",
+        "Configura CP, servidor, estado conectado y marcas. Desactivar la publicación de tu estado oculta los indicadores propios y ajenos.",
+        "En el tema A, selecciona por separado las estadísticas tras el combate: Ataque Frontal · Ataque por la Espalda · Golpe · Perforación · Crítico · Bloqueo con Arma. Puedes mostrar solo las tuyas.",
+        "Configura detalles y resumen al pasar el puntero, bases de contribución y barra, y formato de cifras. Comprueba y guarda.",
+        "En Ajustes → Medidor → Datos visibles, puedes elegir <b>Automático / Izquierda / Derecha</b> para la vista al pasar el ratón sobre una fila. Automático usa el espacio disponible. Si eliges un lado, la vista se mantiene dentro de la pantalla."
+      ],
+      [
+        "El tema B no admite estas estadísticas extendidas. Mostrar solo tus estadísticas conserva las filas ajenas. Ping, FPS y CPU/RAM son medidas distintas; desactivar FPS detiene su medición. Lo no disponible puede aparecer como guion.",
+        "Si los FPS muestran un guion y aparece un aviso de permisos, cierra NotMeter normalmente y vuelve a ejecutarlo como administrador. Un guion por falta del proceso del juego o de una medición no significa 0 FPS."
+      ],
+      null
+    ],
+    "Design": [
+      "Colores, fuentes y opacidad",
+      "Prioriza la lectura del texto y después el fondo.",
+      [
+        "Ajusta fuente, grosor y tamaños de nombre, DPS y jefe por separado. Introduce un color o usa el selector.",
+        "Distingue barra, fondo de fila, fondo general y opacidad de toda la ventana. Una barra al 0 % oculta solo la barra.",
+        "Elige colores de clase o propio, revisa combate y reposo, y guarda."
+      ],
+      [
+        "Si faltan letras o aparecen cuadrados, revisa la fuente alternativa. Si el texto está borroso, prueba el renderizado nítido. Incluso con la opacidad mínima de la ventana, el medidor sigue siendo ligeramente visible para que puedas encontrarlo."
+      ],
+      null
+    ],
+    "ColorFinder": [
+      "Selector de color",
+      "Aplica colores sin recordar sus códigos.",
+      [
+        "Elige el destino y pulsa un color de la paleta. La vista previa cambia y se copia el código.",
+        "Revisa el contraste y guarda. Puedes pegar el código en otro campo de color."
+      ],
+      [],
+      null
+    ],
+    "Presets": [
+      "Perfiles de personaje",
+      "Guarda hasta cinco configuraciones.",
+      [
+        "Con el personaje detectado, elige un espacio vacío y crea su perfil. El primero conserva la configuración existente.",
+        "Modifica y guarda; se aplicará automáticamente al detectar ese personaje. Para cambiar temporalmente sin modificar su vínculo, usa Perfil actual."
+      ],
+      [
+        "Los ajustes de red quedan fuera. Cambiar de personaje no cambia captura ni conexión."
+      ],
+      null
+    ],
+    "NicknameEffects": [
+      "Efectos de nombre",
+      "Controla los tuyos y los de otros por separado.",
+      [
+        "Elige la visibilidad y comprueba diseño, velocidad y brillo en la vista previa de combate.",
+        "Con el personaje detectado, verifica permiso actual y nombre antes de usar un cupón. Selecciona y guarda. La apariencia predeterminada desactiva el efecto."
+      ],
+      [
+        "Perder el rango oculta el efecto pero conserva la selección. Los tramos KR/TW y las recompensas Global tienen reglas distintas."
+      ],
+      null
+    ],
+    "BuffUi": [
+      "Configurar asistencia de combate",
+      "Consulta duración de efectos y espera para volver a usar habilidades.",
+      [
+        "En Inicio rápido elige clase y aplica la configuración inicial. Activa también el interruptor general de arriba.",
+        "En Habilidades selecciona clase, efectos comunes, pociones, pergaminos o perjuicios. Efecto y reutilización se activan por separado para cada habilidad.",
+        "Expande avisos e iconos fijos de la habilidad. Elige permanencia, inicio, fin o disponibilidad. Los controles grises no están admitidos.",
+        "En Avisos y voz selecciona voz, volumen y anticipación. Cada tarjeta permite nombre hablado y tiempos propios.",
+        "En Apariencia ajusta tamaño, dirección, opacidad y colores. Puedes separar efectos, reutilización y mensajes. Usa las vistas de posición y avisos, y guarda.",
+        "En Ayuda de combate → Avisos y voz, activa y ajusta por separado los efectos de sonido y la voz. Prueba ambos antes de guardar.",
+        "Para oír mejor los avisos sin subir todo el volumen de los auriculares, aumenta la amplificación del 100 % al 300 % poco a poco. También afecta a otros avisos de NotMeter, pero no anula el silencio ni un volumen al 0 %.",
+        "Si los iconos son pequeños en 4K, aumenta su escala en Apariencia hasta el 400 %. El zoom de la vista previa solo modifica el editor. Guarda y comprueba el tamaño real en el juego."
+      ],
+      [
+        "Activar una habilidad no basta si el general está apagado. Comprueba solo en combate, solo activo y mantener con medidor oculto. El sonido de objetivo del jefe tiene volumen y repetición propios, y puede limitarse a ti. La dirección usa golpes directos, no invocaciones, efectos colocados ni daño periódico."
+      ],
+      null
+    ],
+    "PartyLookup": [
+      "Consulta de grupo y personaje",
+      "La consulta del grupo se oculta en los ajustes al detectar un servidor Global. Es una función de Corea/Taiwán, distinta del seguimiento de reutilización del grupo en la ayuda de combate.",
+      [
+        "Elige ventana separada o resultados dentro del medidor; activa solicitudes, grupo actual o detalles según necesites.",
+        "Ajusta posición de nuevos solicitantes, sonido, texto y tamaño de tarjetas. Puedes añadir notas y alias de habilidades antes de guardar."
+      ],
+      [
+        "La consulta del grupo se oculta en los ajustes al detectar un servidor Global. Es una función de Corea/Taiwán, distinta del seguimiento de reutilización del grupo en la ayuda de combate."
+      ],
+      null
+    ],
+    "CombatRecords": [
+      "Guardar victorias e intentos",
+      "Vuelve a abrir los combates después de terminarlos.",
+      [
+        "Activa guardado y elige límite. Al superarlo se eliminan las entradas antiguas.",
+        "Abre el cuaderno o usa un atajo. Revisa victorias, intentos, muñecos y archivo; filtra por jefe y elige jugador para detalles.",
+        "Archiva lo que quieras conservar. Borrar no se puede deshacer. Puedes capturar, copiar tus estadísticas y abrir la clasificación de la región correcta.",
+        "Para vaciar después, activa reinicio automático y retraso. Este no reinicia un combate en curso ni uno nuevo."
+      ],
+      [
+        "El retraso empieza al acabar; es distinto de las reglas de inactividad que detectan el final. Los muñecos locales admiten 5–120 segundos, Global fija un minuto."
+      ],
+      null
+    ],
+    "FieldBoss": [
+      "Horarios de jefes de campo",
+      "Recibe avisos usando los horarios detectados en el juego.",
+      [
+        "Activa avisos y elige uno o varios momentos, como 10 o 5 minutos antes.",
+        "Selecciona KR/TW o Global, zona y jefes; asigna importancia de cero a cinco estrellas.",
+        "Abre el mapa del mundo (M) de la zona para recibir horarios. Revísalo otra vez si faltan datos.",
+        "Comprueba posición, duración y volumen en las vistas previas y guarda."
+      ],
+      [
+        "Jefes e importancia se guardan por servicio; tiempos, sonidos y volumen son comunes. Medir daño es otra función: hasta diez jugadores y sin soporte de Abismo."
+      ],
+      null
+    ],
+    "Alerts": [
+      "Eventos y alarmas propias",
+      "Elige cuándo y cómo recibir avisos.",
+      [
+        "La base horaria de los avisos, arriba en Ajustes → Avisos, detecta el servidor automáticamente. Se distingue entre Corea, Taiwán y Global Asia, NA Oeste, NA Este, Europa y Sudamérica.",
+        "Comprueba región, hora del servidor y siguiente aviso en tu hora local. Los avisos programados del juego esperan a detectar el servidor. Si hace falta, elige manualmente tu región y guarda.",
+        "Los avisos de campo de batalla, grieta y Festival Shugo usan esa base del servidor. Las alarmas personales siguen usando la hora local del PC. No cambies la zona horaria del PC por este motivo.",
+        "Activa solo campo de batalla, grieta o Festival de Shugo que necesites. Volumen 0 % muestra el mensaje sin sonido.",
+        "Gestiona alarmas propias para elegir días, hora y anticipación. Si estorban, usa modo separado y vista de posición.",
+        "El aviso de contribución baja necesita umbral de vida del jefe y contribución. Tu fila queda excluida. Guarda los cambios."
+      ],
+      [
+        "Las grietas usan hora del servidor detectado, también en Global. Un horario fijo puede no reflejar mantenimiento o cambios temporales."
+      ],
+      null
+    ],
+    "Bus": [
+      "Contar derrotas de jefes",
+      "Cuenta los jefes elegidos hasta el objetivo.",
+      [
+        "Activa el modo de contador, selecciona jefes y objetivo. Corrige la cantidad actual si hace falta.",
+        "Guarda y comprueba tras derrotar uno. Al alcanzar la meta se reinicia automáticamente a cero."
+      ],
+      [],
+      null
+    ],
+    "General": [
+      "Inicio, bloqueo y actualizaciones",
+      "Fija la posición y permite las acciones necesarias.",
+      [
+        "Selecciona inicio automático, barra de tareas y visibilidad al cambiar de aplicación.",
+        "Para usar el menú con el medidor bloqueado, activa su visualización y permite los botones que necesites. Para abrir los detalles al pulsar una fila de jugador, activa tanto el acceso a los detalles durante el bloqueo como los detalles de combate en los elementos mostrados.",
+        "Para interactuar temporalmente con el medidor al pasar el puntero, activa el desbloqueo automático y configura la espera. Tras ese tiempo, el medidor recibe los clics en lugar de dejarlos pasar al juego. Elige también las comprobaciones y los avisos de actualización durante el uso y guarda. La comprobación al iniciar es independiente.",
+        "La recuperación del medidor en pantalla completa, en Ajustes → General, está activada por defecto. Intenta devolver el medidor delante del juego. Algunos modos de pantalla completa exclusiva siguen impidiendo las superposiciones; en ese caso usa ventana sin bordes.",
+        "Si la ventana está fuera de la pantalla, haz clic derecho en el icono de NotMeter del área de notificación y restablece la posición del medidor. No necesitas borrar todos los ajustes."
+      ],
+      [
+        "Por defecto, los clics bloqueados pasan al juego. Arrastrar las zonas permitidas no mueve ni redimensiona el medidor. El desbloqueo al pasar el puntero no se aplica al bloqueo manual con permisos de clic."
+      ],
+      null
+    ],
+    "Hotkeys": [
+      "Asignar atajos",
+      "Accede a ajustes y ventanas aunque esté bloqueado.",
+      [
+        "Activa la acción, elige tecla y Ctrl, Alt, Mayús o Win.",
+        "Empieza con Ajustes, Mostrar/ocultar y Paso de clics. Añade reinicio, asistencia, registros y ventanas de recursos según necesites.",
+        "Evita conflictos con el juego, guarda y prueba."
+      ],
+      [
+        "Todos están inicialmente desactivados. Los ejemplos no son teclas asignadas. Para salir o reiniciar, usa combinaciones difíciles de pulsar sin querer."
+      ],
+      null
+    ],
+    "Render": [
+      "Representación GPU / CPU",
+      "Cambia estos ajustes si la imagen falla o afecta al rendimiento.",
+      [
+        "Conserva el modo si funciona. Ante ventanas negras o defectos, cambia el modo, <b>guarda y reinicia</b>.",
+        "Los modos de baja latencia son experimentales. Cambia uno cada vez y compara la misma escena.",
+        "Si filas o cifras van a tirones en modo GPU, cambia a CPU, guarda y reinicia; compara la misma escena. Las animaciones de posición y las de cifras/barras se desactivan por separado. No se garantiza la compatibilidad entre generación de fotogramas y superposiciones en todos los PC."
+      ],
+      [
+        "No todos los equipos o entornos Proton mejoran. Si causa problemas, desactívalo y reinicia."
+      ],
+      null
+    ],
+    "Optimization": [
+      "Reducir la carga de renderizado",
+      "Ajusta la presentación aparte de las mediciones.",
+      [
+        "Prueba el modo para equipos modestos. Al quitarlo recuperas los ajustes anteriores.",
+        "Aumenta el intervalo de actualización de los valores y de la ayuda de combate para refrescar la pantalla con menos frecuencia y reducir la carga. Los cambios tardarán más en verse. También puedes desactivar las animaciones de barras, cifras y cambios de posición.",
+        "Puedes ocultar el medidor durante jefes y recuperarlo después; ayudas y alertas siguen disponibles."
+      ],
+      [
+        "Quitar la barra de rendimiento detiene CPU/RAM. Los FPS se controlan por separado en elementos mostrados."
+      ],
+      null
+    ],
+    "Network": [
+      "Conexión y captura",
+      "Prueba primero la detección automática. Si no se detecta tu personaje, comprueba el adaptador de red y cambia el método de captura solo si hace falta.",
+      [
+        "Windows usa Npcap de forma predeterminada. Busca el adaptador mientras te mueves o atacas. Tras cambiar VPN o acelerador, actualiza y vuelve a buscar.",
+        "Busca la conexión confirmada, no la de más tráfico. Si necesitas WinDivert, descarga el complemento oficial y extrae directamente en la carpeta que abre la aplicación, sin otra subcarpeta.",
+        "Comprueba instalación, selecciona WinDivert, guarda, cierra completamente y ejecuta como administrador.",
+        "Para otro PC de juego, configura primero duplicación bidireccional de puertos. Selecciona receptor e IPv4 de un único PC y verifica la duplicación."
+      ],
+      [
+        "Si Npcap funciona, no necesitas complemento. Cambiar captura quizá no resuelva un VPN que oculta tráfico original. No dupliques toda la WAN ni varios PC; se recomiendan adaptadores separados para internet y recepción.",
+        "Si la detección automática ya ha conectado, no necesitas buscar el adaptador cada vez que inicias el programa. Si lo eliges manualmente, guarda y comprueba la selección tras reiniciar. Los ajustes de red no se transfieren mediante códigos de copia ni perfiles de personaje."
+      ],
+      null
+    ],
+    "Backup": [
+      "Guardar y restaurar los ajustes que elijas",
+      "Guarda los ajustes que elijas o comparte un diseño desde la misma pantalla. Selecciona por separado qué categorías guardar y cuáles restaurar. Los ajustes de red y las fotos del fondo en reposo quedan excluidos.",
+      [
+        "Abre Ajustes → Copia de seguridad y restauración y selecciona <b>Crear copia</b>. Todas las categorías están marcadas por defecto.",
+        "Deja marcadas solo las categorías que necesites. Para compartir únicamente la apariencia, elige <b>diseño</b>. Añade <b>Ayuda de combate</b> para incluir habilidades y tiempos de reutilización. La segunda imagen muestra estas dos categorías.",
+        "Pulsa <b>Crear código de copia</b> y después <b>Copiar código</b> o <b>Guardar en archivo</b>. Los códigos nuevos se comprimen para reducir su longitud. Si cambias la selección, genera un código nuevo.",
+        "Para importar, selecciona <b>Restaurar</b> en la misma pantalla. Pega el código completo o abre su archivo de texto con <b>Importar archivo</b> y pulsa <b>Revisar qué restaurar</b>.",
+        "Marca las categorías incluidas que quieras restaurar. Por ejemplo, de un código con diseño y asistencia de combate puedes restaurar solo la asistencia. Los ajustes no seleccionados se conservan.",
+        "Pulsa <b>Restaurar selección</b>. Los cambios se aplican y se cierra la ventana; no hace falta guardar de nuevo. Vuelve a abrir Ajustes para comprobar el resultado."
+      ],
+      [
+        "Se excluyen todos los ajustes de red, incluidos adaptadores, método de captura y VPN. Restaurar un código antiguo también conserva la configuración de red de este PC.",
+        "Se conservan la posición de las ventanas y el estado de bloqueo actual. No se incluyen los archivos de combates guardados; la categoría de registros solo contiene ajustes como el guardado y el reinicio automático.",
+        "Los códigos nuevos NM-SETTINGS-2, las copias completas antiguas NM-SETTINGS-1 y los códigos de diseño NM-SKIN-1 se importan en la misma pantalla. Si no se reconoce un código nuevo, actualiza primero NotMeter.",
+        "Las fotos del fondo en reposo y sus ajustes también quedan fuera de los códigos de copia de seguridad."
+      ],
+      null
+    ],
+    "IdlePhoto": [
+      "Personalizar el fondo en reposo",
+      "Elige una foto o una imagen incluida y ajusta el encuadre sin perder de vista los datos del personaje.",
+      [
+        "Abre Ajustes → Medidor → Fondo. Elige una imagen de muestra o importa un archivo JPG, PNG o BMP de hasta 25 MB. Se recomienda una imagen horizontal de unos 2000 × 800 px.",
+        "Activa la foto y elige <b>Fondo completo / Foto a la izquierda / Foto a la derecha</b>. Rellenar puede recortar los bordes; Ajustar muestra la imagen completa.",
+        "Arrastra la imagen en la vista previa para cambiar la posición y el encuadre. Usa la rueda del ratón o el control de zoom para cambiar el tamaño. Arrastrar no gira la imagen.",
+        "Ajusta la opacidad, el oscurecimiento y la intensidad y extensión del sombreado del texto. Comprueba que se lean el nombre, el servidor y los recursos.",
+        "Comprueba las vistas anterior y posterior a la detección del personaje y guarda. La biblioteca recuerda el último encuadre y los ajustes de cada foto."
+      ],
+      [
+        "La foto solo aparece en reposo. Si activas la visualización solo durante el combate, también se oculta la pantalla de reposo.",
+        "Las fotos y sus ajustes no se incluyen en los códigos de copia de seguridad o diseño. Quitar una foto afecta a la biblioteca del perfil actual."
+      ],
+      "Después de guardar, comprueba la foto y el nombre en reposo. La foto debe desaparecer al entrar en combate."
+    ],
+    "bossForecast": [
+      "Tiempo para derrotar al jefe y Frenesí (TTK)",
+      "Estima el tiempo restante a partir de la vida del jefe y del daño del grupo observado.",
+      [
+        "En Ajustes → Medidor → Datos visibles, activa el tiempo estimado para derrotar al jefe (TTK), el tiempo hasta Frenesí o ambos y guarda. Con ambos activos también aparece el margen o el retraso previsto.",
+        "Los valores aparecen bajo la vida del jefe cuando se conocen el primer daño y la vida restante. No hay que esperar 30 segundos: al principio se indica que es una estimación inicial.",
+        "El TTK es el tiempo restante desde ahora. Usa hasta 30 segundos de daño reciente a ese jefe y el tiempo desde el último golpe. Una fase de invulnerabilidad o una mecánica puede aumentarlo.",
+        "El tiempo hasta Frenesí usa datos confirmados del jefe y el momento del primer ataque. El margen indica cuánto antes se prevé derrotarlo; un exceso indica que se prevé llegar tarde.",
+        "Si está confirmado que el jefe no tiene temporizador de Frenesí, este y el margen muestran ∞. Un tiempo desconocido o un inicio de combate sin confirmar se muestran como no disponibles, no como infinitos."
+      ],
+      [
+        "Disponible en Corea, Taiwán y Global. La fila se oculta al terminar el combate y no aparece para objetivos de entrenamiento.",
+        "No es una garantía de victoria a esa hora. La curación, los cambios de daño y unirse al combate tarde pueden alterar el cálculo."
+      ],
+      "Comprueba que los valores se actualicen durante el combate y desaparezcan al terminar. Los objetivos de entrenamiento no deben mostrar la fila."
+    ],
+    "combatVisibility": [
+      "Mostrar el medidor solo en combate",
+      "Oculta la pantalla de reposo y muestra el medidor automáticamente al empezar un combate.",
+      [
+        "En Ajustes → General, activa la opción para mostrar el medidor solo durante el combate. Está desactivada por defecto.",
+        "Elige un retraso de 0 a 300 segundos tras el combate. Con 0 se oculta al instante; deja unos segundos si quieres leer los resultados.",
+        "Guarda. El medidor se oculta en reposo, aparece en combate y vuelve a ocultarse al vencer el plazo. Un nuevo combate cancela la ocultación pendiente.",
+        "Aunque esté oculto, puedes abrir ajustes y perfiles con un clic derecho en el icono de NotMeter del área de notificación de Windows. <b>Mostrar</b> lo revela hasta el siguiente combate. También puedes asignar una tecla antes."
+      ],
+      [
+        "Si ocultas el medidor manualmente, no reaparecerá automáticamente. La ayuda de combate tiene sus propios ajustes de visibilidad.",
+        "No se puede activar junto con la opción de ocultar durante combates de jefe de Optimización."
+      ],
+      "Comprueba: oculto en reposo, visible en combate y oculto tras el retraso elegido."
+    ],
+    "character": [
+      "Perfiles y detalles de combates clasificados",
+      "Consulta combates de personajes clasificados y las especializaciones detectadas en su registro de clasificación más reciente disponible.",
+      [
+        "En <b>Buscar personaje</b>, elige Corea, Taiwán o Global. En Global, elige también la región del juego. Busca el nombre y abre el personaje del servidor correcto.",
+        "Comprueba por separado <b>Esta semana</b> y <b>Todo el periodo</b>. No tener registro semanal no significa no tener marcas anteriores.",
+        "Pulsa <b>Detalles del combate</b> en un registro para ver daño, habilidades y mejoras de esa pelea. Otro registro abre su propio combate.",
+        "Las especializaciones de la sección de habilidades proceden del combate clasificado más reciente disponible. Pueden no coincidir con la configuración actual del personaje; comprueba la fecha.",
+        "Las habilidades de Estigma no llevan estas marcas. Si faltan especializaciones o no se pueden cargar los detalles, no se inventa una selección."
+      ],
+      [
+        "Hace falta un registro publicado en la clasificación. Una pelea recién terminada puede no aparecer de inmediato."
+      ],
+      "Comprueba región, servidor y que los detalles correspondan al registro elegido."
+    ]
+  },
+  "problems": [
+    [
+      "No termina de detectar el personaje",
+      "Entra al mundo, muévete o ataca, actualiza y busca adaptador. Con VPN comprueba que el tráfico original sea visible; con Proton, que complemento y Python estén conectados."
+    ],
+    [
+      "Ventana invisible o sin clics",
+      "Abre Ajustes desde el área de notificación de Windows. Revisa visibilidad, opacidad global, solo en juego, bloqueo y paso de clics. También sirve un atajo ya configurado."
+    ],
+    [
+      "Habilidad activada pero asistencia ausente",
+      "Comprueba interruptor general, habilidad, solo en combate y solo activo. Revisa la posición con la vista previa. Los controles grises no se admiten."
+    ],
+    [
+      "Aviso sin sonido",
+      "Revisa voz general e individual, volumen y condición de avisar solo cuando eres objetivo. Prueba el sonido."
+    ],
+    [
+      "Actualización repetida o fallida",
+      "Copia todo el diagnóstico desde arriba en Ajustes. La versión actual y la de un fallo previo pueden ser diferentes. Incluye etapa y código."
+    ],
+    [
+      "FPS, puntos o puesto muestran un guion",
+      "FPS depende de proceso y PC; puntos de recursos detectados; rangos de datos publicados adecuados. Un guion no es cero y las causas pueden ser distintas."
+    ],
+    [
+      "No se reinicia al instante",
+      "Revisa automatismo y retraso al terminar. Volver a atacar o un nuevo jefe cambia las condiciones. Si el tiempo se para pero el daño sube, indica versión, jefe, pasos y captura."
+    ],
+    [
+      "Código de copia rechazado",
+      "Pega el código completo en Copia de seguridad y restauración → Restaurar de la versión más reciente. Las copias nuevas, las copias completas antiguas y los códigos de diseño antiguos usan la misma pantalla. Si faltan partes, importa el archivo de texto original y consérvalo."
+    ]
+  ],
+  "scenes": {
+    "assist": [
+      "Efecto y reutilización",
+      "Cuando se detecta un efecto o espera de una habilidad elegida.",
+      "Arriba, 24 son segundos de efecto; abajo, 41 son segundos antes de reutilizar. 1:12 es un minuto y doce segundos. El mismo icono puede tener dos tiempos.",
+      "Comprueba general e interruptores de la habilidad. Los colores dependen del ajuste.",
+      [
+        "Duración arriba, reutilización abajo"
+      ]
+    ],
+    "pinned": [
+      "Iconos fijos y disponibilidad",
+      "Siempre mostrar conserva el icono al acabar la espera.",
+      "A la izquierda quedan 24 segundos, a la derecha está fijo sin tiempo. La permanencia del efecto es otro ajuste.",
+      "Un icono fijo no prueba que el efecto esté activo. Invertir colores puede intercambiar claro y oscuro.",
+      [
+        "Espera de 24 segundos",
+        "Icono fijo sin tiempo"
+      ]
+    ],
+    "combined": [
+      "Dos tiempos en un icono",
+      "Tema combinado con efecto y reutilización de la misma habilidad.",
+      "12 abajo a la izquierda es el efecto; 24 arriba a la derecha, la reutilización.",
+      "Para ventanas separadas usa el tema circular estándar compatible.",
+      [
+        "Efecto de 12 s / reutilización de 24 s"
+      ]
+    ],
+    "debuff": [
+      "Marca de perjuicio",
+      "Cuando se detecta un perjuicio activado y compatible.",
+      "D significa perjuicio, 12 es duración. Un número verde puede indicar acumulaciones, no siempre cargas.",
+      "Los controles incompatibles están desactivados. Los tiempos dependen del efecto observable.",
+      [
+        "Marca D y duración restante"
+      ]
+    ],
+    "alerts": [
+      "Mensajes adicionales",
+      "Con avisos de inicio, final o disponibilidad activados.",
+      "Aplicado indica inicio; 3 segundos, final próximo; listo, posibilidad de reutilizar. Son mensajes temporales.",
+      "Imagen y voz se ajustan por separado. Revisa habilidad, voz general y volumen.",
+      [
+        "Comienza el efecto",
+        "El efecto va a terminar",
+        "Habilidad disponible"
+      ]
+    ],
+    "target": [
+      "Objetivo del jefe",
+      "Si está activado y se identifica al objetivo durante el combate.",
+      "Noel representa a un aliado; Aster, a ti. Puedes cambiar tu color, efectos y sonido.",
+      "Limitar el sonido a ti no oculta el nombre de otros objetivos.",
+      [
+        "Objetivo: aliado",
+        "Objetivo: tú"
+      ]
+    ],
+    "direction": [
+      "Dirección incorrecta",
+      "Prefieres por detrás y se confirma un golpe directo desde otro lado.",
+      "Describe el golpe, no una ruta de movimiento ni la mirada del jefe.",
+      "Revisa activación, dirección y posición. Invocaciones, efectos colocados y daño periódico quedan fuera de los golpes directos.",
+      [
+        "Aviso con preferencia trasera"
+      ]
+    ],
+    "meter": [
+      "Vista de combate",
+      "Al registrar daño a un jefe o muñeco.",
+      "Arriba: objetivo, tiempo y vida. Izquierda: clase, nombre y CP. Derecha: DPS, contribución y rangos disponibles.",
+      "Tema y ajustes cambian la posición. Los datos son ejemplos.",
+      [
+        "Combate del medidor real"
+      ]
+    ],
+    "detail": [
+      "Tras pulsar un jugador",
+      "Con detalles de combate activados.",
+      "Cambia de personaje arriba y compara habilidades y golpes abajo. Los indicadores elegidos cambian las columnas.",
+      "Revisa permisos de clic. Empezar tarde no recupera ataques previos.",
+      [
+        "Daño y golpes por habilidad"
+      ]
+    ],
+    "records": [
+      "Volver a un combate",
+      "Tras activar guardado y crear un registro.",
+      "Busca con pestañas y filtro de jefe, luego elige jugador para ver detalles.",
+      "Revisa el momento de guardado. Activarlo ahora no crea combates pasados.",
+      [
+        "Registro con un combate de ejemplo"
+      ]
+    ],
+    "resources": [
+      "Recursos separados",
+      "Con visualización separada y datos recibidos.",
+      "Las cifras corresponden a la llave o energía; paréntesis son cantidades extra. Botones e iconos abren resúmenes.",
+      "Revisa interruptores y detección. Un guion no es cero.",
+      [
+        "Llaves y energía"
+      ]
+    ],
+    "field": [
+      "Aviso de aparición",
+      "Cuando un jefe elegido alcanza el tiempo de aviso.",
+      "Mira nombre, cuenta atrás y estrellas de importancia. Tres estrellas son tu preferencia, no dificultad.",
+      "Revisa horario del mapa, región y jefe activados.",
+      [
+        "Cinco minutos antes, importancia tres"
+      ]
+    ],
+    "custom": [
+      "Alarma propia",
+      "Cuando coinciden día, hora y anticipación.",
+      "Muestra título, hora objetivo y plazo, con nota debajo si existe.",
+      "Revisa activación y día. Volumen cero deja solo la imagen.",
+      [
+        "Cinco minutos antes de las 21:00"
+      ]
+    ],
+    "bus": [
+      "Objetivo alcanzado",
+      "Cuando las derrotas del jefe seleccionado llegan a la meta.",
+      "El aviso es breve y el contador vuelve a cero para otra ronda.",
+      "Revisa jefe, meta y cantidad. No cuenta todos los monstruos.",
+      [
+        "Aviso de meta alcanzada"
+      ]
+    ],
+    "idle": [
+      "Comprobar tu nombre",
+      "Tras detectar el personaje en el mundo.",
+      "Nombre y servidor confirman la detección. Los otros elementos dependen de los ajustes.",
+      "Si sigue detectando, revisa conexión. Los recursos pueden llegar después del nombre.",
+      [
+        "Reposo con personaje detectado"
+      ]
+    ],
+    "hp": [
+      "Vida del jefe aparte",
+      "Al activar la ventana separada.",
+      "Coloca nombre, vida, porcentaje y barra donde sean fáciles de mirar.",
+      "Revisa los controles de vida, separación y posición.",
+      [
+        "Ventana de vida del jefe"
+      ]
+    ],
+    "hits": [
+      "Estadísticas al terminar",
+      "Bajo los jugadores en tema A; esta es la vista previa real.",
+      "Frontal, trasero, fuerte, perfecto, crítico y parada se eligen por separado. Las categorías se solapan y no suman necesariamente 100 %.",
+      "Puedes limitarlo a tu fila. El tema B no admite esta expansión.",
+      [
+        "Seis indicadores por jugador"
+      ]
+    ],
+    "energy": [
+      "Energía y Kinah por personaje",
+      "En la lista de personajes detectados y guardados.",
+      "Distingue energía base y extra de Kinah. Global muestra valores observados, no las estimaciones de recuperación KR/TW. Los personajes Global muestran «Región - Nombre del servidor» bajo su nombre. Así puedes distinguir servidores del mismo nombre en Asia y NA Este, por ejemplo. Pasa el cursor sobre un nombre abreviado para verlo completo. Corea y Taiwán mantienen su formato anterior.",
+      "Conecta el personaje ausente y verifica detección. Los otros valores no son necesariamente en directo.",
+      [
+        "Resumen de energía y Kinah"
+      ]
+    ],
+    "points": [
+      "Puntos de hoy",
+      "Al pulsar los puntos diarios.",
+      "Compara ganancias, pérdidas y totales observados. El cambio diario no es todo el saldo del juego.",
+      "Detectar el personaje no garantiza tener sus puntos. Un guion no es cero.",
+      [
+        "Cambios observados hoy"
+      ]
+    ],
+    "timers": [
+      "Próximos jefes de campo",
+      "Con el botón de jefes o un atajo asignado.",
+      "Compara horario y cuenta atrás. Las estrellas son personales. Revisa servidor y zona.",
+      "Abre el mapa adecuado con M. No se inventan horarios desconocidos.",
+      [
+        "Jefes con horarios detectados"
+      ]
+    ],
+    "party": [
+      "Habilidades de solicitantes",
+      "Con consulta KR/TW activada y datos recibidos.",
+      "Bajo clase, nombre, servidor y CP aparecen las habilidades seleccionadas y sus niveles.",
+      "Global no es compatible. Si faltan, revisa selección y consulta oficial.",
+      [
+        "Clase, CP y habilidades de un solicitante"
+      ]
+    ],
+    "forecast": [
+      "Leer la previsión del jefe",
+      "Aparece al activar las estimaciones durante un combate de jefe.",
+      "El TTK es el tiempo restante estimado; el temporizador de Frenesí y el margen comparan los dos plazos.",
+      "Se sigue calculando cuando no hay daño. ∞ solo corresponde a un jefe confirmado sin temporizador.",
+      [
+        "Victoria prevista antes de Frenesí",
+        "Pausa de daño: la estimación aumenta",
+        "Jefe confirmado sin temporizador",
+        "Inicio desconocido: temporizador en espera"
+      ]
+    ],
+    "photo": [
+      "Tres distribuciones de foto",
+      "Vistas reales tras detectar al personaje.",
+      "El fondo completo coloca los datos sobre la foto; los diseños laterales separan foto e información.",
+      "Tras ajustar el encuadre, comprueba nombre, servidor y recursos.",
+      [
+        "Fondo completo",
+        "Foto a la izquierda",
+        "Foto a la derecha"
+      ]
+    ],
+    "character": [
+      "Perfiles y detalles de combates clasificados",
+      "Consulta combates de personajes clasificados y las especializaciones detectadas en su registro de clasificación más reciente disponible.",
+      "Pulsa Detalles del combate en un registro para ver daño, habilidades y mejoras de esa pelea. Otro registro abre su propio combate.",
+      "Las habilidades de Estigma no llevan estas marcas. Si faltan especializaciones o no se pueden cargar los detalles, no se inventa una selección.",
+      [
+        "Comprueba por separado Esta semana y Todo el periodo. No tener registro semanal no significa no tener marcas anteriores.",
+        "Las especializaciones de la sección de habilidades proceden del combate clasificado más reciente disponible. Pueden no coincidir con la configuración actual del personaje; comprueba la fecha."
+      ]
+    ]
+  }
+}
