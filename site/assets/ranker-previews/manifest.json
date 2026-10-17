@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "7246fa82e4ab24901d6ca1acb8698455cb77f1d2",
+  "sourceFiles": [
+    {
+      "path": "src/Not4You.Meter/MeterUserJobMarkBuilder.cs",
+      "sha256": "79afa11bd285a11254581a67df89060f5b8259482eb94b3b17ce277c7afeed83"
+    },
+    {
+      "path": "src/Not4You.Meter/MeterRankerStatus.cs",
+      "sha256": "a636fe9566a2986961ac85c6e100f2e5143be68421934bc317768c8d6d6c0d43"
+    },
+    {
+      "path": "src/Not4You.Meter/Reports/DungeonRankerIdentityIndex.cs",
+      "sha256": "26f8572a0ea91077ff1a95fe5db2020053b0e775d71de0c239abb2d42a1912ed"
+    },
+    {
+      "path": "src/NotMeter.Shared/NotMeterRankerIdentityProtocol.cs",
+      "sha256": "aa89c2b193f11d804790cdf6eddc2a96221988427bebce5b54181ba76e764b69"
+    },
+    {
+      "path": "src/Not4You.Meter/Assets/Meter/검성.png",
+      "sha256": "c44cd2bdc37f6364568a36da4655cab809708d21e646f041959b65e3eca0361b"
+    }
+  ],
+  "width": 192,
+  "height": 192,
+  "recommendedCssSize": 96,
+  "background": "#171e24",
+  "transparent": false,
+  "sampleJob": "검성",
+  "sampleJobAccent": "#79e7fa",
+  "includesOnlineIndicator": false,
+  "clientCycleMilliseconds": 6128,
+  "gifCycleMilliseconds": 6130,
+  "sampleIntervalMilliseconds": 40,
+  "rules": {
+    "rankerMinimumCombatPower": 800000,
+    "combatPowerBracketSize": 25000,
+    "mergedTopCombatPowerBracketMinimum": 2000000,
+    "rankerMaximumRank": 20,
+    "allTimeDiamondMaximumRank": 5,
+    "rankingNicknameRewardMaximumRank": 3,
+    "allTimeMetric": "DPS",
+    "weeklyMetric": "nDPS",
+    "timedRankingException": "악몽 등 처치 시간 순위 콘텐츠는 기존 판정 기준을 유지",
+    "displayedRank": "전체 기간과 이번 주의 자격 순위 중 가장 작은 숫자",
+    "diamondCondition": "전체 기간 순위가 1~5위인 경우"
+  },
+  "examples": [
+    {
+      "id": "unranked",
+      "title": "랭커 표시 없음",
+      "description": "기본 직업 아이콘",
+      "allTimeRank": null,
+      "weeklyRank": null,
+      "displayedRank": null,
+      "alt": "랭커 테두리와 순위 숫자가 없는 검성 직업 아이콘",
+      "poster": "unranked.png",
+      "animation": null
+    },
+    {
+      "id": "rank-11-20",
+      "title": "11~20위",
+      "description": "보라색 모서리와 오른쪽 위 보석",
+      "allTimeRank": null,
+      "weeklyRank": 20,
+      "displayedRank": 20,
+      "alt": "11~20위의 보라색 모서리 테두리와 숫자 20이 표시된 검성 직업 아이콘",
+      "poster": "rank-11-20.png",
+      "animation": null
+    },
+    {
+      "id": "rank-6-10",
+      "title": "6~10위",
+      "description": "하늘색 모서리와 오른쪽 위 보석",
+      "allTimeRank": null,
+      "weeklyRank": 10,
+      "displayedRank": 10,
+      "alt": "6~10위의 하늘색 모서리 테두리와 숫자 10이 표시된 검성 직업 아이콘",
+      "poster": "rank-6-10.png",
+      "animation": null
+    },
+    {
+      "id": "weekly-rank-1-5",
+      "title": "이번 주 1~5위",
+      "description": "전체 기간 TOP5가 없을 때 금색 모서리와 오른쪽 위 보석",
+      "allTimeRank": null,
+      "weeklyRank": 5,
+      "displayedRank": 5,
+      "alt": "이번 주 1~5위의 금색 모서리 테두리와 숫자 5가 표시된 검성 직업 아이콘. 움직임 없음",
+      "poster": "weekly-rank-1-5.png",
+      "animation": null
+    },
+    {
+      "id": "alltime-rank-1-5",
+      "title": "전체 기간 1~5위",
+      "description": "금색 다이아몬드와 하단 광선, 테두리를 따라 움직이는 광점",
+      "allTimeRank": 5,
+      "weeklyRank": null,
+      "displayedRank": 5,
+      "alt": "전체 기간 1~5위의 금색 다이아몬드 테두리와 숫자 5가 표시된 검성 직업 아이콘. 하단 광선과 테두리 광점 효과",
+      "poster": "alltime-rank-1-5.png",
+      "animation": "alltime-rank-1-5.gif"
+    },
+    {
+      "id": "combined-alltime-5-weekly-1",
+      "title": "전체 기간 5위 + 이번 주 1위",
+      "description": "더 높은 순위인 1과 전체 기간 TOP5 다이아몬드 효과를 함께 표시",
+      "allTimeRank": 5,
+      "weeklyRank": 1,
+      "displayedRank": 1,
+      "alt": "전체 기간 5위와 이번 주 1위가 함께 있는 예시. 전체 기간 다이아몬드 테두리에 더 높은 순위 숫자 1 표시",
+      "poster": "combined-alltime-5-weekly-1.png",
+      "animation": "combined-alltime-5-weekly-1.gif"
+    }
+  ],
+  "animations": [
+    {
+      "file": "alltime-rank-1-5.gif",
+      "frames": 88,
+      "uniqueFrames": 88,
+      "durationMilliseconds": 6130,
+      "bytes": 465825
+    },
+    {
+      "file": "combined-alltime-5-weekly-1.gif",
+      "frames": 88,
+      "uniqueFrames": 88,
+      "durationMilliseconds": 6130,
+      "bytes": 461915
+    }
+  ],
+  "files": [
+    {
+      "name": "alltime-rank-1-5.gif",
+      "bytes": 465825,
+      "sha256": "875ed1a318d501271ffbd7d4671bf816b20b78ac684fed0c105d03bb3820db23"
+    },
+    {
+      "name": "alltime-rank-1-5.png",
+      "bytes": 14926,
+      "sha256": "8f8c084c7c8e38dc66a9120fa07027656e943372f43c25201b49938c186a50b2"
+    },
+    {
+      "name": "combined-alltime-5-weekly-1.gif",
+      "bytes": 461915,
+      "sha256": "7fc594c47ad3f6b3c9a8cdf48c842394b8d9ec7bfb6c927abcb3714f3c45230d"
+    },
+    {
+      "name": "combined-alltime-5-weekly-1.png",
+      "bytes": 14794,
+      "sha256": "7495faeff61b8276937a193a8d2b3fffd7223ed973e559df06828d56f8c425e7"
+    },
+    {
+      "name": "rank-11-20.png",
+      "bytes": 12009,
+      "sha256": "bf6de9277496d89e921786287ca404356fa8f7a350ad671baf4eb8a4a9a7a6c6"
+    },
+    {
+      "name": "rank-6-10.png",
+      "bytes": 11778,
+      "sha256": "72a54aab5286720c1eb5e9718fba40a4e687e044dac653f8188b143246b5c70e"
+    },
+    {
+      "name": "unranked.png",
+      "bytes": 11647,
+      "sha256": "02adc85b050dd606b6eb2329f5ab1c95c95b7a996ea0406f909d97fe2ed5283c"
+    },
+    {
+      "name": "weekly-rank-1-5.png",
+      "bytes": 11648,
+      "sha256": "03c1a6c31679bc8e8e9c86517c359d92f16e4db9438347c40b0bb360bb6cd851"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+.exitlag-promotion {
+  margin: 0 24px 24px;
+  padding: 20px;
+  border: 1px solid #48404a;
+  border-left: 3px solid #e72b35;
+  border-radius: 10px;
+  background: #191c23;
+  color: #f5f6f8;
+}
+
+.exitlag-promotion-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.exitlag-promotion-brand img {
+  width: 128px;
+  height: 29px;
+  object-fit: contain;
+}
+
+.exitlag-promotion-brand span {
+  padding: 3px 7px;
+  border: 1px solid #505563;
+  border-radius: 4px;
+  color: #bdc2cf;
+  font-size: 11px;
+}
+
+.exitlag-promotion h3 {
+  margin: 17px 0 6px;
+  font-size: 18px;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.exitlag-promotion p {
+  margin: 0;
+  color: #bdc2cf;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.exitlag-promotion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.exitlag-promotion-coupon {
+  display: flex;
+  flex: 1 1 250px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px 8px 12px;
+  border: 1px dashed #66606a;
+  border-radius: 7px;
+  background: #23262e;
+}
+
+.exitlag-promotion-coupon label {
+  display: block;
+  margin-bottom: 3px;
+  color: #bdc2cf;
+  font-size: 10px;
+}
+
+.exitlag-promotion code {
+  color: #fff;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+  user-select: all;
+}
+
+.exitlag-promotion button,
+.exitlag-promotion a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #66606a;
+  border-radius: 6px;
+  background: #292c34;
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.exitlag-promotion a {
+  flex: 1 1 150px;
+  gap: 8px;
+  border-color: #e72b35;
+  background: #bd202b;
+}
+
+.exitlag-promotion button:hover,
+.exitlag-promotion a:hover {
+  filter: brightness(1.18);
+}
+
+.exitlag-promotion button:focus-visible,
+.exitlag-promotion a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.exitlag-promotion [role=status]:not(:empty) {
+  margin-top: 10px;
+  color: #f5f6f8;
+}
+
+@media (max-width: 600px) {
+  .exitlag-promotion { margin: 0 18px 22px; padding: 16px; }
+}

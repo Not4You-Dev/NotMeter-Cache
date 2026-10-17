@@ -1,0 +1,171 @@
+#character-rankings {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #30454e;
+  border-radius: 12px;
+  background: #0d2029;
+  color: #e6efed;
+  container-type: inline-size;
+}
+#character-rankings .character-section-head {
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 26px 28px 24px;
+  border-bottom: 1px solid #2d424b;
+}
+#character-rankings .character-section-head > div:first-child { min-width: 0; }
+#character-rankings .character-section-head h4 {
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -.7px;
+  line-height: 1.3;
+  color: #e6efed;
+}
+#character-rankings .character-section-head p {
+  margin-top: 9px;
+  max-width: 80ch;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #a0b4bc;
+}
+.character-ranking-context { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.character-ranking-cp { display: flex; align-items: center; gap: 10px; }
+.character-ranking-cp img { width: 23px; height: 23px; object-fit: contain; }
+.character-ranking-cp small { display: block; margin-bottom: 3px; font-size: 11px; color: #a0b4bc; }
+.character-ranking-cp strong { font-size: 14px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.character-ranking-limit {
+  padding: 6px 8px;
+  border: 1px solid #38505a;
+  border-radius: 4px;
+  color: #b8cbd2;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+#character-rankings .character-ranking-body {
+  padding: 0 28px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+#character-rankings .character-ranking-periods { display: block; padding: 0; }
+#character-rankings .character-ranking-period { border: 0; border-radius: 0; background: transparent; overflow: visible; }
+#character-rankings .character-ranking-period[hidden] { display: none; }
+#character-rankings .character-ranking-tabs { display: flex; gap: 8px; padding: 16px 0; }
+#character-rankings .character-ranking-tab {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 3px 12px;
+  min-width: 150px;
+  min-height: 44px;
+  padding: 9px 14px;
+  border: 1px solid #38525e;
+  border-radius: 5px;
+  background: transparent;
+  color: #b8cbd2;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+#character-rankings .character-ranking-tab:hover { background: #19343e; }
+#character-rankings .character-ranking-tab[aria-selected="true"] { background: #25494c; border-color: #8dd7cf; color: #e6f6f2; }
+#character-rankings .character-ranking-tab-count { font-size: 12px; color: #8dd7cf; font-variant-numeric: tabular-nums; }
+#character-rankings .character-ranking-tab-status { grid-column: 1 / -1; color: #d3bd8c; font-size: 10px; line-height: 1.4; }
+#character-rankings :is(.character-ranking-tab, .character-ranking-period, .character-combat-button):focus-visible { outline: 2px solid #8dd7cf; outline-offset: 3px; }
+.character-ranking-dungeon { display: grid; grid-template-columns: 232px minmax(0, 1fr); border-top: 1px solid #2d424b; }
+.character-ranking-dungeon-heading { display: flex; align-items: flex-start; gap: 12px; min-width: 0; padding: 20px 16px 20px 0; }
+.character-ranking-dungeon-name { min-width: 0; }
+.character-ranking-dungeon-name h6 { margin: 0; color: #e6efed; font-size: 14px; font-weight: 650; line-height: 1.6; overflow-wrap: anywhere; }
+.character-ranking-dungeon-name > span { display: block; margin-top: 5px; color: #a0b4bc; font-size: 11px; line-height: 1.5; }
+.character-ranking-icon {
+  flex: none;
+  display: block;
+  width: 22px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  color: #92b9c6;
+}
+.character-ranking-client-icon { flex: none; width: 36px; height: 36px; object-fit: contain; margin-top: -5px; }
+.character-ranking-records { min-width: 0; border-left: 1px solid #2a3f49; }
+#character-rankings .character-ranking-row {
+  grid-template-columns: 55px minmax(100px, 1fr) minmax(125px, 166px) minmax(104px, max-content);
+  gap: 16px;
+  min-height: 52px;
+  padding: 8px 0 8px 17px;
+  border-top: 1px solid #253b45;
+  color: #e6efed;
+}
+#character-rankings .character-ranking-row:first-child { border-top: 0; }
+#character-rankings .character-ranking-rank { gap: 5px; overflow: visible; }
+#character-rankings .character-ranking-rank strong { color: #d6e4e7; font-size: 25px; font-weight: 650; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#character-rankings .character-ranking-rank strong > small { margin-right: 3px; color: #859da8; font-size: 12px; font-weight: 500; }
+#character-rankings .character-ranking-rank-1 strong { color: #d1b781; }
+#character-rankings .character-ranking-rank-2 strong { color: #dce4ec; }
+#character-rankings .character-ranking-rank-3 strong { color: #d4ae8c; }
+.character-ranking-row-cp { font-size: 10px; line-height: 1.4; color: #a0b4bc; overflow-wrap: anywhere; }
+#character-rankings .character-ranking-boss { font-size: 14px; font-weight: 600; line-height: 1.45; overflow-wrap: anywhere; }
+#character-rankings .character-ranking-result { display: flex; justify-content: flex-end; align-items: baseline; gap: 6px; min-width: 0; }
+#character-rankings .character-ranking-dps { color: #8dd7cf; font-size: 20px; font-weight: 700; letter-spacing: -.55px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+#character-rankings .character-ranking-result > small { color: #9db8c0; font-size: 10px; font-weight: 550; }
+#character-rankings .character-combat-button {
+  gap: 7px;
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid #38525e;
+  border-radius: 5px;
+  background: #152e39;
+  color: #d6e3e8;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  max-width: 175px;
+}
+#character-rankings .character-combat-button svg { width: 13px; height: 15px; color: currentColor; }
+#character-rankings .character-combat-button:hover { border-color: #8cbcbf; background: #1f3e49; color: #fff; }
+#character-rankings .character-ranking-period-weekly .character-ranking-dungeon { border-top-color: #42635f; }
+#character-rankings .character-ranking-footnote { margin: 0; padding: 19px 28px 20px; color: #a0b4bc; font-size: 11px; font-weight: 500; line-height: 1.5; }
+#character-rankings:not(:has(.character-ranking-footnote)) .character-ranking-body { padding-bottom: 24px; }
+#character-rankings .character-ranking-state { padding: 24px 0; text-align: left; line-height: 1.65; font-size: 13px; color: #a0b4bc; }
+@container (max-width: 1050px) {
+  .character-ranking-dungeon { grid-template-columns: 195px minmax(0, 1fr); }
+  #character-rankings .character-ranking-row { grid-template-columns: 46px minmax(95px, 1fr) minmax(120px, 155px) minmax(94px, max-content); gap: 10px; padding-left: 12px; }
+}
+@container (max-width: 850px) {
+  #character-rankings .character-section-head { align-items: flex-start; flex-direction: column; padding: 22px; gap: 17px; }
+  #character-rankings .character-ranking-body { padding: 0 22px; }
+  .character-ranking-dungeon { display: block; }
+  .character-ranking-dungeon-heading { align-items: center; padding: 16px 0 7px; }
+  .character-ranking-dungeon-name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+  .character-ranking-dungeon-name > span { margin: 0; }
+  .character-ranking-records { border-left: 0; }
+  #character-rankings .character-ranking-row { padding-left: 0; grid-template-columns: 46px minmax(100px, 1fr) minmax(130px, 166px) minmax(100px, max-content); }
+  #character-rankings .character-ranking-footnote { padding-left: 22px; padding-right: 22px; }
+}
+@container (max-width: 610px) {
+  #character-rankings .character-section-head { padding: 20px 18px; }
+  #character-rankings .character-section-head h4 { font-size: 23px; }
+  #character-rankings .character-ranking-body { padding: 0 18px; }
+  #character-rankings .character-ranking-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #character-rankings .character-ranking-tab { min-width: 0; gap: 3px 8px; padding: 10px; font-size: 12px; overflow-wrap: anywhere; }
+  .character-ranking-dungeon-heading { gap: 8px; }
+  .character-ranking-dungeon-heading > svg { width: 24px; }
+  .character-ranking-dungeon-name h6 { font-size: 13px; }
+  #character-rankings .character-ranking-row { grid-template-columns: 38px minmax(0, 1fr) minmax(88px, max-content); gap: 10px 8px; padding: 14px 0; }
+  #character-rankings .character-ranking-rank { grid-column: 1; grid-row: 1 / 3; align-self: start; padding-top: 2px; }
+  #character-rankings .character-ranking-rank strong { font-size: 23px; }
+  #character-rankings .character-ranking-boss { grid-column: 2 / 4; grid-row: 1; font-size: 13px; }
+  #character-rankings .character-ranking-result { grid-column: 2; justify-content: flex-start; flex-wrap: wrap; gap: 2px 5px; }
+  #character-rankings .character-ranking-dps { font-size: 19px; overflow-wrap: anywhere; }
+  #character-rankings .character-combat-button { grid-column: 3; grid-row: 2; min-height: 36px; padding: 5px 8px; font-size: 10px; max-width: 118px; }
+  #character-rankings .character-combat-button svg { display: none; }
+  #character-rankings .character-ranking-footnote { padding: 18px; }
+}

@@ -1,0 +1,30 @@
+body.praise-ranking-view :is(.filter-panel,.custom-cp-panel,.snapshot-bar,.weekly-guide,.ranking-panel) { display:none!important; }
+.praise-surface { margin:24px 0; padding:28px; background:var(--panel,#111923); border:1px solid #38414a; border-radius:12px; }
+.praise-heading { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; }
+.praise-heading-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.praise-heading h2 { font-size:26px; margin:4px 0 14px; }
+#praise-refresh { background:#202832; color:#e0e4e8; border:1px solid #515c69; border-radius:6px; padding:9px 13px; }
+#praise-refresh:hover { background:#2c3642; }
+#praise-refresh:focus-visible { outline:2px solid #c6ab71; outline-offset:3px; }
+.praise-eyebrow { color:#b5a27a; font-size:12px; letter-spacing:.09em; margin:0; }
+.praise-surface p { line-height:1.7; }
+.praise-benefit { max-width:950px; color:#d4c8ad; }
+.praise-updated,.praise-note { color:#a9b0b8; font-size:13px; }
+.praise-list { margin-top:22px; border-top:1px solid #39414a; }
+.praise-row { display:grid; grid-template-columns:40px minmax(155px,1fr) auto minmax(360px,1.9fr); align-items:center; gap:20px; padding:18px 0; border-bottom:1px solid #303842; }
+.praise-rank { font-variant-numeric:tabular-nums; font-size:19px; color:#c4c9cf; }
+.praise-character strong { display:flex; align-items:center; gap:7px; font-size:17px; color:#eef0f3; overflow-wrap:anywhere; }
+.praise-character strong span { min-width:0; }
+.praise-job-icon { width:22px; height:22px; object-fit:contain; flex:0 0 22px; }
+.praise-character { min-width:0; }
+.praise-server { display:block; font-size:13px; color:#a9b0b8; margin-top:5px; }
+.praise-total { display:inline-flex; align-items:center; justify-content:center; gap:7px; min-width:96px; padding:7px 11px; background:#171817; border:1px solid #80673a; border-radius:9px; color:#e7c776; font-size:18px; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.praise-total img { width:28px; height:28px; object-fit:contain; }
+.praise-kinds { display:grid; grid-template-columns:repeat(5,minmax(56px,1fr)); gap:10px; margin:0; }
+.praise-kind { text-align:center; margin:0; }
+.praise-kind dt { display:flex; flex-direction:column; align-items:center; gap:5px; font-size:12px; color:#b5bdc8; line-height:1.35; }
+.praise-kind img { width:36px; height:36px; object-fit:contain; }
+.praise-kind dd { margin:5px 0 0; color:#edf0f3; font-size:15px; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+#praise-state { padding:24px 0; color:#b9c0c8; }
+@media(max-width:900px) { .praise-row { grid-template-columns:30px minmax(0,1fr) auto; gap:12px; } .praise-kinds { grid-column:2 / -1; } }
+@media(max-width:520px) { .praise-surface { padding:18px 14px; } .praise-kinds { grid-column:1 / -1; gap:5px; } .praise-total { min-width:82px; font-size:16px; } .praise-heading h2 { font-size:23px; } }
