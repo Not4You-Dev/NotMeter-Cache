@@ -1,0 +1,201 @@
+
+body.contribution-view .setup-guide-surface#contribution-surface {
+  --guide-base: #141b21;
+  --guide-panel: #1b252d;
+  --guide-raised: #24323c;
+  --guide-line: #35434f;
+  --guide-muted: #abbac5;
+  --guide-accent: #a5d8df;
+  padding: 28px;
+  overflow: visible;
+  border: 1px solid var(--guide-line) !important;
+  border-radius: 14px !important;
+  background: var(--guide-base) !important;
+  color: #edf3f5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+body.contribution-view .setup-guide-surface#contribution-surface [hidden] { display: none !important; }
+body.contribution-view .setup-guide-surface#contribution-surface :is(button, summary, a):focus-visible { outline: 2px solid var(--guide-accent); outline-offset: 4px; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading {
+  gap: 24px;
+  margin: 0 0 28px;
+  padding: 0 0 24px;
+  border-bottom: 1px solid var(--guide-line);
+  background: transparent !important;
+}
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading-copy { align-items: flex-start; gap: 16px; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading-icon {
+  width: 48px; height: 48px; margin-top: 2px;
+  border: 1px solid #6a8a92 !important; border-radius: 12px !important;
+  background: #263c45 !important; color: var(--guide-accent) !important;
+}
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading h2 { font-size: 28px !important; font-weight: 750 !important; letter-spacing: -.035em; line-height: 1.3; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading p { max-width: 62ch; margin: 8px 0 0; font-size: 14px !important; color: var(--guide-muted) !important; line-height: 1.65 !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .ranking-back-button { flex: 0 0 auto; font-size: 12px; min-height: 40px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-picker-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-bottom: 12px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-picker-heading h3 { margin: 0; font-size: 15px; font-weight: 700; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-picker-heading p { margin: 0; color: var(--guide-muted); font-size: 13px; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-tabs { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 7px; margin: 0; padding: 0; border: 0; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-tab {
+  display: flex; flex-direction: column; gap: 7px; min-width: 0; min-height: 80px;
+  padding: 12px 5px; border: 1px solid var(--guide-line) !important; border-radius: 8px !important;
+  background: var(--guide-panel) !important; color: #bac9d4 !important;
+  white-space: normal; overflow-wrap: anywhere; font: inherit; font-size: 13px; line-height: 1.3;
+}
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-tab span { font-weight: 600; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-tab .job-icon { width: 26px; height: 26px; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-tab small { display: none; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-tab:hover { border-color: #668590 !important; background: #25343e !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-tab.active { background: #2b424c !important; color: #e5f7f9 !important; border-color: #94c6ce !important; box-shadow: inset 0 -3px 0 #94c6ce !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-summary {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px !important;
+  margin: 18px 0 24px; padding: 0 0 20px;
+  border: 0 !important; border-bottom: 1px solid var(--guide-line) !important; border-radius: 0 !important;
+  background: transparent !important;
+}
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-summary > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; padding: 0; border: 0 !important; background: transparent !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-summary span { color: var(--guide-muted) !important; font-size: 12px; font-weight: 450; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-summary strong { color: #d9e6ec !important; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+body.contribution-view .setup-guide-surface#contribution-surface #contribution-low-samples { display: inline-flex; align-items: center; gap: 6px; }
+body.contribution-view .setup-guide-surface#contribution-surface #contribution-low-samples::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #dcba79; }
+body.contribution-view .setup-guide-surface#contribution-surface #contribution-low-samples[data-confidence="high"]::before { background: #91c9af; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-content { display: grid; grid-template-columns: 166px minmax(0, 1fr); align-items: start; gap: 26px; padding: 0; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories { position: sticky; top: 18px; display: grid; gap: 6px; padding: 0; margin: 0; border: 0; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories button {
+  display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 12px;
+  border: 1px solid transparent; border-radius: 7px;
+  background: transparent; color: var(--guide-muted); font: inherit; font-size: 14px; text-align: left; cursor: pointer;
+}
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories button svg { width: 22px; height: 22px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories button:hover { background: #202c35; color: #e7f4f7; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories button[aria-pressed="true"] { border-color: #50717d; background: #253b45; color: #c9ecf0; font-weight: 650; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-results { min-width: 0; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-content-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 16px; margin: 0 0 14px; padding: 0; border: 0; background: transparent !important; }
+body.contribution-view .setup-guide-surface#contribution-surface #contribution-dungeon-title { gap: 9px; font-size: 18px; font-weight: 700; }
+body.contribution-view .setup-guide-surface#contribution-surface #contribution-dungeon-title span { font: inherit; color: inherit; }
+body.contribution-view .setup-guide-surface#contribution-surface #contribution-dungeon-title .job-icon { width: 24px; height: 24px; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-content-heading > span { font-size: 12px; color: var(--guide-muted); }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-rows { gap: 18px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-stones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 16px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-section { min-width: 0; padding: 20px; border: 1px solid var(--guide-line) !important; border-radius: 10px !important; background: var(--guide-panel) !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-section-heading { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; margin-bottom: 4px; padding: 0 0 16px; background: transparent !important; border-bottom: 1px solid var(--guide-line); }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-section-heading h3 { font-size: 16px; line-height: 1.5; font-weight: 700; color: #e7eff3; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-section-note { margin: 0; color: var(--guide-muted) !important; font-size: 12px; font-weight: 400; text-align: left; line-height: 1.65; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-section-body { padding: 8px 0 0; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 0 24px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-stones .setup-guide-card-grid { grid-template-columns: minmax(0, 1fr); }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card {
+  display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 4px 10px; align-items: center;
+  min-width: 0; min-height: 0; margin: 0; padding: 16px 0;
+  border: 0 !important; border-radius: 0 !important; background: transparent !important;
+}
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card + .setup-guide-card { margin: 0; border-top: 1px solid var(--guide-line) !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card.has-usage { grid-template-columns: 32px minmax(0, 1fr) auto; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card-no-icon { grid-template-columns: minmax(0, 1fr); }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card-no-icon.has-usage { grid-template-columns: minmax(0, 1fr) auto; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card-icon { width: 32px; height: 32px; margin: 0; border: 0; border-radius: 5px; background: transparent !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card-icon img { object-fit: contain; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card > div { min-width: 0; display: block; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card strong { display: block; font-size: 14px; font-weight: 600; line-height: 1.5; color: #e5eef2 !important; white-space: normal; word-break: keep-all; overflow-wrap: anywhere; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card-meta { display: flex; flex-wrap: wrap; gap: 2px 9px; margin-top: 5px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card-meta span { padding: 0; border: 0; color: var(--guide-muted) !important; background: transparent !important; font-size: 12px; font-weight: 450; line-height: 1.55; font-variant-numeric: tabular-nums; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card .setup-guide-usage-value { align-self: start; color: var(--guide-accent) !important; font-size: 17px; font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-usage-track { grid-column: 2 / -1; display: block; height: 3px; margin-top: 7px; overflow: hidden; border-radius: 2px; background: #33414b; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-card-no-icon .setup-guide-usage-track { grid-column: 1 / -1; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-usage-track > span { display: block; height: 100%; background: #7eaeb9; border-radius: inherit; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-usage-help { max-width: 88ch; margin: 18px 0 0; font-size: 12px; line-height: 1.8; color: var(--guide-muted); }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-browser { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 22px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-nav { padding-right: 18px; border-right: 1px solid var(--guide-line); }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-instruction { margin: 0 0 12px; color: #d9e8ed; font-size: 12px; font-weight: 650; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-nav > h4 { margin: 14px 0 7px; color: var(--guide-muted); font-size: 11px; font-weight: 500; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-choices button { min-width: 0; min-height: 40px; padding: 8px 5px; border: 1px solid var(--guide-line); border-radius: 5px; color: var(--guide-muted); background: var(--guide-base); font: inherit; font-size: 12px; line-height: 1.4; cursor: pointer; overflow-wrap: anywhere; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-choices button:hover { border-color: #6a8696; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-choices button[aria-pressed="true"] { border-color: #88adb7; background: #2e434f; color: #e4f4f7; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-detail { min-width: 0; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot { margin: 0; padding: 0; border: 0; background: transparent !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot > h4 { margin: 0 0 14px; padding: 0; font-size: 17px; font-weight: 700; color: #e7f1f4; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-soul-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-category { min-width: 0; margin: 0; padding: 0; border: 0; background: transparent; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-category h5 { display: block; margin: 0 0 4px; padding: 0 0 9px; border: 0; border-bottom: 1px solid var(--guide-line); border-radius: 0; background: transparent; color: #b9cbd5; font-size: 12px; font-weight: 600; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-detail .setup-guide-arcana-slot { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-arcana-slot > h4 { grid-column: 1 / -1; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-subgroup + .setup-guide-subgroup { margin-top: 22px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-browser + .setup-guide-subgroup { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--guide-line); }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-subgroup > h4 { margin: 0 0 12px; font-size: 14px; font-weight: 650; color: #d4e4ec; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-skill-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 20px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-skill-nav button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 7px 12px; border: 1px solid var(--guide-line); border-radius: 6px; background: var(--guide-base); color: var(--guide-muted); font: inherit; font-size: 13px; cursor: pointer; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-skill-nav button span { font-size: 11px; font-variant-numeric: tabular-nums; opacity: .8; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-skill-nav button[aria-pressed="true"] { background: #2b414c; color: #d9eff3; border-color: #7397a4; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-skill-grid .setup-guide-card { margin: 0; padding: 14px; border: 1px solid var(--guide-line) !important; border-radius: 8px !important; background: #182128 !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-disclosure { grid-column: 1 / -1; margin: 12px 0 0; border-top: 1px solid var(--guide-line); }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-disclosure > summary { padding: 10px 0 0; color: #b7d5df; font-size: 12px; line-height: 1.6; cursor: pointer; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-traits { margin: 12px 0 0; padding: 0; border: 0; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-traits-summary { display: block; margin-bottom: 8px; color: var(--guide-muted); font-size: 11px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 5px; margin: 0; padding: 0; background: transparent !important; list-style: none; overflow: visible; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: start; gap: 8px; padding: 10px 7px; border: 1px solid transparent; border-radius: 5px; color: #bacbd6; background: transparent; text-align: left; line-height: 1.6; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait.is-top { border-color: #527681 !important; background: #253c45 !important; color: #e1f1f5; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-index { display: grid; place-items: center; height: 22px; border: 1px solid #536772; border-radius: 4px; font-size: 11px; font-weight: 650; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait.is-top .setup-guide-trait-index { background: #a4cbd4; border-color: #a4cbd4; color: #172a32; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-description { margin: 0; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-usage { display: grid; justify-items: end; gap: 2px; min-width: 55px; max-width: 90px; text-align: right; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-rate { margin: 0; font-size: 14px; color: inherit; font-variant-numeric: tabular-nums; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-count { font-size: 10px; color: #b5c6d0; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-popular { padding: 1px 4px; border-radius: 3px; background: #3b5662; color: #e3f1f5; font-size: 9px; font-weight: 600; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-language { display: block; color: var(--guide-muted); font-size: 10px; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-status { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12px; color: var(--guide-muted); }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-trait-retry { padding: 6px 10px; border: 1px solid #7796a5; border-radius: 5px; color: #dceef4; background: #243b46; font: inherit; cursor: pointer; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-method { margin: 28px 0 0; padding: 0; border: 0; border-top: 1px solid var(--guide-line); border-radius: 0; background: transparent !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-method > summary { padding: 18px 0 0; color: #bdd2dd; font-size: 13px; cursor: pointer; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-candidate-count { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; color: var(--guide-muted); font-size: 12px; }
+body.contribution-view .setup-guide-surface#contribution-surface #setup-guide-snapshot-range { margin: 6px 0 16px; font-size: 12px; color: var(--guide-muted); }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 28px; padding: 20px; border: 1px solid var(--guide-line); background: var(--guide-panel) !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-method-grid article { display: block; padding: 0; border: 0; background: transparent !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-method-grid article > b { display: none; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-method strong { font-size: 13px; font-weight: 650; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-method p { font-size: 12px !important; line-height: 1.8 !important; color: var(--guide-muted) !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-caution { margin: 16px 0 0; padding: 8px 14px; border-left: 2px solid #ba9b68; background: transparent !important; }
+body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-inline-empty { padding: 18px 0; color: var(--guide-muted); font-size: 13px; line-height: 1.7; }
+body.contribution-view .setup-guide-surface#contribution-surface .contribution-state { min-height: 240px; margin-top: 20px; padding: 32px 20px; text-align: center; background: var(--guide-panel); border-radius: 8px; }
+@media (max-width: 1100px) {
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-content { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories { position: static; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories button { justify-content: center; text-align: center; }
+}
+@media (max-width: 760px) {
+  body.contribution-view .setup-guide-surface#contribution-surface { padding: 18px; border-radius: 10px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading { flex-direction: column; align-items: stretch; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading h2 { font-size: 24px !important; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading-icon { width: 40px; height: 40px; border-radius: 9px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-heading-copy { gap: 12px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .ranking-back-button { align-self: flex-start; min-height: 38px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-tab { flex-direction: row; min-height: 48px; padding: 10px 6px; font-size: 12px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-tab .job-icon { width: 21px; height: 21px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-summary { gap: 6px 16px !important; margin: 16px 0; padding-bottom: 16px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-summary > div:first-child { flex-basis: 100%; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories button { justify-content: flex-start; min-height: 46px; padding: 10px; font-size: 12px; text-align: left; border-color: var(--guide-line); }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-categories button svg { width: 18px; height: 18px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-stones { grid-template-columns: minmax(0, 1fr); }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-section { padding: 16px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-browser { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-nav { padding: 0 0 16px; border: 0; border-bottom: 1px solid var(--guide-line); }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-choices { display: flex; flex-wrap: wrap; gap: 6px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-choices button { min-width: 52px; min-height: 42px; padding-inline: 10px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-soul-columns { gap: 20px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-skill-grid { grid-template-columns: minmax(0, 1fr); }
+  body.contribution-view .setup-guide-surface#contribution-surface .contribution-method-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 16px; }
+}
+@media (max-width: 520px) {
+  body.contribution-view .setup-guide-surface#contribution-surface { padding: 14px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-section { padding: 14px; }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-soul-columns { grid-template-columns: minmax(0, 1fr); }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-slot-detail .setup-guide-arcana-slot { grid-template-columns: minmax(0, 1fr); }
+  body.contribution-view .setup-guide-surface#contribution-surface .setup-guide-skill-grid .setup-guide-card { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.contribution-view .setup-guide-surface#contribution-surface :is(button, a, summary) { transition: none !important; }
+}
