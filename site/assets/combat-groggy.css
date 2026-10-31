@@ -1,0 +1,48 @@
+#combat-detail-modal .detail-scope-tabs { display: flex; flex: 0 0 auto; margin: 0 16px; border-bottom: 1px solid var(--detail-line); }
+#combat-detail-modal .detail-scope-tab { flex: 1; min-width: 0; min-height: 44px; padding: 10px 12px; border: 0; border-bottom: 3px solid transparent; border-radius: 0; color: var(--detail-muted); background: transparent; white-space: normal; overflow-wrap: anywhere; }
+#combat-detail-modal .detail-scope-tab[aria-selected="true"] { color: var(--detail-text); font-weight: 700; background: var(--detail-panel); border-bottom-color: var(--detail-gold); }
+#combat-detail-modal .detail-groggy { display: flex; flex: 1 1 auto; flex-direction: column; min-height: 0; min-width: 0; margin: 0; padding: 0; color: var(--detail-text); background: transparent; border: 0; border-radius: 0; }
+#combat-detail-modal .groggy-totals { display: flex; flex: 0 0 auto; flex-wrap: wrap; align-items: baseline; gap: 5px 18px; margin: 10px 20px; color: var(--detail-muted); font-size: 11px; }
+#combat-detail-modal .groggy-totals > strong { font-weight: 600; }
+#combat-detail-modal .groggy-total-metrics { display: flex; flex-wrap: wrap; gap: 5px 18px; margin: 0; }
+#combat-detail-modal .groggy-total-metrics > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+#combat-detail-modal .groggy-total-metrics dd { margin: 0; color: var(--detail-text); }
+#combat-detail-modal .groggy-selected { flex: 0 0 auto; margin: 0 20px 10px; padding: 10px 12px; border-left: 2px solid var(--detail-gold); background: var(--detail-panel); }
+#combat-detail-modal .groggy-navigation { display: grid; grid-template-columns: minmax(0, 1fr) 38px 38px; gap: 6px; }
+#combat-detail-modal .groggy-picker { width: 100%; min-width: 0; min-height: 36px; padding: 6px 8px; font: inherit; font-size: 12px; color: var(--detail-text); background: var(--detail-bg); border: 1px solid var(--detail-line); border-radius: 3px; }
+#combat-detail-modal .groggy-picker:focus-visible { outline: 2px solid var(--detail-share); outline-offset: 2px; }
+#combat-detail-modal .groggy-navigation button { min-height: 36px; padding: 0; font-size: 22px; color: var(--detail-text); background: var(--detail-bg); border: 1px solid var(--detail-line); border-radius: 3px; }
+#combat-detail-modal .groggy-navigation button:disabled { opacity: .35; cursor: default; }
+#combat-detail-modal .groggy-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 10px 0 0; }
+#combat-detail-modal .groggy-metrics > div { min-width: 0; }
+#combat-detail-modal .groggy-metrics dt { color: var(--detail-muted); font-size: 11px; overflow-wrap: anywhere; }
+#combat-detail-modal .groggy-metrics dd { margin: 3px 0 0; font-size: 17px; line-height: 1.3; font-weight: 700; overflow-wrap: anywhere; }
+#combat-detail-modal .groggy-metrics > div:nth-child(2) dd { color: var(--detail-gold); }
+#combat-detail-modal .groggy-scroll { flex: 1 1 auto; min-height: 0; min-width: 0; padding: 0 20px 12px; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; scrollbar-width: thin; scrollbar-color: #555450 transparent; }
+#combat-detail-modal .groggy-skill-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 6px 0; color: var(--detail-gold); font-size: 11px; }
+#combat-detail-modal .groggy-skill-heading > span { text-align: right; color: var(--detail-muted); }
+#combat-detail-modal .groggy-skills { min-width: 0; }
+#combat-detail-modal .groggy-help { margin: 6px 0; color: var(--detail-muted); font-size: 12px; line-height: 1.5; }
+#combat-detail-modal .groggy-partial { margin: 4px 0; color: var(--detail-gold); font-size: 11px; }
+#combat-detail-modal .groggy-observation { flex: 0 0 auto; margin: 0 20px 8px; color: var(--detail-gold); font-size: 11px; line-height: 1.5; }
+#combat-detail-modal .groggy-empty { margin: 18px 20px; color: var(--detail-muted); }
+#combat-detail-modal .groggy-legacy-skill { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; padding: 12px 0; border-bottom: 1px solid var(--detail-line); }
+#combat-detail-modal .groggy-skill-name { display: flex; align-items: center; gap: 9px; min-width: 0; overflow-wrap: anywhere; }
+#combat-detail-modal .groggy-skill-icon { flex: 0 0 24px; width: 24px; height: 24px; }
+#combat-detail-modal .groggy-legacy-value { text-align: right; color: var(--detail-gold); }
+#combat-detail-modal .groggy-legacy-skill .groggy-help { grid-column: 1 / -1; margin-left: 33px; }
+@media (max-width: 640px) {
+  #combat-detail-modal .detail-scope-tabs { margin: 0 12px; }
+  #combat-detail-modal .groggy-totals { margin: 10px 16px; }
+  #combat-detail-modal .groggy-selected { margin: 0 16px 10px; }
+  #combat-detail-modal .groggy-navigation { grid-template-columns: minmax(0, 1fr) 40px 40px; }
+  #combat-detail-modal .groggy-picker { grid-column: 1 / -1; }
+  #combat-detail-modal .groggy-navigation button { min-height: 36px; }
+  #combat-detail-modal .groggy-previous { grid-column: 2; }
+  #combat-detail-modal .groggy-next { grid-column: 3; }
+  #combat-detail-modal .groggy-metrics dd { font-size: 15px; }
+  #combat-detail-modal .groggy-scroll { flex: 0 0 auto; overflow: visible; padding: 0 16px 12px; scrollbar-gutter: auto; }
+  #combat-detail-modal .groggy-observation { margin: 0 16px 8px; }
+  #combat-detail-modal .groggy-legacy-skill { grid-template-columns: minmax(0, 1fr); }
+  #combat-detail-modal .groggy-legacy-value { text-align: left; margin-left: 33px; }
+}

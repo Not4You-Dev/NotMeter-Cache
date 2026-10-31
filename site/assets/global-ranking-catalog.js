@@ -1,0 +1,784 @@
+globalThis.NotMeterGlobalRankingCatalog = {
+  "version": 1,
+  "dungeons": [
+    {
+      "key": "global-urugugu-hard",
+      "mapId": 600013,
+      "kind": "expeditionHard",
+      "names": {
+        "ko": "우루구구 협곡",
+        "en": "Urugugu Canyon",
+        "de-DE": "Uruguguschlucht",
+        "es-ES": "Cañón de Urugugu",
+        "fr-FR": "Canyon Urugugu",
+        "ja-JP": "ウルググ峡谷",
+        "pt-BR": "Desfiladeiro de Urugugu",
+        "ru-RU": "Ущелье ауругу",
+        "zh-TW": "烏努庫庫峽谷"
+      },
+      "bosses": [
+        {
+          "code": 2320206,
+          "key": "global-urugugu-hard:2320206",
+          "names": {
+            "ko": "수호대장 라우르",
+            "en": "Guardian Captain Raur",
+            "de-DE": "Hüterhauptmann Raur",
+            "es-ES": "Capitán de la Guardia Raur",
+            "fr-FR": "Raur le Capitaine de la garde",
+            "ja-JP": "守護隊長ラウル",
+            "pt-BR": "Capitão Guardião Raur",
+            "ru-RU": "Капитан охраны Лаур",
+            "zh-TW": "守護隊長勞爾"
+          }
+        },
+        {
+          "code": 2320207,
+          "key": "global-urugugu-hard:2320207",
+          "names": {
+            "ko": "심판자 우라훔",
+            "en": "Judge Urahum",
+            "de-DE": "Richter Urahum",
+            "es-ES": "Juez Urahum",
+            "fr-FR": "Juge Urahum",
+            "ja-JP": "審判者ウラフム",
+            "pt-BR": "Juiz Urahum",
+            "ru-RU": "Судья Урахум",
+            "zh-TW": "審判者烏拉姆"
+          }
+        },
+        {
+          "code": 2320218,
+          "key": "global-urugugu-hard:2320218",
+          "names": {
+            "ko": "신성한 아울도르",
+            "en": "Divine Auldor",
+            "de-DE": "Heiliger Auldor",
+            "es-ES": "Auldor sagrado",
+            "fr-FR": "Auldor sacré",
+            "ja-JP": "神聖なアウルドール",
+            "pt-BR": "Auldor Divino",
+            "ru-RU": "Священный Аулдор",
+            "zh-TW": "神聖的奧多勒"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-bakron-hard",
+      "mapId": 600073,
+      "kind": "expeditionHard",
+      "names": {
+        "ko": "바크론의 공중섬",
+        "en": "Vakron Sky Island",
+        "de-DE": "Vakrons Luftinsel",
+        "es-ES": "Isla Aérea de Vakron",
+        "fr-FR": "Île Céleste de Vakron",
+        "ja-JP": "バクロンの空中島",
+        "pt-BR": "Ilha Aérea de Vakron",
+        "ru-RU": "Парящий остров Вакрона",
+        "zh-TW": "巴克隆空中島"
+      },
+      "bosses": [
+        {
+          "code": 2320810,
+          "key": "global-bakron-hard:2320810",
+          "names": {
+            "ko": "티에",
+            "en": "Tiere",
+            "de-DE": "Tière",
+            "es-ES": "Tiere",
+            "fr-FR": "Tiere",
+            "ja-JP": "ティエ",
+            "pt-BR": "Tiere",
+            "ru-RU": "Тие",
+            "zh-TW": "提耶"
+          }
+        },
+        {
+          "code": 2320811,
+          "key": "global-bakron-hard:2320811",
+          "names": {
+            "ko": "타몬",
+            "en": "Thamon",
+            "de-DE": "Thamon",
+            "es-ES": "Thamon",
+            "fr-FR": "Thamon",
+            "ja-JP": "タモン",
+            "pt-BR": "Thamon",
+            "ru-RU": "Тамон",
+            "zh-TW": "塔蒙"
+          }
+        },
+        {
+          "code": 2320812,
+          "key": "global-bakron-hard:2320812",
+          "names": {
+            "ko": "바크론",
+            "en": "Vakron",
+            "de-DE": "Vakron",
+            "es-ES": "Vakron",
+            "fr-FR": "Vakron",
+            "ja-JP": "バクロン",
+            "pt-BR": "Vakron",
+            "ru-RU": "Вакрон",
+            "zh-TW": "巴克隆"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-krao-hard",
+      "mapId": 600004,
+      "kind": "expeditionHard",
+      "names": {
+        "ko": "크라오 동굴",
+        "en": "Krao Cave",
+        "de-DE": "Kraohöhle",
+        "es-ES": "Cueva de Krao",
+        "fr-FR": "Grotte de Krao",
+        "ja-JP": "クラオ洞窟",
+        "pt-BR": "Caverna de Krao",
+        "ru-RU": "Пещера крао",
+        "zh-TW": "Krao Cave"
+      },
+      "bosses": [
+        {
+          "code": 2320104,
+          "key": "global-krao-hard:2320104",
+          "names": {
+            "ko": "강화된 하르콘",
+            "en": "Enhanced Harcon",
+            "de-DE": "Verstärkter Harcon",
+            "es-ES": "Harcon mejorado",
+            "fr-FR": "Harcon amélioré",
+            "ja-JP": "強化されたハルコン",
+            "pt-BR": "Harcon Aprimorado",
+            "ru-RU": "Усиленный Харкон",
+            "zh-TW": "強化的哈爾坤"
+          }
+        },
+        {
+          "code": 2320108,
+          "key": "global-krao-hard:2320108",
+          "names": {
+            "ko": "방치된 가디오톤",
+            "en": "Neglected Gadioton",
+            "de-DE": "Vergessener Gadioton",
+            "es-ES": "Gadioton descuidado",
+            "fr-FR": "Gadioton délaissé",
+            "ja-JP": "放置されたガディオトン",
+            "pt-BR": "Gadioton Abandonado",
+            "ru-RU": "Брошенный Гадиотон",
+            "zh-TW": "棄置的加迪爾頓"
+          }
+        },
+        {
+          "code": 2320171,
+          "key": "global-krao-hard:2320171",
+          "names": {
+            "ko": "완성체 베르크",
+            "en": "Ultimate Berk",
+            "de-DE": "Vollendete Berk",
+            "es-ES": "Berk definitivo",
+            "fr-FR": "Berk accomplie",
+            "ja-JP": "完成体ベルク",
+            "pt-BR": "Berk em Forma Final",
+            "ru-RU": "Завершенная форма Берка",
+            "zh-TW": "完成體貝爾克"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-draupnir-hard",
+      "mapId": 600033,
+      "kind": "expeditionHard",
+      "names": {
+        "ko": "드라웁니르",
+        "en": "Draupnir",
+        "de-DE": "Draupnir",
+        "es-ES": "Draupnir",
+        "fr-FR": "Draupnir",
+        "ja-JP": "ドラウプニル",
+        "pt-BR": "Draupnir",
+        "ru-RU": "Драупнир",
+        "zh-TW": "Draupnir"
+      },
+      "bosses": [
+        {
+          "code": 2320401,
+          "key": "global-draupnir-hard:2320401",
+          "names": {
+            "ko": "몽환의 라크슈미",
+            "en": "Phantasmal Lakshmi",
+            "de-DE": "Phantom-Lakshmi",
+            "es-ES": "Lakshmi de ensueño",
+            "fr-FR": "Lakshmi onirique",
+            "ja-JP": "夢幻のラクシュミ",
+            "pt-BR": "Lakshmi Onírica",
+            "ru-RU": "Лакшми видения",
+            "zh-TW": "夢幻拉克修米"
+          }
+        },
+        {
+          "code": 2320403,
+          "key": "global-draupnir-hard:2320403",
+          "names": {
+            "ko": "포식자 사라스와티",
+            "en": "Predator Saraswati",
+            "de-DE": "Verschlinger Saraswati",
+            "es-ES": "Saraswati depredador",
+            "fr-FR": "Saraswati le Prédateur",
+            "ja-JP": "捕食者サラスワティ",
+            "pt-BR": "Predador Saraswati",
+            "ru-RU": "Хищница Сарасвати",
+            "zh-TW": "捕食者薩拉斯瓦提"
+          }
+        },
+        {
+          "code": 2320471,
+          "key": "global-draupnir-hard:2320471",
+          "names": {
+            "ko": "초월한 바카르마",
+            "en": "Transcendent Bakarma",
+            "de-DE": "Transzendierter Bakarma",
+            "es-ES": "Bakarma trascendido",
+            "fr-FR": "Bakarma transcendé",
+            "ja-JP": "超越したヴォカルマ",
+            "pt-BR": "Bakarma Transcendido",
+            "ru-RU": "Возвышенный Бакрам",
+            "zh-TW": "超越的巴卡爾摩"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-fire-temple",
+      "mapId": 600022,
+      "kind": "expedition",
+      "names": {
+        "ko": "불의 신전",
+        "en": "Fire Temple",
+        "de-DE": "Feuertempel",
+        "es-ES": "Templo de Fuego",
+        "fr-FR": "Temple Divin du Feu",
+        "ja-JP": "炎の神殿",
+        "pt-BR": "Templo Divino do Fogo",
+        "ru-RU": "Храм огня",
+        "zh-TW": "火之神殿"
+      },
+      "bosses": [
+        {
+          "code": 2300311,
+          "key": "global-fire-temple:2300311",
+          "names": {
+            "ko": "붉은불꽃 이그누스",
+            "en": "Red Spark Ignus",
+            "de-DE": "Rotflamme Ignus",
+            "es-ES": "Fulgor rojo Ignus",
+            "fr-FR": "Ignus de flamme rouge",
+            "ja-JP": "赤い炎イグヌス",
+            "pt-BR": "Ignus da Chama Vermelha",
+            "ru-RU": "Игнус красного языка пламени",
+            "zh-TW": "紅火花伊格努斯"
+          }
+        },
+        {
+          "code": 2300312,
+          "key": "global-fire-temple:2300312",
+          "names": {
+            "ko": "검은연기 무르트",
+            "en": "Black Smoke Murute",
+            "de-DE": "Schwarzrauch Murute",
+            "es-ES": "Humo negro Murute",
+            "fr-FR": "Murute de fumée noire",
+            "ja-JP": "黒煙モルト",
+            "pt-BR": "Murute da Fumaça Negra",
+            "ru-RU": "Мурт черного дыма",
+            "zh-TW": "黑煙穆勒特"
+          }
+        },
+        {
+          "code": 2300371,
+          "key": "global-fire-temple:2300371",
+          "names": {
+            "ko": "크로메데의 욕망",
+            "en": "Kromede's Desire",
+            "de-DE": "Kromedes Gier",
+            "es-ES": "Ambición de Kromede",
+            "fr-FR": "Désir de Kromede",
+            "ja-JP": "クロメデの欲望",
+            "pt-BR": "Desejo de Kromede",
+            "ru-RU": "Желание Кромед",
+            "zh-TW": "克羅梅德欲望"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-ferocious-horn",
+      "mapId": 600092,
+      "kind": "expedition",
+      "names": {
+        "ko": "사나운 뿔 암굴",
+        "en": "Ferocious Horn Den",
+        "de-DE": "Grimmhornhöhle",
+        "es-ES": "Caverna del Cuerno Feroz",
+        "fr-FR": "Grotte de la Corne Féroce",
+        "ja-JP": "獰猛な角岩窟",
+        "pt-BR": "Gruta do Chifre Feroz",
+        "ru-RU": "Логово Свирепого Рога",
+        "zh-TW": "凶猛的角岩窟"
+      },
+      "bosses": [
+        {
+          "code": 2300908,
+          "key": "global-ferocious-horn:2300908",
+          "names": {
+            "ko": "번견 쿠하푸",
+            "en": "Watchdog Kwapo",
+            "de-DE": "Wachhund Kwapo",
+            "es-ES": "Perro guardián Kwapo",
+            "fr-FR": "Kwapo le chien de garde",
+            "ja-JP": "番犬クハプ",
+            "pt-BR": "Cão de Ataque Kwapo",
+            "ru-RU": "Сторожевой пес Кухапу",
+            "zh-TW": "護衛犬庫哈普"
+          }
+        },
+        {
+          "code": 2300909,
+          "key": "global-ferocious-horn:2300909",
+          "names": {
+            "ko": "강령술사 두안카",
+            "en": "Necromancer Duanka",
+            "de-DE": "Nekromantin Duanka",
+            "es-ES": "Duanka nigromante",
+            "fr-FR": "Duanka nécromancienne",
+            "ja-JP": "降霊術士ドゥアンカ",
+            "pt-BR": "Necromante Duanka",
+            "ru-RU": "Некромант Дванка",
+            "zh-TW": "降靈術士杜安卡"
+          }
+        },
+        {
+          "code": 2300910,
+          "key": "global-ferocious-horn:2300910",
+          "names": {
+            "ko": "사나운 뿔 누아쿰",
+            "en": "Ferocious Horn Nuakum",
+            "de-DE": "Nuakum (Grimmhorn)",
+            "es-ES": "Nuakum del Cuerno Feroz",
+            "fr-FR": "Nuakum à cornes féroces",
+            "ja-JP": "獰猛な角ヌアクム",
+            "pt-BR": "Nuakum do Chifre Feroz",
+            "ru-RU": "Нуакум свирепого рога",
+            "zh-TW": "凶猛的角努亞庫"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-deus-4",
+      "mapId": 610052,
+      "kind": "stage4",
+      "names": {
+        "ko": "데우스 연구기지",
+        "en": "Deus Research Base",
+        "de-DE": "Forschungsbasis Deus",
+        "es-ES": "Base de Investigación Deus",
+        "fr-FR": "Base de Recherche Deus",
+        "ja-JP": "デウス研究基地",
+        "pt-BR": "Base de Pesquisa Deus",
+        "ru-RU": "Исследовательская база Деус",
+        "zh-TW": "德烏斯研究基地"
+      },
+      "bosses": [
+        {
+          "code": 2346601,
+          "key": "global-deus-4:2346601",
+          "names": {
+            "ko": "아티엘",
+            "en": "Atiel",
+            "de-DE": "Atiel",
+            "es-ES": "Atiel",
+            "fr-FR": "Atiel",
+            "ja-JP": "アティエル",
+            "pt-BR": "Atiel",
+            "ru-RU": "Атиэль",
+            "zh-TW": "亞提埃爾"
+          }
+        },
+        {
+          "code": 2346615,
+          "key": "global-deus-4:2346615",
+          "names": {
+            "ko": "나즈문",
+            "en": "Nazmun",
+            "de-DE": "Nazmun",
+            "es-ES": "Nazmun",
+            "fr-FR": "Nazmun",
+            "ja-JP": "ナズムン",
+            "pt-BR": "Nazmun",
+            "ru-RU": "Назмун",
+            "zh-TW": "納茲文"
+          }
+        },
+        {
+          "code": 2346616,
+          "key": "global-deus-4:2346616",
+          "names": {
+            "ko": "겔코스",
+            "en": "Gelcos",
+            "de-DE": "Gelcos",
+            "es-ES": "Gelcos",
+            "fr-FR": "Gelcos",
+            "ja-JP": "ガルコス",
+            "pt-BR": "Gelcos",
+            "ru-RU": "Гелькос",
+            "zh-TW": "格爾闊斯"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-arkanis-4",
+      "mapId": 610062,
+      "kind": "stage4",
+      "names": {
+        "ko": "조각난 아르카니스",
+        "en": "Shattered Arkanis",
+        "de-DE": "Zersplitterter Arkanis",
+        "es-ES": "Arkanis Fragmentado",
+        "fr-FR": "Arcanis Fragmenté",
+        "ja-JP": "砕けたアルカニス",
+        "pt-BR": "Arcanis Despedaçada",
+        "ru-RU": "Расколотый Арканис",
+        "zh-TW": "破碎的阿爾卡尼斯"
+      },
+      "bosses": [
+        {
+          "code": 2356707,
+          "key": "global-arkanis-4:2356707",
+          "names": {
+            "ko": "거짓의 실리아토르",
+            "en": "Siliator of Deceit",
+            "de-DE": "Siliator der Täuschung",
+            "es-ES": "Siliator de falsedad",
+            "fr-FR": "Siliator du mensonge",
+            "ja-JP": "偽りのシリアトール",
+            "pt-BR": "Siliator da Falsidade",
+            "ru-RU": "Силиатор лжи",
+            "zh-TW": "謊言席利亞多爾"
+          }
+        },
+        {
+          "code": 2356708,
+          "key": "global-arkanis-4:2356708",
+          "names": {
+            "ko": "고통의 루탈리스",
+            "en": "Ruthilis of Pain",
+            "de-DE": "Ruthilis des Schmerzes",
+            "es-ES": "Ruthilis del dolor",
+            "fr-FR": "Ruthilis de la douleur",
+            "ja-JP": "苦痛のルタリス",
+            "pt-BR": "Ruthilis da Dor",
+            "ru-RU": "Руталис боли",
+            "zh-TW": "痛苦路堤里斯"
+          }
+        },
+        {
+          "code": 2356709,
+          "key": "global-arkanis-4:2356709",
+          "names": {
+            "ko": "공허의 탈리스라",
+            "en": "Talisra of the Void",
+            "de-DE": "Talisra der Leere",
+            "es-ES": "Talisra del vacío",
+            "fr-FR": "Talisra du Néant",
+            "ja-JP": "空虚のターリスラ",
+            "pt-BR": "Talisra do Vazio",
+            "ru-RU": "Талира пустоты",
+            "zh-TW": "空虛塔里斯拉"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-nightmare-zikel-10",
+      "mapId": 200003,
+      "kind": "nightmare10",
+      "names": {
+        "ko": "지켈의 사념체",
+        "en": "Zikel's Apparition",
+        "de-DE": "Zikels Schemen",
+        "es-ES": "Ectoplasma de Zikel",
+        "fr-FR": "Apparition de Zikel",
+        "ja-JP": "ジケルの思念体",
+        "pt-BR": "Aparição de Zikel",
+        "ru-RU": "Фантом Джикела",
+        "zh-TW": "吉凱爾思念體"
+      },
+      "bosses": [
+        {
+          "code": 2980229,
+          "key": "global-nightmare-zikel-10:2980229",
+          "names": {
+            "ko": "지켈의 사념체",
+            "en": "Zikel's Apparition",
+            "de-DE": "Zikels Schemen",
+            "es-ES": "Ectoplasma de Zikel",
+            "fr-FR": "Apparition de Zikel",
+            "ja-JP": "ジケルの思念体",
+            "pt-BR": "Aparição de Zikel",
+            "ru-RU": "Фантом Джикела",
+            "zh-TW": "吉凱爾思念體"
+          }
+        }
+      ]
+    },
+    {
+      "key": "global-training-dummy-60s",
+      "mapId": 901,
+      "kind": "dummy60",
+      "names": {
+        "ko": "훈련용 허수아비",
+        "en": "Training Scarecrow",
+        "de-DE": "Trainingspuppe",
+        "es-ES": "Muñeco de entrenamiento",
+        "fr-FR": "Mannequin d'entraînement",
+        "ja-JP": "訓練用カカシ",
+        "pt-BR": "Espantalho de Treinamento",
+        "ru-RU": "Тренировочное чучело",
+        "zh-TW": "訓練用稻草人"
+      },
+      "bosses": [
+        {
+          "code": 2400032,
+          "key": "global-training-dummy-60s:2400032",
+          "names": {
+            "ko": "훈련용 허수아비",
+            "en": "Training Scarecrow",
+            "de-DE": "Trainingspuppe",
+            "es-ES": "Muñeco de entrenamiento",
+            "fr-FR": "Mannequin d'entraînement",
+            "ja-JP": "訓練用カカシ",
+            "pt-BR": "Espantalho de Treinamento",
+            "ru-RU": "Тренировочное чучело",
+            "zh-TW": "訓練用稻草人"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "code": 2400032,
+          "names": {
+            "ko": "훈련용 허수아비",
+            "en": "Training Scarecrow",
+            "de-DE": "Trainingspuppe",
+            "es-ES": "Muñeco de entrenamiento",
+            "fr-FR": "Mannequin d'entraînement",
+            "ja-JP": "訓練用カカシ",
+            "pt-BR": "Espantalho de Treinamento",
+            "ru-RU": "Тренировочное чучело",
+            "zh-TW": "訓練用稻草人"
+          }
+        },
+        {
+          "code": 2400035,
+          "names": {
+            "ko": "근접 훈련용 허수아비",
+            "en": "Melee Training Scarecrow",
+            "de-DE": "Nahkampf-Trainingspuppe",
+            "es-ES": "Muñeco de entrenamiento cuerpo a cuerpo",
+            "fr-FR": "Épouvantail d'entraînement au corps à corps",
+            "ja-JP": "近接訓練用カカシ",
+            "pt-BR": "Espantalho de Treino Corpo a Corpo",
+            "ru-RU": "Тренировочное чучело для ближнего боя",
+            "zh-TW": "近戰訓練用稻草人"
+          }
+        }
+      ],
+      "airships": [
+        {
+          "mapId": 901,
+          "names": {
+            "ko": "알트가르드 레기온 비공정",
+            "en": "Altgard Legion Airship",
+            "de-DE": "Altgard-Legions-Luftschiff",
+            "es-ES": "Dirigible de la Legión de Altgard",
+            "fr-FR": "Aéronef de la Légion d'Altgard",
+            "ja-JP": "アルトガルド レギオンの飛行艇",
+            "pt-BR": "Nave Aérea da Legião de Altgard",
+            "ru-RU": "Летучий корабль легиона Альтгарда",
+            "zh-TW": "Altgard Legion Airship"
+          }
+        },
+        {
+          "mapId": 902,
+          "names": {
+            "ko": "베르테론 레기온 비공정",
+            "en": "Verteron Legion Airship",
+            "de-DE": "Verteron-Legions-Luftschiff",
+            "es-ES": "Dirigible de la Legión de Verteron",
+            "fr-FR": "Aéronef de la Légion de Verteron",
+            "ja-JP": "ベルテロン レギオンの飛行艇",
+            "pt-BR": "Nave Aérea da Legião de Verteron",
+            "ru-RU": "Летучий корабль легиона Бертрона",
+            "zh-TW": "Verteron Legion Airship"
+          }
+        },
+        {
+          "mapId": 904,
+          "names": {
+            "ko": "엘테넨 레기온 비공정",
+            "en": "Eltnen Legion Airship",
+            "de-DE": "Eltnen-Legions-Luftschiff",
+            "es-ES": "Dirigible de la Legión de Eltnen",
+            "fr-FR": "Aéronef de la Légion d'Eltnen",
+            "ja-JP": "エルテネン レギオンの飛行艇",
+            "pt-BR": "Nave Aérea da Legião de Eltnen",
+            "ru-RU": "Летучий корабль легиона Элтенена",
+            "zh-TW": "Eltnen Legion Airship"
+          }
+        },
+        {
+          "mapId": 905,
+          "names": {
+            "ko": "모르헤임 레기온 비공정",
+            "en": "Morheim Legion Airship",
+            "de-DE": "Morheim-Legions-Luftschiff",
+            "es-ES": "Dirigible de la Legión de Morheim",
+            "fr-FR": "Aéronef de la Légion de Morheim",
+            "ja-JP": "モルヘイム レギオンの飛行艇",
+            "pt-BR": "Nave Aérea da Legião de Morheim",
+            "ru-RU": "Летучий корабль легиона Морхейма",
+            "zh-TW": "Morheim Legion Airship"
+          }
+        }
+      ]
+    }
+  ],
+  "retiredBossKeys": [
+    "global-bakron:2300810",
+    "global-bakron:2300811",
+    "global-bakron:2300812",
+    "global-rudra:2301006",
+    "global-rudra:2301007",
+    "global-rudra:2301014"
+  ],
+  "jobs": [
+    "검성",
+    "수호성",
+    "살성",
+    "궁성",
+    "마도성",
+    "정령성",
+    "치유성",
+    "호법성"
+  ],
+  "jobNames": {
+    "ko": {
+      "검성": "검성",
+      "수호성": "수호성",
+      "살성": "살성",
+      "궁성": "궁성",
+      "마도성": "마도성",
+      "정령성": "정령성",
+      "치유성": "치유성",
+      "호법성": "호법성"
+    },
+    "en": {
+      "검성": "Gladiator",
+      "수호성": "Templar",
+      "살성": "Assassin",
+      "궁성": "Ranger",
+      "마도성": "Sorcerer",
+      "정령성": "Spiritmaster",
+      "치유성": "Cleric",
+      "호법성": "Chanter"
+    },
+    "zh-TW": {
+      "검성": "劍星",
+      "수호성": "守護星",
+      "살성": "殺星",
+      "궁성": "弓星",
+      "마도성": "魔道星",
+      "정령성": "精靈星",
+      "치유성": "治癒星",
+      "호법성": "護法星"
+    },
+    "de-DE": {
+      "검성": "Gladiator",
+      "수호성": "Templer",
+      "살성": "Assassine",
+      "궁성": "Waldläufer",
+      "마도성": "Magier",
+      "정령성": "Beschwörer",
+      "치유성": "Kleriker",
+      "호법성": "Kantor"
+    },
+    "es-ES": {
+      "검성": "Gladiador",
+      "수호성": "Templario",
+      "살성": "Asesino",
+      "궁성": "Arquero",
+      "마도성": "Hechicero",
+      "정령성": "Espiritualista",
+      "치유성": "Clérigo",
+      "호법성": "Cantor"
+    },
+    "fr-FR": {
+      "검성": "Gladiateur",
+      "수호성": "Templier",
+      "살성": "Assassin",
+      "궁성": "Rôdeur",
+      "마도성": "Sorcier",
+      "정령성": "Spiritualiste",
+      "치유성": "Clerc",
+      "호법성": "Aède"
+    },
+    "ja-JP": {
+      "검성": "グラディエーター",
+      "수호성": "テンプラー",
+      "살성": "アサシン",
+      "궁성": "レンジャー",
+      "마도성": "ソーサラー",
+      "정령성": "スピリットマスター",
+      "치유성": "クレリック",
+      "호법성": "チャンター"
+    },
+    "pt-BR": {
+      "검성": "Gladiador",
+      "수호성": "Templário",
+      "살성": "Assassino",
+      "궁성": "Arqueiro",
+      "마도성": "Mago",
+      "정령성": "Espiritualista",
+      "치유성": "Clérigo",
+      "호법성": "Encantador"
+    },
+    "ru-RU": {
+      "검성": "Гладиатор",
+      "수호성": "Страж",
+      "살성": "Убийца",
+      "궁성": "Стрелок",
+      "마도성": "Волшебник",
+      "정령성": "Заклинатель",
+      "치유성": "Целитель",
+      "호법성": "Чародей"
+    }
+  },
+  "hardDifficultyNames": {
+    "ko": "어려움",
+    "en": "Hard",
+    "de-DE": "Schwer",
+    "es-ES": "Difícil",
+    "fr-FR": "Difficile",
+    "ja-JP": "難しい",
+    "pt-BR": "Difícil",
+    "ru-RU": "Сложный",
+    "zh-TW": "困難"
+  }
+};
