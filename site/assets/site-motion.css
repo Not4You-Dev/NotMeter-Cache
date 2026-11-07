@@ -1,0 +1,200 @@
+@media (prefers-reduced-motion: no-preference) {
+  #notmeter-site .grouped-topbar {
+    position: relative;
+  }
+
+  #notmeter-site .grouped-topbar::before {
+    content: "";
+    position: absolute;
+    inset: -1px 24px auto;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, #8ed6c6 38%, #edf3f6 50%, #e7ca91 62%, transparent);
+    pointer-events: none;
+    opacity: 0;
+    transform-origin: center;
+    animation: nm-motion-trace 1100ms cubic-bezier(.16, 1, .3, 1) 100ms;
+  }
+
+  #notmeter-site .grouped-topbar .brand-icon {
+    animation: nm-motion-emblem 700ms cubic-bezier(.16, 1, .3, 1);
+  }
+
+  #notmeter-site .grouped-topbar .daily-activity-icon rect {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    animation: nm-motion-meter 900ms cubic-bezier(.22, .8, .25, 1) backwards;
+  }
+
+  #notmeter-site .grouped-topbar .daily-activity-icon rect:nth-of-type(2) { animation-delay: 90ms; }
+  #notmeter-site .grouped-topbar .daily-activity-icon rect:nth-of-type(3) { animation-delay: 180ms; }
+
+  #notmeter-site .topbar.grouped-topbar .grouped-navigation .service-link {
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  }
+
+  #notmeter-site .topbar.grouped-topbar .grouped-navigation .service-link::after {
+    content: "";
+    position: absolute;
+    inset: auto 12px 3px 40px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #8ed6c6, #e7ca91 45%, #eefbf7 50%, #8ed6c6 55%, #8ed6c6);
+    background-size: 240% 100%;
+    pointer-events: none;
+    opacity: 0;
+    transform: scaleX(.12);
+    transform-origin: left;
+    transition: transform 260ms cubic-bezier(.16, 1, .3, 1), opacity 180ms ease;
+  }
+
+  #notmeter-site .topbar.grouped-topbar .grouped-navigation .service-link:focus-visible::after {
+    opacity: 1;
+    transform: scaleX(1);
+    animation: nm-motion-glint 650ms ease-out;
+  }
+
+  #notmeter-site .grouped-navigation .service-link:focus-visible > :is(.service-link-icon, img) {
+    animation: nm-motion-salute 520ms ease-out;
+  }
+
+  #notmeter-site :is(#download-modal:not([hidden]) > .download-panel, #combat-detail-modal:not([hidden]) > .detail-panel) {
+    animation: nm-motion-dialog 220ms cubic-bezier(.16, 1, .3, 1);
+    transform-origin: center 30%;
+  }
+
+  #notmeter-site #cp-filter-menu:not([hidden]) {
+    animation: nm-motion-dialog 180ms cubic-bezier(.16, 1, .3, 1);
+    transform-origin: top right;
+  }
+
+  #notmeter-site :is(.ranking-period-button, .ranking-service-button, .filter-button-list button) {
+    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, scale 160ms ease;
+  }
+
+  #notmeter-site :is(.ranking-period-button, .ranking-service-button, .filter-button-list button):active:not(:disabled) {
+    scale: .97;
+  }
+
+  #notmeter-site .grouped-topbar #download-button:focus-visible .download-icon {
+    animation: nm-motion-download 600ms ease-out;
+  }
+
+  #notmeter-site .grouped-topbar #notmeter-discord:focus-visible .discord-community-icon svg {
+    animation: nm-motion-wave 650ms ease-out;
+  }
+
+  #notmeter-site .grouped-topbar #notmeter-discord .discord-community-arrow {
+    transition: transform 220ms cubic-bezier(.16, 1, .3, 1);
+  }
+
+  #notmeter-site .grouped-topbar #notmeter-discord:focus-visible .discord-community-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  #notmeter-site .topbar.grouped-topbar .grouped-navigation .service-link:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+    animation: nm-motion-glint 650ms ease-out;
+  }
+
+  #notmeter-site .grouped-navigation .service-link:hover > :is(.service-link-icon, img) {
+    animation: nm-motion-salute 520ms ease-out;
+  }
+
+  #notmeter-site .grouped-navigation .artifact-link:hover > .service-link-icon {
+    animation-name: nm-motion-orbit;
+    animation-duration: 800ms;
+  }
+
+  #notmeter-site .grouped-topbar .brand:hover .brand-icon {
+    animation: nm-motion-salute 650ms ease-out;
+  }
+
+  #notmeter-site .grouped-topbar .daily-activity:hover rect {
+    animation-name: nm-motion-meter-replay;
+  }
+
+  #notmeter-site .grouped-topbar #download-button:hover .download-icon {
+    animation: nm-motion-download 600ms ease-out;
+  }
+
+  #notmeter-site .grouped-topbar #notmeter-discord:hover .discord-community-icon svg {
+    animation: nm-motion-wave 650ms ease-out;
+  }
+
+  #notmeter-site .grouped-topbar #notmeter-discord:hover .discord-community-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce), (forced-colors: active), print {
+  #notmeter-site .grouped-topbar::before,
+  #notmeter-site .grouped-topbar *::after,
+  #notmeter-site :is(.grouped-topbar, .grouped-topbar *, .download-panel, .detail-panel, #cp-filter-menu, .ranking-period-button, .ranking-service-button, .filter-button-list button) {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes nm-motion-trace {
+  0% { opacity: 0; transform: scaleX(.04); }
+  25% { opacity: .9; }
+  65% { opacity: .55; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(1); }
+}
+
+@keyframes nm-motion-emblem {
+  0% { opacity: .5; transform: perspective(300px) rotateY(-28deg) scale(.9); }
+  65% { opacity: 1; transform: perspective(300px) rotateY(5deg) scale(1.04); }
+  100% { opacity: 1; transform: perspective(300px) rotateY(0) scale(1); }
+}
+
+@keyframes nm-motion-meter {
+  0% { transform: scaleY(.25); }
+  65% { transform: scaleY(1.12); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes nm-motion-meter-replay {
+  0%, 100% { transform: scaleY(1); }
+  35% { transform: scaleY(.45); }
+  70% { transform: scaleY(1.12); }
+}
+
+@keyframes nm-motion-glint {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+@keyframes nm-motion-salute {
+  0%, 100% { transform: translateY(0) rotate(0) scale(1); }
+  40% { transform: translateY(-3px) rotate(-8deg) scale(1.12); }
+  70% { transform: translateY(1px) rotate(3deg) scale(1.03); }
+}
+
+@keyframes nm-motion-orbit {
+  0% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(180deg) scale(1.16); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes nm-motion-download {
+  0%, 100% { transform: translateY(0); }
+  35% { transform: translateY(4px); }
+  65% { transform: translateY(-2px); }
+}
+
+@keyframes nm-motion-wave {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-12deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-4deg); }
+}
+
+@keyframes nm-motion-dialog {
+  from { opacity: .35; transform: translateY(10px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

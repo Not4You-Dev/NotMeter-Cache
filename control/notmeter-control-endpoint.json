@@ -1,0 +1,14 @@
+{
+  "schema": "notmeter-control-endpoint-v1",
+  "version": 1,
+  "generation": "33d556efc6f7b053625663490ac6131e",
+  "generatedAtUnixSeconds": 1793818101,
+  "validUntilUnixSeconds": 1794422901,
+  "primaryBaseUrl": "https://notmeter.59-27-108-81.sslip.io",
+  "fallbackBaseUrls": [
+    "https://notmeter.59-27-108-81.nip.io"
+  ],
+  "signatureAlgorithm": "RSA-SHA256-PKCS1-v1",
+  "keyId": "notmeter-ranking-2026-07",
+  "signature": "h216b6zFgg1SChZKXpIiDdTklQ8pIEvfiF1ItlwB3KhypMYAv3c9kLV5jGMI79BpRt7e3TeHZ/uQwEAMQ4wtE0EXSsmcOUMl79aF67ALC3PVK7E4dIBsYIfEsNaAuH5cxSnKZUvWXUvr957fX9vXkTcvvj0ZXL3WkLj1pdSs43gvvMAWXCLjptFMxNBAN0wagFLozVo0KugQTsdWSg\u002BIlyKp6lmd\u002BIVXyEp71Y8uqCpN2HwCqOoFHhvY6s52c2\u002BFeh1AHYQqhCW4nt2i9oNMHgypfVZhSIPN/CaVJAC\u002BKzzcR9N94JEK2glxlS2RqdKNIo8adVvqNVHBNNjg2Nw5Hw05QQF3uu2w6xbFXPTifWFD\u002BIgWZOCLQYqYmjPNLr2f9x/JXrKjRmEY1/MRa9xkuPNNPFK2mSBI8tjEiwAlEu3zcHsC2RzNF77SL9SvhlXJ1Eo3Y8c7FmlfpTLG71QFGaoWq4Lvqpgdiq6oIqE\u002BiXIDXzj4QbaChsfjkFwLxgFR"
+}

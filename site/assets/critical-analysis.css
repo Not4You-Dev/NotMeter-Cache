@@ -1,0 +1,31 @@
+#combat-detail-modal .detail-rate-grid > .critical-scope { position:relative; padding:0; border:0; background:transparent; overflow:visible; max-width:100%; }
+#combat-detail-modal .critical-scope-trigger { display:inline-flex; align-items:center; gap:6px; max-width:100%; min-height:30px; margin:0; padding:5px 10px; border:1px solid var(--detail-line); border-radius:5px; background:var(--detail-panel); color:var(--detail-muted); font:inherit; cursor:pointer; box-shadow:none; }
+#combat-detail-modal .critical-scope-trigger:hover,
+#combat-detail-modal .critical-scope-trigger[aria-expanded="true"],
+#combat-detail-modal .critical-scope-trigger[data-filtered="true"] { border-color:var(--detail-gold); }
+#combat-detail-modal .critical-scope-trigger > span { font-size:12px; font-weight:400; color:var(--detail-muted); }
+#combat-detail-modal .critical-scope-trigger > strong { font-size:13px; font-weight:700; white-space:nowrap; color:var(--detail-gold); }
+#combat-detail-modal .critical-scope-trigger .critical-scope-basis { margin-left:3px; padding-left:9px; border-left:1px solid var(--detail-line); font-size:11px; }
+#combat-detail-modal .critical-scope-trigger svg { flex:none; transition:transform .15s ease; }
+#combat-detail-modal .critical-scope-trigger[aria-expanded="true"] svg { transform:rotate(180deg); }
+#combat-detail-modal .critical-scope-menu { position:absolute; top:calc(100% + 5px); left:0; z-index:30; width:340px; max-width:calc(100vw - 40px); padding:5px; border:1px solid var(--detail-line); border-radius:7px; background:var(--detail-panel); box-shadow:0 12px 30px #0006; }
+#combat-detail-modal .critical-scope-menu[hidden],
+#combat-detail-modal .critical-analysis[hidden],
+#combat-detail-modal .critical-analysis [hidden] { display:none; }
+#combat-detail-modal .critical-scope-menu button { display:grid; grid-template-columns:18px minmax(0,1fr) auto; align-items:center; gap:9px; width:100%; min-height:42px; padding:9px 10px; border:1px solid transparent; border-radius:4px; background:transparent; color:var(--detail-text); text-align:left; font:inherit; cursor:pointer; box-shadow:none; }
+#combat-detail-modal .critical-scope-menu button[aria-checked="true"] { background:color-mix(in srgb, var(--detail-gold) 12%, transparent); }
+#combat-detail-modal .critical-scope-menu button:hover:not(:disabled) { background:color-mix(in srgb, var(--detail-gold) 18%, transparent); }
+#combat-detail-modal .critical-scope-menu button:disabled { opacity:.45; cursor:default; }
+#combat-detail-modal .critical-scope-menu .critical-scope-label { color:var(--detail-text); font-size:12px; font-weight:500; overflow-wrap:anywhere; white-space:normal; line-height:1.5; }
+#combat-detail-modal .critical-scope-menu .critical-scope-check,
+#combat-detail-modal .critical-scope-menu strong { color:var(--detail-gold); font-size:12px; }
+#combat-detail-modal .critical-scope-menu button[aria-checked="false"] .critical-scope-check { visibility:hidden; }
+#combat-detail-modal .critical-scope button:focus-visible { outline:2px solid var(--detail-gold); outline-offset:2px; }
+#combat-detail-modal .critical-analysis { margin-top:10px; padding-top:10px; border-top:1px solid var(--detail-line); font-size:12px; }
+#combat-detail-modal .critical-analysis-result { color:var(--detail-gold); line-height:1.7; }
+#combat-detail-modal .critical-analysis details { margin-top:7px; color:var(--detail-muted); }
+#combat-detail-modal .critical-analysis summary { cursor:pointer; width:fit-content; color:var(--detail-text); }
+#combat-detail-modal .critical-analysis details p { margin:8px 0; max-width:80ch; line-height:1.6; }
+#combat-detail-modal .critical-analysis ul { padding-left:18px; margin:6px 0 0; display:flex; flex-wrap:wrap; gap:6px 32px; }
+@media (max-width:600px) { #combat-detail-modal .critical-analysis ul { display:block; } #combat-detail-modal .critical-analysis li + li { margin-top:5px; } }
+@media (prefers-reduced-motion:reduce) { #combat-detail-modal .critical-scope-trigger svg { transition:none; } }

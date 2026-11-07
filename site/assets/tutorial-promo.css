@@ -1,0 +1,40 @@
+/* A visible starting point directly below the community panel. */
+.topbar .first-guide {
+  grid-column: 1 / -1; grid-row: 4;
+  display: grid; grid-template-columns: 38px minmax(0,1fr) auto;
+  align-items: center; gap: 22px; min-width: 0; width: 100%;
+  padding: 23px 25px; border: 1px solid #8e5574; border-left: 4px solid #ef86b3;
+  border-radius: 9px; background: #201b2c; color: #f7f0f6;
+}
+.first-guide-mark { width: 34px; height: 34px; color: #efa1c4; }
+.first-guide-copy { min-width: 0; }
+.first-guide-copy h2 { margin: 0; font-size: 22px; line-height: 1.35; letter-spacing: -.025em; }
+.first-guide-copy p { margin: 7px 0 0; max-width: 680px; font-size: 13px; line-height: 1.7; color: #cfc2d1; }
+.first-guide-actions { display: flex; flex-direction: column; align-items: stretch; gap: 10px; max-width: 280px; text-align: center; }
+.first-guide-actions a { text-decoration: none; font-size: 13px; font-weight: 650; line-height: 1.5; }
+.first-guide-primary { padding: 11px 20px; border-radius: 5px; border: 1px solid #efadcc; background: #edaccb; color: #301525; }
+.first-guide-primary:hover { background: #f5c6dc; }
+.first-guide-secondary { color: #ecc1d6; text-underline-offset: 4px; padding: 2px 6px; }
+.first-guide-secondary:hover { text-decoration: underline; }
+.first-guide a:focus-visible, .download-guide a:focus-visible { outline: 2px solid #ffd4e7; outline-offset: 4px; }
+.download-guide { margin: 0 24px; padding: 18px 20px; background: #251e2f; border: 1px solid #885c76; border-left: 3px solid #efa1c4; border-radius: 6px; }
+.download-guide h3 { margin: 0; color: #f5c5dc; font-size: 17px; line-height: 1.4; }
+.download-guide p { margin: 8px 0 14px; color: #d0c6d3; font-size: 13px; line-height: 1.7; }
+.download-guide-links { display: flex; flex-wrap: wrap; gap: 9px 20px; }
+.download-guide-links a { color: #f3bfda; font-size: 13px; line-height: 1.5; font-weight: 650; text-decoration: underline; text-underline-offset: 4px; }
+.download-guide small { display: block; margin-top: 10px; color: #bfb0c2; font-size: 11px; }
+@media(max-width: 1050px) {
+  .topbar.has-support-menu .first-guide { grid-row: 5; }
+}
+@media(max-width: 900px) {
+  .topbar .first-guide { grid-template-columns: 30px minmax(0,1fr); gap: 14px; padding: 20px; }
+  .first-guide-mark { width: 28px; height: 28px; align-self: start; margin-top: 2px; }
+  .first-guide-actions { grid-column: 2; max-width: none; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 12px 20px; text-align: left; }
+}
+@media(max-width: 480px) {
+  .topbar .first-guide { padding: 18px 16px; }
+  .first-guide-copy h2 { font-size: 20px; }
+  .first-guide-actions { grid-column: 1 / -1; }
+  .first-guide-actions a { width: 100%; text-align: center; }
+  .download-guide { margin: 0 16px; padding: 16px; }
+}

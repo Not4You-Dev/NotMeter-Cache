@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <style>
+    html { background: #080c12; }
+    html[data-nm-shell-pending], html[data-nm-shell-pending] :is(body, #notmeter-site) { background: #080c12 !important; }
+    html[data-nm-shell-pending] :is(#homepage-redesign, .app-shell, [data-shell-content], .guide-header) { visibility: hidden; }
+  </style>
+  <script>
+    document.documentElement.setAttribute("data-nm-shell-pending", "");
+    setTimeout(() => document.documentElement.removeAttribute("data-nm-shell-pending"), 8000);
+    addEventListener("pagereveal", event => {
+      event.viewTransition?.ready.catch(() => {});
+    });
+  </script>
+  <link rel="preload" as="style" href="./assets/homepage-reference.css?v=20261108-profile-navigation">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080c12">
+  <meta name="description" content="내 펫 정보를 가져와 글로벌 베르테론·알트가르드·어비스 하층에서 펫 이해도를 높일 몬스터와 키벨리스크 위치를 찾아보세요.">
+  <link rel="canonical" href="https://notmeter.com/pet-tracker.html">
+  <link rel="icon" href="./assets/notmeter-icon.svg" type="image/svg+xml">
+  <title>NotMeter · Pet tracker</title>
+  <link rel="stylesheet" href="./assets/pet-map.css?v=20261104-renewal-2">
+  <script src="./assets/i18n.js?v=20261024-resource-work"></script>
+  <script src="./assets/web-translations.js?v=20261021-praise-retired" defer></script>
+  <script src="./assets/web-vi.js?v=20261023-game-terms" defer></script>
+  <script src="./assets/pet-map-copy.js?v=20261104-renewal" defer></script>
+  <script src="./assets/pet-map-core.js?v=20261102-8" defer></script>
+  <script src="./assets/pet-map.js?v=20261104-tab-memory" defer></script>
+  <script src="./assets/advertising-loader.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="./assets/homepage-redesign.css?v=20261108-profile-navigation">
+</head>
+<body>
+  <div id="homepage-redesign" data-shell-view="pet-tracker" data-shell-language="language" hidden></div>
+  <header class="site-header" data-shell-content>
+    <a class="brand" href="./"><img src="./assets/notmeter-mark.svg" alt=""><span>NotMeter</span></a>
+    <nav><a href="./" data-copy="back">홈페이지</a><a href="./pet-tracker.html" aria-current="page" data-copy="title">펫 트래커</a></nav>
+    <div class="header-actions"><span class="region" data-copy="region"></span><button data-open-guide data-copy="usageGuide"></button><select id="language" aria-label="Language"></select></div>
+  </header>
+  <main class="pm-page" data-shell-content>
+    <header class="pg" aria-labelledby="map-title">
+      <div class="pg-l">
+        <div class="crumb"><span data-copy="pageGroup"></span><i aria-hidden="true"></i><div data-copy="tracker"></div></div>
+        <h1 id="map-title" data-copy="exploreTitle"></h1>
+        <p data-copy="pageDescription"></p>
+      </div>
+      <div class="pg-r pm-head-r">
+        <span class="tag-mono" data-copy="region"></span>
+        <button type="button" id="import-open" class="btn" data-open-import data-copy="openImport"></button>
+      </div>
+    </header>
+    <div class="pm-sum" id="data-status" role="status" hidden>
+      <div class="pm-sum-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="pm-sum-k">
+        <span><i aria-hidden="true"></i><span data-copy="max"></span><b class="mono" id="total-max"></b></span>
+        <span><i aria-hidden="true"></i><span data-copy="inProgress"></span><b class="mono" id="total-progress"></b></span>
+        <span><i aria-hidden="true"></i><span data-copy="unowned"></span><b class="mono" id="total-unowned"></b></span>
+        <span class="pm-sum-t" id="total-note"></span>
+      </div>
+    </div>
+    <div class="pm-shell">
+      <div class="pm-bar">
+        <div id="map-tabs" class="pm-tabs" role="tablist" aria-label="Map"></div>
+        <div class="pm-filters">
+          <div class="f-group off" id="level-group">
+            <span class="f-label" id="level-label" data-copy="insight"></span>
+            <div id="level-filter" class="nm-seg" role="group" aria-labelledby="level-label">
+              <button type="button" data-filter="all" data-copy="filterAll" aria-pressed="true" class="on" disabled></button>
+              <button type="button" data-filter="0" data-copy="unowned" aria-pressed="false" disabled></button>
+              <button type="button" data-filter="1" data-copy="level1" aria-pressed="false" disabled></button>
+              <button type="button" data-filter="2" data-copy="level2" aria-pressed="false" disabled></button>
+            </div>
+          </div>
+          <div class="f-group" id="species-group">
+            <span class="f-label" id="species-label" data-copy="speciesFilter"></span>
+            <div id="species-filter" class="nm-seg" role="group" aria-labelledby="species-label">
+              <button type="button" data-filter="all" data-copy="filterAll" aria-pressed="true" class="on"></button>
+              <button type="button" data-filter="cogni" data-copy="speciesCogni" aria-pressed="false"></button>
+              <button type="button" data-filter="fera" data-copy="speciesFera" aria-pressed="false"></button>
+              <button type="button" data-filter="natura" data-copy="speciesNatura" aria-pressed="false"></button>
+              <button type="button" data-filter="varian" data-copy="speciesVarian" aria-pressed="false"></button>
+            </div>
+          </div>
+          <label class="pm-check pm-kib" id="landmark-toggle"><input type="checkbox" id="obelisks" checked><img id="landmark-icon" width="18" height="18" alt=""><span data-copy="obelisks"></span></label>
+        </div>
+      </div>
+      <div class="pm-body" id="map-body">
+        <aside class="pm-list pet-list-panel" aria-labelledby="list-title">
+          <div class="pm-list-hd" id="list-controls">
+            <h2 id="list-title" class="sr-only" data-copy="listTitle"></h2>
+            <input class="pm-search" id="search" type="search">
+            <div class="pm-list-meta"><span id="list-count" aria-live="polite"></span><span data-copy="maxHidden"></span></div>
+          </div>
+          <div id="pet-list" class="pm-rows"></div>
+          <div class="pm-list-ft" data-copy="selectPet"></div>
+        </aside>
+        <section class="pm-stage" aria-label="Pet map">
+          <div id="map" class="pm-map" tabindex="0" role="region">
+            <canvas id="map-canvas"></canvas><div id="markers" class="markers"></div>
+            <canvas id="focus-canvas" aria-hidden="true" hidden></canvas>
+            <div id="map-status" class="map-status" role="status"></div>
+            <div id="map-popup" class="pm-pop" role="tooltip" hidden></div>
+            <div class="pm-zoom" id="map-controls">
+              <button id="zoom-in" type="button">+</button><button id="zoom-out" type="button">−</button><button id="reset-map" type="button" class="pm-fit"><i aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="pm-mapname" id="map-nameplate"><b id="map-name"></b><span data-copy="mapHint"></span></div>
+          <div id="selection-bar" class="pm-selbar" hidden>
+            <img id="selection-icon" class="pm-ic" width="36" height="36" alt="">
+            <div><b id="selection-name" role="status" aria-live="polite"></b><span id="selection-detail"></span></div>
+            <button id="clear-selection" type="button"><span data-copy="removeSelection"></span><kbd aria-hidden="true">Esc</kbd></button>
+          </div>
+          <div id="empty-progress" class="pm-nudge">
+            <b data-copy="missing"></b><span data-copy="nudge"></span>
+            <div><button type="button" class="btn sm" data-open-import data-copy="openImport"></button><button type="button" class="btn ghost sm" data-pet-sample data-copy="sampleShort" disabled></button></div>
+          </div>
+        </section>
+      </div>
+      <section id="outside-info" class="pm-outside" hidden>
+        <div class="pm-out-hd" id="outside-heading"><div><b data-copy="outsideTitle"></b><p><span data-copy="outsideHelp"></span> <span data-copy="notExclusive"></span></p></div></div>
+        <div class="pm-src-grid" id="source-grid"></div>
+      </section>
+    </div>
+    <p class="foot-note"><span data-copy="privacy"></span> <span data-copy="locationNote"></span></p>
+  </main>
+  <dialog id="import-dialog" class="pm-dlg" aria-labelledby="import-title">
+    <button id="import-close" class="pm-dlg-x" type="button" aria-label="Close">✕</button>
+    <span class="pm-eyebrow" data-copy="importTitle"></span>
+    <h2 id="import-title" data-copy="pasteHeading"></h2>
+    <ol class="pm-steps" id="guide-steps">
+      <li><b>1</b><div><strong data-copy="step1Title"></strong><span data-copy="step1Body"></span></div></li>
+      <li><b>2</b><div><button id="guide-image-open" type="button"><strong data-copy="step2Title"></strong></button><span data-copy="step2Body"></span></div></li>
+      <li><b>3</b><div><strong data-copy="step3Title"></strong><span data-copy="step3Body"></span></div></li>
+    </ol>
+    <form id="import-form">
+      <label class="sr-only" for="pet-code" data-copy="importLabel"></label>
+      <textarea id="pet-code" class="pm-code" rows="3" maxlength="100000" spellcheck="false" autocomplete="off"></textarea>
+      <p id="import-status" class="pm-err" role="status" hidden></p>
+      <div class="pm-dlg-row">
+        <label class="pm-check"><input id="remember" type="checkbox"><span data-copy="remember"></span></label>
+        <span class="pm-dlg-spacer"></span>
+        <button id="clear" class="btn ghost sm" type="button" data-copy="clear" hidden></button>
+        <button class="btn" id="import-apply" type="submit" data-copy="importButton" disabled></button>
+      </div>
+    </form>
+    <div class="pm-dlg-foot"><span data-copy="privacy"></span><button type="button" class="pm-link" data-pet-sample data-copy="sampleAction" disabled></button></div>
+  </dialog>
+  <dialog id="guide-dialog" aria-label="Guide"><button id="guide-dialog-close" type="button" data-copy="close"></button><img id="guide-large" alt=""></dialog>
+  <script src="./assets/homepage-redesign.js?v=20261108-profile-navigation" defer></script>
+</body>
+</html>

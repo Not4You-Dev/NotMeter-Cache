@@ -1,0 +1,17 @@
+#global-cp-notice { margin: 0 0 24px; padding: 20px; border: 1px solid #496d88; border-left: 4px solid #83c7ff; border-radius: 8px; background: #18232e; color: #dce8f2; }
+#global-cp-notice[hidden], #global-cp-notice [hidden] { display: none; }
+#global-cp-notice h2 { margin: 0; color: #a6d7ff; font-size: 19px; line-height: 1.5; }
+#global-cp-notice p { margin: 10px 0; line-height: 1.65; }
+#global-cp-notice ol { margin: 16px 0; padding-left: 24px; display: grid; gap: 13px; }
+#global-cp-notice li { padding-left: 4px; line-height: 1.65; }
+#global-cp-notice li strong { display: block; color: #fff; }
+#global-cp-notice button { padding: 9px 14px; border: 1px solid #63819b; border-radius: 6px; background: #243746; color: #fff; font: inherit; cursor: pointer; }
+#global-cp-notice button:hover { background: #334c60; }
+#global-cp-notice button:focus-visible { outline: 2px solid #a6d7ff; outline-offset: 3px; }
+#global-cp-notice small { display: block; margin-top: 9px; color: #bbcbd8; line-height: 1.5; }
+#global-cp-notice.is-dismissed { padding: 10px 14px; }
+@media (max-width: 600px) {
+  #global-cp-notice { padding: 16px 14px; font-size: 14px; }
+  #global-cp-notice h2 { font-size: 17px; }
+  #global-cp-notice button { min-height: 44px; }
+}

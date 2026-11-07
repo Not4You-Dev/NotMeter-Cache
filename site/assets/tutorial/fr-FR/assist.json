@@ -1,0 +1,24 @@
+{
+  "skills": [
+    {
+      "code": 18250000,
+      "name": "Pouvoir de la tempête"
+    },
+    {
+      "code": 17290000,
+      "name": "Absolution"
+    },
+    {
+      "code": 17390000,
+      "name": "Appel de résurrection"
+    },
+    {
+      "code": 17270000,
+      "name": "Rédemption"
+    },
+    {
+      "code": 17420000,
+      "name": "Pouvoir de Yustiel"
+    }
+  ]
+}
