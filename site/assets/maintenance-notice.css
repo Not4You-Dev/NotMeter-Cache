@@ -1,0 +1,84 @@
+/* The announcement uses the site's Graphite palette and existing typeface. */
+#maintenance-notice {
+  box-sizing: border-box;
+  width: min(720px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  color: var(--gr-text, #edf0f4);
+  background: var(--gr-panel, #1b1f26);
+  border: 1px solid var(--gr-selected-line, #8999ac);
+  border-radius: 12px;
+  box-shadow: 0 24px 80px #0008;
+  font: inherit;
+  text-align: start;
+  color-scheme: dark;
+}
+#maintenance-notice:not([open]) { display: none; }
+#maintenance-notice[open] { display: flex; flex-direction: column; }
+#maintenance-notice::backdrop { background: rgb(5 8 12 / 78%); }
+body.maintenance-notice-open { overflow: hidden; }
+#maintenance-notice .maintenance-header {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 26px 28px 20px; border-bottom: 1px solid var(--gr-line, #3a424e);
+  flex: 0 0 auto;
+}
+#maintenance-notice h2 { margin: 0; font-size: clamp(20px, 3vw, 25px); line-height: 1.4; font-weight: 700; }
+#maintenance-notice h2:focus { outline: none; }
+#maintenance-notice .maintenance-body {
+  min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+  padding: 22px 28px; font-size: 15px; line-height: 1.75;
+  scrollbar-width: thin; scrollbar-color: var(--gr-selected-line) transparent;
+}
+#maintenance-notice p { margin: 0 0 16px; overflow-wrap: anywhere; }
+#maintenance-notice .maintenance-lead { font-size: 17px; color: var(--gr-text); font-weight: 700; }
+#maintenance-notice .maintenance-explanation { color: var(--gr-secondary, #c6ccd5); }
+#maintenance-notice .maintenance-impact {
+  margin: 20px 0 24px; padding: 15px 18px;
+  background: #f1c3760b; border-inline-start: 3px solid #e8ba70;
+}
+#maintenance-notice .maintenance-impact strong { display: block; color: #f3d39e; margin-bottom: 5px; }
+#maintenance-notice .maintenance-impact p { margin: 0; }
+#maintenance-notice h3 { margin: 0 0 14px; font-size: 17px; line-height: 1.5; }
+#maintenance-notice ul { margin: 0; padding-inline-start: 20px; }
+#maintenance-notice li { padding-inline-start: 4px; margin-bottom: 18px; }
+#maintenance-notice li:last-child { margin-bottom: 0; }
+#maintenance-notice li strong { display: block; margin-bottom: 5px; }
+#maintenance-notice li p { margin-bottom: 8px; color: var(--gr-secondary); }
+#maintenance-notice .maintenance-footer {
+  padding: 18px 28px 20px; flex: 0 0 auto;
+  border-top: 1px solid var(--gr-line); background: var(--gr-panel);
+}
+#maintenance-notice .maintenance-actions { display: flex; gap: 12px; }
+#maintenance-notice button {
+  min-height: 44px; padding: 10px 18px; border: 1px solid var(--gr-line);
+  border-radius: 6px; color: var(--gr-text); background: var(--gr-tile, #242a32);
+  font: inherit; font-size: 14px; line-height: 1.5; font-weight: 600;
+  cursor: pointer; white-space: normal; overflow-wrap: anywhere;
+}
+#maintenance-notice button:hover { border-color: var(--gr-selected-line); }
+#maintenance-notice button:focus-visible { outline: 2px solid var(--gr-accent); outline-offset: 3px; }
+#maintenance-notice .maintenance-dismiss-today { flex: 1; }
+#maintenance-notice .maintenance-confirm {
+  min-width: 112px; background: var(--gr-accent, #d9e1eb); color: var(--gr-ink, #1b232d);
+}
+#maintenance-notice .maintenance-close {
+  flex: 0 0 36px; min-height: 36px; margin: -4px -8px 0 auto; padding: 0;
+  font: 26px/1 sans-serif; border: 0; background: transparent; color: var(--gr-secondary);
+}
+#maintenance-notice .maintenance-until {
+  margin: 12px 0 0; color: var(--gr-muted); font-size: 12px; line-height: 1.6;
+}
+@media (max-width: 480px) {
+  #maintenance-notice { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); border-radius: 9px; }
+  #maintenance-notice .maintenance-header { padding: 18px 18px 14px; gap: 8px; }
+  #maintenance-notice .maintenance-body { padding: 18px; font-size: 14px; }
+  #maintenance-notice .maintenance-lead { font-size: 15px; }
+  #maintenance-notice .maintenance-footer { padding: 14px 18px 16px; }
+  #maintenance-notice .maintenance-actions { flex-wrap: wrap; gap: 8px; }
+  #maintenance-notice .maintenance-dismiss-today { flex-basis: 100%; }
+  #maintenance-notice .maintenance-confirm { width: 100%; }
+}
+@media print { #maintenance-notice[open] { display: none; } }
