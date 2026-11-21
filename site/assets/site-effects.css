@@ -1,0 +1,61 @@
+#notmeter-site .nm-composited-border::before,
+#notmeter-site #back-button.nm-composited-border::before { content: none; }
+.nm-flow-border {
+  position: absolute;
+  inset: 0;
+  padding: var(--gr-motion-width, 1.5px);
+  border-radius: inherit;
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.nm-flow-border::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: var(--gr-motion-gradient, var(--gr-motion-cool));
+  background-size: 100% 300%;
+  background-position: 0 50%;
+  will-change: transform;
+  animation: nm-border-travel var(--gr-motion-duration, 10s) linear infinite alternate;
+  animation-play-state: var(--nm-effect-play, paused);
+}
+#notmeter-site :is(.ranking-metric-button, .ranking-service-button):not(.is-active) > .nm-flow-border { display: none; }
+.filter-cp-field > .nm-flow-border { inset: -1px; padding: 2px; opacity: .85; }
+.filter-cp-field > .nm-flow-border::before {
+  background-image: linear-gradient(115deg, #7dcfc5, #8ab6df, #bca3d7, #dfc592, #7dcfc5);
+  animation-name: nm-border-round-trip;
+  animation-duration: 9s;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+}
+.filter-cp-field:focus-within > .nm-flow-border { opacity: 1; }
+.filter-cp-field:focus-within > .nm-flow-border::before { animation-play-state: paused; }
+#notmeter-site #class-ranking-hint {
+  animation-play-state: var(--nm-effect-play, paused);
+  contain: paint;
+  will-change: transform;
+}
+html[data-nm-effects-paused="true"] #notmeter-site .nm-flow-border::before,
+html[data-nm-effects-paused="true"] #notmeter-site #class-ranking-hint { animation-play-state: paused; }
+@keyframes nm-border-travel {
+  from { transform: translateX(0); }
+  to { transform: translateX(-66.6666667%); }
+}
+@keyframes nm-border-round-trip {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-66.6666667%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nm-flow-border::before { animation: none; transform: translateX(-33.3333333%); }
+}
+@media (forced-colors: active), print {
+  .nm-flow-border { display: none; }
+}

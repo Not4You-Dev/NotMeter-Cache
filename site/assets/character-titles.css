@@ -1,0 +1,31 @@
+.character-appearance-title {
+  position: relative;
+  isolation: isolate;
+  display: table;
+  max-width: 100%;
+  margin: 0 0 3px;
+  color: var(--title-color, #c3c3c3);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  text-shadow: 0 1px 2px #000, 0 0 3px #000;
+}
+.character-appearance-title[hidden] { display: none; }
+.character-appearance-title-text { position: relative; display: block; z-index: 1; }
+.character-appearance-title:not(.has-title-art) .character-appearance-title-text::before { content: "["; }
+.character-appearance-title:not(.has-title-art) .character-appearance-title-text::after { content: "]"; }
+.character-appearance-title.has-title-art {
+  box-sizing: border-box;
+  min-height: 44px;
+  min-width: min(150px, 100%);
+  padding: 12px 62px 12px 45px;
+  margin: 0 0 4px;
+}
+.character-title-background, .character-title-decoration { position: absolute; pointer-events: none; z-index: 0; }
+.character-title-background { inset: 0; width: 100%; height: 100%; }
+.character-title-decoration { left: 0; top: var(--title-line-center, 50%); width: 44px; height: 38px; transform: translateY(-50%); z-index: 2; }
+@media (max-width: 520px) {
+  .character-appearance-title { font-size: 12px; }
+  .character-appearance-title.has-title-art { padding-right: 50px; padding-left: 40px; }
+}

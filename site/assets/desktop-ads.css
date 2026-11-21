@@ -1,0 +1,52 @@
+.desktop-ad-rail {
+  position: absolute;
+  top: 200px;
+  z-index: 1;
+  height: 624px;
+}
+
+.desktop-ad-rail[hidden] {
+  display: none;
+}
+
+.desktop-ad-caption {
+  display: block;
+  height: 24px;
+  color: #a2aab7;
+  font: 10px/24px Arial, sans-serif;
+  text-align: center;
+}
+
+.desktop-ad-rail[data-failed="true"],
+.desktop-ad-rail:has(ins[data-ad-status="unfilled"]),
+.desktop-ad-rail:has(ins[data-ad-status="unfill-optimized"]),
+body:is(.detail-open, .download-open) .desktop-ad-rail {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (min-width: 1680px) and (hover: hover) and (pointer: fine) {
+  body.desktop-ads-ready :is(.creator-banner, .sponsor-rail) {
+    top: 872px;
+  }
+
+  body:has(.exitlag-dock.is-open) .desktop-ad-rail--left {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  body.desktop-ads-ready :is(.nmba, .nmba-toast) {
+    right: max(24px, calc((100vw - 1260px) / 2 + 12px));
+  }
+
+  body.desktop-ads-ready :is(.nmba, .nmba-toast)[data-side="left"] {
+    right: auto;
+    left: max(24px, calc((100vw - 1260px) / 2 + 12px));
+  }
+}
+
+@media (max-width: 1679px), (hover: none), (pointer: coarse), print {
+  .desktop-ad-rail {
+    display: none;
+  }
+}
