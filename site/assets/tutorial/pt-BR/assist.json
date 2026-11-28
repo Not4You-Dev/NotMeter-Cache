@@ -1,0 +1,24 @@
+{
+  "skills": [
+    {
+      "code": 18250000,
+      "name": "Soberania do Vendaval"
+    },
+    {
+      "code": 17290000,
+      "name": "Absolvição"
+    },
+    {
+      "code": 17390000,
+      "name": "Ressurreição por Invocação"
+    },
+    {
+      "code": 17270000,
+      "name": "Salvação"
+    },
+    {
+      "code": 17420000,
+      "name": "Soberania de Yustiel"
+    }
+  ]
+}
